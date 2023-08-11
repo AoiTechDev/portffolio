@@ -10,3 +10,19 @@
 .app
     background-color: black
     height: 100vh
+    scroll-snap-type: y proximity
+    overflow: auto
+    section
+        scroll-snap-align: end
+    
+
+.main
+    color: white
+    background-color: black
+    height: calc(100vh - 94px)
+.skills
+    background-color: red
+    height: 100vh
+.projects
+    @extend .skills
+    background-color: yellow
