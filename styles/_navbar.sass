@@ -4,38 +4,13 @@ nav
     padding: 2rem
 
     @media screen and (max-width: #{$medium})
-        .test
+        .nav-list
             display: none
             background-color: blue
         @include flexbox(center, end)
-    .test
+    .nav-list
         color: white
 
     ul
         width: 100%
-        @include flexbox(center, center)
-        gap: 2.5rem
-        font-size: 2vmin
-        color: #{$grey}
-        li
-            position: relative
-            list-style: none
-            a
-                position: relative
-                text-transform: uppercase
-                letter-spacing: 2px
-                cursor: pointer
-                &::before
-                    content: attr(data-text)
-                    position: absolute
-                    color: var(--clr)
-                    width: 0
-                    overflow: hidden
-                    transition: 1s
-                    border-right: 4px solid var(--clr)
-                    -webkit-text-stroke: 1px var(--clr)
-                    @media screen and (max-width: #{$medium})
-                        transition: 0s
-                &:hover::before
-                    width: 100%
-                    filter: drop-shadow(0 0 10px var(--clr))
+        @include navList(row, 2vmin, 0)

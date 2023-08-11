@@ -2,7 +2,7 @@ import React from "react";
 
 const Navlist = () => {
   return (
-    <div className="test">
+    <div className="nav-list">
       <ul>
         <li>
           <a

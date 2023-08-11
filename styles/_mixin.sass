@@ -24,3 +24,33 @@
     height: 100%
     background-color: red
     opacity: 0
+
+@mixin navList($flex-direction, $vmin, $margin)
+    @include flexbox(center, center)
+    flex-direction: $flex-direction
+    gap: 2.5rem
+    font-size: $vmin
+    color: #{$grey}
+    li
+        position: relative
+        list-style: none
+        margin: $margin
+        a
+            position: relative
+            text-transform: uppercase
+            letter-spacing: 2px
+            cursor: pointer
+            &::before
+                content: attr(data-text)
+                position: absolute
+                color: var(--clr)
+                width: 0
+                overflow: hidden
+                transition: 1s
+                border-right: 4px solid var(--clr)
+                -webkit-text-stroke: 1px var(--clr)
+                @media screen and (max-width: #{$medium})
+                    transition: 0s
+            &:hover::before
+                width: 100%
+                filter: drop-shadow(0 0 10px var(--clr))

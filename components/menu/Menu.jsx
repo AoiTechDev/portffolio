@@ -1,15 +1,17 @@
-import React from 'react'
-import 'animate.css';
+import React from "react";
+import "animate.css";
+import Navlist from "@components/navlist/Navlist";
 
-const Menu = () => {
+const Menu = ({ menuOpenHandler}) => {
   return (
-    <div className="menu">
-        <p>Home</p>
-        <p>Contact</p>
-        <p>Projects</p>
-        <p>Exp</p>
+    <div className="menu animate__animated animate__fadeInRight">
+      <div id="burger-menu-close" onClick={menuOpenHandler}>
+        <span></span>
+        <span></span>
+      </div>
+      <Navlist />
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
