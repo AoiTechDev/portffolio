@@ -1,6 +1,6 @@
 @use 'burger-menu'
 @use 'navbar'
-
+@import 'variables'
 *
     margin: 0
     padding: 0
@@ -12,17 +12,24 @@
     height: 100vh
     scroll-snap-type: y proximity
     overflow: auto
-    section
+    scroll-behavior: smooth!important
+    section, main, footer
         scroll-snap-align: end
     
 
-.main
+main
     color: white
     background-color: black
     height: calc(100vh - 94px)
-.skills
-    background-color: red
+#skills
+    background-color: black
     height: 100vh
-.projects
-    @extend .skills
+#projects
+    @extend #skills
+    background-color: #{$orange}
+#contact
+    @extend #skills
+    background-color: #{$blue}
+footer
+    height: 15vh
     background-color: yellow

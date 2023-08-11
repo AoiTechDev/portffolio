@@ -1,48 +1,60 @@
 import React from "react";
-
-const Navlist = () => {
+import Link from "next/link";
+const Navlist = ({ menuOpenHandler }) => {
   return (
     <div className="nav-list">
       <ul>
         <li>
-          <a
+          <Link
+            href="/"
             data-text="&nbsp;About"
             style={{
               "--clr": "#0C4A60",
             }}
+            className="link-a"
+            onClick={menuOpenHandler}
           >
             &nbsp;About&nbsp;
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             data-text="&nbsp;Skills"
             style={{
               "--clr": "#EF6C33",
             }}
+            className="link-a"
+            href="#skills"
+            onClick={menuOpenHandler}
           >
             &nbsp;Skills&nbsp;
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             data-text="&nbsp;Projects"
             style={{
               "--clr": "#0C4A60",
             }}
+            className="link-a"
+            href="#projects"
+            onClick={menuOpenHandler}
           >
             &nbsp;Projects&nbsp;
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             data-text="&nbsp;Contact"
             style={{
               "--clr": "#EF6C33",
             }}
+            className="link-a"
+            href="#contact"
+            onClick={menuOpenHandler}
           >
             &nbsp;Contact&nbsp;
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

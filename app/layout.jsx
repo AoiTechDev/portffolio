@@ -5,6 +5,7 @@ import Nav from "@components/Nav";
 
 import React, { useState } from "react";
 import Menu from "@components/menu/Menu";
+
 const RootLayout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

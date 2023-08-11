@@ -25,21 +25,23 @@
     background-color: red
     opacity: 0
 
-@mixin navList($flex-direction, $vmin, $margin)
+@mixin navList($flex-direction, $vmin, $margin, $color)
     @include flexbox(center, center)
     flex-direction: $flex-direction
     gap: 2.5rem
     font-size: $vmin
-    color: #{$grey}
+    
     li
         position: relative
         list-style: none
         margin: $margin
-        a
+        .link-a
             position: relative
             text-transform: uppercase
             letter-spacing: 2px
             cursor: pointer
+            text-decoration: none
+            color: $color
             &::before
                 content: attr(data-text)
                 position: absolute

@@ -9,7 +9,7 @@ const Menu = ({ menuOpenHandler}) => {
         <span></span>
         <span></span>
       </div>
-      <Navlist />
+      <Navlist menuOpenHandler={menuOpenHandler}/>
     </div>
   );
 };
