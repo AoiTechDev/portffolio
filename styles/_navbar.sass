@@ -1,0 +1,36 @@
+@import 'variables'
+@import 'mixin'
+
+nav
+    padding: 2rem
+    @include flexbox(center,center)
+    .nav-list
+        width: 100%
+        @include flexbox(center, center)
+        gap: 2rem
+
+        font-size: 2vmin
+        color: #{$grey}
+        li
+            position: relative
+            list-style: none
+            a
+                position: relative
+
+                text-transform: uppercase
+                letter-spacing: 2px
+                cursor: pointer
+                
+                &::before
+                    content: attr(data-text)
+                    position: absolute
+                    color: var(--clr)
+                    width: 0
+                    overflow: hidden
+                    transition: 1s
+                    border-right: 4px solid var(--clr)
+                    -webkit-text-stroke: 1px var(--clr)
+
+                &:hover::before
+                    width: 100%
+                    filter: drop-shadow(0 0 10px var(--clr))
