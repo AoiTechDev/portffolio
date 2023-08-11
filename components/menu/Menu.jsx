@@ -3,7 +3,7 @@ import 'animate.css';
 
 const Menu = () => {
   return (
-    <div className="menu animate__animated animate__slideInRight ">
+    <div className="menu">
         <p>Home</p>
         <p>Contact</p>
         <p>Projects</p>
