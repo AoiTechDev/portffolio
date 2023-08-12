@@ -8,7 +8,9 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <main></main>
+      <main>
+        
+      </main>
       <About/>
       {/* <section className="skills"></section>
       <section className="projects"></section> */}
