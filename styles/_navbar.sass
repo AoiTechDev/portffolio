@@ -3,15 +3,19 @@
 .fixed
     position: fixed
     width: 100%
-    
+
 nav
     padding: 1rem
     @include flexbox(center,center)
+    backdrop-filter: blur(10px)
+    
     @media screen and (max-width: #{$medium})
         .nav-list
             display: none
             background-color: blue
+            
         @include flexbox(center, end)
+
     .nav-list
         color: white
 

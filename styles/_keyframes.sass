@@ -1,0 +1,44 @@
+@keyframes fadeInLeft
+    from
+        opacity: 0
+        transform: translate3d(-100%,0,0)
+    to
+        opacity: 1
+        transform: translate3d(0,0,0)
+
+@keyframes fadeInDown
+    from
+        opacity: 0
+        transform: translate3d(0,-100%,0)
+    to
+        opacity: 1
+        transform: translate3d(0,0,0)
+
+@keyframes typing
+    from
+        width: 0
+    to
+        width: 100%
+
+@keyframes neon
+    from
+        text-shadow: 0 0 10px #{$grey},0 0 35px #{$blue},0 0 40px #{$blue},0 0 50px #{$blue},0 0 80px #{$blue}, 0 0 150px #{$blue}, 0 0 180px #{$blue}
+    to
+        text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 80px #{$blue},0 0 100px #{$blue},0 0 150px #{$blue}
+
+$base: 0.6rem
+@keyframes move
+    25%
+        opacity: 1
+
+    33.3% 
+        opacity: 1
+        transform: translateY($base * 3.8)
+
+    66.6% 
+        opacity: 1
+        transform: translateY($base * 5.2)
+
+    100%
+        opacity: 0
+        transform: translateY($base * 8) scale(0.5)

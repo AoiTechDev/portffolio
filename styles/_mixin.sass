@@ -10,6 +10,9 @@
     -ms-transition: $transition
     transition: $transition
 
+@mixin rotate($deg)
+    @include transform(rotate(#{$deg}deg))
+    
 @mixin flexbox($align-items, $justify-content)
     display: flex
     align-items: $align-items
@@ -55,6 +58,7 @@
             &:hover::before
                 width: 100%
                 filter: drop-shadow(0 0 10px var(--clr))
+                    
 
 @mixin gradient($direction, $list)
     background-image: -webkit-linear-gradient($direction, $list)
