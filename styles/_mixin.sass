@@ -10,7 +10,7 @@
     -ms-transition: $transition
     transition: $transition
 
-@mixin flexbox($align-items, $justify-content) 
+@mixin flexbox($align-items, $justify-content)
     display: flex
     align-items: $align-items
     justify-content: $justify-content
@@ -30,7 +30,7 @@
     flex-direction: $flex-direction
     gap: 2.5rem
     font-size: $vmin
-    
+    padding: 1rem
     li
         position: relative
         list-style: none
@@ -51,7 +51,13 @@
                 transition: 1s
                 border-right: 4px solid var(--clr)
                 -webkit-text-stroke: 1px var(--clr)
-                
+
             &:hover::before
                 width: 100%
                 filter: drop-shadow(0 0 10px var(--clr))
+
+@mixin gradient($direction, $list)
+    background-image: -webkit-linear-gradient($direction, $list)
+    background-imgae: -o-linear-gradient($direction, $list)
+    background-imgae: linear-gradient($direction, $list)
+    background-imgae: -moz-linear-gradient($direction, $list)

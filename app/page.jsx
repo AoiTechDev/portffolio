@@ -1,3 +1,4 @@
+import About from "@components/About";
 import Contact from "@components/Contact";
 import Footer from "@components/Footer";
 import Projects from "@components/Projects";
@@ -8,6 +9,7 @@ const Home = () => {
   return (
     <>
       <main></main>
+      <About/>
       {/* <section className="skills"></section>
       <section className="projects"></section> */}
       <Skills />

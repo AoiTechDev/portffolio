@@ -12,6 +12,8 @@ const RootLayout = ({ children }) => {
   const menuOpenHandler = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
+
   return (
     <html>
       <body>

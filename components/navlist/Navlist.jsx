@@ -6,13 +6,14 @@ const Navlist = ({ menuOpenHandler }) => {
       <ul>
         <li>
           <Link
-            href="/"
+            href="#about"
             data-text="&nbsp;About"
             style={{
               "--clr": "#0C4A60",
             }}
             className="link-a"
             onClick={menuOpenHandler}
+            
           >
             &nbsp;About&nbsp;
           </Link>

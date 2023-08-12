@@ -1,7 +1,11 @@
 @import 'variables'
 @import 'mixin'
+.fixed
+    position: fixed
+    width: 100%
+    
 nav
-    padding: 2rem
+    padding: 1rem
     @include flexbox(center,center)
     @media screen and (max-width: #{$medium})
         .nav-list

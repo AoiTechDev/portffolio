@@ -1,6 +1,10 @@
 @use 'burger-menu'
 @use 'navbar'
 @import 'variables'
+@import 'mixin'
+
+
+
 *
     margin: 0
     padding: 0
@@ -8,7 +12,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 
 .app
-    background-color: black
+    @include gradient( 60deg, #{$gradientListMain})
     height: 100vh
     scroll-snap-type: y proximity
     overflow: auto
@@ -18,17 +22,12 @@
     
 
 main
-    color: white
-    background-color: black
-    height: calc(100vh - 94px)
-#skills
-    background-color: black
     height: 100vh
 #projects
-    @extend #skills
+    height: 100vh
     background-color: #{$orange}
 #contact
-    @extend #skills
+    height: 100vh
     background-color: #{$blue}
 footer
     height: 15vh
