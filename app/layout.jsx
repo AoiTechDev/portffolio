@@ -16,6 +16,7 @@ const RootLayout = ({ children }) => {
 
   return (
     <html>
+     
       <body>
         <main className="app">
           <Nav menuOpenHandler={menuOpenHandler} />

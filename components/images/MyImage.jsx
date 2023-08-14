@@ -1,8 +1,14 @@
-
 import Image from "next/image";
 
-
-const MyImage = ({ src, alt, width, height, layout = "intrinsic" }) => {
+const MyImage = ({
+  src,
+  alt,
+  width,
+  height,
+  isVisible,
+  containerRef,
+  layout = "intrinsic",
+}) => {
   
   return (
     <>
@@ -12,9 +18,8 @@ const MyImage = ({ src, alt, width, height, layout = "intrinsic" }) => {
         width={width}
         height={height}
         layout={layout}
-       
-      
-        className="my-image"
+        className={isVisible ? 'my-image scroll-left' : 'my-image'}
+        ref={containerRef}
       />
     </>
   );

@@ -1,70 +1,66 @@
 @import 'variables'
 @import 'mixin'
+@import 'keyframes'
+@function multiple-box-shadow ($n)
+    $value: '#{random(2000)}px #{random(2000)}px #FFF'
+    @for $i from 2 through $n
+        $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF'
 
-@function multiple-box-shadow ($n) 
-  $value: '#{random(2000)}px #{random(2000)}px #FFF'
-  @for $i from 2 through $n
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF'
+    @return unquote($value)
 
-  @return unquote($value)
-
-$shadows-small:  multiple-box-shadow(300)
+$shadows-small: multiple-box-shadow(300)
 $shadows-medium: multiple-box-shadow(100)
-$shadows-big:    multiple-box-shadow(50)
+$shadows-big: multiple-box-shadow(50)
 #stars
-  width: 1px
-  height: 1px
-  background: transparent
-  box-shadow: $shadows-small
-  animation			: animStar 50s linear infinite
-    
-  &:after
-    content: " "
-    position: absolute
-    top: 2000px
     width: 1px
     height: 1px
     background: transparent
     box-shadow: $shadows-small
-    
+    animation: animStar 50s linear infinite
+    &:after
+        content: " "
+        position: absolute
+        top: 2000px
+        width: 1px
+        height: 1px
+        background: transparent
+        box-shadow: $shadows-small
+
 #stars2
-  width: 2px
-  height: 2px
-  background: transparent
-  box-shadow: $shadows-medium
-  animation			: animStar 100s linear infinite
-    
-  &:after
-    content: " "
-    position: absolute
-    top: 2000px
     width: 2px
     height: 2px
     background: transparent
     box-shadow: $shadows-medium
-    
+    animation: animStar 100s linear infinite
+    &:after
+        content: " "
+        position: absolute
+        top: 2000px
+        width: 2px
+        height: 2px
+        background: transparent
+        box-shadow: $shadows-medium
+
 #stars3
-  width: 3px
-  height: 3px
-  background: transparent
-  box-shadow: $shadows-big
-  animation			: animStar 150s linear infinite
-    
-  &:after
-    content: " "
-    position: absolute
-    top: 2000px
     width: 3px
     height: 3px
     background: transparent
     box-shadow: $shadows-big
+    animation: animStar 150s linear infinite
+    &:after
+        content: " "
+        position: absolute
+        top: 2000px
+        width: 3px
+        height: 3px
+        background: transparent
+        box-shadow: $shadows-big
 
 @keyframes animStar
-  from	
-    transform: translateY(0px)
-  to		
-    transform: translateY(-2000px)
-    
+    from
+        transform: translateY(0px)
+    to
+        transform: translateY(-2000px)
 
 #about
     background: black
@@ -76,16 +72,16 @@ $shadows-big:    multiple-box-shadow(50)
     display: flex
 
     .left-side-img
-        
+
         width: 100%
         position: relative
         @include flexbox(center,center)
         .my-image
+            opacity: 0
             border-bottom-left-radius: 40%
             border-bottom-right-radius: 40%
             filter: drop-shadow(10px 2px 15px #{$blue}) brightness(70%)
 
-            
     .right-side-info
         @include flexbox(center,space-evenly)
         flex-direction: column
@@ -93,6 +89,7 @@ $shadows-big:    multiple-box-shadow(50)
         height: 60%
         align-self: center
         h2
+            opacity: 0
             font-weight: 400
             font-size: calc(20px + 0.390625vw)
             letter-spacing: 4px
@@ -112,6 +109,7 @@ $shadows-big:    multiple-box-shadow(50)
                         list-style: none
                         cursor: pointer
                         position: relative
+                        opacity: 0
                     li:not(.active)
 
                         &::before
@@ -127,13 +125,68 @@ $shadows-big:    multiple-box-shadow(50)
                             background-color: transparent
 
         .info-content
+            
             width: 100%
             height: fit-content
             padding: 1rem
             font-weight: 300
-            white-space: wrap
+            
             @include flexbox(center,center)
+            .introduction
+                opacity: 0
 
 .active
+    opacity: 1
     color: #{$grey}
     text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px var(--clr),0 0 40px var(--clr),0 0 50px var(--clr),0 0 80px var(--clr), 0 0 100px var(--clr),0 0 150px var(--clr)
+.in-view
+    @extend #about
+    
+.scroll-left
+
+    animation: fadeLeft 1s
+    animation-fill-mode: both
+.scroll-down
+    animation: fadeInDown 1s
+    animation-fill-mode: both
+.scroll-right
+    animation: fadeRight 1s
+    animation-fill-mode: both
+.scroll-typing
+    animation: fadeUp 1s
+    animation-fill-mode: both
+
+@keyframes typing
+    from
+        width: 0
+
+@keyframes fadeLeft
+    from
+        opacity: 0
+        transform: translate3d(-40%,0,0)
+    to
+        opacity: 1
+        transform: translate3d(0,0,0)
+@keyframes fadeRight
+    0%
+        opacity: 0
+        transform: translateX(20%)
+
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+@keyframes fadeDown
+    from
+        opacity: 0
+        transform: translate3d(0,-20%,0)
+    to
+        opacity: 1
+        transform: translate3d(0,0,0)
+@keyframes fadeUp
+    from
+        opacity: 0
+        transform: translate3d(0,40%,0)
+    to
+        opacity: 1
+        transform: translate3d(0,0,0)
