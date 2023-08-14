@@ -1,9 +1,139 @@
 @import 'variables'
 @import 'mixin'
 
+@function multiple-box-shadow ($n) 
+  $value: '#{random(2000)}px #{random(2000)}px #FFF'
+  @for $i from 2 through $n
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF'
+
+  @return unquote($value)
+
+$shadows-small:  multiple-box-shadow(300)
+$shadows-medium: multiple-box-shadow(100)
+$shadows-big:    multiple-box-shadow(50)
+#stars
+  width: 1px
+  height: 1px
+  background: transparent
+  box-shadow: $shadows-small
+  animation			: animStar 50s linear infinite
+    
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 1px
+    height: 1px
+    background: transparent
+    box-shadow: $shadows-small
+    
+#stars2
+  width: 2px
+  height: 2px
+  background: transparent
+  box-shadow: $shadows-medium
+  animation			: animStar 100s linear infinite
+    
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 2px
+    height: 2px
+    background: transparent
+    box-shadow: $shadows-medium
+    
+#stars3
+  width: 3px
+  height: 3px
+  background: transparent
+  box-shadow: $shadows-big
+  animation			: animStar 150s linear infinite
+    
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 3px
+    height: 3px
+    background: transparent
+    box-shadow: $shadows-big
+
+@keyframes animStar
+  from	
+    transform: translateY(0px)
+  to		
+    transform: translateY(-2000px)
+    
 
 #about
-    background: blue
+    background: black
+    width: 100%
     height: 100vh
     color: white
-    
+    box-shadow: #{$edgeShadow}
+    //background-image: #{$aboutLayer1}, #{$aboutLayer2}, #{$aboutLayer3}, #{$aboutLayer4}, #{$aboutLayer5}
+    display: flex
+
+    .left-side-img
+        
+        width: 100%
+        position: relative
+        @include flexbox(center,center)
+        .my-image
+            border-bottom-left-radius: 40%
+            border-bottom-right-radius: 40%
+            filter: drop-shadow(10px 2px 15px #{$blue}) brightness(70%)
+
+            
+    .right-side-info
+        @include flexbox(center,space-evenly)
+        flex-direction: column
+        width: 100%
+        height: 60%
+        align-self: center
+        h2
+            font-weight: 400
+            font-size: calc(20px + 0.390625vw)
+            letter-spacing: 4px
+            &::first-letter
+                font-size: calc(25px + 0.390625vw)
+                text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 100px #{$orange},0 0 150px #{$orange}
+        .info-container
+
+            width: 70%
+            height: 30%
+            .info-navigator
+                padding: 0.7rem
+                ul
+                    @include flexbox(center, space-evenly)
+
+                    li
+                        list-style: none
+                        cursor: pointer
+                        position: relative
+                    li:not(.active)
+
+                        &::before
+                            content: attr(data-text)
+                            position: absolute
+                            color: var(--clr)
+                            width: 0
+
+                            overflow: hidden
+                            transition: 0.3s
+                        &:hover::before
+                            width: 100%
+                            background-color: transparent
+
+        .info-content
+            width: 100%
+            height: fit-content
+            padding: 1rem
+            font-weight: 300
+            white-space: wrap
+            @include flexbox(center,center)
+
+.active
+    color: #{$grey}
+    text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px var(--clr),0 0 40px var(--clr),0 0 50px var(--clr),0 0 80px var(--clr), 0 0 100px var(--clr),0 0 150px var(--clr)

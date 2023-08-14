@@ -2,7 +2,7 @@ import Navlist from "./navlist/Navlist";
 
 const Nav = ({ menuOpenHandler }) => {
   return (
-    <div className="fixed">
+    
       <nav>
         <Navlist />
         <div id="burger-menu-open" onClick={menuOpenHandler}>
@@ -11,7 +11,7 @@ const Nav = ({ menuOpenHandler }) => {
           <span></span>
         </div>
       </nav>
-    </div>
+    
   );
 };
 

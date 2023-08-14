@@ -1,23 +1,26 @@
 @import 'variables'
 @import 'mixin'
-.fixed
-    position: fixed
-    width: 100%
+// .fixed
+//     position: fixed
+//     width: 97%
 
 nav
-    padding: 1rem
-    @include flexbox(center,center)
-    backdrop-filter: blur(10px)
-    
-    @media screen and (max-width: #{$medium})
+    padding: 2rem
+    @include flexbox(center,end)
+    position: sticky
+    top: 0
+    height: 10vh
+    backdrop-filter: blur(10px)  
+    @media screen and (max-width: #{$tabletLandscape})
+        backdrop-filter: none
+    @media screen and (max-width: #{$tabletLandscape})
         .nav-list
             display: none
             background-color: blue
-            
-        @include flexbox(center, end)
+        nav
+            padding-right: 0rem
 
-    .nav-list
-        color: white
+    @include flexbox(center, end)
 
     ul
         width: 100%
