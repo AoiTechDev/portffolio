@@ -3,7 +3,7 @@ import "../styles/about.sass";
 import { useState, useEffect } from "react";
 import photo from "../assets/images/myphoto.png";
 import MyImage from "./images/MyImage";
-import useElementOnScreen from "./hooks/elementOnScreen";
+
 import { useInView } from "react-intersection-observer";
 
 const About = () => {
@@ -12,21 +12,23 @@ const About = () => {
     const list = document.querySelectorAll(".info-navigator ul li");
     list.forEach((element) => {
       element.classList.remove("active");
+      
     });
     setInfoSection(() => {
       e.target.classList.remove("active");
-      if (e.target.className === "info-btn") {
+      
+      if (e.target.className.includes("info-btn")) {
         e.target.classList.add("active");
         return "introduction";
       }
-      if (e.target.className === "hobbies-btn") {
+      if (e.target.className.includes("hobbies-btn")) {
         e.target.classList.add("active");
         return "hobbies";
       }
     });
   };
 
- 
+  
   const { ref, inView, entry } = useInView({
     /* Optional options */
     root: null,
@@ -34,14 +36,16 @@ const About = () => {
     threshold: 1.0,
     triggerOnce: true,
   });
-  //console.log(entry);
-
   return (
-    <section id="about" >
+    <section id="about">
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
-      <inView as='div' onChange={(inView, entry) => console.log('inView', inView)} className="in-view">
+      <inView
+        as="div"
+        onChange={(inView, entry) => console.log("inView", inView)}
+        className="in-view"
+      >
         <div className="left-side-img">
           <MyImage
             src={photo}
@@ -53,7 +57,9 @@ const About = () => {
           />
         </div>
         <div className="right-side-info">
-          <h2 ref={ref} className={inView && 'scroll-down'}>About me</h2>
+          <h2 ref={ref} className={inView && "scroll-down"}>
+            About me
+          </h2>
           <div className="info-container">
             <div className="info-navigator">
               {/* <button className="info-btn" onClick={infoSectionHandler}>
@@ -64,18 +70,22 @@ const About = () => {
             </button> */}
               <ul>
                 <li
-                  className={inView ? "info-btn active scroll-left" : "info-btn active"}
+                  className={
+                    inView ? "active info-btn scroll-left" : "active info-btn"
+                  }
                   onClick={infoSectionHandler}
                   data-text="Introducion"
                   style={{
                     "--clr": "#0C4A60",
                   }}
-                  ref={ref} 
+                  ref={ref}
                 >
                   Introducion
                 </li>
                 <li
-                   className={inView ? "hobbies-btn scroll-right" : "hobbies-btn"}
+                  className={
+                    inView ? "hobbies-btn scroll-right" : "hobbies-btn"
+                  }
                   onClick={infoSectionHandler}
                   data-text="Hobbies"
                   style={{
@@ -89,7 +99,13 @@ const About = () => {
             </div>
             <div className="info-content">
               {infoSection === "introduction" && (
-                <div ref={ref} className={inView ? "introduction scroll-typing" : "introduction"}>
+                <div
+                  ref={ref}
+                  className={
+                    inView ? "introduction scroll-left" : "introduction"
+                  }
+                  
+                >
                   intro Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
@@ -98,7 +114,9 @@ const About = () => {
                 </div>
               )}
               {infoSection === "hobbies" && (
-                <div className="hobbies" ref={ref}>
+                <div className={
+                  inView ? "hobbies scroll-right" : "hobbies"
+                }  ref={ref}>
                   hobbies Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown

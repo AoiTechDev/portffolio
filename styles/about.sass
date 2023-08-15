@@ -130,15 +130,17 @@ $shadows-big: multiple-box-shadow(50)
             height: fit-content
             padding: 1rem
             font-weight: 300
-            
+          
             @include flexbox(center,center)
             .introduction
                 opacity: 0
+                
 
 .active
-    opacity: 1
     color: #{$grey}
     text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px var(--clr),0 0 40px var(--clr),0 0 50px var(--clr),0 0 80px var(--clr), 0 0 100px var(--clr),0 0 150px var(--clr)
+
+
 .in-view
     @extend #about
     
