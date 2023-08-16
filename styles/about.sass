@@ -98,7 +98,7 @@ $shadows-big: multiple-box-shadow(50)
                 text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 100px #{$orange},0 0 150px #{$orange}
         .info-container
 
-            width: 70%
+            width: 80%
             height: 30%
             .info-navigator
                 padding: 0.7rem
@@ -125,25 +125,44 @@ $shadows-big: multiple-box-shadow(50)
                             background-color: transparent
 
         .info-content
-            
-            width: 100%
-            height: fit-content
+
             padding: 1rem
             font-weight: 300
-          
-            @include flexbox(center,center)
+            font-size: calc(14px + 0.390625vw)
+
             .introduction
                 opacity: 0
-                
+@media screen and (max-width: #{$medium})
+    #about
+        @include flexbox(center,center)
+        flex-direction: column
+        gap: 20px
+        .right-side-info
+            @include flexbox(center,start)
+            gap: 20px
+            height: 50%
+        .my-image
+            width: 30%
+
+        
+
+@media screen and (max-width: 400px ) and (max-height: 610px)
+    #about
+        color: red
+        @include flexbox(center,center)
+        flex-direction: column
+        .info-container
+            width: 90%
+        .right-side-info
+            height: 50%
 
 .active
     color: #{$grey}
     text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px var(--clr),0 0 40px var(--clr),0 0 50px var(--clr),0 0 80px var(--clr), 0 0 100px var(--clr),0 0 150px var(--clr)
 
-
 .in-view
     @extend #about
-    
+
 .scroll-left
 
     animation: fadeLeft 1s
@@ -157,6 +176,16 @@ $shadows-big: multiple-box-shadow(50)
 .scroll-typing
     animation: fadeUp 1s
     animation-fill-mode: both
+.scroll-fade-in
+    animation: fadeIn 1s
+    animation-fill-mode: both
+
+@keyframes fadeIn
+    from
+        opacity: 0
+
+    to
+        opacity: 1
 
 @keyframes typing
     from
@@ -165,7 +194,7 @@ $shadows-big: multiple-box-shadow(50)
 @keyframes fadeLeft
     from
         opacity: 0
-        transform: translate3d(-40%,0,0)
+        transform: translate3d(-20%,0,0)
     to
         opacity: 1
         transform: translate3d(0,0,0)

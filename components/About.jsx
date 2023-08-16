@@ -12,11 +12,10 @@ const About = () => {
     const list = document.querySelectorAll(".info-navigator ul li");
     list.forEach((element) => {
       element.classList.remove("active");
-      
     });
     setInfoSection(() => {
       e.target.classList.remove("active");
-      
+
       if (e.target.className.includes("info-btn")) {
         e.target.classList.add("active");
         return "introduction";
@@ -28,7 +27,6 @@ const About = () => {
     });
   };
 
-  
   const { ref, inView, entry } = useInView({
     /* Optional options */
     root: null,
@@ -102,26 +100,25 @@ const About = () => {
                 <div
                   ref={ref}
                   className={
-                    inView ? "introduction scroll-left" : "introduction"
+                    inView ? "introduction scroll-fade-in" : "introduction"
                   }
-                  
                 >
-                  intro Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  I am a computer science graduate with a passion for front-end.
+                  Creating modern, functional interfaces is my goal. Much of my
+                  knowledge is self- taught. I want to develop and create unique
+                  solutions
                 </div>
               )}
               {infoSection === "hobbies" && (
-                <div className={
-                  inView ? "hobbies scroll-right" : "hobbies"
-                }  ref={ref}>
-                  hobbies Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                <div
+                  className={inView ? "hobbies scroll-fade-in" : "hobbies"}
+                  ref={ref}
+                >
+                  My current interests include programming, developing front-end
+                  skills, and regular physical training at the gym. I believe I
+                  have found my true calling in these areas. In addition, I am
+                  passionate about computer games and would like to develop in
+                  the area of creating and mixing music.
                 </div>
               )}
             </div>
