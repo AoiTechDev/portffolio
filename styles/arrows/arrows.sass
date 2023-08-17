@@ -1,0 +1,59 @@
+@import '../mixin'
+@import '../variables'
+.introducer
+    width: 100%
+    
+    @include flexbox(center,center)
+    flex-direction: column
+    gap: 25px
+    align-self: center
+    
+            
+    h2
+        font-weight: 400
+        animation: fadeInLeft 1s
+        animation-fill-mode: backwards
+        animation-delay: 1.5s
+        font-size: calc(14px + 0.390625vw)
+    .arrow-container
+
+        @include flexbox(center,center)
+        position: relative
+
+        animation: fadeInLeft 1s
+        animation-fill-mode: backwards
+        animation-delay: 2s
+
+    .arrow
+        $base: 0.6rem
+        position: absolute
+        width: calc(#{$base} * 3.5)
+        height: calc(#{$base} * 0.4)
+        transform: scale(2)
+        opacity: 0
+
+        animation: move 3s ease-out infinite
+
+        &:first-child
+            animation: move 3s ease-out 1s infinite
+        &:nth-child(2)
+            animation: move 3s ease-out 2s infinite
+
+        &::before
+            content: ""
+            position: absolute
+            background-color: #{$grey}
+            top: 0
+            height: 100%
+            width: 50%
+            left: 0
+            transform: skewY(30deg)
+        &::after
+            content: ""
+            position: absolute
+            background-color: #{$grey}
+            top: 0
+            height: 100%
+            width: 50%
+            right: 0
+            transform: skewY(-30deg)

@@ -40,11 +40,7 @@
         animation-fill-mode: backwards
         animation-delay: 2s
 
-    .introducer
-        width: 100%
-        @include flexbox(center,center)
-        h2
-            font-weight: 400
+    
     .motiv-text
         @include flexbox(center, end)
         flex-direction: column
@@ -78,48 +74,48 @@
         animation-delay: 1.5s
         font-size: calc(14px + 0.390625vw)
 
-.arrow-container
+// .arrow-container
     
-    @include flexbox(center,center)
-    position: relative
+//     @include flexbox(center,center)
+//     position: relative
     
-    animation: fadeInLeft 1s
-    animation-fill-mode: backwards
-    animation-delay: 2s
+//     animation: fadeInLeft 1s
+//     animation-fill-mode: backwards
+//     animation-delay: 2s
     
-.arrow
-    $base: 0.6rem
-    position: absolute
-    width: calc(#{$base} * 3.5)
-    height: calc(#{$base} * 0.4)
-    transform: scale(2)
-    opacity: 0
+// .arrow
+//     $base: 0.6rem
+//     position: absolute
+//     width: calc(#{$base} * 3.5)
+//     height: calc(#{$base} * 0.4)
+//     transform: scale(2)
+//     opacity: 0
     
-    animation: move 3s ease-out infinite
+//     animation: move 3s ease-out infinite
 
-    &:first-child
-        animation: move 3s ease-out 1s infinite
-    &:nth-child(2)
-        animation: move 3s ease-out 2s infinite
+//     &:first-child
+//         animation: move 3s ease-out 1s infinite
+//     &:nth-child(2)
+//         animation: move 3s ease-out 2s infinite
 
-    &::before
-        content: ""
-        position: absolute
-        background-color: #{$grey}
-        top: 0
-        height: 100%
-        width: 50%
-        left: 0
-        transform: skewY(30deg)
-    &::after
-        content: ""
-        position: absolute
-        background-color: #{$grey}
-        top: 0
-        height: 100%
-        width: 50%
-        right: 0
-        transform: skewY(-30deg)
+//     &::before
+//         content: ""
+//         position: absolute
+//         background-color: #{$grey}
+//         top: 0
+//         height: 100%
+//         width: 50%
+//         left: 0
+//         transform: skewY(30deg)
+//     &::after
+//         content: ""
+//         position: absolute
+//         background-color: #{$grey}
+//         top: 0
+//         height: 100%
+//         width: 50%
+//         right: 0
+//         transform: skewY(-30deg)
 
 @media screen and (max-width: #{$large})
     .header

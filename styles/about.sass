@@ -68,9 +68,14 @@ $shadows-big: multiple-box-shadow(50)
     height: 100vh
     color: white
     box-shadow: #{$edgeShadow}
+    
     //background-image: #{$aboutLayer1}, #{$aboutLayer2}, #{$aboutLayer3}, #{$aboutLayer4}, #{$aboutLayer5}
     display: flex
-
+    flex-direction: column
+    .wrapper
+        @include flexbox(center,center)
+        flex-direction: row
+        height: 80%
     .left-side-img
 
         width: 100%
@@ -143,6 +148,8 @@ $shadows-big: multiple-box-shadow(50)
             height: 50%
         .my-image
             width: 30%
+        .wrapper
+            flex-direction: column
 
         
 
