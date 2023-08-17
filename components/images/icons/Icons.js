@@ -12,7 +12,31 @@ import github_icon from '../../../assets/icons/tools/github-icon.png'
 import next_icon from '../../../assets/icons/learning/next-icon.png'
 import ts_icon from '../../../assets/icons/learning/ts-icon.png'
 import redux_icon from '../../../assets/icons/learning/redux-icon.png'
+
+import communication_icon from '../../../assets/icons/soft/communication-icon.png'
+import creative_icon from '../../../assets/icons/soft/creative-icon.png'
+import problem_icon from '../../../assets/icons/soft/problem-icon.png'
+import selfdiscipline_icon from '../../../assets/icons/soft/selfdiscipline-icon.png'
+import teamwork_icon from '../../../assets/icons/soft/teamwork-icon.png'
+
+
 import Image from 'next/image'
+export const CommunicationIcon = () => {
+    return <Image src={communication_icon} width={50} height={50}/>
+}
+export const CreativeIcon = () => {
+    return <Image src={creative_icon} width={50} height={50}/>
+}
+export const ProblemIcon = () => {
+    return <Image src={problem_icon} width={50} height={50}/>
+}
+export const SelfdisciplineIcon = () => {
+    return <Image src={selfdiscipline_icon} width={50} height={50}/>
+}
+export const TeamworkIcon = () => {
+    return <Image src={teamwork_icon} width={50} height={50}/>
+}
+
 
 export const CssIcon = () => {
     return <Image src={css_icon} width={50} height={50}/>

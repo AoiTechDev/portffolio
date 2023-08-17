@@ -8,19 +8,26 @@
     flex-direction: column
     .wrapper
         width: 100%
-        height: 70%
+        height: 60%
         display: flex
-
+        position: relative
+        h2
+            position: absolute
+            top: 0
+        .skills-wrapper
+                @include flexbox(center,space-around)
+                flex-direction: column
+                height: 70%
         .hard-skills
             width: 100%
             @include flexbox(center,space-evenly)
             flex-direction: column
-            
+
             .technologies, .tools, .learning
                 @include flexbox(center,center)
                 flex-direction: column
                 gap: 10px
-           
+
             .icons-wrapper
                 width: 100%
                 @include flexbox(center,center)
@@ -31,7 +38,11 @@
                     background: blue
 
         .soft-skills
-            @include flexbox(center,center)
+            @include flexbox(center,space-evenly)
             flex-direction: column
             width: 100%
-            background: blue
+           
+            .soft-skill
+                display: flex
+                gap: 20px
+                font-size: calc(12px + 0.390625vw)
