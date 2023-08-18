@@ -6,18 +6,33 @@
     height: 100vh
     @include flexbox(center,center)
     flex-direction: column
+
     .wrapper
         width: 100%
         height: 60%
         display: flex
         position: relative
+        
         h2
             position: absolute
             top: 0
+            font-weight: 400
+        .soft-first-letter
+            &::first-letter
+                font-size: calc(40px + 0.390625vw)
+                text-shadow: 0 0 10px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 150px #{$orange}
+        .hard-first-letter
+            &::first-letter
+                font-size: calc(40px + 0.390625vw)
+                text-shadow: 0 0 10px #{$grey},0 0 35px #{$blue},0 0 40px #{$blue},0 0 50px #{$blue},0 0 80px #{$blue}, 0 0 150px #{$blue}
         .skills-wrapper
-                @include flexbox(center,space-around)
+
                 flex-direction: column
+                @include flexbox(center,space-around)
                 height: 70%
+                h3
+                    font-weight: 300
+
         .hard-skills
             width: 100%
             @include flexbox(center,space-evenly)
@@ -41,8 +56,30 @@
             @include flexbox(center,space-evenly)
             flex-direction: column
             width: 100%
-           
+
             .soft-skill
                 display: flex
                 gap: 20px
                 font-size: calc(12px + 0.390625vw)
+
+.slider-wrapper
+    width: 100%
+    height: 100%
+    display: flex
+    
+   
+    cursor: move
+    
+
+
+@media screen and (max-width: 950px)
+    .hard-skills, .soft-skills
+        height: 100%
+@media screen and (max-width: #{$smallTabletPortrait})
+    .icon
+        width: 40px
+        height: 40px
+@media screen and (max-width: 450px)
+    .icon
+        width: 30px
+        height: 30px
