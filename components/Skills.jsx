@@ -26,7 +26,7 @@ const Skills = () => {
   };
 
   let width = windowWidthSize();
-  console.log(width);
+  
   return (
     <section id="skills">
       <div className="wrapper">

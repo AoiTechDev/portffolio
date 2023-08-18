@@ -15,13 +15,11 @@ nav
     box-shadow: #{$navShadowInside}, #{$navShadowOutside}
     @media screen and (max-width: #{$tabletLandscape})
         backdrop-filter: none
-    @media screen and (max-width: #{$tabletLandscape})
-        
+        box-shadow: none
         .nav-list
             display: none
             background-color: blue
-        nav
-            padding-right: 0rem
+   
 
     @include flexbox(center, end)
 
