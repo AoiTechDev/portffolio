@@ -37,7 +37,7 @@
             width: 100%
             @include flexbox(center,space-evenly)
             flex-direction: column
-
+            position: relative
             .technologies, .tools, .learning
                 @include flexbox(center,center)
                 flex-direction: column
@@ -66,10 +66,52 @@
     width: 100%
     height: 100%
     display: flex
-    
-   
     cursor: move
+    .left, .right
+        position: relative
     
+.swiper-button-next, .swiper-button-prev
+    position: absolute
+    top: 40%
+    height: 50px
+    width: 50px
+    
+    border-radius: 50%
+    display: grid
+    place-items: center
+    cursor: pointer
+    border: solid 1px #{$grey}
+.swiper-button-next
+    right: 20px
+.swiper-button-prev
+    left: 20px
+.swiper-arrow
+    width: 30px
+    height: 5px
+    
+    position: relative
+
+    &::before, &::after
+        content: ""
+        position: absolute
+        width: 50%
+        height: 100%
+        background: #{$grey}
+    &::before
+        top: 0
+        left: 0
+        
+        transform: skewY(50deg)
+        
+    &::after
+        top: 0
+        right: 0
+        
+        transform: skewY(-50deg)
+.s-a-next
+    transform: rotate(-90deg)
+.s-a-prev
+    transform: rotate(90deg)        
 
 
 @media screen and (max-width: 950px)
