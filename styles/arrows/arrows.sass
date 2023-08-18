@@ -7,7 +7,7 @@
     flex-direction: column
     gap: 25px
     align-self: center
-        
+    
             
     h2
         font-weight: 400
@@ -17,20 +17,25 @@
         font-size: calc(14px + 0.390625vw)
     .arrow-container
 
-        @include flexbox(center,center)
+        @include flexbox(start,center)
         position: relative
 
         animation: fadeInLeft 1s
         animation-fill-mode: backwards
         animation-delay: 2s
-
+        width: 80px
+        height: 80px
+        
+        border-radius: 50%
+        border: solid 1px #{$grey}
+        overflow: hidden
     .arrow
         $base: 0.6rem
         position: absolute
-        width: calc(#{$base} * 3.5)
+        width: calc(#{$base} * 3)
         height: calc(#{$base} * 0.4)
         transform: scale(2)
-        opacity: 0
+        opacity: 1
 
         animation: move 3s ease-out infinite
 

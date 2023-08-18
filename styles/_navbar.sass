@@ -11,9 +11,12 @@ nav
     top: 0
     height: 10vh
     backdrop-filter: blur(10px)  
+    z-index: 999
+    box-shadow: #{$navShadowInside}, #{$navShadowOutside}
     @media screen and (max-width: #{$tabletLandscape})
         backdrop-filter: none
     @media screen and (max-width: #{$tabletLandscape})
+        
         .nav-list
             display: none
             background-color: blue
