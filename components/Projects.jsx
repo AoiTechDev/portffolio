@@ -11,10 +11,13 @@ import ProjectCard from "./projectsCards/ProjectCard";
 import { useInView } from "react-intersection-observer";
 import '@styles/about.sass'
 import diplomaWork from '../assets/images/first_loaded.png'
+import myApp from '../assets/images/my_app.jpg'
+import ProjectInfo from "./projectsCards/ProjectInfo";
 const Projects = () => {
  
   return (
     <section id="projects">
+      <ProjectInfo/>
       <div className="card-container">
         <Swiper
           effect={"coverflow"}
@@ -37,7 +40,7 @@ const Projects = () => {
             <ProjectCard title={'My diploma work'} img={diplomaWork}/>
           </SwiperSlide>
           <SwiperSlide >
-            <ProjectCard title={'My personal portfolio website'}/>
+            <ProjectCard title={'My personal portfolio website'} img={myApp}/>
           </SwiperSlide>
         </Swiper>
       </div>

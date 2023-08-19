@@ -15,8 +15,8 @@ const ProjectCard = ({ title, img }) => {
 
   return (
     <div className="slide s-st">
-      <Image src={img} className="card-image" />
-      <h2>{title}</h2>
+      <h2 className={inView ? "card-title scroll-right" : "card-title"} ref={ref}>{title}</h2>
+      <p>Click here to get more informations!</p>
     </div>
   );
 };
