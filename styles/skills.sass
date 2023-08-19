@@ -81,6 +81,9 @@
     place-items: center
     cursor: pointer
     border: solid 1px #{$grey}
+    &:hover
+        box-shadow: 0 0 10px 5px #{$blue}, inset 0 0 10px 5px #{$orange} 
+        
 .swiper-button-next
     right: 20px
 .swiper-button-prev
@@ -88,32 +91,32 @@
 .swiper-arrow
     width: 30px
     height: 5px
-    
     position: relative
-
     &::before, &::after
         content: ""
         position: absolute
         width: 50%
         height: 100%
         background: #{$grey}
+        transitino: translate3d(-20%,0,0)
     &::before
         top: 0
         left: 0
-        
         transform: skewY(50deg)
-        
     &::after
         top: 0
         right: 0
-        
         transform: skewY(-50deg)
+
 .s-a-next
     transform: rotate(-90deg)
+    
 .s-a-prev
-    transform: rotate(90deg)        
+    transform: rotate(90deg)
+          
 
 
+        
 @media screen and (max-width: 950px)
     .hard-skills, .soft-skills
         height: 100%
