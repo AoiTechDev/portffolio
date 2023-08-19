@@ -125,7 +125,7 @@ const About = () => {
                 )}
               </div>
             </div>
-            <Arrows section={'#skills'} headingText={'Allow me to present my skills :)'}/>
+            <Arrows section={'#skills'} headingText={'Allow me to present my skills :)'} bottom={'0px'}/>
           </div>
         </div>
 

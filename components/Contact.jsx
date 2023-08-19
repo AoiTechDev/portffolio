@@ -1,8 +1,12 @@
-import React from 'react'
+'use client'
+import React from "react";
+import "@styles/contact.sass";
 
 const Contact = () => {
   return (
-    <section id="contact">Contact</section>
-  )
-}
-export default Contact
+    <section id="contact">
+      
+    </section>
+  );
+};
+export default Contact;

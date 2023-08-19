@@ -13,10 +13,8 @@ const RootLayout = ({ children }) => {
     setIsMenuOpen((prev) => !prev);
   };
 
-
   return (
     <html>
-     
       <body>
         <main className="app">
           <Nav menuOpenHandler={menuOpenHandler} />

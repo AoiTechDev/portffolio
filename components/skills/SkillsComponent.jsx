@@ -29,7 +29,7 @@ export const HardSkills = () => {
     threshold: 1.0,
     triggerOnce: true,
   });
-  const techArray = [<CssIcon/>, <ReactIcon/>, <JsIcon/>, <HtmlIcon/>, <NodeIcon/>, <SassIcon/>]
+  
   return (
     <div className="hard-skills">
       <h2

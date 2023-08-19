@@ -29,7 +29,7 @@ const Header = () => {
           <span className="arrow a2"></span>
           <span className="arrow a3"></span>
         </Link> */}
-        <Arrows section={'#about'} headingText={'Let me introduce myself!'}/>
+        <Arrows section={'#about'} headingText={'Let me introduce myself!'} position={'20%'}/>
       {/* </div> */}
     </div>
   );

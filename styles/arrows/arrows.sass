@@ -1,14 +1,19 @@
 @import '../mixin'
 @import '../variables'
 .introducer
-    width: 100%
+   
     
     @include flexbox(center,center)
     flex-direction: column
     gap: 25px
-    align-self: center
     
-            
+    
+    position: absolute
+    bottom: 3rem
+    @media screen and (max-width: 950px)
+        left: auto !important
+        right: auto !important
+        bottom: 2rem !important
     h3
         font-weight: 400
         animation: fadeInLeft 1s

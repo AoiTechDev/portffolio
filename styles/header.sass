@@ -9,7 +9,7 @@
     flex-direction: column
     padding-right: 15rem
     padding-left: 15rem
-    
+    position: relative
     .my-name
         //background-color: red
 
@@ -61,18 +61,6 @@
             animation: fadeR 2s
 
 
-.introducer
-    width: 100%
-    @include flexbox(center,center)
-    flex-direction: column
-    gap: 25px
-    align-self: center
-    h2
-        
-        //animation: fadeInLeft 1s
-        //animation-fill-mode: backwards
-        //animation-delay: 1.5s
-        font-size: calc(14px + 0.390625vw)
 
 @media screen and (max-width: #{$large})
     .header
