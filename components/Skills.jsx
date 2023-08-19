@@ -7,6 +7,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/hash-navigation";
 import { HardSkills, SoftSkills } from "./skills/SkillsComponent";
+import { useInView } from "react-intersection-observer";
 //import 'swiper/swiper.min.css'
 
 import React, { useLayoutEffect, useState, useRef } from "react";
@@ -26,10 +27,18 @@ const Skills = () => {
   };
 
   let width = windowWidthSize();
-  
+
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+    triggerOnce: true,
+  });
+
   return (
     <section id="skills">
-      <div className="wrapper">
+      <inView as="div" className="wrapper">
         {width < 950 ? (
           <Swiper
             spaceBetween={50}
@@ -58,12 +67,11 @@ const Skills = () => {
           </Swiper>
         ) : (
           <>
-           
             <HardSkills />
             <SoftSkills />
           </>
         )}
-      </div>
+      </inView>
       <Arrows section={"#projects"} headingText={"Next one are my projects!"} />
     </section>
   );
