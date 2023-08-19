@@ -5,7 +5,7 @@ import "@styles/arrows/arrows.sass";
 const Arrows = ({section, headingText}) => {
   return (
     <div className="introducer">
-      <h2>{headingText}</h2>
+      <h3>{headingText}</h3>
 
       <Link href={section} className="arrow-container">
         <span className="arrow a1"></span>

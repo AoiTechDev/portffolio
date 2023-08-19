@@ -55,6 +55,7 @@ export const CssIcon = ({className, ref}) => {
     return <Image src={css_icon} width={50} height={50} className={className} ref={ref} style={{
         animationDelay: '0.5s'
       }}
+        
       />
 }
 export const ReactIcon = ({className, ref}) => {

@@ -29,6 +29,7 @@ export const HardSkills = () => {
     threshold: 1.0,
     triggerOnce: true,
   });
+  const techArray = [<CssIcon/>, <ReactIcon/>, <JsIcon/>, <HtmlIcon/>, <NodeIcon/>, <SassIcon/>]
   return (
     <div className="hard-skills">
       <h2
@@ -48,7 +49,7 @@ export const HardSkills = () => {
             <CssIcon
               className={inView ? "icon scroll-left" : "icon"}
               ref={ref}
-            />
+            /> 
             <ReactIcon
               className={inView ? "icon scroll-left" : "icon"}
               ref={ref}
@@ -69,6 +70,7 @@ export const HardSkills = () => {
               className={inView ? "icon scroll-left" : "icon"}
               ref={ref}
             />
+           
           </div>
         </div>
         <div className="tools ">

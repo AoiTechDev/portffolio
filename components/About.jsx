@@ -125,10 +125,11 @@ const About = () => {
                 )}
               </div>
             </div>
+            <Arrows section={'#skills'} headingText={'Allow me to present my skills :)'}/>
           </div>
         </div>
 
-        <Arrows section={'#skills'} headingText={'Come to see my skills :)'}/>
+        
       </inView>
     </section>
   );
