@@ -171,7 +171,6 @@ $shadows-big: multiple-box-shadow(50)
     @extend #about
 
 .scroll-left
-
     animation: fadeLeft 1s
     animation-fill-mode: both
 .scroll-down
@@ -187,44 +186,5 @@ $shadows-big: multiple-box-shadow(50)
     animation: fadeIn 1s
     animation-fill-mode: both
 
-@keyframes fadeIn
-    from
-        opacity: 0
 
-    to
-        opacity: 1
-
-@keyframes typing
-    from
-        width: 0
-
-@keyframes fadeLeft
-    from
-        opacity: 0
-        transform: translate3d(-20%,0,0)
-    to
-        opacity: 1
-        transform: translate3d(0,0,0)
-@keyframes fadeRight
-    0%
-        opacity: 0
-        transform: translateX(20%)
-
-    100%
-        opacity: 1
-        transform: translateX(0)
-
-@keyframes fadeDown
-    from
-        opacity: 0
-        transform: translate3d(0,-20%,0)
-    to
-        opacity: 1
-        transform: translate3d(0,0,0)
-@keyframes fadeUp
-    from
-        opacity: 0
-        transform: translate3d(0,40%,0)
-    to
-        opacity: 1
-        transform: translate3d(0,0,0)
+        

@@ -38,7 +38,7 @@ const Skills = () => {
 
   return (
     <section id="skills">
-      <inView as="div" className="wrapper">
+      <div className="wrapper">
         {width < 950 ? (
           <Swiper
             spaceBetween={50}
@@ -67,11 +67,11 @@ const Skills = () => {
           </Swiper>
         ) : (
           <>
-            <HardSkills />
-            <SoftSkills />
+            <HardSkills  />
+            <SoftSkills  />
           </>
         )}
-      </inView>
+      </div>
       <Arrows section={"#projects"} headingText={"Next one are my projects!"} />
     </section>
   );

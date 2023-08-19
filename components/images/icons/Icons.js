@@ -21,58 +21,98 @@ import teamwork_icon from '../../../assets/icons/soft/teamwork-icon.png'
 import '@styles/skills.sass'
 
 import Image from 'next/image'
-export const CommunicationIcon = () => {
-    return <Image src={communication_icon} width={50} height={50} className="icon"/>
+//SOFT SKILLS
+export const CommunicationIcon = ({className, ref}) => {
+    return <Image src={communication_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '1s'
+      }}
+        
+      />
 }
-export const CreativeIcon = () => {
-    return <Image src={creative_icon} width={50} height={50} className="icon"/>
+export const CreativeIcon = ({className, ref}) => {
+    return <Image src={creative_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '2.5s'
+      }}/>
 }
-export const ProblemIcon = () => {
-    return <Image src={problem_icon} width={50} height={50} className="icon"/>
+export const ProblemIcon = ({className, ref}) => {
+    return <Image src={problem_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '2s'
+      }}/>
 }
-export const SelfdisciplineIcon = () => {
-    return <Image src={selfdiscipline_icon} width={50} height={50} className="icon"/>
+export const SelfdisciplineIcon = ({className, ref}) => {
+    return <Image src={selfdiscipline_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '1.5s'
+      }}/>
 }
-export const TeamworkIcon = () => {
-    return <Image src={teamwork_icon} width={50} height={50} className="icon"/>
-}
-
-
-export const CssIcon = () => {
-    return <Image src={css_icon} width={50} height={50} className="icon"/>
-}
-export const ReactIcon = () => {
-    return <Image src={react_icon} width={50} height={50} className="icon"/>
-}
-export const JsIcon = () => {
-    return <Image src={js_icon} width={50} height={50} className="icon"/>
-}
-export const HtmlIcon = () => {
-    return <Image src={html_icon} width={50} height={50} className="icon"/>
-}
-export const NodeIcon = () => {
-    return <Image src={node_icon} width={50} height={50} className="icon"/>
-}
-export const SassIcon = () => {
-    return <Image src={sass_icon} width={50} height={50} className="icon"/>
+export const TeamworkIcon = ({className, ref}) => {
+    return <Image src={teamwork_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '0.5s'
+      }}/>
 }
 
-export const VscodeIcon = () => {
-    return <Image src={vscode_icon} width={50} height={50} className="icon"/>
+//TECHNOLOGIES
+export const CssIcon = ({className, ref}) => {
+    return <Image src={css_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '0.5s'
+      }}
+      />
 }
-export const GitIcon = () => {
-    return <Image src={git_icon} width={50} height={50} className="icon"/>
+export const ReactIcon = ({className, ref}) => {
+    return <Image src={react_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '1s'
+      }}/>
 }
-export const GithubIcon = () => {
-    return <Image src={github_icon} width={50} height={50} className="icon"/>
+export const JsIcon = ({className, ref}) => {
+    return <Image src={js_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '1.5s'
+      }}/>
+}
+export const HtmlIcon = ({className, ref}) => {
+    return <Image src={html_icon} width={50} height={50} className={className} ref={ref}style={{
+            animationDelay: '2s'
+      }}/>
+}
+export const NodeIcon = ({className, ref}) => {
+    return <Image src={node_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '2.5s'
+      }}/>
+}
+export const SassIcon = ({className, ref}) => {
+    return <Image src={sass_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '3s'
+      }}/>
 }
 
-export const NextIcon = () => {
-    return <Image src={next_icon} width={50} height={50} className="icon"/>
+//TOOLS
+export const VscodeIcon = ({className, ref}) => {
+    return <Image src={vscode_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '0.5s'
+      }}/>
 }
-export const TsIcon = () => {
-    return <Image src={ts_icon} width={50} height={50} className="icon"/>
+export const GitIcon = ({className, ref}) => {
+    return <Image src={git_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '1s'
+      }}/>
 }
-export const ReduxIcon = () => {
-    return <Image src={redux_icon} width={50} height={50} className="icon"/>
+export const GithubIcon = ({className, ref}) => {
+    return <Image src={github_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '1.5s'
+      }}/>
+}
+
+//LEARNING
+export const NextIcon = ({className, ref}) => {
+    return <Image src={next_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '0.5s'
+      }}/>
+}
+export const TsIcon = ({className, ref}) => {
+    return <Image src={ts_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '1s'
+      }}/>
+}
+export const ReduxIcon = ({className, ref}) => {
+    return <Image src={redux_icon} width={50} height={50} className={className} ref={ref}style={{
+        animationDelay: '1.5s'
+      }}/>
 }

@@ -1,6 +1,6 @@
 @import 'variables'
 @import 'mixin'
-
+@import 'keyframes'
 #skills
     color: #{$grey}
     height: 100vh
@@ -18,12 +18,14 @@
             top: 0
             font-weight: 400
         .soft-first-letter
+            opacity: 0
             &::first-letter
-                font-size: calc(40px + 0.390625vw)
+                
                 text-shadow: 0 0 10px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 150px #{$orange}
         .hard-first-letter
+            opacity: 0
             &::first-letter
-                font-size: calc(40px + 0.390625vw)
+                
                 text-shadow: 0 0 10px #{$grey},0 0 35px #{$blue},0 0 40px #{$blue},0 0 50px #{$blue},0 0 80px #{$blue}, 0 0 150px #{$blue}
         .skills-wrapper
 
@@ -32,6 +34,7 @@
                 height: 70%
                 h3
                     font-weight: 300
+                    opacity: 0
 
         .hard-skills
             width: 100%
@@ -47,10 +50,8 @@
                 width: 100%
                 @include flexbox(center,center)
                 gap: 20px
-                .icons
-                    width: 50px
-                    height: 50px
-                    background: blue
+                
+             
 
         .soft-skills
             @include flexbox(center,space-evenly)
@@ -67,6 +68,7 @@
     height: 100%
     display: flex
     cursor: move
+    
     .left, .right
         position: relative
     
@@ -81,6 +83,9 @@
     place-items: center
     cursor: pointer
     border: solid 1px #{$grey}
+    visibility: hidden
+    @media screen and (max-width: 950px)
+        visibility: visible
     &:hover
         box-shadow: 0 0 10px 5px #{$blue}, inset 0 0 10px 5px #{$orange} 
         
@@ -114,6 +119,8 @@
 .s-a-prev
     transform: rotate(90deg)
           
+.icon
+    opacity: 0
 
 
         
