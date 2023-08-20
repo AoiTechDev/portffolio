@@ -89,6 +89,7 @@ export const HardSkills = () => {
             <GithubIcon
               className={inView ? "icon scroll-left" : "icon"}
               ref={ref}
+              animationDelay={'1.5s'}
             />
           </div>
         </div>

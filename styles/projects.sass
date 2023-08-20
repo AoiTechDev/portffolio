@@ -13,12 +13,12 @@
     @include flexbox(center,space-evenly)
     flex-direction: column
     position: relative
-    
+
     .card-container
 
         width: 60%
         height: 60%
-        
+
         @include flexbox(center,center)
         .swiper
             width: 100%
@@ -30,20 +30,20 @@
             background-size: cover
             width: 50%
             height: 400px
-            
+
         .swiper-slide .slide
             display: block
             width: 100%
             height: 100%
             background: #{$blue}
+            box-shadow: 10px 10px 10px 10px black
             padding: 1rem
             border-radius: 1rem
             @include flexbox(center,space-evenly)
             flex-direction: column
-            
+
             h2
                 font-weight: 400
-
 
 .card-title
     opacity: 0
@@ -52,14 +52,73 @@
     position: absolute
     width: 40%
     height: 90%
-    background: #332F2E
+
     left: 0
     bottom: 0
     z-index: 199
     padding: 1rem
+    backdrop-filter: blur(20px)
     @include flexbox(center, space-evenly)
     flex-direction: column
+    box-shadow: 0 3px 10px 10px black
+    border-top-right-radius: 1.5rem
+    border-bottom-right-radius: 1.5rem
     h3
         font-weight: 400
-    
-   
+        font-size: calc(15px + 0.390625vw)
+        text-align: center
+        opacity: 0
+        
+    h4
+        font-size: calc(13px + 0.390625vw)
+        opacity: 0
+
+    p
+        font-size: calc(10px + 0.390625vw)
+        opacity: 0
+    .side-technologies
+        @include flexbox(center, center)
+        flex-direction: column
+        gap: 10px
+        h4
+            opacity: 0
+        .side-icons-wrapper
+            width: 100%
+            @include flexbox(center,center)
+            gap: 20px
+    .project-description
+        @include flexbox(center, center)
+        flex-direction: column
+        gap: 10px
+    .github-link
+        @include flexbox(center, center)
+        a
+            color: #{$grey}
+            text-decoration: none
+            position: relative
+            &::before
+                content: attr(data-text)
+                position: absolute
+                color: #{$orange}
+                width: 0
+                overflow: hidden
+                transition: 1s
+                border-bottom: 4px solid #{$orange}
+                -webkit-text-stroke: 1px #{$orange}
+            &:hover::before
+                width: 100%
+                filter: -webkit-drop-shadow(0 0 10px #{$orange})
+                filter: -o-drop-shadow(0 0 10px #{$orange})
+                filter: -moz-drop-shadow(0 0 10px #{$orange})
+                filter: drop-shadow(0 0 10px #{$orange})
+            &::after
+                content: ''
+                position: absolute
+                background: #{$orange}
+                width: 100%
+                bottom: 0
+                left: 0
+                height: 3px
+                transition: 1s
+            &:hover::after
+                width: 0%

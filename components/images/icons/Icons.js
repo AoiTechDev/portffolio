@@ -95,9 +95,9 @@ export const GitIcon = ({className, ref}) => {
         animationDelay: '1s'
       }}/>
 }
-export const GithubIcon = ({className, ref}) => {
+export const GithubIcon = ({className, ref, animationDelay}) => {
     return <Image src={github_icon} width={50} height={50} className={className} ref={ref}style={{
-        animationDelay: '1.5s'
+        animationDelay: animationDelay
       }}/>
 }
 

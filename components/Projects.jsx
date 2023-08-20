@@ -21,7 +21,7 @@ const Projects = () => {
 
   return (
     <section id="projects" >
-      {projectInfo && <ProjectInfo projectInfoHandler={projectInfoHandler} />}
+      {projectInfo && <ProjectInfo projectInfoHandler={projectInfoHandler}/>}
       <div className="card-container">
         <Swiper
           effect={"coverflow"}

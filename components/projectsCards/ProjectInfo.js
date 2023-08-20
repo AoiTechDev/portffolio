@@ -22,27 +22,34 @@ const ProjectInfo = ({ projectInfoHandler }) => {
   });
   return (
     <div className="side-menu animate__animated animate__fadeInLeft">
-      <CloseMenu onClick={projectInfoHandler} />
-      <h3>
+      <CloseMenu
+        onClick={projectInfoHandler}
+        style={{
+          background: "#E1DDDB",
+        }}
+      />
+      <h3 className={inView && "scroll-down"} ref={ref}>
         Web application to collect, present and process information and
         statistics from the game World of Warcraft
       </h3>
-      <Line/> 
+      <Line />
       <div className="project-description">
-        <h4>Description:</h4>
-        <p>
+        <h4 className={inView && "scroll-down"} ref={ref}>
+          Description
+        </h4>
+        <p className={inView && "scroll-left"} ref={ref}>
           The application allows users to search for any character or guild and
           display all relevant information about them in a simple and clear way.
           It uses appropriate queries to an external API provided by the game
           developers.
         </p>
       </div>
-      <Line/> 
-      <div className="technologies">
+      <Line />
+      <div className="side-technologies">
         <h4 className={inView && "scroll-down"} ref={ref}>
           Technologies
         </h4>
-        <div className="icons-wrapper">
+        <div className="side-icons-wrapper">
           <CssIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
           <ReactIcon
             className={inView ? "icon scroll-left" : "icon"}
@@ -58,15 +65,25 @@ const ProjectInfo = ({ projectInfoHandler }) => {
             ref={ref}
           />
         </div>
-       
       </div>
       <div className="github-link">
         <GithubIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <a href="https://github.com/BorPawel/praca-inz">Github</a>
-        </div>
+          className={inView ? "icon scroll-left" : "icon"}
+          ref={ref}
+          animationDelay={"3s"}
+        />
+        <a
+          href="https://github.com/BorPawel/praca-inz"
+          className={inView ? "icon scroll-right" : "icon"}
+          ref={ref}
+          style={{
+            animationDelay: '3s'
+          }}
+          data-text="Github"
+        >
+          Github
+        </a>
+      </div>
     </div>
   );
 };
