@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import "@styles/about.sass";
 import Image from "next/image";
 
-const ProjectCard = ({ title, img }) => {
+const ProjectCard = ({ title, }) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
     root: null,

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import "@styles/projects.sass";
 import Arrows from "./arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,10 +14,14 @@ import diplomaWork from '../assets/images/first_loaded.png'
 import myApp from '../assets/images/my_app.jpg'
 import ProjectInfo from "./projectsCards/ProjectInfo";
 const Projects = () => {
- 
+  const [projectInfo, setProjectInfo] = useState(false)
+  const projectInfoHandler = () => {
+    setProjectInfo(prev => !prev)
+  }
+
   return (
-    <section id="projects">
-      <ProjectInfo/>
+    <section id="projects" >
+      {projectInfo && <ProjectInfo projectInfoHandler={projectInfoHandler} />}
       <div className="card-container">
         <Swiper
           effect={"coverflow"}
@@ -36,7 +40,7 @@ const Projects = () => {
           
           
         >
-          <SwiperSlide>
+          <SwiperSlide onClick={projectInfoHandler}>
             <ProjectCard title={'My diploma work'} img={diplomaWork}/>
           </SwiperSlide>
           <SwiperSlide >
