@@ -18,7 +18,11 @@
 
         width: 60%
         height: 60%
-
+        @media screen and (max-width: #{$tabletLandscape})
+            width: 500px
+        @media screen and (max-width: #{$tabletLandscape})
+            width: 90%
+            
         @include flexbox(center,center)
         .swiper
             width: 100%
@@ -28,9 +32,17 @@
         .swiper-slide
             background-position: center
             background-size: cover
-            width: 50%
+            width: 550px
             height: 400px
-
+            @media screen and (max-width: #{$large})
+                width: 470px
+                height: 350px
+            @media screen and (max-width: #{$tabletLandscape})
+                width: 370px
+                height: 250px
+            @media screen and (max-width: #{$medium})
+                width: 300px
+                height: 200px
         .swiper-slide .slide
             display: block
             width: 100%
@@ -44,7 +56,9 @@
 
             h2
                 font-weight: 400
-
+                font-size: calc(20px + 0.8vw)
+            p
+                font-size: calc(10px + 0.46vw)
 .card-title
     opacity: 0
 
@@ -63,6 +77,15 @@
     box-shadow: 0 3px 10px 10px black
     border-top-right-radius: 1.5rem
     border-bottom-right-radius: 1.5rem
+    @media screen and (max-width: #{$large})
+        width: 50%
+        
+    @media screen and (max-width: #{$tabletLandscape})
+        width: 60%
+       
+    @media screen and (max-width: #{$medium})
+        width: 100%
+        
     h3
         font-weight: 400
         font-size: calc(15px + 0.390625vw)

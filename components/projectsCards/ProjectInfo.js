@@ -8,6 +8,7 @@ import {
   HtmlIcon,
   NodeIcon,
   GithubIcon,
+  CustomIcon,
 } from "../images/icons/Icons";
 import { useInView } from "react-intersection-observer";
 import Line from "@components/line/Line";
@@ -29,7 +30,7 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
           background: "#E1DDDB",
         }}
       />
-      
+
       {projectData.map(
         (project) =>
           project.id === cardId && (
@@ -40,13 +41,25 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
       )}
       <Line />
       <div className="project-description">
-        <h4 className={inView && "scroll-down"} ref={ref}>
+        <h4
+          className={inView && "scroll-down"}
+          ref={ref}
+          style={{
+            animationDelay: "0.5s",
+          }}
+        >
           Description
         </h4>
         {projectData.map(
           (project) =>
             project.id === cardId && (
-              <p className={inView && "scroll-left"} ref={ref}>
+              <p
+                className={inView && "scroll-left"}
+                ref={ref}
+                style={{
+                  animationDelay: "1s",
+                }}
+              >
                 {project.description}
               </p>
             )
@@ -54,11 +67,13 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
       </div>
       <Line />
       <div className="side-technologies">
-        <h4 className={inView && "scroll-down"} ref={ref}>
+        <h4 className={inView && "scroll-down"} ref={ref} style={{
+            animationDelay: "1.5s",
+          }}>
           Technologies
         </h4>
         <div className="side-icons-wrapper">
-          <CssIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
+          {/* <CssIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
           <ReactIcon
             className={inView ? "icon scroll-left" : "icon"}
             ref={ref}
@@ -71,21 +86,35 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
           <NodeIcon
             className={inView ? "icon scroll-left" : "icon"}
             ref={ref}
-          />
+          /> */}
+          {projectData.map(
+            (project) =>
+              project.id === cardId &&
+              project.tech.map((tech, index) => {
+                let del = (3+index)/2
+                return <CustomIcon
+                  key={index}
+                  src={tech}
+                  className={inView ? "icon scroll-left" : "icon"}
+                  ref={ref}
+                  delay={del+'s'}
+                />
+              })
+          )}
         </div>
       </div>
       <div className="github-link">
         <GithubIcon
           className={inView ? "icon scroll-left" : "icon"}
           ref={ref}
-          animationDelay={"3s"}
+          animationDelay={"4s"}
         />
         <a
           href={diploma_work.github}
           className={inView ? "icon scroll-right" : "icon"}
           ref={ref}
           style={{
-            animationDelay: "3s",
+            animationDelay: "4s",
           }}
           data-text="Github"
           target="_blank"

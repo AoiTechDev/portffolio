@@ -19,7 +19,8 @@ const Projects = () => {
   const [cardId, setCardId] = useState("diploma");
   const projectInfoHandler = (e) => {
     setProjectInfo((prev) => !prev);
-    setCardId(e.target.id);
+    setCardId(e.currentTarget.id);
+    
   };
 
   return (
@@ -48,8 +49,8 @@ const Projects = () => {
           modules={[EffectCoverflow, Pagination]}
         >
           {project_data.map((project, index) => (
-            <SwiperSlide onClick={projectInfoHandler} key={index}>
-              <ProjectCard name={project.name} id={project.id} />
+            <SwiperSlide onClick={projectInfoHandler} key={index} id={project.id}>
+              <ProjectCard name={project.name}  />
             </SwiperSlide>
           ))}
           {/* <SwiperSlide onClick={projectInfoHandler}>

@@ -21,6 +21,13 @@ import teamwork_icon from '../../../assets/icons/soft/teamwork-icon.png'
 import '@styles/skills.sass'
 
 import Image from 'next/image'
+export const CustomIcon = ({src, className, ref, delay}) => {
+    return <Image src={src} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: delay
+      }}
+        
+      />
+}
 //SOFT SKILLS
 export const CommunicationIcon = ({className, ref}) => {
     return <Image src={communication_icon} width={50} height={50} className={className} ref={ref} style={{
@@ -97,7 +104,7 @@ export const GitIcon = ({className, ref}) => {
 }
 export const GithubIcon = ({className, ref, animationDelay}) => {
     return <Image src={github_icon} width={50} height={50} className={className} ref={ref}style={{
-        animationDelay: animationDelay
+        animationDelay: animationDelay  
       }}/>
 }
 
