@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import "@styles/about.sass";
 import Image from "next/image";
 
-const ProjectCard = ({ title, }) => {
+const ProjectCard = ({ name, id }) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
     root: null,
@@ -14,8 +14,8 @@ const ProjectCard = ({ title, }) => {
   });
 
   return (
-    <div className="slide s-st">
-      <h2 className={inView ? "card-title scroll-right" : "card-title"} ref={ref}>{title}</h2>
+    <div className="slide s-st" id={id}>
+      <h2 className={inView ? "card-title scroll-right" : "card-title"} ref={ref}>{name}</h2>
       <p>Click here to get more informations!</p>
     </div>
   );

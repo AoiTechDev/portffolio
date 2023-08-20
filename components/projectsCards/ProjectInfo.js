@@ -11,8 +11,9 @@ import {
 } from "../images/icons/Icons";
 import { useInView } from "react-intersection-observer";
 import Line from "@components/line/Line";
+import { diploma_work } from "../../projects_data/data";
 
-const ProjectInfo = ({ projectInfoHandler }) => {
+const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
     root: null,
@@ -28,21 +29,28 @@ const ProjectInfo = ({ projectInfoHandler }) => {
           background: "#E1DDDB",
         }}
       />
-      <h3 className={inView && "scroll-down"} ref={ref}>
-        Web application to collect, present and process information and
-        statistics from the game World of Warcraft
-      </h3>
+      
+      {projectData.map(
+        (project) =>
+          project.id === cardId && (
+            <h3 className={inView && "scroll-down"} ref={ref}>
+              {project.title}
+            </h3>
+          )
+      )}
       <Line />
       <div className="project-description">
         <h4 className={inView && "scroll-down"} ref={ref}>
           Description
         </h4>
-        <p className={inView && "scroll-left"} ref={ref}>
-          The application allows users to search for any character or guild and
-          display all relevant information about them in a simple and clear way.
-          It uses appropriate queries to an external API provided by the game
-          developers.
-        </p>
+        {projectData.map(
+          (project) =>
+            project.id === cardId && (
+              <p className={inView && "scroll-left"} ref={ref}>
+                {project.description}
+              </p>
+            )
+        )}
       </div>
       <Line />
       <div className="side-technologies">
@@ -73,13 +81,14 @@ const ProjectInfo = ({ projectInfoHandler }) => {
           animationDelay={"3s"}
         />
         <a
-          href="https://github.com/BorPawel/praca-inz"
+          href={diploma_work.github}
           className={inView ? "icon scroll-right" : "icon"}
           ref={ref}
           style={{
-            animationDelay: '3s'
+            animationDelay: "3s",
           }}
           data-text="Github"
+          target="_blank"
         >
           Github
         </a>

@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "@styles/projects.sass";
 import Arrows from "./arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,19 +9,28 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import ProjectCard from "./projectsCards/ProjectCard";
 import { useInView } from "react-intersection-observer";
-import '@styles/about.sass'
-import diplomaWork from '../assets/images/first_loaded.png'
-import myApp from '../assets/images/my_app.jpg'
+import "@styles/about.sass";
+import diplomaWork from "../assets/images/first_loaded.png";
+import myApp from "../assets/images/my_app.jpg";
 import ProjectInfo from "./projectsCards/ProjectInfo";
+import { project_data } from "../projects_data/data";
 const Projects = () => {
-  const [projectInfo, setProjectInfo] = useState(false)
-  const projectInfoHandler = () => {
-    setProjectInfo(prev => !prev)
-  }
+  const [projectInfo, setProjectInfo] = useState(false);
+  const [cardId, setCardId] = useState("diploma");
+  const projectInfoHandler = (e) => {
+    setProjectInfo((prev) => !prev);
+    setCardId(e.target.id);
+  };
 
   return (
-    <section id="projects" >
-      {projectInfo && <ProjectInfo projectInfoHandler={projectInfoHandler}/>}
+    <section id="projects">
+      {projectInfo && (
+        <ProjectInfo
+          projectInfoHandler={projectInfoHandler}
+          projectData={project_data}
+          cardId={cardId}
+        />
+      )}
       <div className="card-container">
         <Swiper
           effect={"coverflow"}
@@ -37,15 +46,18 @@ const Projects = () => {
           }}
           pagination={true}
           modules={[EffectCoverflow, Pagination]}
-          
-          
         >
-          <SwiperSlide onClick={projectInfoHandler}>
-            <ProjectCard title={'My diploma work'} img={diplomaWork}/>
+          {project_data.map((project, index) => (
+            <SwiperSlide onClick={projectInfoHandler} key={index}>
+              <ProjectCard name={project.name} id={project.id} />
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide onClick={projectInfoHandler}>
+            <ProjectCard title={"My diploma work"} img={diplomaWork} />
           </SwiperSlide>
-          <SwiperSlide >
-            <ProjectCard title={'My personal portfolio website'} img={myApp}/>
-          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard title={"My personal portfolio website"} img={myApp} />
+          </SwiperSlide> */}
         </Swiper>
       </div>
       <Arrows
