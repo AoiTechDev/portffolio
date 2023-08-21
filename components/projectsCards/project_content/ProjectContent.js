@@ -1,7 +1,6 @@
 import React from 'react'
 import { useInView } from "react-intersection-observer";
-
-const ProjectDescription = ({ projectData, cardId}) => {
+const ProjectContent = ({projectData,cardId, title, delay, content}) => {
     const { ref, inView, entry } = useInView({
         /* Optional options */
         root: null,
@@ -9,16 +8,19 @@ const ProjectDescription = ({ projectData, cardId}) => {
         threshold: 1.0,
         triggerOnce: true,
       });
+      const allDelay = delay + 's'
+      const halfDelay = (delay/2) + 's'
+      console.log(allDelay, halfDelay)
   return (
     <div className="project-description">
         <h4
           className={inView && "scroll-down"}
           ref={ref}
           style={{
-            animationDelay: "0.5s",
+            animationDelay: halfDelay,
           }}
         >
-          Description
+          {title}
         </h4>
         {projectData.map(
           (project) =>
@@ -27,14 +29,14 @@ const ProjectDescription = ({ projectData, cardId}) => {
                 className={inView && "scroll-left"}
                 ref={ref}
                 style={{
-                  animationDelay: "1s",
+                  animationDelay: allDelay,
                 }}
               >
-                {project.description}
+                {content === 'description' ? project.description : project.spec}
               </p>
             )
         )}
       </div>
   )
 }
-export default ProjectDescription
+export default ProjectContent

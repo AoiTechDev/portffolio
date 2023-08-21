@@ -18,9 +18,10 @@ import "swiper/css";
 import "swiper/css/hash-navigation";
 import { Navigation } from "swiper/modules";
 import "@styles/skills.sass";
-import ProjectDescription from "./project_content/ProjectDescription";
+  
 import SlideArrow from "@components/arrows/SlideArrow";
-import ProjectSpec from "./project_content/ProjectSpec";
+
+import ProjectContent from "./project_content/ProjectContent";
 const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
@@ -61,11 +62,12 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
         }}
       >
         <SwiperSlide className="project-slide">
-          <ProjectDescription projectData={projectData} cardId={cardId} />
+         
+          <ProjectContent projectData={projectData} cardId={cardId} title="Description" content="description" delay={0.75}/>
           <SlideArrow/>
         </SwiperSlide>
         <SwiperSlide className="project-slide">
-          <ProjectSpec projectData={projectData} cardId={cardId}/>
+        <ProjectContent projectData={projectData} cardId={cardId} title="What I did" content="spec" delay={0.4}/>
         </SwiperSlide>
       </Swiper>
 
