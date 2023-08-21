@@ -6,7 +6,7 @@ import MyImage from "./images/MyImage";
 
 import { useInView } from "react-intersection-observer";
 import Arrows from "./arrows/Arrows";
-
+import { Stars } from "./stars/Stars";
 const About = () => {
   const [infoSection, setInfoSection] = useState("introduction");
   const infoSectionHandler = (e) => {
@@ -37,9 +37,7 @@ const About = () => {
   });
   return (
     <section id="about">
-      <div id="stars"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
+      <Stars/>
       <inView
         as="div"
         onChange={(inView, entry) => console.log("inView", inView)}

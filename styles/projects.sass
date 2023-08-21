@@ -3,11 +3,11 @@
 #projects
     height: 100vh
 
-    @include gradient( 60deg, #{$gradientListMain})
-    background-size: 100% 100%
-    background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px
+    // @include gradient( 60deg, #{$gradientListMain})
+    // background-size: 100% 100%
+    // background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px
 
-    background-image: #{$landPageLayer1}, #{$landPageLayer2}, #{$landPageLayer3}, #{$landPageLayer4}, #{$landPageLayer5}
+    // background-image: #{$landPageLayer1}, #{$landPageLayer2}, #{$landPageLayer3}, #{$landPageLayer4}, #{$landPageLayer5}
     box-shadow: #{$edgeShadow}
     color: #{$grey}
     @include flexbox(center,space-evenly)
@@ -16,7 +16,7 @@
 
     .card-container
 
-        width: 60%
+        width: 90%
         height: 60%
         @media screen and (max-width: #{$tabletLandscape})
             width: 500px
@@ -28,12 +28,13 @@
             width: 100%
             padding-top: 50px
             padding-bottom: 50px
-
+            
         .swiper-slide
             background-position: center
             background-size: cover
             width: 550px
             height: 400px
+            
             @media screen and (max-width: #{$large})
                 width: 470px
                 height: 350px

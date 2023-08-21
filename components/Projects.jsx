@@ -53,12 +53,7 @@ const Projects = () => {
               <ProjectCard name={project.name}  />
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide onClick={projectInfoHandler}>
-            <ProjectCard title={"My diploma work"} img={diplomaWork} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectCard title={"My personal portfolio website"} img={myApp} />
-          </SwiperSlide> */}
+          
         </Swiper>
       </div>
       <Arrows

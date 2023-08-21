@@ -12,6 +12,7 @@ import { useInView } from "react-intersection-observer";
 
 import React, { useLayoutEffect, useState, useRef } from "react";
 
+
 const Skills = () => {
   const windowWidthSize = () => {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -38,6 +39,7 @@ const Skills = () => {
 
   return (
     <section id="skills">
+      
       <div className="wrapper">
         {width < 950 ? (
           <Swiper
