@@ -16,7 +16,7 @@
 
     .card-container
 
-        width: 90%
+        width: 60%
         height: 60%
         @media screen and (max-width: #{$tabletLandscape})
             width: 500px
@@ -114,6 +114,7 @@
         @include flexbox(center, center)
         flex-direction: column
         gap: 10px
+        padding: 0 3rem 0 3rem
     .github-link
         @include flexbox(center, center)
         a
@@ -146,3 +147,10 @@
                 transition: 1s
             &:hover::after
                 width: 0%
+.project-info-swiper
+    width: 100%
+    display: flex
+    
+    cursor: move
+    .project-slide
+        position: relative

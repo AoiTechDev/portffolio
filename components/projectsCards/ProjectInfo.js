@@ -13,7 +13,14 @@ import {
 import { useInView } from "react-intersection-observer";
 import Line from "@components/line/Line";
 import { diploma_work } from "../../projects_data/data";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/hash-navigation";
+import { Navigation } from "swiper/modules";
+import "@styles/skills.sass";
+import ProjectDescription from "./project_content/ProjectDescription";
+import SlideArrow from "@components/arrows/SlideArrow";
+import ProjectSpec from "./project_content/ProjectSpec";
 const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
@@ -22,6 +29,7 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
     threshold: 1.0,
     triggerOnce: true,
   });
+
   return (
     <div className="side-menu animate__animated animate__fadeInLeft">
       <CloseMenu
@@ -40,65 +48,54 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
           )
       )}
       <Line />
-      <div className="project-description">
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        className="project-info-swiper"
+        rows={1}
+        fill={"row"}
+        modules={[Navigation]}
+        navigation={{
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        }}
+      >
+        <SwiperSlide className="project-slide">
+          <ProjectDescription projectData={projectData} cardId={cardId} />
+          <SlideArrow/>
+        </SwiperSlide>
+        <SwiperSlide className="project-slide">
+          <ProjectSpec projectData={projectData} cardId={cardId}/>
+        </SwiperSlide>
+      </Swiper>
+
+      <Line />
+
+      <div className="side-technologies">
         <h4
           className={inView && "scroll-down"}
           ref={ref}
           style={{
-            animationDelay: "0.5s",
+            animationDelay: "1.5s",
           }}
         >
-          Description
-        </h4>
-        {projectData.map(
-          (project) =>
-            project.id === cardId && (
-              <p
-                className={inView && "scroll-left"}
-                ref={ref}
-                style={{
-                  animationDelay: "1s",
-                }}
-              >
-                {project.description}
-              </p>
-            )
-        )}
-      </div>
-      <Line />
-      <div className="side-technologies">
-        <h4 className={inView && "scroll-down"} ref={ref} style={{
-            animationDelay: "1.5s",
-          }}>
           Technologies
         </h4>
         <div className="side-icons-wrapper">
-          {/* <CssIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
-          <ReactIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          />
-          <JsIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
-          <HtmlIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          />
-          <NodeIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          /> */}
           {projectData.map(
             (project) =>
               project.id === cardId &&
               project.tech.map((tech, index) => {
-                let del = (3+index)/2
-                return <CustomIcon
-                  key={index}
-                  src={tech}
-                  className={inView ? "icon scroll-left" : "icon"}
-                  ref={ref}
-                  delay={del+'s'}
-                />
+                let del = (3 + index) / 2;
+                return (
+                  <CustomIcon
+                    key={index}
+                    src={tech}
+                    className={inView ? "icon scroll-left" : "icon"}
+                    ref={ref}
+                    delay={del + "s"}
+                  />
+                );
               })
           )}
         </div>
