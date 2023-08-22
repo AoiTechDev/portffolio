@@ -39,7 +39,7 @@ export const project_data = [
     title: "Personal portfolio",
     description:
       "This website is a reflection of my identity and my abilities. Here I try to present myself authentically and to reflect both my programming skills and my sense of aesthetics. My goal in creating this website was to highlight the passion and dedication I put into every detail.",
-    spec: "",
+    spec: "I created a unique user interface, relying on my own sense of aesthetics and creativity. I guaranteed optimal responsiveness of the site, ensuring that it works on a variety of devices.",
     github: "https://github.com/BorPawel/portffolio",
     tech: [next_icon, js_icon, sass_icon, css_icon, html_icon],
   },

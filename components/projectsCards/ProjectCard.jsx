@@ -16,7 +16,22 @@ const ProjectCard = ({ name, id }) => {
   return (
     <div className="slide s-st" id={id}>
       <h2 className={inView ? "card-title scroll-right" : "card-title"} ref={ref}>{name}</h2>
-      <p>Click here to get more informations!</p>
+      <div className="card_content">
+        
+        <h5>Click here to get more informations about:</h5>
+        <ul className="card-project-info-list">
+          <li>Project description</li>
+          <li>What i did in project</li>
+          <li>Technologies i used</li>
+        </ul>
+        {/* <p>Project description</p>
+        <p>What i did in project</p>
+        <p>Technologies i used</p> */}
+      </div>
+      <div class="blob"></div>
+      <div class="blob"></div>
+      
+      
     </div>
   );
 };

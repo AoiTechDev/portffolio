@@ -22,19 +22,19 @@
         //     width: 500px
         // @media screen and (max-width: #{$tabletLandscape})
         //     width: 90%
-            
+
         @include flexbox(center,center)
         .swiper
             width: 100%
             padding-top: 50px
             padding-bottom: 50px
-            
+
         .swiper-slide
             background-position: center
             background-size: cover
             width: 550px
-            height: 400px
-            
+            height: 350px
+
             @media screen and (max-width: #{$large})
                 width: 470px
                 height: 350px
@@ -45,21 +45,144 @@
                 width: 300px
                 height: 200px
         .swiper-slide .slide
-            display: block
+
             width: 100%
             height: 100%
-            background: #{$blue}
+
+            position: relative
             box-shadow: 10px 10px 10px 10px black
             padding: 1rem
             border-radius: 1rem
+            z-index: 1
             @include flexbox(center,space-evenly)
             flex-direction: column
+            overflow: hidden
+            gap: 20px
 
+            
+            &:hover h5
+                opacity: 1
+                transform: translate3d(0,0,0)
+            
+            &:hover .blob
+                width: 350px
+                height: 350px
+            &:hover .blob
+                &:nth-child(3)
+                    background: #{$orange}
+                    @include dropShadow(#{$orange})
+            &:hover .blob
+                &:nth-child(4)
+                    background: #{$blue}
+                    @include dropShadow(#{$blue})
+            &:hover .card_content ul li
+                opacity: 1
+                @for $i from 1 through 3
+                    &:nth-child(#{$i})
+                        transform: translate3d(0,0,0)
+                        
+                   
+
+            .card_content
+
+                z-index: 1
+
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                border-radius: 21px
+                backdrop-filter: blur(20px)
+
+                transition: 1s
+                @include flexbox(center, space-evenly)
+                flex-direction: column
+                padding: 1rem
+                ul
+                    list-style: none
+                    li
+                        opacity: 0
+                        font-size: calc(10px + 0.46vw)
+                        @for $i from 1 through 3
+                            &:nth-child(#{$i})
+                                transition: calc(#{$i} * 0.75s)
+                                
+                        &:nth-child(odd)
+                            transform: translate3d(-60%,0,0)
+                        &:nth-child(even)
+                            transform: translate3d(60%,0,0)
+                            
+                        // &:nth-child(1)
+                        //     transition: 1.33s
+                        //     transform: translate3d(-60%,0,0)
+                        // &:nth-child(2)
+                        //     transition: 1.66s
+                        //     transform: translate3d(60%,0,0)
+                        // &:nth-child(3)
+                        //     transition: 2s
+                        //     transform: translate3d(-60%,0,0)
+                                
+                                
+                        
+                    
+                            
+                            
+            .blob
+                position: absolute
+                z-index: -1
+                border-radius: 50%
+                width: 250px
+                height: 250px
+                transition: 1s
+                animation-name: blob-animation
+                animation-duration: 10s
+                animation-timing-function: ease-in-out
+                animation-iteration-count: infinite
+                &:nth-child(3)
+                    left: -70px
+                    top: -70px
+                    background: #{$blue}
+                    @include dropShadow(#{$blue})
+                &:nth-child(4)
+                    right: -30px
+                    bottom: -30px
+                    background: #{$orange}
+                    @include dropShadow(#{$orange})
             h2
+
                 font-weight: 400
                 font-size: calc(20px + 0.8vw)
-            p
-                font-size: calc(10px + 0.46vw)
+            h5
+                opacity: 0
+                transition: 0.75s
+                font-weight: 400
+                font-size: calc(13px + 0.46vw)
+                transform: translate3d(0,-100%,0)
+      
+                // &:nth-child(2)
+                //     left: 110px
+                //     top: -20px
+                //     z-index: -1
+                //     background: #EF6C33
+                // &:nth-child(3)
+                //     left: -40px
+                //     top: 100px
+                //     background: #0C4A60
+                // &:nth-child(4)
+                //     left: -40px
+                //     top: 100px
+                //     background: #EF6C33
+
+@keyframes blob-animation
+    0%
+        transform: translate(0, 0) scale(1)
+
+    50%
+        transform: translate(10%, 10%) scale(1.1)
+
+    100%
+        transform: translate(0, 0) scale(1)
+
 .card-title
     opacity: 0
 
@@ -80,19 +203,19 @@
     border-bottom-right-radius: 1.5rem
     @media screen and (max-width: #{$large})
         width: 50%
-        
+
     @media screen and (max-width: #{$tabletLandscape})
         width: 60%
-       
+
     @media screen and (max-width: #{$medium})
         width: 100%
-        
+
     h3
         font-weight: 400
         font-size: calc(15px + 0.390625vw)
         text-align: center
         opacity: 0
-        
+
     h4
         font-size: calc(13px + 0.390625vw)
         opacity: 0
@@ -150,7 +273,7 @@
 .project-info-swiper
     width: 100%
     display: flex
-    
+
     cursor: move
     .project-slide
         position: relative

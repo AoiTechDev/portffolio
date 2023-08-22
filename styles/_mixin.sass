@@ -12,7 +12,7 @@
 
 @mixin rotate($deg)
     @include transform(rotate(#{$deg}deg))
-    
+
 @mixin flexbox($align-items, $justify-content)
     display: flex
     align-items: $align-items
@@ -45,7 +45,7 @@
             cursor: pointer
             text-decoration: none
             color: $color
-            
+
             &::before
                 content: attr(data-text)
                 position: absolute
@@ -58,15 +58,20 @@
 
             &:hover::before
                 width: 100%
-                
+
                 filter: -webkit-drop-shadow(0 0 10px var(--clr))
                 filter: -o-drop-shadow(0 0 10px var(--clr))
                 filter: -moz-drop-shadow(0 0 10px var(--clr))
                 filter: drop-shadow(0 0 10px var(--clr))
-                    
 
 @mixin gradient($direction, $list)
     background-image: -webkit-linear-gradient($direction, $list)
     background-imgae: -o-linear-gradient($direction, $list)
     background-imgae: linear-gradient($direction, $list)
     background-imgae: -moz-linear-gradient($direction, $list)
+
+@mixin dropShadow($color)
+    filter: -webkit-drop-shadow(0 0 10px $color) -webkit-drop-shadow(0 0 10px $color)
+    filter: -o-drop-shadow(0 0 10px $color) -o-drop-shadow(0 0 20px $color)
+    filter: -moz-drop-shadow(0 0 10px $color) -moz-drop-shadow(0 0 20px $color)
+    filter: drop-shadow(0 0 10px $color) drop-shadow(0 0 20px $color)

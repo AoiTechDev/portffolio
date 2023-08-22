@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/hash-navigation";
 import { Navigation } from "swiper/modules";
 import "@styles/skills.sass";
-  
+
 import SlideArrow from "@components/arrows/SlideArrow";
 
 import ProjectContent from "./project_content/ProjectContent";
@@ -62,12 +62,23 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
         }}
       >
         <SwiperSlide className="project-slide">
-         
-          <ProjectContent projectData={projectData} cardId={cardId} title="Description" content="description" delay={0.75}/>
-          <SlideArrow/>
+          <ProjectContent
+            projectData={projectData}
+            cardId={cardId}
+            title="Description"
+            content="description"
+            delay={0.75}
+          />
+          <SlideArrow />
         </SwiperSlide>
         <SwiperSlide className="project-slide">
-        <ProjectContent projectData={projectData} cardId={cardId} title="What I did" content="spec" delay={0.4}/>
+          <ProjectContent
+            projectData={projectData}
+            cardId={cardId}
+            title="What I did"
+            content="spec"
+            delay={0}
+          />
         </SwiperSlide>
       </Swiper>
 
