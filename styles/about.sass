@@ -2,106 +2,136 @@
 @import 'mixin'
 @import 'keyframes'
 
-
 #about
-    
+
     width: 100%
     height: 100vh
-    color: white
+    color: #{$grey}
     box-shadow: #{$edgeShadow}
-    
-    //background-image: #{$aboutLayer1}, #{$aboutLayer2}, #{$aboutLayer3}, #{$aboutLayer4}, #{$aboutLayer5}
-    display: flex
+
+    @include flexbox(center,center)
     flex-direction: column
-    .wrapper
+    .swiper
+        width: 300px
+        height: 300px
+        
+    .swiper-slide
+        
+        --border-width: 3px
         @include flexbox(center,center)
-        flex-direction: row
-        height: 100%
-    .left-side-img
-
-        width: 100%
         position: relative
-        @include flexbox(center,center)
-        .my-image
-            opacity: 0
-            border-bottom-left-radius: 40%
-            border-bottom-right-radius: 40%
-            filter: drop-shadow(10px 2px 15px #{$blue}) brightness(70%)
+        z-index: 0
+        background: #222
+        width: 300px
+        height: 300px
+        border-radius: var(--border-width)
 
-    .right-side-info
+        &::after
+            position: absolute
+            content: ""
+            top: calc(-1 * var(--border-width))
+            left: calc(-1 * var(--border-width))
+            z-index: -1
+            width: calc(100% + var(--border-width) * 2)
+            height: calc(100% + var(--border-width) * 2)
+            //background: linear-gradient(60deg,hsl(224, 85%, 66%),hsl(269, 85%, 66%),hsl(314, 85%, 66%),hsl(359, 85%, 66%),hsl(44, 85%, 66%),hsl(89, 85%, 66%),hsl(134, 85%, 66%),hsl(179, 85%, 66%))
+            background: linear-gradient(60deg,#0C4A60 ,#051D79,#410A70,#700A26,#EF6C33,#D9C91C,#69DB00,#5EF5FF)
+            background-size: 300% 300%
+            background-position: 0 50%
+            border-radius: calc(2 * var(--border-width))
+            animation: moveGradient 4s alternate infinite
+        &::before
+            position: absolute
+            content: ""
+            width: 298px
+            height: 298px
+            background: #222
+    .cube-wrapper
+        width: 70%
+        height: 70%
         @include flexbox(center,space-evenly)
         flex-direction: column
-        width: 100%
-        height: 80%
-        align-self: center
-        position: relative
-        h2
-            opacity: 0
-            font-weight: 400
-            font-size: calc(20px + 0.390625vw)
-            letter-spacing: 4px
-            &::first-letter
-                font-size: calc(25px + 0.390625vw)
-                text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 100px #{$orange},0 0 150px #{$orange}
-        .info-container
-
-            width: 80%
-            height: 30%
-            .info-navigator
-                padding: 0.7rem
-                ul
-                    @include flexbox(center, space-evenly)
-
-                    li
-                        list-style: none
-                        cursor: pointer
-                        position: relative
-                        opacity: 0
-                    li:not(.active)
-
-                        &::before
-                            content: attr(data-text)
-                            position: absolute
-                            color: var(--clr)
-                            width: 0
-
-                            overflow: hidden
-                            transition: 0.3s
-                        &:hover::before
-                            width: 100%
-                            background-color: transparent
-
-        .info-content
-
-            padding: 1rem
-            font-weight: 300
-            font-size: calc(14px + 0.390625vw)
-
-            .introduction
-                opacity: 0
-@media screen and (max-width: #{$medium})
-    #about
-        @include flexbox(center,center)
-        flex-direction: column
-        gap: 20px
-        .right-side-info
+        .about-heading-text
             @include flexbox(center,center)
-            gap: 20px
-            
-        .my-image
-            width: 30%
-        .wrapper
             flex-direction: column
+//     .wrapper
+//         @include flexbox(center,center)
+//         flex-direction: row
+//         height: 100%
+//     .left-side-img
 
-// @media screen and (max-width: 600px)
+//         width: 100%
+//         position: relative
+//         @include flexbox(center,center)
+//         .my-image
+//             opacity: 0
+//             border-bottom-left-radius: 40%
+//             border-bottom-right-radius: 40%
+//             filter: drop-shadow(10px 2px 15px #{$blue}) brightness(70%)
+//     .right-side-info
+//         @include flexbox(center,space-evenly)
+//         flex-direction: column
+//         width: 100%
+//         height: 80%
+//         align-self: center
+//         position: relative
+//         h2
+//             opacity: 0
+//             font-weight: 400
+//             font-size: calc(20px + 0.390625vw)
+//             letter-spacing: 4px
+//             &::first-letter
+//                 font-size: calc(25px + 0.390625vw)
+//                 text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 100px #{$orange},0 0 150px #{$orange}
+//         .info-container
+
+//             width: 80%
+//             height: 30%
+//             .info-navigator
+//                 padding: 0.7rem
+//                 ul
+//                     @include flexbox(center, space-evenly)
+
+//                     li
+//                         list-style: none
+//                         cursor: pointer
+//                         position: relative
+//                         opacity: 0
+//                     li:not(.active)
+
+//                         &::before
+//                             content: attr(data-text)
+//                             position: absolute
+//                             color: var(--clr)
+//                             width: 0
+
+//                             overflow: hidden
+//                             transition: 0.3s
+//                         &:hover::before
+//                             width: 100%
+//                             background-color: transparent
+
+//         .info-content
+
+//             padding: 1rem
+//             font-weight: 300
+//             font-size: calc(14px + 0.390625vw)
+
+//             .introduction
+//                 opacity: 0
+// @media screen and (max-width: #{$medium})
 //     #about
+//         @include flexbox(center,center)
+//         flex-direction: column
+//         gap: 20px
 //         .right-side-info
-//             @include flexbox(center,space-evenly)
-            
-//             .info-content
-//                 height: 100px
-//                 overflow-y: scroll
+//             @include flexbox(center,center)
+//             gap: 20px
 
+//         .my-image
+//             width: 30%
+//         .wrapper
+//             flex-direction: column
 
 @media screen and (max-width: 400px ) and (max-height: 610px)
     #about
@@ -135,5 +165,6 @@
 .scroll-fade-in
     animation: fadeIn 1s
     animation-fill-mode: both
-
-
+@keyframes moveGradient
+    50%
+        background-position: 100% 50%

@@ -63,7 +63,9 @@
             &:hover h5
                 opacity: 1
                 transform: translate3d(0,0,0)
-            
+            &:hover h3
+                opacity: 0
+                transform: translate3d(0,-100%,0)
             &:hover .blob
                 width: 350px
                 height: 350px
@@ -103,14 +105,17 @@
                     li
                         opacity: 0
                         font-size: calc(10px + 0.46vw)
-                        @for $i from 1 through 3
-                            &:nth-child(#{$i})
-                                transition: calc(#{$i} * 0.75s)
+                       
                                 
                         &:nth-child(odd)
                             transform: translate3d(-60%,0,0)
+                            transition: 1.25s
                         &:nth-child(even)
                             transform: translate3d(60%,0,0)
+                            transition: 1.25s
+                        
+                        &:nth-child(3)
+                            transition: 1.75s
                             
                         // &:nth-child(1)
                         //     transition: 1.33s
@@ -158,7 +163,10 @@
                 font-weight: 400
                 font-size: calc(13px + 0.46vw)
                 transform: translate3d(0,-100%,0)
-      
+            h3
+                position: absolute
+                font-size: calc(20px + 0.46vw)
+                transition: 0.5s
                 // &:nth-child(2)
                 //     left: 110px
                 //     top: -20px

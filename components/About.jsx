@@ -1,12 +1,19 @@
 "use client";
 import "../styles/about.sass";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import photo from "../assets/images/myphoto.png";
 import MyImage from "./images/MyImage";
 
 import { useInView } from "react-intersection-observer";
 import Arrows from "./arrows/Arrows";
 import { Stars } from "./stars/Stars";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cube";
+import "swiper/css/pagination";
+import { EffectCube, Pagination } from "swiper/modules";
+import Blob from "./blob/Blob";
+
 const About = () => {
   const [infoSection, setInfoSection] = useState("introduction");
   const infoSectionHandler = (e) => {
@@ -37,35 +44,21 @@ const About = () => {
   });
   return (
     <section id="about">
-      <Stars/>
-      <inView
+      {/* <Stars/> */}
+      {/* <inView
         as="div"
         onChange={(inView, entry) => console.log("inView", inView)}
         className="in-view"
       >
         <div className="wrapper">
-          <div className="left-side-img">
-            <MyImage
-              src={photo}
-              alt={"my image"}
-              width={400}
-              height={600}
-              //containerRef={ref}
-              isVisible={inView}
-            />
-          </div>
+          
           <div className="right-side-info">
             <h2 ref={ref} className={inView && "scroll-down"}>
               About me
             </h2>
             <div className="info-container">
               <div className="info-navigator">
-                {/* <button className="info-btn" onClick={infoSectionHandler}>
-              Introducion
-            </button>
-            <button className="hobbies-btn" onClick={infoSectionHandler}>
-              Hobbies
-            </button> */}
+            
                 <ul>
                   <li
                     className={
@@ -128,7 +121,37 @@ const About = () => {
         </div>
 
         
-      </inView>
+      </inView> */}
+      <div className="cube-wrapper">
+        <div className="about-heading-text">
+          <h2>MyCube</h2>
+          <p>Swipe and click to know be better!</p>
+        </div>
+        <Swiper
+          effect={"cube"}
+          grabCursor={true}
+          cubeEffect={{
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94,
+          }}
+          pagination={true}
+          modules={[EffectCube, Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <Blob text="Who am I?"/>
+          </SwiperSlide>
+          <SwiperSlide>
+          <Blob text="Education"/>
+          </SwiperSlide>
+          <SwiperSlide>
+          <Blob text="Hobbies"/>
+          </SwiperSlide>
+          
+        </Swiper>
+      </div>
     </section>
   );
 };

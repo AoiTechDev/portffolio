@@ -21,9 +21,10 @@ const ProjectCard = ({ name, id }) => {
         <h5>Click here to get more informations about:</h5>
         <ul className="card-project-info-list">
           <li>Project description</li>
-          <li>What i did in project</li>
-          <li>Technologies i used</li>
+          <li>Work I did</li>
+          <li>Technologies</li>
         </ul>
+        <h3>Hover me!</h3>
         {/* <p>Project description</p>
         <p>What i did in project</p>
         <p>Technologies i used</p> */}
