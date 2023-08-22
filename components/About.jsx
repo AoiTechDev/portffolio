@@ -13,6 +13,7 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import { EffectCube, Pagination } from "swiper/modules";
 import Blob from "./blob/Blob";
+import CloseMenu from "./menu/CloseMenu";
 
 const About = () => {
   const [infoSection, setInfoSection] = useState("introduction");
@@ -42,6 +43,22 @@ const About = () => {
     threshold: 1.0,
     triggerOnce: true,
   });
+  const showContent = (e) => {
+    const ball = document.querySelector(".bouncing-ball");
+    ball.classList.add("start-bouncing");
+    const content = document.querySelector(".about-content-wrapper");
+    content.classList.add("expand-content");
+    const hiddenContent = document.querySelector('.hidden-content')
+    hiddenContent.classList.add('show-content')
+  };
+  const hideContent = (e) => {
+    const content = document.querySelector(".about-content-wrapper");
+    content.classList.remove("expand-content");
+    const hiddenContent = document.querySelector('.hidden-content')
+    hiddenContent.classList.remove('show-content')
+    const ball = document.querySelector(".bouncing-ball");
+    ball.classList.remove("start-bouncing");
+  };
   return (
     <section id="about">
       {/* <Stars/> */}
@@ -124,9 +141,14 @@ const About = () => {
       </inView> */}
       <div className="cube-wrapper">
         <div className="about-heading-text">
-          <h2>MyCube</h2>
-          <p>Swipe and click to know be better!</p>
+          <h2 ref={ref} className={inView && "scroll-left"}>
+            MyCube
+          </h2>
+          <p ref={ref} className={inView && "scroll-right"}>
+            Swipe and click to know be better!
+          </p>
         </div>
+
         <Swiper
           effect={"cube"}
           grabCursor={true}
@@ -138,20 +160,46 @@ const About = () => {
           }}
           pagination={true}
           modules={[EffectCube, Pagination]}
-          className="mySwiper"
+          className={inView && "scroll-typing"}
+          id="mycube"
         >
-          <SwiperSlide>
-            <Blob text="Who am I?"/>
+          <SwiperSlide onClick={showContent}>
+            <Blob text="Who am I?" />
           </SwiperSlide>
           <SwiperSlide>
-          <Blob text="Education"/>
+            <Blob text="Education" />
           </SwiperSlide>
           <SwiperSlide>
-          <Blob text="Hobbies"/>
+            <Blob text="Hobbies" />
           </SwiperSlide>
-          
         </Swiper>
       </div>
+      <div className="bouncing-ball"></div>
+      <div className="about-content-wrapper">
+        <div className="hidden-content">
+          <CloseMenu
+            style={{
+              background: "white",
+            }}
+            onClick={hideContent}
+          />
+        </div>
+      </div>
+      {/* <div className="about-content-wrapper">
+          <button >cofnij</button>
+          <h2>Who am I?</h2>
+          <p>
+            is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy text ever since the
+            1500s, when an unknown printer took a galley of type and scrambled
+            it to make a type specimen book. It has survived not only five
+            centuries, but also the leap into electronic typesetting, remaining
+            essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more
+            recently with desktop publishing software like Aldus PageMaker
+            including versions of Lorem Ipsum
+          </p>
+        </div> */}
     </section>
   );
 };

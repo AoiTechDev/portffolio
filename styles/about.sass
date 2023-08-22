@@ -8,15 +8,38 @@
     height: 100vh
     color: #{$grey}
     box-shadow: #{$edgeShadow}
-
+    position: relative
     @include flexbox(center,center)
-    flex-direction: column
+    .bouncing-ball
+        width: 50px
+        height: 50px
+        background: red
+        position: absolute
+        top: 130px
+        border-radius: 50%
+        z-index: 10
+        opacity: 0
+    .about-content-wrapper
+        width: 50px
+        height: 50px
+        position: absolute
+        border-radius: 50%
+        //@include flexbox(center,space-evenly)
+        display: none
+        // position: absolute
+        // flex-direction: column
+        // padding: 3rem
+        backdrop-filter: blur(40px)
+        visibility: hidden
+        z-index: 11
+        
+        
     .swiper
         width: 300px
         height: 300px
-        
+
     .swiper-slide
-        
+
         --border-width: 3px
         @include flexbox(center,center)
         position: relative
@@ -25,7 +48,7 @@
         width: 300px
         height: 300px
         border-radius: var(--border-width)
-
+        
         &::after
             position: absolute
             content: ""
@@ -51,9 +74,16 @@
         height: 70%
         @include flexbox(center,space-evenly)
         flex-direction: column
+
         .about-heading-text
             @include flexbox(center,center)
             flex-direction: column
+            gap: 20px
+            h2
+                opacity: 0
+            p
+                opacity: 0
+    
 //     .wrapper
 //         @include flexbox(center,center)
 //         flex-direction: row
@@ -168,3 +198,47 @@
 @keyframes moveGradient
     50%
         background-position: 100% 50%
+.start-bouncing
+    animation: bouncing 1s ease-in
+    animation-fill-mode: both
+    opacity: 1
+@keyframes bouncing
+    from
+        transform: translate3d(0,0,0)
+        opacity: 1
+    70%
+        transform: translate3d(0,650%,0)
+        opacity: 1
+    90%
+        transform: translate3d(0,600%,0)
+        opacity: 1
+    100%
+        transform: translate3d(0,650%,0)
+        opacity: 0
+
+.expand-content
+    display: flex !important
+    border-radius: 1rem !important
+    animation: expand 0.5s
+    animation-delay: 1.05s
+    animation-fill-mode: both
+    box-shadow: 5px 5px 10px 10px black
+@keyframes expand
+    from
+        width: 50px
+        height: 50px
+        
+    to
+        width: 50%
+        height: 60%
+        visibility: visible
+
+.hidden-content
+    visibility: hidden
+.show-content
+    animation: showContent 0.1s
+    animation-delay: 1.6s
+    animation-fill-mode: both
+@keyframes showContent
+    to
+        visibility: visible
