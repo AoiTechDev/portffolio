@@ -1,0 +1,25 @@
+import React from "react";
+import CloseMenu from "../menu/CloseMenu";
+import Line from "../line/Line";
+import { myData } from "./aboutMeData";
+import Education from "./Education";
+const HiddenContent = ({ onClick, contentId }) => {
+  return (
+    <div className="hidden-content">
+      <CloseMenu
+        style={{
+          background: "white",
+        }}
+        onClick={onClick}
+      />
+      <h2>{myData.map((data) => contentId === data.id && data.title)}</h2>
+      <Line
+        style={{
+          width: "60%",
+        }}
+      />
+      {myData.map((data) => contentId === data.id && data.content)}
+    </div>
+  );
+};
+export default HiddenContent;
