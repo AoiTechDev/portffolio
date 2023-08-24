@@ -1,4 +1,5 @@
 import Education from "./Education";
+import Hobbies from "./Hobbies";
 export const myData = [
   {
     id: "whoami",
@@ -20,7 +21,7 @@ export const myData = [
   {
     id: "hobbies",
     title: "Hobbies",
-    content: <Education/>,
+    content: <Hobbies/>,
 
   },
 ];

@@ -273,3 +273,12 @@
         @include flexbox(center,center)
         font-size: calc(10px + 0.390625vw)
         
+.hobbies-wrapper
+    @extend .education-wrapper
+    flex-direction: column
+    .hobbies-icon-wrapper
+        width: 100%
+        @include flexbox(center,space-evenly)
+    p
+        padding: 0 2rem 0 2rem
+        font-size: calc(12px + 0.390625vw)
