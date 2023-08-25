@@ -1,8 +1,5 @@
 @import 'variables'
 @import 'mixin'
-// .fixed
-//     position: fixed
-//     width: 97%
 
 nav
 
@@ -16,7 +13,10 @@ nav
         @include flexbox(center,space-between)
         width: 100%
         padding: 0.5rem
-
+        .logo
+            @media screen and (max-width: #{$medium})
+                width: 160px
+                height: 40px
     @media screen and (max-width: 950px)
         backdrop-filter: none
         box-shadow: none

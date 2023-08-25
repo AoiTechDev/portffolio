@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <nav>
       <div className="navbar-wrapper">
-        <Image src={logo} width={200} height={50} />
+        <Image src={logo} width={200} height={50} className="logo"/>
 
         <Navlist />
       </div>
