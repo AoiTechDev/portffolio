@@ -6,34 +6,25 @@
     @include flexbox(center,center)
     height: 100%
     width: 100%
-   
-    
     position: relative
     .landpage-content-wrapper
-        
         width: 60%
         height: 50%
-        @include flexbox(center, space-around)
-        flex-direction: column
-    .my-name
-        //background-color: red
-        align-self: start
-       
-        flex-direction: column
-       
-        gap: 0.6rem
-
+        @include flexbox(center, space-evenly)
         
+    .my-name
+        
+        flex-direction: column
+        gap: 0.6rem
         h1
-
             font-weight: 400
             animation: fadeInLeft 1s
+            font-size: calc(2.5rem + 0.390625vw)
             &:nth-child(1)::first-letter
-                font-size: calc(50px + 0.390625vw)
+                font-size: calc(3rem + 0.390625vw)
                 text-shadow: 0 0 10px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 150px #{$orange}
 
         h3
-
             animation: fadeInLeft 1s
             animation-fill-mode: backwards
             animation-delay: 1s
@@ -45,9 +36,8 @@
         animation-fill-mode: backwards
         animation-delay: 2s
 
-    
     .motiv-text
-       
+
         gap: 1rem
         align-self: end
 
@@ -58,37 +48,31 @@
             animation: fadeInDown 1s
 
         .limit
-           
 
             letter-spacing: 0.2rem
             white-space: nowrap
             animation: fadeR 2s
-
-
 
 @media screen and (max-width: #{$large})
     .landpage
         color: red
         .landpage-content-wrapper
             width: 70%
-    
+
 @media screen and (max-width: #{$tabletLandscape})
-   
 
 @media screen and (max-width: #{$smallTabletLandscape})
-    
 
-        
 @media screen and (max-width: #{$medium})
     .landpage
         color: green
         .landpage-content-wrapper
             width: 100%
             padding: 2rem
-       
+
 @media screen and (max-width: #{$mobileLandscape})
     .landpage
-        
+
         .my-name
             @include flexbox(center,center)
             h1
@@ -100,17 +84,15 @@
             align-self: center
             text-align: center
             font-size: calc(10px + 0.390625vw)
-                
 
 @media only screen and (max-height: 575.98px) and (orientation: landscape)
     .landpage
-        
-        
+
         .my-name
-            
+
             align-self: start
         .motiv-text
-            
+
             font-size: calc(10px + 0.390625vw)
         .introducer
             .arrow-container
@@ -121,11 +103,7 @@
                 transform: scale(1)
             h2
                 display: none
-                
-            
-                
 
     // .motiv-text
     //     padding-right: 2rem
     //     padding-left: 2rem
-
