@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import About from "@src/pages/About";
 import Contact from "@src/pages/Contact";
 import Footer from "@components/Footer";
@@ -8,7 +8,7 @@ import Header from "@src/pages/LandPage";
 
 import Menu from "@components/menu/Menu";
 import Nav from "@components/Nav";
-import React,{useState} from 'react'
+import React, { useState } from "react";
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,12 +17,12 @@ const Home = () => {
   };
 
   return (
-    <>
+    <main className="app">
       <div id="burger-menu-open" onClick={menuOpenHandler}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <Nav menuOpenHandler={menuOpenHandler} />
       {isMenuOpen && <Menu menuOpenHandler={menuOpenHandler} />}
       <Header />
@@ -31,7 +31,7 @@ const Home = () => {
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </main>
   );
 };
 

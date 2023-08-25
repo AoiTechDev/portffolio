@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import myphoto from "../../assets/images/myphoto.png";
-import "@styles/header.sass";
+import "@styles/landpage.sass";
 import "animate.css";
 import Link from "next/link";
 import "@styles/arrows/arrows.sass";
@@ -9,7 +9,7 @@ import Arrows from "../../components/visual_components/arrows/Arrows";
 
 const Header = () => {
   return (
-    <section className="landpage">
+    <section id="landpage">
       <div className="landpage-content-wrapper">
         <div className="my-name">
           <h1>

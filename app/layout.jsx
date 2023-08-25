@@ -4,7 +4,7 @@ const RootLayout = ({ children }) => {
   return (
     <html>
       <body>
-        <main className="app">{children}</main>
+        {children}
       </body>
     </html>
   );

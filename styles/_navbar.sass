@@ -11,10 +11,10 @@ nav
     transform: translate(-50%)
     backdrop-filter: blur(10px)
     z-index: 999
-
+    width: 90%
     .navbar-wrapper
-        @include flexbox(center,end)
-
+        @include flexbox(center,space-between)
+        width: 100%
         padding: 0.5rem
 
     @media screen and (max-width: 950px)
