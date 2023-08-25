@@ -5,21 +5,24 @@
 //     width: 97%
 
 nav
-    padding: 2rem
-    @include flexbox(center,end)
-    position: sticky
-    top: 0
-    height: 10vh
-    backdrop-filter: blur(10px)  
+
+    position: fixed
+    left: 50%
+    transform: translate(-50%)
+    backdrop-filter: blur(10px)
     z-index: 999
-    box-shadow: #{$navShadowOutside}
+
+    .navbar-wrapper
+        @include flexbox(center,end)
+
+        padding: 0.5rem
+
     @media screen and (max-width: 950px)
         backdrop-filter: none
         box-shadow: none
         .nav-list
             display: none
             background-color: blue
-   
 
     @include flexbox(center, end)
 

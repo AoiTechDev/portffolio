@@ -1,25 +1,36 @@
-
-import About from "@components/About";
-import Contact from "@components/Contact";
+'use client'
+import About from "@src/pages/About";
+import Contact from "@src/pages/Contact";
 import Footer from "@components/Footer";
-import Projects from "@components/Projects";
-import Skills from "@components/Skills";
-import Header from "@components/introduce/Header";
-import React from "react";
+import Projects from "@src/pages/Projects";
+import Skills from "@src/pages/Skills";
+import Header from "@src/pages/LandPage";
 
+import Menu from "@components/menu/Menu";
+import Nav from "@components/Nav";
+import React,{useState} from 'react'
 const Home = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuOpenHandler = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <>
-      <main>
-        <Header/>
-      </main>
-      <About/>
-      {/* <section className="skills"></section>
-      <section className="projects"></section> */}
+      <div id="burger-menu-open" onClick={menuOpenHandler}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      <Nav menuOpenHandler={menuOpenHandler} />
+      {isMenuOpen && <Menu menuOpenHandler={menuOpenHandler} />}
+      <Header />
+      <About />
       <Skills />
       <Projects />
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </>
   );
 };

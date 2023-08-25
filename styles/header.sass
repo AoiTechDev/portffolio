@@ -1,24 +1,29 @@
 @import 'variables'
 @import 'mixin'
 @import 'keyframes'
-.header
+.landpage
     color: #{$grey}
-    @include flexbox(center,space-evenly)
+    @include flexbox(center,center)
     height: 100%
     width: 100%
-    flex-direction: column
-    padding-right: 15rem
-    padding-left: 15rem
+   
+    
     position: relative
+    .landpage-content-wrapper
+        
+        width: 60%
+        height: 50%
+        @include flexbox(center, space-around)
+        flex-direction: column
     .my-name
         //background-color: red
-
-        @include flexbox(left,top)
+        align-self: start
+       
         flex-direction: column
-        align-self: flex-start
+       
         gap: 0.6rem
 
-        width: 100%
+        
         h1
 
             font-weight: 400
@@ -42,10 +47,9 @@
 
     
     .motiv-text
-        @include flexbox(center, end)
-        flex-direction: column
+       
         gap: 1rem
-        align-self: flex-end
+        align-self: end
 
         h3
 
@@ -54,7 +58,7 @@
             animation: fadeInDown 1s
 
         .limit
-            width: 100%
+           
 
             letter-spacing: 0.2rem
             white-space: nowrap
@@ -63,35 +67,27 @@
 
 
 @media screen and (max-width: #{$large})
-    .header
-        
-        padding-right: 7rem
-        padding-left: 7rem
-
-@media screen and (max-width: #{$large})
-    main
-        height: 100%
-
+    .landpage
+        color: red
+        .landpage-content-wrapper
+            width: 70%
+    
 @media screen and (max-width: #{$tabletLandscape})
-    .header
-        
-        padding-right: 5rem
-        padding-left: 5rem
+   
 
 @media screen and (max-width: #{$smallTabletLandscape})
-    .header
-        
-        padding-right: 7rem
-        padding-left: 7rem
+    
 
         
 @media screen and (max-width: #{$medium})
-    .header
-        
-        padding-right: 2rem
-        padding-left: 2rem
+    .landpage
+        color: green
+        .landpage-content-wrapper
+            width: 100%
+            padding: 2rem
+       
 @media screen and (max-width: #{$mobileLandscape})
-    .header
+    .landpage
         
         .my-name
             @include flexbox(center,center)
@@ -107,7 +103,7 @@
                 
 
 @media only screen and (max-height: 575.98px) and (orientation: landscape)
-    .header
+    .landpage
         
         
         .my-name

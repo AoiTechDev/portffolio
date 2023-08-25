@@ -1,17 +1,13 @@
-import css_icon from "../assets/icons/technology/css-icon.png";
-import react_icon from "../assets/icons/technology/react-icon.png";
-import js_icon from "../assets/icons/technology/js-icon.png";
-import html_icon from "../assets/icons/technology/html-icon.png";
-import node_icon from "../assets/icons/technology/node-icon.png";
-import sass_icon from "../assets/icons/technology/sass-icon.png";
+import css_icon from "@assets/icons/technology/css-icon.png";
+import react_icon from "@assets/icons/technology/react-icon.png";
+import js_icon from "@assets/icons/technology/js-icon.png";
+import html_icon from "@assets/icons/technology/html-icon.png";
+import node_icon from "@assets/icons/technology/node-icon.png";
+import sass_icon from "@assets/icons/technology/sass-icon.png";
 
-import vscode_icon from "../assets/icons/tools/vscode-icon.png";
-import git_icon from "../assets/icons/tools/git-icon.png";
-import github_icon from "../assets/icons/tools/github-icon.png";
-
-import next_icon from "../assets/icons/learning/next-icon.png";
-import ts_icon from "../assets/icons/learning/ts-icon.png";
-import redux_icon from "../assets/icons/learning/redux-icon.png";
+import next_icon from "@assets/icons/learning/next-icon.png";
+import ts_icon from "@assets/icons/learning/ts-icon.png";
+import redux_icon from "@assets/icons/learning/redux-icon.png";
 
 export const diploma_work = {
   title:

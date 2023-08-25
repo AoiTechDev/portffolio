@@ -1,17 +1,12 @@
 import Navlist from "./navlist/Navlist";
 
-const Nav = ({ menuOpenHandler }) => {
+const Nav = () => {
   return (
-    
-      <nav>
+    <nav>
+      <div className="navbar-wrapper">
         <Navlist />
-        <div id="burger-menu-open" onClick={menuOpenHandler}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    
+      </div>
+    </nav>
   );
 };
 

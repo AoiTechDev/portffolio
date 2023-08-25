@@ -1,7 +1,7 @@
 import React from 'react'
 import '@styles/styles.sass'
 import Image from 'next/image'
-import leaf from '../../assets/icons/leaf_icon.png'
+import leaf from '@assets/icons/leaf_icon.png'
 const Line = ({style}) => {
   return (
     <div className="line-container" style={style}>

@@ -29,8 +29,8 @@ const ProjectCard = ({ name, id }) => {
         <p>What i did in project</p>
         <p>Technologies i used</p> */}
       </div>
-      <div class="blob"></div>
-      <div class="blob"></div>
+      <div className="blob"></div>
+      <div className="blob"></div>
       
       
     </div>

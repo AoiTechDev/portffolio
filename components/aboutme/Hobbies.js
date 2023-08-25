@@ -5,7 +5,7 @@ import development_icon from "../../assets/icons/hobbies/development_icon.png";
 import games_icon from "../../assets/icons/hobbies/games_icon.png";
 import gym_icon from "../../assets/icons/hobbies/gym_icon.png";
 import painting_icon from "../../assets/icons/hobbies/painting_icon.png";
-import Line from "@components/line/Line";
+import Line from "@components/visual_components/line/Line";
 const Hobbies = () => {
   return (
     <div className="hobbies-wrapper">

@@ -2,24 +2,19 @@ import React from "react";
 import "animate.css";
 import CloseMenu from "@components/menu/CloseMenu";
 import {
-  CssIcon,
-  ReactIcon,
-  JsIcon,
-  HtmlIcon,
-  NodeIcon,
   GithubIcon,
   CustomIcon,
-} from "../images/icons/Icons";
+} from "@components/images/icons/Icons";
 import { useInView } from "react-intersection-observer";
-import Line from "@components/line/Line";
-import { diploma_work } from "../../projects_data/data";
+import Line from "@components/visual_components/line/Line";
+import { diploma_work } from "@components/projects/projects_data/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/hash-navigation";
 import { Navigation } from "swiper/modules";
 import "@styles/skills.sass";
 
-import SlideArrow from "@components/arrows/SlideArrow";
+import SlideArrow from "@components/visual_components/arrows/SlideArrow";
 
 import ProjectContent from "./project_content/ProjectContent";
 const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {

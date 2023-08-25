@@ -1,12 +1,12 @@
 "use client";
 
 import "@styles/skills.sass";
-import Arrows from "./arrows/Arrows";
+import Arrows from "../../components/visual_components/arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/hash-navigation";
-import { HardSkills, SoftSkills } from "./skills/SkillsComponent";
+import { HardSkills, SoftSkills } from "../../components/skills/SkillsComponent";
 import { useInView } from "react-intersection-observer";
 //import 'swiper/swiper.min.css'
 

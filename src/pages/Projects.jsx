@@ -1,19 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import "@styles/projects.sass";
-import Arrows from "./arrows/Arrows";
+import Arrows from "../../components/visual_components/arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import ProjectCard from "./projectsCards/ProjectCard";
-import { useInView } from "react-intersection-observer";
+import ProjectCard from "@components/projects/projectsCards/ProjectCard";
+
 import "@styles/about.sass";
-import diplomaWork from "../assets/images/first_loaded.png";
-import myApp from "../assets/images/my_app.jpg";
-import ProjectInfo from "./projectsCards/ProjectInfo";
-import { project_data } from "../projects_data/data";
+import ProjectInfo from "@components/projects/projectsCards/ProjectInfo";
+import { project_data } from "@components/projects/projects_data/data";
 const Projects = () => {
   const [projectInfo, setProjectInfo] = useState(false);
   const [cardId, setCardId] = useState("diploma");

@@ -1,25 +1,18 @@
 "use client";
-import "../styles/about.sass";
-import { useState, useEffect, useRef } from "react";
-import photo from "../assets/images/myphoto.png";
-import MyImage from "./images/MyImage";
-
+import "@styles/about.sass";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import Arrows from "./arrows/Arrows";
-import { Stars } from "./stars/Stars";
+import Arrows from "../../components/visual_components/arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import { EffectCube, Pagination } from "swiper/modules";
-import Blob from "./blob/Blob";
-import CloseMenu from "./menu/CloseMenu";
-
-import HiddenContent from "./aboutme/HiddenContent";
+import Blob from "../../components/visual_components/blob/Blob";
+import HiddenContent from "../../components/aboutme/HiddenContent";
 
 const About = () => {
-  
-  const [contentId, setContentId] = useState('') 
+  const [contentId, setContentId] = useState("");
   const { ref, inView, entry } = useInView({
     /* Optional options */
     root: null,
@@ -34,7 +27,7 @@ const About = () => {
     content.classList.add("expand-content");
     const hiddenContent = document.querySelector(".hidden-content");
     hiddenContent.classList.add("show-content");
-    setContentId(e.currentTarget.id)
+    setContentId(e.currentTarget.id);
   };
   const hideContent = (e) => {
     const content = document.querySelector(".about-content-wrapper");
@@ -44,7 +37,7 @@ const About = () => {
     const ball = document.querySelector(".bouncing-ball");
     ball.classList.remove("start-bouncing");
   };
-  console.log(contentId)
+
   return (
     <section id="about">
       <div className="cube-wrapper">
@@ -85,9 +78,13 @@ const About = () => {
       <div className="bouncing-ball"></div>
 
       <div className="about-content-wrapper">
-        <HiddenContent onClick={hideContent} contentId={contentId}/>
+        <HiddenContent onClick={hideContent} contentId={contentId} />
       </div>
-      <Arrows section={'#skills'} headingText={'Allow me to present my skills :)'} bottom={'1rem'} />
+      <Arrows
+        section={"#skills"}
+        headingText={"Allow me to present my skills :)"}
+        bottom={"1rem"}
+      />
     </section>
   );
 };

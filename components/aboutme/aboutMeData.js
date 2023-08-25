@@ -4,24 +4,24 @@ export const myData = [
   {
     id: "whoami",
     title: "Who am I?",
-    content:
-      <p>I am a freshman student specializing in front-end development. My
-        passion for creating aesthetically pleasing interfaces combined with my 
-        programming skills allows me to pursue the field I've always wanted. My
-        background in drawing and painting adds creativity and attention to
-        detail to my work. My ambition is to become an expert in front-end
-        development, constantly evolving and transforming my vision into
-        functional and beautiful designs.</p>,
+    content: (
+      <p>
+        As a recently graduated student pursuing front-end development, I
+        combine my artistic background with programming skills to create
+        aesthetically pleasing, detailed interfaces. My ambition is to
+        constantly evolve as an expert, transforming my vision into functional,
+        beautiful designs.
+      </p>
+    ),
   },
   {
     id: "education",
     title: "Education",
-    content: <Education/>,
+    content: <Education />,
   },
   {
     id: "hobbies",
     title: "Hobbies",
-    content: <Hobbies/>,
-
+    content: <Hobbies />,
   },
 ];

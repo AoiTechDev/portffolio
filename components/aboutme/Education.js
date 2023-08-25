@@ -21,11 +21,11 @@ const Education = () => {
         </div>
       </div>
       <div className="education-content">
-        I have a general knowledge of computer science, covering a variety of
-        programming languages and technologies. I have actively participated in
-        team projects, gaining experience in the development and management of
-        such projects, which has allowed me to learn their entire architecture
-        and planning process.
+        I have a broad knowledge of computer science, covering various
+        programming languages, technologies, and algorithms. By actively
+        participating in team projects, I've gained experience in development
+        and management, learning architectural planning and effective
+        problem-solving skills in the process.
       </div>
     </div>
   );
