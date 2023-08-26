@@ -2,13 +2,16 @@
 .gooey
     background-image: linear-gradient(120deg, rgba(0,67,255,.55) 30%, #{$orange} 100%)
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%
-    width: 150px 
+    width: 150px
     height: 144px
+
     animation: morph 3s linear infinite
     transform-style: preserve-3d
     outline: 1px solid transparent
     will-change: border-radius
-    
+    @media screen and (max-width: #{$medium})
+        width: 120px
+        height: 114px
 .gooey:before,
 .gooey:after
     content: ''
@@ -16,7 +19,7 @@
     height: 100%
     display: block
     position: absolute
-    left: 0 
+    left: 0
     top: 0
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%
     box-shadow: 5px 5px 89px rgba(0, 102, 255, 0.21)

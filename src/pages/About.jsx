@@ -45,9 +45,9 @@ const About = () => {
           <h2 ref={ref} className={inView && "scroll-left"}>
             MyCube
           </h2>
-          <p ref={ref} className={inView && "scroll-right"}>
+          <h4 ref={ref} className={inView && "scroll-right"}>
             Swipe and click to know be better!
-          </p>
+          </h4>
         </div>
 
         <Swiper

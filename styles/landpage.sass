@@ -34,7 +34,7 @@
                 animation: fadeInLeft 1s
                 font-size: calc(2rem + 0.390625vw)
                 &:nth-child(1)::first-letter
-                    font-size: calc(3rem + 0.390625vw)
+                    font-size: calc(2.5rem + 0.390625vw)
                     text-shadow: 0 0 10px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 150px #{$orange}
 
             h3
@@ -42,29 +42,12 @@
                 animation-fill-mode: backwards
                 animation-delay: 1s
                 font-weight: 400
+            h4
+                animation: fadeInRight 1s
+                animation-fill-mode: backwards
+                animation-delay: 1s
+                font-weight: 300
 
-    p
-        font-size: calc(10px + 0.390625vw)
-        animation: fadeInLeft 1s
-        animation-fill-mode: backwards
-        animation-delay: 2s
-
-    .motiv-text
-
-        gap: 1rem
-        align-self: end
-
-        h3
-
-            text-shadow: 0 0 10px #{$grey},0 0 35px #{$blue},0 0 40px #{$blue},0 0 50px #{$blue},0 0 80px #{$blue}, 0 0 150px #{$blue}
-            //text-shadow: 0 0 10px #fff,0 0 20px #fff,0 0 80px #228DFF,0 0 100px #228DFF,0 0 150px #228DFF
-            animation: fadeInDown 1s
-
-        .limit
-
-            letter-spacing: 0.2rem
-            white-space: nowrap
-            animation: fadeR 2s
 
 
 @media screen and (max-width: #{$tabletLandscape})

@@ -1,26 +1,24 @@
 @import '../mixin'
 @import '../variables'
 .introducer
-   
-    
+
     @include flexbox(center,center)
     flex-direction: column
-    gap: 10px
-    
-    
+    gap: 5px
+
     position: absolute
     bottom: 1rem
     @media screen and (max-width: 950px)
         left: auto !important
         right: auto !important
         bottom: 2rem !important
-    h3
+    h4
         font-weight: 400
         animation: fadeInLeft 1s
         animation-fill-mode: backwards
         animation-delay: 1s
         will-change: transform
-        font-size: calc(14px + 0.390625vw)
+        font-size: calc(12px + 0.390625vw)
     .arrow-container
 
         @include flexbox(start,center)
@@ -28,13 +26,13 @@
 
         animation: fadeInLeft 1s
         animation-fill-mode: backwards
-        animation-delay: 2s
+        animation-delay: 1s
         will-change: transform
         width: 80px
         height: 80px
-        
+
         border-radius: 50%
-        border: solid 1px #{$grey}
+
         overflow: hidden
         @media screen and (max-width: #{$tabletLandscape})
             width: 70px
@@ -42,7 +40,7 @@
         @media screen and (max-width: #{$medium})
             width: 60px
             height: 60px
-        
+
         &:hover
             box-shadow: 0 0 10px 5px #{$blue}, inset 0 0 10px 5px #{$orange}
     .arrow

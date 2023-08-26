@@ -7,7 +7,7 @@ nav
     left: 50%
     transform: translate(-50%)
     backdrop-filter: blur(10px)
-    z-index: 999
+    z-index: 100
     width: 90%
     .navbar-wrapper
         @include flexbox(center,space-between)
@@ -18,11 +18,11 @@ nav
                 width: 160px
                 height: 40px
     @media screen and (max-width: 950px)
-        backdrop-filter: none
+        
         box-shadow: none
         .nav-list
             display: none
-            background-color: blue
+           
 
     @include flexbox(center, end)
 

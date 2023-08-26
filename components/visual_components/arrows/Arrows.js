@@ -8,7 +8,7 @@ const Arrows = ({section, headingText, position, bottom}) => {
       left: position,
       bottom: bottom
     }}>
-      <h3>{headingText}</h3>
+      <h4>{headingText}</h4>
 
       <Link href={section} className="arrow-container">
         <span className="arrow a1"></span>

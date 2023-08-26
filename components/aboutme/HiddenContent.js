@@ -2,7 +2,6 @@ import React from "react";
 import CloseMenu from "../menu/CloseMenu";
 import Line from "../visual_components/line/Line";
 import { myData } from "./aboutMeData";
-import Education from "./Education";
 const HiddenContent = ({ onClick, contentId }) => {
   return (
     <div className="hidden-content">

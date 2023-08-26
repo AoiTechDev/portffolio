@@ -10,6 +10,9 @@
     box-shadow: #{$edgeShadow}
     position: relative
     @include flexbox(center,center)
+    // @media screen and (max-width: #{$smallTabletPortrait})
+    //     @include flexbox(start,center)
+        
     .bouncing-ball
         width: 50px
         height: 50px
@@ -25,22 +28,17 @@
         height: 50px
         position: absolute
         border-radius: 50%
-        //@include flexbox(center,space-evenly)
         display: none
-        // position: absolute
-        // flex-direction: column
-        // padding: 3rem
         backdrop-filter: blur(40px)
         visibility: hidden
         z-index: 11
-        
-        
     .swiper
         width: 300px
         height: 300px
-
+        @media screen and (max-width: #{$medium})
+            width: 200px
+            height: 200px
     .swiper-slide
-
         --border-width: 3px
         @include flexbox(center,center)
         position: relative
@@ -49,7 +47,9 @@
         width: 300px
         height: 300px
         border-radius: var(--border-width)
-
+        @media screen and (max-width: #{$medium})
+            width: 200px
+            height: 200px
         &::after
             position: absolute
             content: ""
@@ -67,103 +67,31 @@
         &::before
             position: absolute
             content: ""
-            width: 298px
-            height: 298px
+            width: calc(100% - 2px)
+            height: calc(100% - 2px)
+            
             background: #222
     .cube-wrapper
         width: 70%
         height: 70%
         @include flexbox(center,space-evenly)
         flex-direction: column
-        
+        @media screen and (max-width: #{$medium})
+            width: 80%
+        @media screen and (max-width: #{$smallTabletPortrait})
+            height: 50%
         .about-heading-text
             @include flexbox(center,center)
             flex-direction: column
             gap: 20px
-            
+            @media screen and (max-width: #{$smallTabletPortrait})
+                 gap: 10px
             h2
                 opacity: 0
-            p
+            h4
                 opacity: 0
-
-//     .wrapper
-//         @include flexbox(center,center)
-//         flex-direction: row
-//         height: 100%
-//     .left-side-img
-
-//         width: 100%
-//         position: relative
-//         @include flexbox(center,center)
-//         .my-image
-//             opacity: 0
-//             border-bottom-left-radius: 40%
-//             border-bottom-right-radius: 40%
-//             filter: drop-shadow(10px 2px 15px #{$blue}) brightness(70%)
-//     .right-side-info
-//         @include flexbox(center,space-evenly)
-//         flex-direction: column
-//         width: 100%
-//         height: 80%
-//         align-self: center
-//         position: relative
-//         h2
-//             opacity: 0
-//             font-weight: 400
-//             font-size: calc(20px + 0.390625vw)
-//             letter-spacing: 4px
-//             &::first-letter
-//                 font-size: calc(25px + 0.390625vw)
-//                 text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 100px #{$orange},0 0 150px #{$orange}
-//         .info-container
-
-//             width: 80%
-//             height: 30%
-//             .info-navigator
-//                 padding: 0.7rem
-//                 ul
-//                     @include flexbox(center, space-evenly)
-
-//                     li
-//                         list-style: none
-//                         cursor: pointer
-//                         position: relative
-//                         opacity: 0
-//                     li:not(.active)
-
-//                         &::before
-//                             content: attr(data-text)
-//                             position: absolute
-//                             color: var(--clr)
-//                             width: 0
-
-//                             overflow: hidden
-//                             transition: 0.3s
-//                         &:hover::before
-//                             width: 100%
-//                             background-color: transparent
-
-//         .info-content
-
-//             padding: 1rem
-//             font-weight: 300
-//             font-size: calc(14px + 0.390625vw)
-
-//             .introduction
-//                 opacity: 0
-// @media screen and (max-width: #{$medium})
-//     #about
-//         @include flexbox(center,center)
-//         flex-direction: column
-//         gap: 20px
-//         .right-side-info
-//             @include flexbox(center,center)
-//             gap: 20px
-
-//         .my-image
-//             width: 30%
-//         .wrapper
-//             flex-direction: column
+                font-weight: 400
+                text-align: center
 
 @media screen and (max-width: 400px ) and (max-height: 610px)
     #about
@@ -222,27 +150,58 @@
 .expand-content
     display: flex !important
     border-radius: 1rem !important
-    animation: expand 0.5s
+    animation: expandxlarge 0.5s
     animation-delay: 1.05s
     animation-fill-mode: both
     box-shadow: 10px 10px 10px black
-@keyframes expand
+    opacity: 0
+    @media screen and (max-width: #{$large})
+        animation: expandlarge 0.5s
+        animation-delay: 1.05s
+        animation-fill-mode: both
+    @media screen and (max-width: #{$medium})
+        animation: expandmedium 0.5s
+        animation-delay: 1.05s
+        animation-fill-mode: both
+@keyframes expandxlarge
     from
         width: 50px
         height: 50px
-
+         opacity: 0
     to
         width: 50%
-        height: 60%
+        height: 55%
         visibility: visible
+        opacity: 1
+
+@keyframes expandlarge
+    from
+        width: 50px
+        height: 50px
+            opacity: 0
+    to
+        width: 70%
+        height: 55%
+        visibility: visible
+        opacity: 1
+@keyframes expandmedium
+    from
+        width: 50px
+        height: 50px
+            opacity: 0
+    to
+        width: 100%
+        height: 55%
+        visibility: visible
+        opacity: 1
 
 .hidden-content
     visibility: hidden
     @include flexbox(center,space-evenly)
     flex-direction: column
-    padding: 2rem
+    padding: 0 2rem 0 2rem
     width: 100%
-    
+
     h2
         font-size: calc(20px + 0.390625vw)
     p
@@ -258,7 +217,7 @@
     @include flexbox(center,space-around)
     width: 100%
     height: 70%
-    
+
     .education-info
         @include flexbox(center,start)
         gap: 10px
