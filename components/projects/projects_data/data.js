@@ -9,13 +9,6 @@ import next_icon from "@assets/icons/learning/next-icon.png";
 import ts_icon from "@assets/icons/learning/ts-icon.png";
 import redux_icon from "@assets/icons/learning/redux-icon.png";
 
-export const diploma_work = {
-  title:
-    "Web application to collect, present and process information and statistics from the game World of Warcraft",
-  description:
-    "The application allows users to search for any character or guild and display all relevant information about them in a simple and clear way. It uses appropriate queries to an external API provided by the game developers.",
-  github: "https://github.com/BorPawel/praca-inz",
-};
 
 export const project_data = [
   {
@@ -24,8 +17,14 @@ export const project_data = [
     title:
       "Web application to collect, present and process information and statistics from the game World of Warcraft",
     description:
-      "The application allows users to search for any character or guild and display all relevant information about them in a simple and clear way. It uses appropriate queries to an external API provided by the game developers.",
-    spec: "Using the ExpressJs framework, I created customized endpoints to retrieve data from an external application programming interface (API). In response to the limitations on the number of queries per second imposed by the game's developers, I implemented a suitable control mechanism to adhere to these guidelines. Using asynchronicity, I split the code in a way that allows independent loading of data for each section, reducing the time the user has to wait for the full pool of information to be retrieved.",
+      "The application allows users to search for any character or guild and display all relevant information about them in a simple and clear way. \
+      It uses appropriate queries to an external API provided by the game developers.",
+    // spec: "Using the ExpressJs framework, I created customized endpoints to retrieve data from an external application programming interface (API).\
+    //  In response to the limitations on the number of queries per second imposed by the game's developers, I implemented a suitable control\
+    //   mechanism to adhere to these guidelines. Using asynchronicity, I split the code in a way that allows independent\
+    //    loading of data for each section, reducing the time the user has to wait for the full pool of information to be retrieved.",
+    spec: "I used ExpressJs to create custom endpoints to get data from an API. To adhere to rate limits, I implemented controls\
+     on queries per second. With asynchronous code, I split data loading by section to reduce wait times.",
     github: "https://github.com/BorPawel/praca-inz",
     tech: [react_icon, js_icon, css_icon, html_icon, node_icon],
   },
@@ -34,8 +33,10 @@ export const project_data = [
     name: "Personal portfolio",
     title: "Personal portfolio",
     description:
-      "This website is a reflection of my identity and my abilities. Here I try to present myself authentically and to reflect both my programming skills and my sense of aesthetics. My goal in creating this website was to highlight the passion and dedication I put into every detail.",
-    spec: "I created a unique user interface, relying on my own sense of aesthetics and creativity. I guaranteed optimal responsiveness of the site, ensuring that it works on a variety of devices.",
+      "This website is a reflection of my identity and my abilities. Here I try to present myself authentically and to reflect both my \
+       programming skills and my sense of aesthetics. My goal in creating this website was to highlight the passion and dedication I put into every detail.",
+    spec: "I created a unique user interface, relying on my own sense of aesthetics and creativity. I guaranteed optimal\
+     responsiveness of the site, ensuring that it works on a variety of devices.",
     github: "https://github.com/BorPawel/portffolio",
     tech: [next_icon, js_icon, sass_icon, css_icon, html_icon],
   },

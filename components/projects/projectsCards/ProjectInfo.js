@@ -1,10 +1,7 @@
 import React from "react";
 import "animate.css";
 import CloseMenu from "@components/menu/CloseMenu";
-import {
-  GithubIcon,
-  CustomIcon,
-} from "@components/images/icons/Icons";
+import { GithubIcon, CustomIcon } from "@components/images/icons/Icons";
 import { useInView } from "react-intersection-observer";
 import Line from "@components/visual_components/line/Line";
 import { diploma_work } from "@components/projects/projects_data/data";
@@ -114,18 +111,20 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
           ref={ref}
           animationDelay={"4s"}
         />
-        <a
-          href={diploma_work.github}
-          className={inView ? "icon scroll-right" : "icon"}
-          ref={ref}
-          style={{
-            animationDelay: "4s",
-          }}
-          data-text="Github"
-          target="_blank"
-        >
-          Github
-        </a>
+        {projectData.map((project) => project.id === cardId && (
+          <a
+            href={project.github}
+            className={inView ? "icon scroll-right" : "icon"}
+            ref={ref}
+            style={{
+              animationDelay: "4s",
+            }}
+            data-text="Github"
+            target="_blank"
+          >
+            Github
+          </a>
+        ))}
       </div>
     </div>
   );
