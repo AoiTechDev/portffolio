@@ -7,6 +7,7 @@ import Link from "next/link";
 import "@styles/arrows/arrows.sass";
 import Arrows from "../../components/visual_components/arrows/Arrows";
 import DevSVG from "@assets/icons/animation/dev_animation.svg";
+import devImg from '@assets/images/dev_img.svg'
 const Header = () => {
   return (
     <section id="landpage">
@@ -23,7 +24,7 @@ const Header = () => {
         </div>
 
         <Image
-          src={DevSVG}
+          src={devImg}
           width={300}
           height={300}
           className="svg-animation"
