@@ -38,27 +38,30 @@
         position: relative
         list-style: none
         margin: $margin
-        .link-a
+        
+        .chakra-link
+            
             position: relative
             text-transform: uppercase
             letter-spacing: 2px
             cursor: pointer
             text-decoration: none
             color: $color
-
+            
             &::before
                 content: attr(data-text)
                 position: absolute
                 color: var(--clr)
                 width: 0
+                height: 100%
                 overflow: hidden
                 transition: 1s
                 border-right: 4px solid var(--clr)
                 -webkit-text-stroke: 1px var(--clr)
-
+                
             &:hover::before
                 width: 100%
-
+                
                 filter: -webkit-drop-shadow(0 0 10px var(--clr))
                 filter: -o-drop-shadow(0 0 10px var(--clr))
                 filter: -moz-drop-shadow(0 0 10px var(--clr))

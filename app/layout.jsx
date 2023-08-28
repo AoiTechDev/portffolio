@@ -1,10 +1,11 @@
 import "@styles/styles.sass";
+import { Providers } from "./providers";
 
 const RootLayout = ({ children }) => {
   return (
     <html>
       <body>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

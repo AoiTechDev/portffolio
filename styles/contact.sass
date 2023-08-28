@@ -3,10 +3,27 @@
 
 #contact
     height: 100vh
-    // @include gradient( 60deg, #{$gradientListMain})
-    // background-size: 100% 100%
-    // background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px
-    
-    // background-image: #{$landPageLayer1}, #{$landPageLayer2}, #{$landPageLayer3}, #{$landPageLayer4}, #{$landPageLayer5}
-    // box-shadow: #{$edgeShadow}
-    
+    @include flexbox(center,center)
+    color: #{$grey}
+    .contact-wrapper
+        height: 70%
+        width: 80%
+        @include flexbox(center,space-evenly)
+        .left-contact
+            width: 20%
+           
+            height: 100%
+            @include flexbox(center,center)
+            flex-direction: column      
+        .right-contact
+            width: 40%
+            
+            height: 100%
+            @include flexbox(center,center)
+            flex-direction: column
+            gap: 30px
+
+    .contact-icon
+        width: 200px
+        height: 200px
+

@@ -1,11 +1,15 @@
 import React from "react";
-import Link from "next/link";
+//import Link from "next/link";
+import { Link } from '@chakra-ui/react'
+
 const Navlist = ({ menuOpenHandler }) => {
+
   return (
     <div className="nav-list">
       <ul>
         <li>
           <Link
+            
             href="#about"
             data-text="&nbsp;About"
             style={{
@@ -13,6 +17,7 @@ const Navlist = ({ menuOpenHandler }) => {
             }}
             className="link-a"
             onClick={menuOpenHandler}
+            _hover={{ textDecoration: "none" }}
           >
             &nbsp;About&nbsp;
           </Link>
@@ -26,6 +31,7 @@ const Navlist = ({ menuOpenHandler }) => {
             className="link-a"
             href="#skills"
             onClick={menuOpenHandler}
+            _hover={{ textDecoration: "none" }}
           >
             &nbsp;Skills&nbsp;
           </Link>
@@ -39,6 +45,7 @@ const Navlist = ({ menuOpenHandler }) => {
             className="link-a"
             href="#projects"
             onClick={menuOpenHandler}
+            _hover={{ textDecoration: "none" }}
           >
             &nbsp;Projects&nbsp;
           </Link>
@@ -52,6 +59,7 @@ const Navlist = ({ menuOpenHandler }) => {
             className="link-a"
             href="#contact"
             onClick={menuOpenHandler}
+            _hover={{ textDecoration: "none" }}
           >
             &nbsp;Contact&nbsp;
           </Link>

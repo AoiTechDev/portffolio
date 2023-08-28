@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/hash-navigation";
 import { Navigation } from "swiper/modules";
 import "@styles/skills.sass";
-
+import { Link } from '@chakra-ui/react'
 import SlideArrow from "@components/visual_components/arrows/SlideArrow";
 
 import ProjectContent from "./project_content/ProjectContent";
@@ -112,7 +112,7 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
           animationDelay={"4s"}
         />
         {projectData.map((project) => project.id === cardId && (
-          <a
+          <Link
             href={project.github}
             className={inView ? "icon scroll-right" : "icon"}
             ref={ref}
@@ -121,9 +121,10 @@ const ProjectInfo = ({ projectInfoHandler, projectData, cardId }) => {
             }}
             data-text="Github"
             target="_blank"
+            _hover={{ textDecoration: "none" }}
           >
             Github
-          </a>
+          </Link>
         ))}
       </div>
     </div>
