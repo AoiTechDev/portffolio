@@ -18,9 +18,23 @@ import creative_icon from '@assets/icons/soft/creative-icon.png'
 import problem_icon from '@assets/icons/soft/problem-icon.png'
 import selfdiscipline_icon from '@assets/icons/soft/selfdiscipline-icon.png'
 import teamwork_icon from '@assets/icons/soft/teamwork-icon.png'
+
+import express_icon from '@assets/icons/workedwith/express-icon.png'
+import mongo_icon from '@assets/icons/workedwith/mongo-icon.png'
+import python_icon from '@assets/icons/workedwith/python-icon.png'
+import tailwind_icon from '@assets/icons/workedwith/tailwind-icon.png'
+import api_icon from '@assets/icons/workedwith/api-icon.png'
+import postman_icon from '@assets/icons/workedwith/postman-icon.png'
+
 import '@styles/skills.sass'
 
 import Image from 'next/image'
+export const techArray = [css_icon, react_icon,js_icon,html_icon, sass_icon]
+export const toolsArray = [vscode_icon,git_icon,github_icon]
+export const learningArray = [next_icon,ts_icon,redux_icon]
+export const softArray = [communication_icon,creative_icon,problem_icon,selfdiscipline_icon,teamwork_icon]
+export const workedwithArray = [express_icon,mongo_icon,python_icon,tailwind_icon, node_icon, api_icon, postman_icon]
+
 export const CustomIcon = ({src, className, ref, delay}) => {
     return <Image src={src} width={50} height={50} className={className} ref={ref} style={{
         animationDelay: delay

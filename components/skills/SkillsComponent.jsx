@@ -17,6 +17,11 @@ import {
   ProblemIcon,
   SelfdisciplineIcon,
   TeamworkIcon,
+  techArray,
+  CustomIcon,
+  toolsArray,
+  learningArray,
+  workedwithArray,
 } from "../images/icons/Icons";
 import "@styles/about.sass";
 import { useInView } from "react-intersection-observer";
@@ -29,7 +34,7 @@ export const HardSkills = () => {
     threshold: 1.0,
     triggerOnce: true,
   });
-  
+
   return (
     <div className="hard-skills">
       <h2
@@ -41,75 +46,68 @@ export const HardSkills = () => {
         Hard Skills
       </h2>
       <div className="skills-wrapper">
-        <div className="technologies ">
+        <div className="technologies icons-row">
           <h3 className={inView && "scroll-down"} ref={ref}>
             Technologies
           </h3>
           <div className="icons-wrapper">
-            <CssIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            /> 
-            <ReactIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <JsIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <HtmlIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <NodeIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <SassIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-           
+            {techArray.map((tech, index) => (
+              <CustomIcon
+                key={index}
+                className={inView ? "icon scroll-left" : "icon"}
+                ref={ref}
+                src={tech}
+                delay={index / 2 + "s"}
+              />
+            ))}
           </div>
         </div>
-        <div className="tools ">
+        <div className="workedwith icons-row">
+          <h3 className={inView && "scroll-down"} ref={ref}>
+            I also worked with
+          </h3>
+          <div className="icons-wrapper">
+            {workedwithArray.map((work, index) => (
+              <CustomIcon
+                key={index}
+                className={inView ? "icon scroll-left" : "icon"}
+                ref={ref}
+                src={work}
+                delay={index / 2 + "s"}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="tools icons-row">
           <h3 className={inView && "scroll-down"} ref={ref}>
             Tools
           </h3>
           <div className="icons-wrapper">
-            <VscodeIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <GitIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <GithubIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-              animationDelay={'1.5s'}
-            />
+            {toolsArray.map((tools, index) => (
+              <CustomIcon
+                key={index}
+                className={inView ? "icon scroll-left" : "icon"}
+                ref={ref}
+                src={tools}
+                delay={index / 2 + "s"}
+              />
+            ))}
           </div>
         </div>
-        <div className="learning ">
+        <div className="learning icons-row">
           <h3 className={inView && "scroll-down"} ref={ref}>
             In process of learning
           </h3>
           <div className="icons-wrapper">
-            <NextIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <TsIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
-            <ReduxIcon
-              className={inView ? "icon scroll-left" : "icon"}
-              ref={ref}
-            />
+            {learningArray.map((learn, index) => (
+              <CustomIcon
+                key={index}
+                className={inView ? "icon scroll-left" : "icon"}
+                ref={ref}
+                src={learn}
+                delay={index / 2 + "s"}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -127,12 +125,20 @@ export const SoftSkills = () => {
   });
   return (
     <div className="soft-skills">
-      <h2 className={inView ? "soft-first-letter scroll-down" : 'soft-first-letter'} ref={ref}>
+      <h2
+        className={
+          inView ? "soft-first-letter scroll-down" : "soft-first-letter"
+        }
+        ref={ref}
+      >
         Soft Skills
       </h2>
       <div className="skills-wrapper">
         <div className="soft-skill">
-          <TeamworkIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
+          <TeamworkIcon
+            className={inView ? "icon scroll-left" : "icon"}
+            ref={ref}
+          />
           <h3
             className={inView && "soft-skill scroll-left"}
             ref={ref}
@@ -183,10 +189,16 @@ export const SoftSkills = () => {
           >
             Problem-solving
           </h3>{" "}
-          <ProblemIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
+          <ProblemIcon
+            className={inView ? "icon scroll-left" : "icon"}
+            ref={ref}
+          />
         </div>
         <div className="soft-skill">
-          <CreativeIcon className={inView ? "icon scroll-left" : "icon"} ref={ref} />
+          <CreativeIcon
+            className={inView ? "icon scroll-left" : "icon"}
+            ref={ref}
+          />
           <h3
             className={inView && "scroll-left"}
             ref={ref}

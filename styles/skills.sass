@@ -9,13 +9,13 @@
     position: relative
     .wrapper
         width: 100%
-        height: 60%
+        height: 70%
         display: flex
         position: relative
         
         h2
             position: absolute
-            top: 0
+            top: 20px
             font-weight: 400
         .soft-first-letter
             opacity: 0
@@ -41,7 +41,7 @@
             @include flexbox(center,space-evenly)
             flex-direction: column
             position: relative
-            .technologies, .tools, .learning
+            .icons-row
                 @include flexbox(center,center)
                 flex-direction: column
                 gap: 10px
