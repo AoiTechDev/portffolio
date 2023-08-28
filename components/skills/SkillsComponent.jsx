@@ -22,6 +22,7 @@ import {
   toolsArray,
   learningArray,
   workedwithArray,
+  softArray,
 } from "../images/icons/Icons";
 import "@styles/about.sass";
 import { useInView } from "react-intersection-observer";
@@ -47,9 +48,9 @@ export const HardSkills = () => {
       </h2>
       <div className="skills-wrapper">
         <div className="technologies icons-row">
-          <h3 className={inView && "scroll-down"} ref={ref}>
+          <h4 className={inView && "scroll-down"} ref={ref}>
             Technologies
-          </h3>
+          </h4>
           <div className="icons-wrapper">
             {techArray.map((tech, index) => (
               <CustomIcon
@@ -63,9 +64,9 @@ export const HardSkills = () => {
           </div>
         </div>
         <div className="workedwith icons-row">
-          <h3 className={inView && "scroll-down"} ref={ref}>
+          <h4 className={inView && "scroll-down"} ref={ref}>
             I also worked with
-          </h3>
+          </h4>
           <div className="icons-wrapper">
             {workedwithArray.map((work, index) => (
               <CustomIcon
@@ -73,15 +74,15 @@ export const HardSkills = () => {
                 className={inView ? "icon scroll-left" : "icon"}
                 ref={ref}
                 src={work}
-                delay={index / 2 + "s"}
+                delay={index  / 2 - (0.08*index) + "s"}
               />
             ))}
           </div>
         </div>
         <div className="tools icons-row">
-          <h3 className={inView && "scroll-down"} ref={ref}>
+          <h4 className={inView && "scroll-down"} ref={ref}>
             Tools
-          </h3>
+          </h4>
           <div className="icons-wrapper">
             {toolsArray.map((tools, index) => (
               <CustomIcon
@@ -95,9 +96,9 @@ export const HardSkills = () => {
           </div>
         </div>
         <div className="learning icons-row">
-          <h3 className={inView && "scroll-down"} ref={ref}>
+          <h4 className={inView && "scroll-down"} ref={ref}>
             In process of learning
-          </h3>
+          </h4>
           <div className="icons-wrapper">
             {learningArray.map((learn, index) => (
               <CustomIcon
@@ -134,81 +135,47 @@ export const SoftSkills = () => {
         Soft Skills
       </h2>
       <div className="skills-wrapper">
-        <div className="soft-skill">
-          <TeamworkIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          />
-          <h3
-            className={inView && "soft-skill scroll-left"}
-            ref={ref}
-            style={{
-              animationDelay: "0.61s",
-            }}
-          >
-            Teamwork
-          </h3>
-        </div>
-        <div className="soft-skill">
-          <h3
-            className={inView && "soft-skill scroll-right"}
-            ref={ref}
-            style={{
-              animationDelay: "1.22s",
-            }}
-          >
-            Communication
-          </h3>{" "}
-          <CommunicationIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          />
-        </div>
-        <div className="soft-skill">
-          <SelfdisciplineIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          />
-          <h3
-            className={inView && "soft-skill scroll-left"}
-            ref={ref}
-            style={{
-              animationDelay: "1.83s",
-            }}
-          >
-            Self-discipline
-          </h3>
-        </div>
-        <div className="soft-skill">
-          <h3
-            className={inView && "soft-skill scroll-right"}
-            ref={ref}
-            style={{
-              animationDelay: "2.44s",
-            }}
-          >
-            Problem-solving
-          </h3>{" "}
-          <ProblemIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          />
-        </div>
-        <div className="soft-skill">
-          <CreativeIcon
-            className={inView ? "icon scroll-left" : "icon"}
-            ref={ref}
-          />
-          <h3
-            className={inView && "scroll-left"}
-            ref={ref}
-            style={{
-              animationDelay: "3.05s",
-            }}
-          >
-            Creative
-          </h3>
-        </div>
+        {softArray.map((skill, index) =>
+          index % 2 === 0 ? (
+            <div className="soft-skill">
+              <CustomIcon
+                key={index}
+                src={skill.icon}
+                className={inView ? "icon scroll-left" : "icon"}
+                ref={ref}
+                delay={index / 2 + "s"}
+              />
+              <h4
+                className={inView && "soft-skill scroll-right"}
+                ref={ref}
+                style={{
+                  animationDelay: index / 2 + "s",
+                }}
+              >
+                {skill.text}
+              </h4>
+            </div>
+          ) : (
+            <div className="soft-skill">
+              <h4
+                className={inView && "soft-skill scroll-left"}
+                ref={ref}
+                style={{
+                  animationDelay: index / 2 + "s",
+                }}
+              >
+                {skill.text}
+              </h4>
+              <CustomIcon
+                key={index}
+                src={skill.icon}
+                className={inView ? "icon scroll-right" : "icon"}
+                ref={ref}
+                delay={index / 2 + "s"}
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   );

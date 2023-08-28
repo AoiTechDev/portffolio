@@ -18,6 +18,7 @@ import creative_icon from '@assets/icons/soft/creative-icon.png'
 import problem_icon from '@assets/icons/soft/problem-icon.png'
 import selfdiscipline_icon from '@assets/icons/soft/selfdiscipline-icon.png'
 import teamwork_icon from '@assets/icons/soft/teamwork-icon.png'
+import fast_icon from '@assets/icons/soft/fast-icon.png'
 
 import express_icon from '@assets/icons/workedwith/express-icon.png'
 import mongo_icon from '@assets/icons/workedwith/mongo-icon.png'
@@ -32,7 +33,33 @@ import Image from 'next/image'
 export const techArray = [css_icon, react_icon,js_icon,html_icon, sass_icon]
 export const toolsArray = [vscode_icon,git_icon,github_icon]
 export const learningArray = [next_icon,ts_icon,redux_icon]
-export const softArray = [communication_icon,creative_icon,problem_icon,selfdiscipline_icon,teamwork_icon]
+//export const softArray = [communication_icon,creative_icon,problem_icon,selfdiscipline_icon,teamwork_icon]
+export const softArray = [
+    {
+        icon: teamwork_icon,
+        text: 'Teamwork'
+    },
+    {
+        icon: communication_icon,
+        text: 'Communication'
+    },
+    {
+        icon: selfdiscipline_icon,
+        text: 'Self-discipline'
+    },
+    {
+        icon: problem_icon,
+        text: 'Problem-solving'
+    },
+    {
+        icon: fast_icon,
+        text: 'Fast-learning'
+    },
+    {
+        icon: creative_icon,
+        text: 'Creative'
+    },
+]
 export const workedwithArray = [express_icon,mongo_icon,python_icon,tailwind_icon, node_icon, api_icon, postman_icon]
 
 export const CustomIcon = ({src, className, ref, delay}) => {
@@ -67,6 +94,11 @@ export const SelfdisciplineIcon = ({className, ref}) => {
 }
 export const TeamworkIcon = ({className, ref}) => {
     return <Image src={teamwork_icon} width={50} height={50} className={className} ref={ref} style={{
+        animationDelay: '0.5s'
+      }}/>
+}
+export const FastIcon = ({className, ref}) => {
+    return <Image src={fast_icon} width={50} height={50} className={className} ref={ref} style={{
         animationDelay: '0.5s'
       }}/>
 }
