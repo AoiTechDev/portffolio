@@ -4,22 +4,37 @@ import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  FormHelperText,
 } from "@chakra-ui/react";
 
-const InputForm = ({ label, type }) => {
-  const [input, setInput] = useState("");
-  
-  const handleInputChange = (e) => setInput(e.target.value);
-
-  const isError = input === "";
-  
+const InputForm = ({
+  label,
+  type,
+  handleChange,
+  value,
+  name,
+  touched,
+  onBlur,
+}) => {
   return (
-    <FormControl isRequired className="form-wrapper">
+    <FormControl
+      isRequired
+      className="form-wrapper"
+      isInvalid={touched && !value}
+      mb={3}
+    >
       <FormLabel className="form-label">{label}</FormLabel>
-      <Input type={type} value={input} onChange={handleInputChange} width="50%" />
+      <Input
+        type={type}
+        value={value}
+        onChange={handleChange}
+        width="50%"
+        name={name}
+        errorBorderColor="red.300"
+        onBlur={onBlur}
+      />
+      <FormErrorMessage>Required</FormErrorMessage>
       {/* {!isError ? (
-        <FormHelperText>We'll never share your email.</FormHelperText>
+        
       ) : (
         <FormErrorMessage>Please enter a valid email address</FormErrorMessage>
       )} */}

@@ -13,17 +13,23 @@
             width: 20%
            
             height: 100%
-            @include flexbox(center,center)
-            flex-direction: column      
+            @include flexbox(center,space-evenly)
+            flex-direction: column
+            h2
+                font-size: 2rem
+                
         .right-contact
             width: 40%
             
             height: 100%
             @include flexbox(center,center)
             flex-direction: column
-            gap: 30px
+            gap: 10px
+           
 
     .contact-icon
         width: 200px
         height: 200px
 
+    .chakra-button
+        align-self: start

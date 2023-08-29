@@ -1,23 +1,26 @@
-import React, {useState} from "react";
-import { FormControl, Textarea, FormLabel } from "@chakra-ui/react";
-const TextareaForm = () => {
-  let [value, setValue] = useState("");
-
-  let handleInputChange = (e) => {
-    let inputValue = e.target.value;
-    setValue(inputValue);
-  };
+import React, { useState } from "react";
+import { FormControl, Textarea, FormLabel, FormErrorMessage } from "@chakra-ui/react";
+const TextareaForm = ({ value, handleChange, name, touched, onBlur }) => {
   return (
-    <FormControl className="form-wrapper">
+    <FormControl
+      isRequired
+      className="form-wrapper"
+      isInvalid={touched && !value}
+      mb={3}
+    >
       <FormLabel>Message</FormLabel>
-      
+
       <Textarea
         value={value}
-        onChange={handleInputChange}
+        onChange={handleChange}
         placeholder="Here is a sample placeholder"
         size="sm"
         width="80%"
+        name={name}
+        rows={4}
+        onBlur={onBlur}
       />
+      <FormErrorMessage>Required</FormErrorMessage>
     </FormControl>
   );
 };
