@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import { EffectCube, Pagination } from "swiper/modules";
 import Blob from "../../components/visual_components/blob/Blob";
 import HiddenContent from "../../components/aboutme/HiddenContent";
+import Line from "@components/visual_components/line/Line";
 
 const About = () => {
   const [contentId, setContentId] = useState("");
@@ -75,11 +76,22 @@ const About = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="bouncing-ball"></div>
-
-      <div className="about-content-wrapper">
-        <HiddenContent onClick={hideContent} contentId={contentId} />
+      <div className="aboutme-content">
+        <h2>Who am I?</h2>
+        <Line/>
+        <div className='content-wrapper'>
+        As a recently graduated student pursuing front-end development, I
+        combine my artistic background with programming skills to create
+        aesthetically pleasing, detailed interfaces. My ambition is to
+        constantly evolve as an expert, transforming my vision into functional,
+        beautiful designs.
+        </div>
       </div>
+      {/* <div className="bouncing-ball"></div> */}
+
+      {/* <div className="about-content-wrapper">
+        <HiddenContent onClick={hideContent} contentId={contentId} />
+      </div> */}
       <Arrows
         section={"#skills"}
         headingText={"Allow me to present my skills :)"}

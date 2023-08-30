@@ -74,7 +74,7 @@ export const HardSkills = () => {
                 className={inView ? "icon scroll-left" : "icon"}
                 ref={ref}
                 src={work}
-                delay={index  / 2 - (0.08*index) + "s"}
+                delay={index  / 2  + "s"}
               />
             ))}
           </div>

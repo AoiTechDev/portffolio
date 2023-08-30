@@ -31,7 +31,7 @@ import '@styles/skills.sass'
 
 import Image from 'next/image'
 export const techArray = [css_icon, react_icon,js_icon,html_icon, sass_icon]
-export const toolsArray = [vscode_icon,git_icon,github_icon]
+export const toolsArray = [vscode_icon,git_icon,github_icon, postman_icon]
 export const learningArray = [next_icon,ts_icon,redux_icon]
 //export const softArray = [communication_icon,creative_icon,problem_icon,selfdiscipline_icon,teamwork_icon]
 export const softArray = [
@@ -60,7 +60,7 @@ export const softArray = [
         text: 'Creative'
     },
 ]
-export const workedwithArray = [express_icon,mongo_icon,python_icon,tailwind_icon, node_icon, api_icon, postman_icon]
+export const workedwithArray = [express_icon,mongo_icon,python_icon,tailwind_icon, node_icon, api_icon ]
 
 export const CustomIcon = ({src, className, ref, delay}) => {
     return <Image src={src} width={50} height={50} className={className} ref={ref} style={{
