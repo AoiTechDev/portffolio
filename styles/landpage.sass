@@ -14,117 +14,38 @@
         padding: 0 1rem
         flex-direction: column
         .landpage-headline
-            $b: 5px
-            $c: #{$blue}
-            $w: 170px
-            border: #{$b} solid #0000
-            $g: #0000 90deg, #{$c} 0
-            $p: $w $w border-box no-repeat
-            $topleft: conic-gradient(from 90deg at top $b left $b, $g) 0 0 / $p
-           
-            $bottomright: conic-gradient(from -90deg at bottom $b right $b, $g) 100% 100% / $p
 
-            background: $topleft, $bottomright
-            @include flexbox(center,space-evenly)
+            @include flexbox(center,center)
             flex-direction: column
             z-index: 1
             gap: 3rem
-            //background: linear-gradient(to right, red 4px, transparent 4px) 0 0, linear-gradient(to left, red 4px, transparent 4px) 100% 100%, linear-gradient(to bottom, red 4px, transparent 4px) 0 0, linear-gradient(to top, red 4px, transparent 4px) 100% 100%
             width: min(700px, 100%)
-            background-repeat: no-repeat
-            padding: 1rem
+            min-height: 55vh
+            position: relative
+            @media screen and (max-width: 400px)
+                min-height: 45vh
+            &:before
+                $b: 8px
+                $c: #{$blue}
+                border: #{$b} solid #0000
+                $w: 180px
+                content: ''
+                position: absolute
+                inset: 0
+                background: $c
+                $g: #0000 90deg, #000 0
+                $p: $w $w border-box no-repeat
+                $topleft: conic-gradient(from 90deg at top $b left $b, $g) 0 0 / $p
+                $bottomright: conic-gradient(from -90deg at bottom $b right $b, $g) 100% 100% / $p
+                $mask: $topleft, $bottomright
+                -webkit-mask: $mask
+                mask: $mask
+            .my-name
+                h1
+                    line-height: 120%
         .front-img
             width: min(650px,100%)
             position: absolute
             bottom: 0
             opacity: 0.3
             z-index: 0
-
-        // width: 70%
-        // height: 50%
-        // @include flexbox(center, space-evenly)
-        // padding: 2rem
-        // @media screen and (max-width: #{$large})
-        //     width: 100%
-        //     .svg-animation
-        //         width: 250px
-        //         height: 250px
-        // @media screen and (max-width: #{$medium})
-        //     flex-direction: column
-        //     gap: 20px
-        //     .svg-animation
-        //         width: 200px
-        //         height: 200px
-        // .my-name
-        //     @include flexbox(start,center)
-        //     flex-direction: column
-        //     @media screen and (max-width: #{$medium})
-        //         @include flexbox(center,center)
-        //         text-align: center
-        //     h1
-        //         font-weight: 400
-        //         animation: fadeInLeft 1s
-        //         font-size: calc(2rem + 0.390625vw)
-        //         &:nth-child(1)::first-letter
-        //             font-size: calc(2.5rem + 0.390625vw)
-        //             text-shadow: 0 0 10px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 150px #{$orange}
-
-        //     h3
-        //         animation: fadeInLeft 1s
-        //         animation-fill-mode: backwards
-        //         animation-delay: 1s
-        //         font-weight: 400
-        //     h4
-        //         animation: fadeInRight 1s
-        //         animation-fill-mode: backwards
-        //         animation-delay: 1s
-        //         font-weight: 300
-
-// @media screen and (max-width: #{$tabletLandscape})
-
-// @media screen and (max-width: #{$smallTabletLandscape})
-
-// @media screen and (max-width: #{$medium})
-//     .landpage
-//         color: green
-//         .landpage-content-wrapper
-//             width: 100%
-//             padding: 2rem
-
-// @media screen and (max-width: #{$mobileLandscape})
-//     .landpage
-
-//         .my-name
-//             @include flexbox(center,center)
-//             h1
-//                 &:nth-child(1)::first-letter
-//                     font-size: calc(35px + 0.390625vw)
-//                 span
-//                     font-size: calc(25px)
-//         .motiv-text
-//             align-self: center
-//             text-align: center
-//             font-size: calc(10px + 0.390625vw)
-
-// @media only screen and (max-height: 575.98px) and (orientation: landscape)
-//     .landpage
-
-//         .my-name
-
-//             align-self: start
-//         .motiv-text
-
-//             font-size: calc(10px + 0.390625vw)
-//         .introducer
-//             .arrow-container
-//                 align-self: start
-//                 left: 50px
-//                 top: -80px
-//             .arrow
-//                 transform: scale(1)
-//             h2
-//                 display: none
-
-    // .motiv-text
-    //     padding-right: 2rem
-    //     padding-left: 2rem

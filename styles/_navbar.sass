@@ -2,17 +2,15 @@
 @import 'mixin'
 
 nav
-
     position: fixed
     left: 50%
     transform: translate(-50%)
-    backdrop-filter: blur(10px)
     z-index: 100
     width: 90%
     .navbar-wrapper
         @include flexbox(center,space-between)
         width: 100%
-        padding: 0.5rem
+        padding: 2rem
         .logo
             @media screen and (max-width: #{$medium})
                 width: 160px
