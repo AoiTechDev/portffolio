@@ -75,8 +75,9 @@ const Skills = () => {
         )} */}
         <HardSkills  />
       </div>
-      
+    
     </section>
   );
 };
+
 export default Skills;

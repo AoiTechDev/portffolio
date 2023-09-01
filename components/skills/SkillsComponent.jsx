@@ -38,14 +38,7 @@ export const HardSkills = () => {
 
   return (
     <div className="hard-skills">
-      <h2
-        className={
-          inView ? "hard-first-letter scroll-left" : "hard-first-letter"
-        }
-        ref={ref}
-      >
-        Hard Skills
-      </h2>
+      <h2>Hard Skills</h2>
       <div className="skills-wrapper">
         <div className="technologies icons-row">
           <h4 className={inView && "scroll-down"} ref={ref}>
@@ -63,7 +56,7 @@ export const HardSkills = () => {
             ))}
           </div>
         </div>
-        <div className="workedwith icons-row">
+        {/* <div className="workedwith icons-row">
           <h4 className={inView && "scroll-down"} ref={ref}>
             I also worked with
           </h4>
@@ -74,7 +67,7 @@ export const HardSkills = () => {
                 className={inView ? "icon scroll-left" : "icon"}
                 ref={ref}
                 src={work}
-                delay={index  / 2  + "s"}
+                delay={index / 2 + "s"}
               />
             ))}
           </div>
@@ -94,8 +87,8 @@ export const HardSkills = () => {
               />
             ))}
           </div>
-        </div>
-        <div className="learning icons-row">
+        </div> */}
+        {/* <div className="learning icons-row">
           <h4 className={inView && "scroll-down"} ref={ref}>
             In process of learning
           </h4>
@@ -110,7 +103,7 @@ export const HardSkills = () => {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

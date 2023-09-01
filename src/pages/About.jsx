@@ -6,8 +6,8 @@ import Arrows from "../../components/visual_components/arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cube";
-import "swiper/css/pagination";
-import { EffectCube, Pagination } from "swiper/modules";
+
+import { EffectCube } from "swiper/modules";
 import Blob from "../../components/visual_components/blob/Blob";
 import {myData} from '@components/aboutme/aboutMeData'
 
@@ -45,8 +45,8 @@ const About = () => {
             shadowOffset: 20,
             shadowScale: 0.94,
           }}
-          pagination={true}
-          modules={[EffectCube, Pagination]}
+         
+          modules={[EffectCube]}
           className={inView && "scroll-typing"}
           id="mycube"
         >

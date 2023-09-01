@@ -10,11 +10,11 @@ const Nav = ({menuOpenHandler}) => {
         <Image src={logo} width={200} height={50} className="logo" />
 
         {/* <Navlist /> */}
-        <div id="burger-menu-open" onClick={menuOpenHandler}>
+        {/* <div id="burger-menu-open" onClick={menuOpenHandler}>
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
