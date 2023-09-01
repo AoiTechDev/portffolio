@@ -11,10 +11,13 @@ nav
         @include flexbox(center,space-between)
         width: 100%
         padding: 2rem
+       
+    @media screen and (max-width: #{$medium})
         .logo
-            @media screen and (max-width: #{$medium})
-                width: 160px
-                height: 40px
+            width: 160px
+            height: 40px
+        .navbar-wrapper
+            padding: 1rem 0
     // @media screen and (max-width: 950px)
         
     //     box-shadow: none

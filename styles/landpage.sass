@@ -4,7 +4,6 @@
 #landpage
     color: #{$grey}
     background: black
-
     height: 100vh
     position: relative
     .landpage-content-wrapper
@@ -22,24 +21,10 @@
             width: min(700px, 100%)
             min-height: 55vh
             position: relative
+            border: #{$bold}
+            background: #{$topleft}, #{$bottomright}
             @media screen and (max-width: 400px)
                 min-height: 45vh
-            &:before
-                $b: 8px
-                $c: #{$blue}
-                border: #{$b} solid #0000
-                $w: 180px
-                content: ''
-                position: absolute
-                inset: 0
-                background: $c
-                $g: #0000 90deg, #000 0
-                $p: $w $w border-box no-repeat
-                $topleft: conic-gradient(from 90deg at top $b left $b, $g) 0 0 / $p
-                $bottomright: conic-gradient(from -90deg at bottom $b right $b, $g) 100% 100% / $p
-                $mask: $topleft, $bottomright
-                -webkit-mask: $mask
-                mask: $mask
             .my-name
                 h1
                     line-height: 120%
@@ -49,3 +34,9 @@
             bottom: 0
             opacity: 0.3
             z-index: 0
+    .front-icon
+        position: absolute
+        top: 30%
+        right: 15%
+        width: 70px
+        height: 70px

@@ -4,47 +4,37 @@
 
 #about
 
-    width: 100%
+   
     height: 100vh
     color: #{$grey}
-    box-shadow: #{$edgeShadow}
+   
     position: relative
+    background: black
     @include flexbox(center,center)
-    // @media screen and (max-width: #{$smallTabletPortrait})
-    //     @include flexbox(start,center)
-        
-    // .bouncing-ball
-    //     width: 50px
-    //     height: 50px
-    //     background: radial-gradient(circle at 65% 15%, white 1px, #{$orange} 3%, #{$blue} 60%, #{$blue} 100%)
-    //     position: absolute
-    //     top: 130px
-    //     border-radius: 50%
-    //     z-index: 10
-    //     opacity: 0
 
-    // .about-content-wrapper
-    //     width: 50px
-    //     height: 50px
-    //     position: absolute
-    //     border-radius: 50%
-    //     display: none
-    //     backdrop-filter: blur(40px)
-    //     visibility: hidden
-    //     z-index: 11
     .aboutme-content
-        width: 40%
-        height: 60%
+        width: min(700px, 100%)
+        min-height: 30vh
         @include flexbox(center,space-evenly)
         flex-direction: column
-      
-        padding: 1rem
+        padding: 1rem 4rem
+        gap: 1rem
+        border: #{$border}
+        background: #{$topright}, #{$bottomleft}
+        
+        @media screen and (max-width: 700px)
+            padding: 1rem 1rem
     .swiper
         width: 300px
         height: 300px
         @media screen and (max-width: #{$medium})
             width: 200px
             height: 200px
+        .swiper-cube-shadow
+            background: linear-gradient(60deg,#0C4A60 ,#051D79,#410A70,#5EF5FF)
+            animation: moveGradient 4s alternate infinite
+            background-size: 300% 300%
+            background-position: 0 50%
     .swiper-slide
         --border-width: 3px
         @include flexbox(center,center)
@@ -66,7 +56,7 @@
             width: calc(100% + var(--border-width) * 2)
             height: calc(100% + var(--border-width) * 2)
             //background: linear-gradient(60deg,hsl(224, 85%, 66%),hsl(269, 85%, 66%),hsl(314, 85%, 66%),hsl(359, 85%, 66%),hsl(44, 85%, 66%),hsl(89, 85%, 66%),hsl(134, 85%, 66%),hsl(179, 85%, 66%))
-            background: linear-gradient(60deg,#0C4A60 ,#051D79,#410A70,#700A26,#EF6C33,#D9C91C,#69DB00,#5EF5FF)
+            background: linear-gradient(60deg,#0C4A60 ,#051D79,#410A70,#5EF5FF)
             background-size: 300% 300%
             background-position: 0 50%
             border-radius: calc(2 * var(--border-width))
@@ -77,46 +67,28 @@
             width: calc(100% - 2px)
             height: calc(100% - 2px)
             
-            background: #222
+            background: black
     .cube-wrapper
+        
         width: 50%
-        height: 70%
-        @include flexbox(center,space-evenly)
+        @include flexbox(center, space-evenly)
         flex-direction: column
-        @media screen and (max-width: #{$medium})
-            width: 80%
-        @media screen and (max-width: #{$smallTabletPortrait})
-            height: 50%
+        gap: 3rem
         .about-heading-text
             @include flexbox(center,center)
             flex-direction: column
-            gap: 20px
-            @media screen and (max-width: #{$smallTabletPortrait})
-                 gap: 10px
             h2
                 opacity: 0
             h4
                 opacity: 0
                 font-weight: 400
                 text-align: center
-
-@media screen and (max-width: 400px ) and (max-height: 610px)
-    #about
-        color: red
-        @include flexbox(center,center)
+    @media screen and (max-width: 1200px)
         flex-direction: column
-        .info-container
-            width: 90%
-        .right-side-info
-            height: 50%
-
-.active
-    color: #{$grey}
-    text-shadow: 0 0 10px #{$grey},0 0 20px #{$grey},0 0 35px var(--clr),0 0 40px var(--clr),0 0 50px var(--clr),0 0 80px var(--clr), 0 0 100px var(--clr),0 0 150px var(--clr)
-
-.in-view
-    @extend #about
-
+        gap: 3rem
+        
+        .cube-wrapper
+            width: 100%
 .scroll-left
     animation: fadeLeft 1s
     animation-fill-mode: both
@@ -132,123 +104,9 @@
 .scroll-fade-in
     animation: fadeIn 1s
     animation-fill-mode: both
+
+
+
 @keyframes moveGradient
     50%
         background-position: 100% 50%
-.start-bouncing
-    animation: bouncing 1s ease-in
-    animation-fill-mode: both
-    opacity: 1
-
-@keyframes bouncing
-    from
-        top: 130px
-        opacity: 1
-    50%
-        top: 50%
-        opacity: 1
-    75%
-        top: 43%
-        opacity: 1
-    100%
-        top: 50%
-        opacity: 0
-
-.expand-content
-    display: flex !important
-    border-radius: 1rem !important
-    animation: expandxlarge 0.5s
-    animation-delay: 1.05s
-    animation-fill-mode: both
-    box-shadow: 10px 10px 10px black
-    opacity: 0
-    @media screen and (max-width: #{$large})
-        animation: expandlarge 0.5s
-        animation-delay: 1.05s
-        animation-fill-mode: both
-    @media screen and (max-width: #{$medium})
-        animation: expandmedium 0.5s
-        animation-delay: 1.05s
-        animation-fill-mode: both
-@keyframes expandxlarge
-    from
-        width: 50px
-        height: 50px
-         opacity: 0
-    to
-        width: 50%
-        height: 55%
-        visibility: visible
-        opacity: 1
-
-@keyframes expandlarge
-    from
-        width: 50px
-        height: 50px
-            opacity: 0
-    to
-        width: 70%
-        height: 55%
-        visibility: visible
-        opacity: 1
-@keyframes expandmedium
-    from
-        width: 50px
-        height: 50px
-            opacity: 0
-    to
-        width: 100%
-        height: 55%
-        visibility: visible
-        opacity: 1
-
-.hidden-content
-    visibility: hidden
-    @include flexbox(center,space-evenly)
-    flex-direction: column
-    padding: 0 2rem 0 2rem
-    width: 100%
-
-    h2
-        font-size: calc(20px + 0.390625vw)
-    p
-        font-size: calc(13px + 0.390625vw)
-.show-content
-    animation: showContent 0.2s
-    animation-delay: 1.7s
-    animation-fill-mode: both
-@keyframes showContent
-    to
-        visibility: visible
-.education-wrapper
-    @include flexbox(center,space-around)
-    width: 100%
-    height: 70%
-
-    .education-info
-        @include flexbox(center,start)
-        gap: 10px
-    .education-icons
-        @include flexbox(start,space-evenly)
-        flex-direction: column
-        gap: 10px
-        width: 30%
-        height: 100%
-        h5
-            font-size: calc(12px + 0.390625vw)
-            font-weight: 400
-    .education-content
-        width: 50%
-        height: 100%
-        @include flexbox(center,center)
-        font-size: calc(10px + 0.390625vw)
-
-.hobbies-wrapper
-    @extend .education-wrapper
-    flex-direction: column
-    .hobbies-icon-wrapper
-        width: 100%
-        @include flexbox(center,space-evenly)
-    p
-        padding: 0 2rem 0 2rem
-        font-size: calc(12px + 0.390625vw)
