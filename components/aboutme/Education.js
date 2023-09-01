@@ -8,16 +8,16 @@ const Education = () => {
     <div className="education-wrapper">
       <div className="education-icons">
         <div className="education-info">
-          <CustomIcon src={calendar_icon} />
-          <h5>10.2018 - 07.2023</h5>
+          <CustomIcon src={calendar_icon} className='edu-icon'/>
+          <p>10.2018 - 07.2023</p>
         </div>
         <div className="education-info">
-          <CustomIcon src={location_icon} />
-          <h5>ZUT, Szczecin</h5>
+          <CustomIcon src={location_icon} className='edu-icon'/>
+          <p>ZUT, Szczecin</p>
         </div>
         <div className="education-info">
-          <CustomIcon src={education_icon} />
-          <h5>Bachelor of Engineering</h5>
+          <CustomIcon src={education_icon} className='edu-icon'/>
+          <p>Bachelor of Engineering</p>
         </div>
       </div>
       <div className="education-content">

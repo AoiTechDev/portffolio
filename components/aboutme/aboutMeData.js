@@ -1,5 +1,5 @@
 import Education from "./Education";
-import Hobbies from "./Hobbies";
+
 export const myData = [
   {
     id: "whoami",
@@ -22,6 +22,15 @@ export const myData = [
   {
     id: "hobbies",
     title: "Hobbies",
-    content: <Hobbies />,
+    //content: <Hobbies />,
+    content: (
+      <p>
+        My current interests focus on constantly improving myself as a front-end
+        developer, but also in other areas, for example, physical fitness.
+        Regular strength training provides me with discipline and satisfaction.
+        I also occasionally enjoy playing various computer games and painting
+        whatever comes to mind.
+      </p>
+    ),
   },
 ];

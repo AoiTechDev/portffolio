@@ -40,8 +40,8 @@ const Skills = () => {
   return (
     <section id="skills">
       
-      <div className="wrapper">
-        {width < 950 ? (
+      <div className="skills-wrapper">
+        {/* {width < 950 ? (
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
@@ -69,12 +69,13 @@ const Skills = () => {
           </Swiper>
         ) : (
           <>
-            <HardSkills  />
+            
             <SoftSkills  />
           </>
-        )}
+        )} */}
+        <HardSkills  />
       </div>
-      <Arrows section={"#projects"} headingText={"Next one are my projects!"} />
+      
     </section>
   );
 };

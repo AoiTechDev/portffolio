@@ -23,8 +23,8 @@ const Home = () => {
       {isMenuOpen && <Menu menuOpenHandler={menuOpenHandler} />}
       <Landpage />
       <About />
-      {/* <Skills />
-      <Projects />
+      <Skills />
+      {/* <Projects />
       <Contact />
       <Footer /> */}
     </main>

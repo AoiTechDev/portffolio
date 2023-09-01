@@ -13,11 +13,11 @@
     @include flexbox(center,center)
 
     .aboutme-content
-        width: min(700px, 100%)
+        width: min(750px, 100%)
         min-height: 30vh
         @include flexbox(center,space-evenly)
         flex-direction: column
-        padding: 1rem 4rem
+        padding: 4rem 4rem
         gap: 1rem
         border: #{$border}
         background: #{$topright}, #{$bottomleft}
@@ -31,7 +31,7 @@
             width: 200px
             height: 200px
         .swiper-cube-shadow
-            background: linear-gradient(60deg,#0C4A60 ,#051D79,#410A70,#5EF5FF)
+            background: linear-gradient(60deg,#{$blue} ,#{$darkblue}, #{$purple},#{$lightblue})
             animation: moveGradient 4s alternate infinite
             background-size: 300% 300%
             background-position: 0 50%
@@ -89,6 +89,25 @@
         
         .cube-wrapper
             width: 100%
+
+    
+    
+/// EDUCATION COMPONENT
+.education-wrapper
+    @include flexbox(center,space-evenly)
+    
+    flex-direction: column
+    gap: 1rem
+    .education-icons
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+        width: 100%
+        .education-info
+            @include flexbox(center,center)
+            flex-direction: column
+    .edu-icon
+        width: 30px
+    
 .scroll-left
     animation: fadeLeft 1s
     animation-fill-mode: both
