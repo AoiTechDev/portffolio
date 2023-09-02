@@ -46,9 +46,10 @@ const Home = () => {
         className="mySwiper"
         speed={1000}
         resistanceRatio={0}
-        touchRatio={0}
+        //touchRatio={0}
+        
       >
-        <SwiperSlide>
+        <SwiperSlide >
           <Landpage />
         </SwiperSlide>
         <SwiperSlide>

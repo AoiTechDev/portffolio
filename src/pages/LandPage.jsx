@@ -4,19 +4,27 @@ import "@styles/landpage.sass";
 import "animate.css";
 import "@styles/arrows/arrows.sass";
 import frontImg from "@assets/images/nobg-frontimg.png";
-import { CustomIcon } from "@components/images/icons/Icons";
-import react_icon from '@assets/icons/technology/react-icon.png'
+
+import { useElementOnScreen } from "@utills/ElementOnScreen";
+
 const LandPage = () => {
+
+ 
+  const  [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: '0px',
+    threshold: 1.0
+  })
   return (
-    <section id="landpage">
+    <section id="landpage" ref={containerRef}>
       <div className="landpage-content-wrapper">
-        <div className="landpage-headline">
-          <div className="my-name">
+        <div className={isVisible ? "expand-borders landpage-headline" : "hide-borders landpage-headline"} >
+          <div className={isVisible ? "fade-in my-name" : 'fade-out my-name'}>
             <h1>Hi, Im Paweł</h1>
             <h1>Bornikowski</h1>
           </div>
 
-          <h3>Front-end Developer</h3>
+          <h3 className={isVisible ? "fade-in" : 'fade-out' }  >Front-end Developer</h3>
         </div>
         <Image src={frontImg} className="front-img" />
         

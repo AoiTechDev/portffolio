@@ -23,11 +23,17 @@
             position: relative
             border: #{$bold}
             background: #{$topleft}, #{$bottomright}
+           
+          
+            
             @media screen and (max-width: 400px)
                 min-height: 45vh
             .my-name
+                opacity: 0
                 h1
                     line-height: 120%
+            h3
+                opacity: 0
         .front-img
             width: min(650px,100%)
             position: absolute
@@ -40,3 +46,32 @@
         right: 15%
         width: 70px
         height: 70px
+
+.expand-borders
+    animation: bordersExpand 1s ease-in
+    animation-fill-mode: both !important
+   
+.fade-in
+    animation: fadeIn 1s
+    animation-fill-mode: both !important
+    animation-delay: 0.25s
+.fade-out
+    animation: fadeOut 0.5s
+    animation-fill-mode: both !important
+    
+    
+.hide-borders
+    animation: hideBorders 1s
+    animation-fill-mode: both !important
+    
+@keyframes bordersExpand
+    from
+        opacity: 0
+        background-position: 50% 50%
+    to
+        opacity: 1
+        backgtound-position: 100% 100%
+@keyframes hideBorders
+    to
+        opacity: 0
+        background-position: 50% 50%
