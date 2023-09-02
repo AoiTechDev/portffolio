@@ -8,7 +8,7 @@ import Landpage from "@src/pages/LandPage";
 
 import Menu from "@components/menu/Menu";
 import Nav from "@components/Nav";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -27,38 +27,61 @@ const Home = () => {
   };
   let labels = ["Home", "About", "Skills"];
 
+  const windowWidthSize = () => {
+    const [windowWidth, setWindowWidth] = useState(0);
+    useLayoutEffect(() => {
+      const updateWidth = () => {
+        setWindowWidth(window.innerWidth);
+      };
+      window.addEventListener("resize", updateWidth);
+      updateWidth();
+      return () => window.removeEventListener("resize", updateWidth);
+    }, []);
+    return windowWidth;
+  };
 
+  let width = windowWidthSize();
+  console.log(width)
   return (
     <main className="app">
       <Nav menuOpenHandler={menuOpenHandler} />
       {/* {isMenuOpen && <Menu menuOpenHandler={menuOpenHandler} />} */}
-      <Swiper
-        direction={"vertical"}
-        slidesPerView={1}
-        mousewheel={true}
-        pagination={{
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<div class="' + className + '">' + labels[index] + "</div>";
-          },
-        }}
-        modules={[Mousewheel, Pagination]}
-        className="mySwiper"
-        speed={1000}
-        resistanceRatio={0}
-        //touchRatio={0}
-        
-      >
-        <SwiperSlide >
+      {width > 700 ? (
+        <Swiper
+          direction={"vertical"}
+          slidesPerView={1}
+          mousewheel={true}
+          pagination={{
+            clickable: true,
+            renderBullet: function (index, className) {
+              return (
+                '<div class="' + className + '">' + labels[index] + "</div>"
+              );
+            },
+          }}
+          modules={[Mousewheel, Pagination]}
+          className="mySwiper"
+          speed={1000}
+          resistanceRatio={0}
+          //touchRatio={0}
+        >
+          <SwiperSlide>
+            <Landpage />
+          </SwiperSlide>
+          <SwiperSlide>
+            <About />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Skills />
+          </SwiperSlide>
+        </Swiper>
+      ) : (
+        <>
           <Landpage />
-        </SwiperSlide>
-        <SwiperSlide>
           <About />
-        </SwiperSlide>
-        <SwiperSlide>
           <Skills />
-        </SwiperSlide>
-      </Swiper>
+        </>
+      )}
 
       {/* <Landpage />
       <About />

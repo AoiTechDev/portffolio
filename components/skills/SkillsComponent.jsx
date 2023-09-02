@@ -100,9 +100,9 @@ export const HardSkills = () => {
 
   return (
     <div className="hard-skills">
+      <h2>My Coding Toolkit</h2>
       <div className="stack-wrapper">
         <div className="heading-wrapper">
-          <h2>My Coding Toolkit</h2>
           <h5>
             Cooking up React interfaces and more using my kitchen full of dev
             tools
