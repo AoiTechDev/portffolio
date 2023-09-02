@@ -26,7 +26,7 @@ const LandPage = () => {
 
           <h3 className={isVisible ? "fade-in" : 'fade-out' }  >Front-end Developer</h3>
         </div>
-        <Image src={frontImg} className="front-img" />
+        <Image src={frontImg} className={isVisible ? "fade-in-img front-img" : 'fade-out-img front-img' } />
         
       </div>
       {/* <CustomIcon src={react_icon} className="front-icon"/> */}

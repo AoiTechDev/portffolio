@@ -1,4 +1,4 @@
-import React,{useState, useEffect, useRef} from "react";
+import {useState, useEffect, useRef} from "react";
 export const useElementOnScreen = (options) => {
     const containerRef = useRef(null)
     const [isVisible, setIsVisible] = useState(false)

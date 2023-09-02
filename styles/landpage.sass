@@ -51,6 +51,10 @@
     animation: bordersExpand 1s ease-in
     animation-fill-mode: both !important
    
+.hide-borders
+    animation: hideBorders 1s
+    animation-fill-mode: both !important
+    
 .fade-in
     animation: fadeIn 1s
     animation-fill-mode: both !important
@@ -58,10 +62,12 @@
 .fade-out
     animation: fadeOut 0.5s
     animation-fill-mode: both !important
+.fade-in-img
+    animation: fadeInImg 0.5s
+    animation-fill-mode: both !important
     
-    
-.hide-borders
-    animation: hideBorders 1s
+.fade-out-img
+    animation: fadeOutImg 0.5s
     animation-fill-mode: both !important
     
 @keyframes bordersExpand
@@ -75,3 +81,13 @@
     to
         opacity: 0
         background-position: 50% 50%
+
+
+@keyframes fadeInImg
+    from
+        opacity: 0
+    to
+        opacity: 0.4
+@keyframes fadeOutImg
+    to
+        opacity: 0

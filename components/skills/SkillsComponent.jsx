@@ -26,7 +26,26 @@ import {
 } from "../images/icons/Icons";
 import "@styles/about.sass";
 import { useInView } from "react-intersection-observer";
-
+import {
+  DiReact,
+  DiHtml5,
+  DiCss3,
+  DiSass,
+  DiJavascript1,
+  DiGit,
+  DiGithubBadge,
+  DiVisualstudio,
+} from "react-icons/di";
+import { TbApi, TbBrandNextjs } from "react-icons/tb";
+import {
+  SiPostman,
+  SiExpress,
+  SiNodedotjs,
+  SiMongodb,
+  SiTailwindcss,
+  SiTypescript,
+  SiRedux,
+} from "react-icons/si";
 export const HardSkills = () => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
@@ -35,75 +54,82 @@ export const HardSkills = () => {
     threshold: 1.0,
     triggerOnce: true,
   });
+  const stackIconArray = [
+    <DiReact className="tech-icon" />,
+    <DiJavascript1 className="tech-icon" />,
+    <DiHtml5 className="tech-icon" />,
+    <DiCss3 className="tech-icon" />,
+    <DiSass className="tech-icon" />,
+    <DiGit className="tech-icon" />,
+    <DiGithubBadge className="tech-icon" />,
+    <DiVisualstudio className="tech-icon" />,
+    <TbApi className="tech-icon" />,
+    <SiPostman className="tech-icon" />,
+  ];
+  const workedIconArray = [
+    <SiNodedotjs className="tech-icon" />,
+    <SiExpress className="tech-icon" />,
+    <SiTailwindcss className="tech-icon" />,
+    <SiMongodb className="tech-icon" />,
+    <SiTypescript className="tech-icon" />,
+    <SiRedux className="tech-icon" />,
+    <TbBrandNextjs className="tech-icon" />,
+  ];
+
+  const stackLabelArray = [
+    "React",
+    "Javascript",
+    "HTML5",
+    "CSS3",
+    "Sass",
+    "Git",
+    "Github",
+    "VS Code",
+    "REST API",
+    "Postman",
+  ];
+  const wortkedLabelArray = [
+    "NodeJS",
+    "ExpressJS",
+    "Tailwind",
+    "MongoDB",
+    "Typescript",
+    "Redux",
+    "NextJS",
+  ];
 
   return (
     <div className="hard-skills">
-      <h2>Hard Skills</h2>
-      <div className="skills-wrapper">
-        <div className="technologies icons-row">
-          <h4 className={inView && "scroll-down"} ref={ref}>
-            Technologies
-          </h4>
-          <div className="icons-wrapper">
-            {techArray.map((tech, index) => (
-              <CustomIcon
-                key={index}
-                className={inView ? "icon scroll-left" : "icon"}
-                ref={ref}
-                src={tech}
-                delay={index / 2 + "s"}
-              />
-            ))}
-          </div>
+      <div className="stack-wrapper">
+        <div className="heading-wrapper">
+          <h2>My Coding Toolkit</h2>
+          <h5>
+            Cooking up React interfaces and more using my kitchen full of dev
+            tools
+          </h5>
         </div>
-        {/* <div className="workedwith icons-row">
-          <h4 className={inView && "scroll-down"} ref={ref}>
-            I also worked with
-          </h4>
-          <div className="icons-wrapper">
-            {workedwithArray.map((work, index) => (
-              <CustomIcon
-                key={index}
-                className={inView ? "icon scroll-left" : "icon"}
-                ref={ref}
-                src={work}
-                delay={index / 2 + "s"}
-              />
-            ))}
-          </div>
+        <div className="skills-wrapper">
+          {stackIconArray.map((icon, index) => (
+            <div key={index} className="icon-wrapper">
+              {icon}
+              <p>{stackLabelArray[index]}</p>
+            </div>
+          ))}
         </div>
-        <div className="tools icons-row">
-          <h4 className={inView && "scroll-down"} ref={ref}>
-            Tools
-          </h4>
-          <div className="icons-wrapper">
-            {toolsArray.map((tools, index) => (
-              <CustomIcon
-                key={index}
-                className={inView ? "icon scroll-left" : "icon"}
-                ref={ref}
-                src={tools}
-                delay={index / 2 + "s"}
-              />
-            ))}
-          </div>
-        </div> */}
-        {/* <div className="learning icons-row">
-          <h4 className={inView && "scroll-down"} ref={ref}>
-            In process of learning
-          </h4>
-          <div className="icons-wrapper">
-            {learningArray.map((learn, index) => (
-              <CustomIcon
-                key={index}
-                className={inView ? "icon scroll-left" : "icon"}
-                ref={ref}
-                src={learn}
-                delay={index / 2 + "s"}
-              />
-            ))}
-          </div>
-        </div> */}
+      </div>
+
+      <div className="worked-wrapper">
+        <div className="heading-wrapper">
+          <h5>I constantly adding new spices and flavors to my recipe list</h5>
+        </div>
+        <div className="worked-skills-wrapper">
+          {workedIconArray.map((icon, index) => (
+            <div key={index} className="icon-wrapper">
+              {icon}
+              <p>{wortkedLabelArray[index]}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

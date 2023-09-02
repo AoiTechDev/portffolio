@@ -40,7 +40,7 @@ const Skills = () => {
   return (
     <section id="skills">
       
-      <div className="skills-wrapper">
+     
         {/* {width < 950 ? (
           <Swiper
             spaceBetween={50}
@@ -74,7 +74,7 @@ const Skills = () => {
           </>
         )} */}
         <HardSkills  />
-      </div>
+
     
     </section>
   );

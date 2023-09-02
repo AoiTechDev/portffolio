@@ -5,132 +5,46 @@
     color: #{$grey}
     background: black
     height: 100vh
-    @include flexbox(center,center)
-    flex-direction: column
-    position: relative
-    .skills-wrapper
-        width: 100%
-        height: 70%
-        display: flex
-        position: relative
-        
-        h2
-            position: absolute
-            top: 20px
-            font-weight: 400
-        .soft-first-letter
-            opacity: 0
-            &::first-letter
-                
-                text-shadow: 0 0 10px #{$grey},0 0 35px #{$orange},0 0 40px #{$orange},0 0 50px #{$orange},0 0 80px #{$orange}, 0 0 150px #{$orange}
-        .hard-first-letter
-            opacity: 0
-            &::first-letter
-                
-                text-shadow: 0 0 10px #{$grey},0 0 35px #{$blue},0 0 40px #{$blue},0 0 50px #{$blue},0 0 80px #{$blue}, 0 0 150px #{$blue}
-        .skills-wrapper
-
-                flex-direction: column
-                @include flexbox(center,space-around)
-                height: 70%
-                h4
-                    font-weight: 300
-                    opacity: 0
-
-        .hard-skills
-            width: 100%
-            @include flexbox(center,space-evenly)
-            flex-direction: column
-            position: relative
-            .icons-row
-                @include flexbox(center,center)
-                flex-direction: column
-                gap: 10px
-
-            .icons-wrapper
-                width: 100%
-                @include flexbox(center,center)
-                gap: 20px
-                
-             
-
-        .soft-skills
-            @include flexbox(center,space-evenly)
-            flex-direction: column
-            width: 100%
-
-            .soft-skill
-                display: flex
-                gap: 20px
-                justify-content: center
-                align-items: center
-               
-.slider-wrapper
     width: 100%
-    height: 100%
-    display: flex
-    cursor: move
-    
-    .left, .right
-        position: relative
-    
-.swiper-button-next, .swiper-button-prev
-    position: absolute
-    top: 40%
-    height: 50px
-    width: 50px
-    
-    border-radius: 50%
-    display: grid
-    place-items: center
-    cursor: pointer
-    
+    @include flexbox(center,center)
 
-    &:hover
-        box-shadow: 0 0 10px 5px #{$blue}, inset 0 0 10px 5px #{$orange} 
-        
-.swiper-button-next
-    right: 20px
-.swiper-button-prev
-    left: 20px
-.swiper-arrow
-    width: 30px
-    height: 5px
-    position: relative
-    &::before, &::after
-        content: ""
-        position: absolute
-        width: 50%
-        height: 100%
-        background: #{$grey}
-        transitino: translate3d(-20%,0,0)
-    &::before
-        top: 0
-        left: 0
-        transform: skewY(50deg)
-    &::after
-        top: 0
-        right: 0
-        transform: skewY(-50deg)
+    .hard-skills
+        @include flexbox(center,space-evenly)
+        flex-direction: column
+        padding: 2rem
+        min-height: 90%
+        width: 100%
+        .stack-wrapper
+            @include flexbox(center,space-evenly)
+            flex-direction: column
+            min-height: 50vh
+        .heading-wrapper
+            @include flexbox(center,center)
+            flex-direction: column
+            min-height: 10vh
+        .skills-wrapper
+            // display: grid
+            // grid-template-columns: repeat(auto-fit, minmax(100px, 2fr))
+            @include flexbox(center,center)
 
-.s-a-next
-    transform: rotate(-90deg)
-    
-.s-a-prev
-    transform: rotate(90deg)
-          
-.icon
-    opacity: 0
-    
-        
-@media screen and (max-width: 950px)
-    .hard-skills, .soft-skills
-        height: 100%
-@media screen and (max-width: #{$smallTabletPortrait})
-    .icon
-        width: 40px
-        height: 40px
-@media screen and (max-width: 450px)
-    .icon
-        width: 30px
-        height: 30px
+            flex-wrap: wrap
+            gap: 1rem
+            width: min(400px, 100%)
+            .icon-wrapper
+                @include flexbox(center,center)
+                flex-direction: column
+                position: relative
+
+        .worked-skills-wrapper
+            @extend .skills-wrapper
+            width: 100%
+
+    .tech-icon
+        width: 3rem
+        height: 3rem
+        color: #0A7D9E
+
+    @media screen and (max-width: 600px)
+        .tech-icon
+            width: 2.5rem
+            height: 2.5rem
