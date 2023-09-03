@@ -33,4 +33,9 @@ export const myData = [
       </p>
     ),
   },
+  {
+    id: "myqualities",
+    title: "My qualities",
+    content: <p>Teamwork, self-discipline, communication, creative</p>
+  }
 ];
