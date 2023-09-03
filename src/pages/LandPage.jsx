@@ -13,7 +13,7 @@ const LandPage = () => {
   const  [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
-    threshold: 1.0
+    threshold: 0.9
   })
   return (
     <section id="landpage" ref={containerRef}>
