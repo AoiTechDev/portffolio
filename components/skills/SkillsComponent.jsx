@@ -133,7 +133,8 @@ export const HardSkills = () => {
                 }
                 style={{
                   "--xIn": xIn + "%",
-                  "--xOut": xOut + '%'
+                  "--xOut": xOut + '%',
+                  "--delayIcon": "0.5s"
                 }}
               >
                 {icon}
@@ -152,8 +153,11 @@ export const HardSkills = () => {
         </div>
         <div className="worked-skills-wrapper">
           {workedIconArray.map((icon, index) => {
-            let x = Math.floor(Math.random() * 100 + -100);
-            x = x * index;
+            let xIn = Math.floor(Math.random() * 100 + 1);
+            xIn = xIn * index;
+
+            let xOut = Math.floor(Math.random() * -100 + 1);
+            xOut = xOut * index;
             return (
               <div
                 key={index}
@@ -163,7 +167,9 @@ export const HardSkills = () => {
                     : "fade-out-random-icon icon-wrapper"
                 }
                 style={{
-                  "--tr": x + "%",
+                  "--xIn": xIn + "%",
+                  "--xOut": xOut + '%',
+                  "--delayIcon": "0.25s"
                 }}
               >
                 {icon}
