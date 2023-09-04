@@ -1,5 +1,5 @@
 import Education from "./Education";
-
+import Qualities from "./Qualities";
 export const myData = [
   {
     id: "whoami",
@@ -36,6 +36,7 @@ export const myData = [
   {
     id: "myqualities",
     title: "My qualities",
-    content: <p>Teamwork, self-discipline, communication, creative</p>
+    qualities: ['Teamwork', 'Discipline', 'Communication', 'Creative', 'Adaptation'],
+    content: <Qualities/>
   }
 ];

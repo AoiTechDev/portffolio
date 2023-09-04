@@ -21,7 +21,9 @@
         gap: 1rem
         border: #{$border}
         background: #{$topright}, #{$bottomleft}
-        
+        .content-wrapper
+            width: 100%
+            height: 100%
         @media screen and (max-width: 700px)
             padding: 1rem 1rem
     .swiper
@@ -56,7 +58,6 @@
             z-index: -1
             width: calc(100% + var(--border-width) * 2)
             height: calc(100% + var(--border-width) * 2)
-            //background: linear-gradient(60deg,hsl(224, 85%, 66%),hsl(269, 85%, 66%),hsl(314, 85%, 66%),hsl(359, 85%, 66%),hsl(44, 85%, 66%),hsl(89, 85%, 66%),hsl(134, 85%, 66%),hsl(179, 85%, 66%))
             background: linear-gradient(60deg,#0C4A60 ,#051D79,#410A70,#5EF5FF)
             background-size: 300% 300%
             background-position: 0 50%
@@ -109,6 +110,29 @@
     .edu-icon
         width: 30px
     
+// QUALITIES COMPONENT
+.qualities-wrapper
+    @include flexbox(center, space-evenly)
+    
+    .quality-container
+        padding: 0.5rem
+        
+        
+        position: relative
+        &::after
+            position: absolute
+            content: ""
+            top: 0
+            left: 0
+            z-index: -1
+            width: 100%
+            height: 100%
+            background: linear-gradient(60deg,#0C4A60 ,#051D79,#410A70,#5EF5FF)
+            background-size: 300% 300%
+            background-position: 0 50%
+            border-radius: calc(2 * var(--border-width))
+            animation: moveGradient 7s alternate infinite
+            border-radius: 20px
 .scroll-left
     animation: fadeLeft 1s
     animation-fill-mode: both
