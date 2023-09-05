@@ -25,7 +25,7 @@ const Home = () => {
   const menuOpenHandler = () => {
     setIsMenuOpen((prev) => !prev);
   };
-  let labels = ["Home", "About", "Skills"];
+  let labels = ["Home", "About", "Skills", "Projects"];
 
   const windowWidthSize = () => {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -41,7 +41,7 @@ const Home = () => {
   };
 
   let width = windowWidthSize();
-  console.log(width)
+  console.log(width);
   return (
     <main className="app">
       <Nav menuOpenHandler={menuOpenHandler} />
@@ -74,12 +74,16 @@ const Home = () => {
           <SwiperSlide>
             <Skills />
           </SwiperSlide>
+          <SwiperSlide>
+            <Projects />
+          </SwiperSlide>
         </Swiper>
       ) : (
         <>
           <Landpage />
           <About />
           <Skills />
+          <Projects />
         </>
       )}
 

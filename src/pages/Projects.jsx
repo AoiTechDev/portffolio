@@ -7,8 +7,9 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import ProjectCard from "@components/projects/projectsCards/ProjectCard";
-
+import { Navigation } from "swiper/modules";
 import "@styles/about.sass";
 import ProjectInfo from "@components/projects/projectsCards/ProjectInfo";
 import { project_data } from "@components/projects/projects_data/data";
@@ -18,46 +19,20 @@ const Projects = () => {
   const projectInfoHandler = (e) => {
     setProjectInfo((prev) => !prev);
     setCardId(e.currentTarget.id);
-    
   };
 
   return (
     <section id="projects">
-      {projectInfo && (
-        <ProjectInfo
-          projectInfoHandler={projectInfoHandler}
-          projectData={project_data}
-          cardId={cardId}
-        />
-      )}
-      <div className="card-container">
-        <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          pagination={true}
-          modules={[EffectCoverflow, Pagination]}
-        >
+      <h2>My projects</h2>
+      <div className="projects-content">
+        <Swiper navigation={true} modules={[Navigation]} >
           {project_data.map((project, index) => (
-            <SwiperSlide onClick={projectInfoHandler} key={index} id={project.id}>
-              <ProjectCard name={project.name}  />
+            <SwiperSlide key={index}>
+                {project.description}
             </SwiperSlide>
           ))}
-          
         </Swiper>
       </div>
-      <Arrows
-        section={"#contact"}
-        headingText={"You can contact me down there"}
-      />
     </section>
   );
 };
