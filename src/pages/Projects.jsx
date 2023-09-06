@@ -25,12 +25,42 @@ const Projects = () => {
     <section id="projects">
       <h2>My projects</h2>
       <div className="projects-content">
-        <Swiper navigation={true} modules={[Navigation]} >
+        <Swiper
+          navigation={{
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+          }}
+          modules={[Navigation]}
+        >
           {project_data.map((project, index) => (
             <SwiperSlide key={index}>
-                {project.description}
+              <div className="project-container">
+                <h4>{project.title}</h4>
+                <div className="project-description">
+                  <h5>Description</h5>
+                  <p>{project.description}</p>
+                </div>
+                <div className="project-tech-stack">
+                  <h5>Technologies I Used</h5>
+                  <div className="tech-container">
+                    
+                  </div>
+                  
+                </div>
+              </div>
             </SwiperSlide>
           ))}
+          {/* <SwiperSlide>
+            {" "}
+            <div className="swiper-button-next">
+              <div className="swiper-arrow s-a-next"></div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="swiper-button-prev">
+              <div className="swiper-arrow s-a-prev"></div>
+            </div>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </section>
