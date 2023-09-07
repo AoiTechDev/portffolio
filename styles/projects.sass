@@ -1,13 +1,67 @@
 @import 'variables'
 @import 'mixin'
 #projects
-    height: 100vh
+    min-height: 100vh
     color: #{$grey}
     background: black
     @include flexbox(center,center)
     flex-direction: column
-   
+
     .projects-content
-        width: 60%
-        min-height: 70%
-        background: blue
+        width: min(65rem, 100%)
+
+        padding: 1.5rem
+
+    .project-container
+        @include flexbox(center, space-evenly)
+        flex-direction: column
+        gap: 1rem
+        .project-description
+            @include flexbox(center,center)
+            flex-direction: column
+        .project-spec
+            @include flexbox(start,center)
+            flex-direction: column
+            padding: 1rem
+            gap: 10px
+        .project-tech-stack
+            @include flexbox(center,center)
+            flex-direction: column
+
+            .tech-container
+                @include flexbox(center,center)
+                gap: 1rem
+                flex-wrap: wrap
+        .project-link
+            @include flexbox(center,center)
+            .github-icon
+                transition: 1s
+                
+            &:hover .github-icon
+                transform: translate3d(220%,0,0)
+            &:hover p::before
+                width: 100%
+                filter: drop-shadow(0 0 10px var(--clr))
+            p
+                position: relative
+                overflow: hidden
+                text-transform: uppercase
+                letter-spacing: 2px
+                &::before
+                    content: attr(data-text)
+                    position: absolute
+                    width: 0
+                    overflow: hidden
+                    color: #{$blue}
+                    -webkit-text-stroke: 1px #{$blue}
+                    transition: 0.75s
+
+    .tech-icon
+        width: 3rem
+        height: 3rem
+        color: #0A7D9E
+
+    @media screen and (max-width: 600px)
+        .tech-icon
+            width: 2.5rem
+            height: 2.5rem

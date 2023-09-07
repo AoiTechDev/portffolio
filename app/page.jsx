@@ -87,10 +87,10 @@ const Home = () => {
         </>
       )}
 
-      {/* <Landpage />
-      <About />
-      <Skills /> */}
-      {/* <Projects />
+      {/* <Landpage /> */}
+      {/* <About />
+      <Skills /> 
+       <Projects />
       <Contact />
       <Footer /> */}
     </main>

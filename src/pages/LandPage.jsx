@@ -29,7 +29,7 @@ const LandPage = () => {
         <Image src={frontImg} className={isVisible ? "fade-in-img front-img" : 'fade-out-img front-img' } />
         
       </div>
-      {/* <CustomIcon src={react_icon} className="front-icon"/> */}
+      
     </section>
   );
 };

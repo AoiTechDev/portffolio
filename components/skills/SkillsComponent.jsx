@@ -111,7 +111,7 @@ export const HardSkills = () => {
       </h2>
       <div className="stack-wrapper">
         <div className="heading-wrapper">
-          <h5 className={isVisible ? "fade-in-left" : "fade-out-right"}>
+          <h5 className={isVisible ? "fade-in-up" : "fade-out-down"}>
             Cooking up React interfaces and more using my kitchen full of dev
             tools
           </h5>
@@ -133,8 +133,8 @@ export const HardSkills = () => {
                 }
                 style={{
                   "--xIn": xIn + "%",
-                  "--xOut": xOut + '%',
-                  "--delayIcon": "0.5s"
+                  "--xOut": xOut + "%",
+                  "--delayIcon": "0.5s",
                 }}
               >
                 {icon}
@@ -147,7 +147,7 @@ export const HardSkills = () => {
 
       <div className="worked-wrapper">
         <div className="heading-wrapper">
-          <h5 className={isVisible ? "fade-in-right" : "fade-out-left"}>
+          <h5 className={isVisible ? "fade-in-up" : "fade-out-down"}>
             I constantly adding new spices and flavors to my recipe list
           </h5>
         </div>
@@ -168,8 +168,8 @@ export const HardSkills = () => {
                 }
                 style={{
                   "--xIn": xIn + "%",
-                  "--xOut": xOut + '%',
-                  "--delayIcon": "0.25s"
+                  "--xOut": xOut + "%",
+                  "--delayIcon": "0.25s",
                 }}
               >
                 {icon}
