@@ -23,7 +23,7 @@
             position: relative
             border: #{$bold}
             background: #{$topleft}, #{$bottomright}
-           
+            
           
             
             @media screen and (max-width: 400px)
@@ -38,7 +38,7 @@
             width: min(650px,100%)
             position: absolute
             bottom: 0
-            opacity: 0.3
+            opacity: 0
             z-index: 0
     .front-icon
         position: absolute
@@ -89,5 +89,7 @@
     to
         opacity: 0.4
 @keyframes fadeOutImg
+    from
+        opacity: 0.4
     to
         opacity: 0

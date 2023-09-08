@@ -13,11 +13,11 @@ const LandPage = () => {
   const  [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
-    threshold: 0.9
+    threshold: 1
   })
   return (
     <section id="landpage" ref={containerRef}>
-      <div className="landpage-content-wrapper">
+      <div className="landpage-content-wrapper" >
         <div className={isVisible ? "expand-borders landpage-headline" : "hide-borders landpage-headline"} >
           <div className={isVisible ? "fade-in my-name" : 'fade-out my-name'}>
             <h1>Hi, Im Paweł</h1>

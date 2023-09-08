@@ -46,7 +46,7 @@ const Home = () => {
     <main className="app">
       <Nav menuOpenHandler={menuOpenHandler} />
       {/* {isMenuOpen && <Menu menuOpenHandler={menuOpenHandler} />} */}
-      {width > 700 ? (
+      {/* {width > 700 ? (
         <Swiper
           direction={"vertical"}
           slidesPerView={1}
@@ -85,13 +85,17 @@ const Home = () => {
           <Skills />
           <Projects />
         </>
-      )}
-
+      )} */}
+      <Landpage />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
       {/* <Landpage /> */}
       {/* <About />
       <Skills /> 
        <Projects />
-      <Contact />
+    
       <Footer /> */}
     </main>
   );
