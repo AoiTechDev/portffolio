@@ -24,7 +24,7 @@
             border: #{$bold}
             background: #{$topleft}, #{$bottomright}
             
-          
+            opacity: 0
             
             @media screen and (max-width: 400px)
                 min-height: 45vh
@@ -78,6 +78,8 @@
         opacity: 1
         backgtound-position: 100% 100%
 @keyframes hideBorders
+    from
+        opacity: 1
     to
         opacity: 0
         background-position: 50% 50%

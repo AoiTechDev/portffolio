@@ -1,12 +1,12 @@
 "use client";
 import "@styles/about.sass";
-import { useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { useState, useRef } from "react";
+
 import Arrows from "../../components/visual_components/arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cube";
-
+import { useInView } from 'react-intersection-observer';
 import { EffectCube } from "swiper/modules";
 import Blob from "../../components/visual_components/blob/Blob";
 import { myData } from "@components/aboutme/aboutMeData";
@@ -14,10 +14,11 @@ import { useElementOnScreen } from "@utills/ElementOnScreen";
 
 const About = () => {
   const [contentId, setContentId] = useState("");
-  const [containerRef, isVisible] = useElementOnScreen({
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
     root: null,
-    rootMargin: "0px",
-    threshold: 0.9,
+    rootMargin: '0px',
+    threshold: 1,
   });
 
   const getSlideId = (e) => {
@@ -25,11 +26,11 @@ const About = () => {
   };
 
   return (
-    <section id="about" ref={containerRef}>
+    <section id="about" >
       <div className="cube-wrapper">
         <div className="about-heading-text">
-          <h3 className={isVisible && "scroll-left"}>MyCube</h3>
-          <h5 className={isVisible && "scroll-right"}>
+          <h3 ref={ref} className={inView && "scroll-left"}>MyCube</h3>
+          <h5 ref={ref} className={inView && "scroll-right"}>
             Swipe and click to know be better!
           </h5>
         </div>
@@ -44,8 +45,9 @@ const About = () => {
             shadowScale: 0.94,
           }}
           modules={[EffectCube]}
-          className={isVisible && "scroll-typing"}
+          className={inView && "scroll-typing"}
           id="mycube"
+          ref={ref}
         >
           {myData.map((data, index) => (
             <SwiperSlide key={index} id={data.id} onClick={getSlideId}>
@@ -57,9 +59,9 @@ const About = () => {
       {myData.map(
         (data, index) =>
           data.id === contentId && (
-            <div key={index} className={isVisible ? "expand-borders aboutme-content" : "hide-borders aboutme-content"}>
-              <h4 className={isVisible ? "fade-in" : "fade-out"}>{data.title}</h4>
-              <div className={isVisible ? "fade-in content-wrapper" : "fade-out content-wrapper"}>{data.content}</div>
+            <div key={index} ref={ref} className={inView ? "expand-borders aboutme-content" : "hide-borders aboutme-content"}>
+              <h4 ref={ref} className={inView ? "fade-in" : "fade-out"}>{data.title}</h4>
+              <div ref={ref} className={inView ? "fade-in content-wrapper" : "fade-out content-wrapper"}>{data.content}</div>
             </div>
           )
       )}
