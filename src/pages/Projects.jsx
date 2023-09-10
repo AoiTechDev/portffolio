@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import ProjectCard from "@components/projects/projectsCards/ProjectCard";
+
 import { Navigation } from "swiper/modules";
 import "@styles/about.sass";
 import ProjectInfo from "@components/projects/projectsCards/ProjectInfo";
