@@ -29,8 +29,8 @@ const About = () => {
     <section id="about" >
       <div className="cube-wrapper">
         <div className="about-heading-text">
-          <h3 ref={ref} className={inView && "scroll-left"}>MyCube</h3>
-          <h5 ref={ref} className={inView && "scroll-right"}>
+          <h3 ref={ref} className={inView ? "fade-in-left" : "fade-out-up"}>MyCube</h3>
+          <h5 ref={ref} className={inView ? "fade-in-right" : "fade-out-up"}>
             Swipe and click to know be better!
           </h5>
         </div>
@@ -45,7 +45,7 @@ const About = () => {
             shadowScale: 0.94,
           }}
           modules={[EffectCube]}
-          className={inView && "scroll-typing"}
+          className={inView ? "fade-in-left" : "fade-out-left"}
           id="mycube"
           ref={ref}
         >

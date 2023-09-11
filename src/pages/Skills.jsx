@@ -40,42 +40,8 @@ const Skills = () => {
   return (
     <section id="skills">
       
-     
-        {/* {width < 950 ? (
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={1}
-            className="slider-wrapper"
-            rows={1}
-            fill={"row"}
-            modules={[Navigation]}
-            navigation={{
-              prevEl: ".swiper-button-prev",
-              nextEl: ".swiper-button-next",
-            }}
-          >
-            <SwiperSlide className="left">
-              <HardSkills />
-              <div className="swiper-button-next">
-                <div className="swiper-arrow s-a-next"></div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="right">
-              <div className="swiper-button-prev">
-                <div className="swiper-arrow s-a-prev"></div>
-              </div>
-              <SoftSkills />
-            </SwiperSlide>
-          </Swiper>
-        ) : (
-          <>
-            
-            <SoftSkills  />
-          </>
-        )} */}
         <HardSkills  />
 
-    
     </section>
   );
 };

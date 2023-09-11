@@ -46,20 +46,20 @@ import {
   SiTypescript,
   SiRedux,
 } from "react-icons/si";
+
 import { useElementOnScreen } from "@utills/ElementOnScreen";
 export const HardSkills = () => {
-  const [containerRef, isVisible] = useElementOnScreen({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.9,
-  });
-  // const { ref, inView, entry } = useInView({
-  //   /* Optional options */
+  // const [containerRef, isVisible] = useElementOnScreen({
   //   root: null,
   //   rootMargin: "0px",
-  //   threshold: 1.0,
-  //   triggerOnce: true,
+  //   threshold: 0.9,
   // });
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  });
   const stackIconArray = [
     <DiReact className="tech-icon" />,
     <DiJavascript1 className="tech-icon" />,
@@ -105,13 +105,11 @@ export const HardSkills = () => {
   ];
 
   return (
-    <div className="hard-skills" ref={containerRef}>
-      <h2 className={isVisible ? "fade-in-down" : "fade-out-down"}>
-        My Coding Toolkit
-      </h2>
+    <div className="hard-skills">
+      <h2>My Coding Toolkit</h2>
       <div className="stack-wrapper">
         <div className="heading-wrapper">
-          <h5 className={isVisible ? "fade-in-up" : "fade-out-down"}>
+          <h5>
             Cooking up React interfaces and more using my kitchen full of dev
             tools
           </h5>
@@ -126,11 +124,12 @@ export const HardSkills = () => {
             return (
               <div
                 key={index}
-                className={
-                  isVisible
-                    ? "fade-in-random-icon icon-wrapper"
-                    : "fade-out-random-icon icon-wrapper"
-                }
+                // className={
+                //   inView
+                //     ? "fade-in-random-icon icon-wrapper"
+                //     : "fade-out-random-icon icon-wrapper"
+                // }
+                className="icon-wrapper"
                 style={{
                   "--xIn": xIn + "%",
                   "--xOut": xOut + "%",
@@ -147,9 +146,7 @@ export const HardSkills = () => {
 
       <div className="worked-wrapper">
         <div className="heading-wrapper">
-          <h5 className={isVisible ? "fade-in-up" : "fade-out-down"}>
-            I constantly adding new spices and flavors to my recipe list
-          </h5>
+          <h5>I constantly adding new spices and flavors to my recipe list</h5>
         </div>
         <div className="worked-skills-wrapper">
           {workedIconArray.map((icon, index) => {
@@ -161,11 +158,12 @@ export const HardSkills = () => {
             return (
               <div
                 key={index}
-                className={
-                  isVisible
-                    ? "fade-in-random-icon icon-wrapper"
-                    : "fade-out-random-icon icon-wrapper"
-                }
+                // className={
+                //   inView
+                //     ? "fade-in-random-icon icon-wrapper"
+                //     : "fade-out-random-icon icon-wrapper"
+                // }
+                className="icon-wrapper"
                 style={{
                   "--xIn": xIn + "%",
                   "--xOut": xOut + "%",
