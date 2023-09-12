@@ -8,7 +8,7 @@ import Landpage from "@src/pages/LandPage";
 
 import Menu from "@components/menu/Menu";
 import Nav from "@components/Nav";
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -44,9 +44,49 @@ const Home = () => {
   let width = windowWidthSize();
   const nextRef = useRef(null);
   const prevRef = useRef(null);
+  const [mousePos, setMousePos] = useState({});
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
+      let w = window.innerWidth > 0 ? window.innerWidth : screen.width;
+      let h = window.innerHeight > 0 ? window.innerHeight : screen.height;
+
+      //const obj = document.querySelector(".arrow");
+      const prev = document.querySelector(".swiper-button-prev")
+      const next = document.querySelector(".swiper-button-next")
+     
+      
+      if(event.clientX < window.innerWidth/8){
+        //obj.style.transform = "rotate(180deg)"
+        prev.style.left = mousePos.x - 10 + "px";
+        prev.style.top = mousePos.y + "px";
+        
+      }else if(event.clientX > window.innerWidth/8 && event.clientX< window.innerWidth-window.innerWidth/8){
+        //obj.style.transform = "rotate(0deg)"
+        prev.style.left = "10px"
+        prev.style.top = "50%"
+        next.style.left = window.innerWidth - 30 + 'px'
+        next.style.top = "50%"
+      }
+      else{
+       
+        next.style.left = mousePos.x -10 + "px";
+        next.style.top = mousePos.y + "px";
+      }
+    
+    
+    }
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [mousePos]);
+
   return (
     <main className="app">
       <Nav menuOpenHandler={menuOpenHandler} />
+      {/* <div className="arrow"></div> */}
       {/* {isMenuOpen && <Menu menuOpenHandler={menuOpenHandler} />} */}
       {width > 700 ? (
         <Swiper
@@ -92,6 +132,7 @@ const Home = () => {
           <SwiperSlide>
             <Contact />
           </SwiperSlide>
+         
           <div className="swiper-button-prev" ref={prevRef}></div>
           <div className="swiper-button-next" ref={nextRef}></div>
         </Swiper>

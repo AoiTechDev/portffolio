@@ -25,7 +25,7 @@ const Projects = () => {
     <section id="projects">
       <h2>My projects</h2>
       <div className="projects-content">
-        <Swiper
+        {/* <Swiper
           navigation={{
             prevEl: ".swiper-button-prev",
             nextEl: ".swiper-button-next",
@@ -39,7 +39,8 @@ const Projects = () => {
             <ProjectInfo projectID="portfolio" />
           </SwiperSlide>
          
-        </Swiper>
+        </Swiper> */}
+        <ProjectInfo projectID="diploma" />
       </div>
     </section>
   );
