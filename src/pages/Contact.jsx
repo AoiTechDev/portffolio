@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "@styles/contact.sass";
-import { CustomIcon } from "@components/images/icons/Icons";
+
 import email_svg from "@assets/icons/email.svg";
 import InputForm from "@components/contact/InputForm";
 
@@ -40,7 +40,7 @@ const Contact = () => {
       <div className="contact-wrapper">
         <div className="left-contact">
           <h2>Contact me!</h2>
-          <CustomIcon src={email_svg} className="contact-icon" />
+         
         </div>
         <div className="right-contact">
           <InputForm

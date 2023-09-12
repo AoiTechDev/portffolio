@@ -23,7 +23,7 @@ const LandPage = () => {
   return (
     <section id="landpage" >
       <div className="landpage-content-wrapper" >
-        <div ref={ref} className={inView ? "expand-borders landpage-headline" : "hide-borders landpage-headline"} >
+        <div ref={ref} className={inView ? "expand-borders landpage-headline" : "landpage-headline"} >
           <div className={inView ? "fade-in my-name" : 'fade-out my-name'}>
             <h1>Hi, Im Paweł</h1>
             <h1>Bornikowski</h1>
@@ -33,7 +33,7 @@ const LandPage = () => {
         </div>
         <Image src={frontImg} className={inView ? "fade-in-img front-img" : 'fade-out-img front-img' } />
         
-      </div>
+      </div>  
       
     </section>
   );

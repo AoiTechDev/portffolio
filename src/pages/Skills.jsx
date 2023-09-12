@@ -1,7 +1,7 @@
 "use client";
 
 import "@styles/skills.sass";
-import Arrows from "../../components/visual_components/arrows/Arrows";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";

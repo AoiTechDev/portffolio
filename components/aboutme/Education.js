@@ -1,22 +1,21 @@
-import { CustomIcon } from "@components/images/icons/Icons";
+
 import React from "react";
-import calendar_icon from "../../assets/icons/education/calendar_icon.png";
-import education_icon from "../../assets/icons/education/education_icon.png";
-import location_icon from "../../assets/icons/education/location_icon.png";
+import { MdLocationPin, MdCalendarMonth } from "react-icons/md";
+import { BsFillMortarboardFill } from "react-icons/bs";
 const Education = () => {
   return (
     <div className="education-wrapper">
       <div className="education-icons">
         <div className="education-info">
-          <CustomIcon src={calendar_icon} className='edu-icon'/>
+          <MdCalendarMonth className='edu-icon'/>
           <p>10.2018 - 07.2023</p>
         </div>
         <div className="education-info">
-          <CustomIcon src={location_icon} className='edu-icon'/>
+        <MdLocationPin className='edu-icon'/>
           <p>ZUT, Szczecin</p>
         </div>
         <div className="education-info">
-          <CustomIcon src={education_icon} className='edu-icon'/>
+        <BsFillMortarboardFill className='edu-icon'/>
           <p>Bachelor of Engineering</p>
         </div>
       </div>

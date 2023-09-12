@@ -2,7 +2,6 @@
 import "@styles/about.sass";
 import { useState, useRef } from "react";
 
-import Arrows from "../../components/visual_components/arrows/Arrows";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cube";
@@ -13,7 +12,7 @@ import { myData } from "@components/aboutme/aboutMeData";
 import { useElementOnScreen } from "@utills/ElementOnScreen";
 
 const About = () => {
-  const [contentId, setContentId] = useState("");
+  const [contentId, setContentId] = useState("whoami");
   const { ref, inView, entry } = useInView({
     /* Optional options */
     root: null,

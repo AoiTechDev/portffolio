@@ -1,29 +1,5 @@
 import React from "react";
-import {
-  CssIcon,
-  ReactIcon,
-  JsIcon,
-  HtmlIcon,
-  NodeIcon,
-  SassIcon,
-  VscodeIcon,
-  GitIcon,
-  GithubIcon,
-  NextIcon,
-  TsIcon,
-  ReduxIcon,
-  CommunicationIcon,
-  CreativeIcon,
-  ProblemIcon,
-  SelfdisciplineIcon,
-  TeamworkIcon,
-  techArray,
-  CustomIcon,
-  toolsArray,
-  learningArray,
-  workedwithArray,
-  softArray,
-} from "../images/icons/Icons";
+
 import "@styles/about.sass";
 import { useInView } from "react-intersection-observer";
 import {

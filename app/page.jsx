@@ -13,7 +13,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/mousewheel";
-import { Mousewheel, Pagination } from "swiper/modules";
+import "swiper/css/navigation";
+import { Mousewheel, Pagination, Navigation } from "swiper/modules";
 
 import "@styles/styles.sass";
 
@@ -25,7 +26,7 @@ const Home = () => {
   const menuOpenHandler = () => {
     setIsMenuOpen((prev) => !prev);
   };
-  let labels = ["Home", "About", "Skills", "Projects"];
+  let labels = ["Home", "About", "Skills", "Projects", "Contact"];
 
   const windowWidthSize = () => {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -41,14 +42,21 @@ const Home = () => {
   };
 
   let width = windowWidthSize();
-  console.log(width);
+  const nextRef = useRef(null);
+  const prevRef = useRef(null);
   return (
     <main className="app">
       <Nav menuOpenHandler={menuOpenHandler} />
       {/* {isMenuOpen && <Menu menuOpenHandler={menuOpenHandler} />} */}
-      {/* {width > 700 ? (
+      {width > 700 ? (
         <Swiper
-          direction={"vertical"}
+          onInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }}
+          direction={"horizontal"}
           slidesPerView={1}
           mousewheel={true}
           pagination={{
@@ -59,11 +67,15 @@ const Home = () => {
               );
             },
           }}
-          modules={[Mousewheel, Pagination]}
+          modules={[Mousewheel, Pagination, Navigation]}
+          navigation={{
+            prevEl: prevRef.current ? prevRef.current : undefined,
+            nextEl: nextRef.current ? nextRef.current : undefined,
+          }}
           className="mySwiper"
           speed={1000}
           resistanceRatio={0}
-          //touchRatio={0}
+          touchRatio={0}
         >
           <SwiperSlide>
             <Landpage />
@@ -77,6 +89,11 @@ const Home = () => {
           <SwiperSlide>
             <Projects />
           </SwiperSlide>
+          <SwiperSlide>
+            <Contact />
+          </SwiperSlide>
+          <div className="swiper-button-prev" ref={prevRef}></div>
+          <div className="swiper-button-next" ref={nextRef}></div>
         </Swiper>
       ) : (
         <>
@@ -85,12 +102,12 @@ const Home = () => {
           <Skills />
           <Projects />
         </>
-      )} */}
-      <Landpage />
+      )}
+      {/* <Landpage />
       <About />
       <Skills />
       <Projects />
-      <Contact />
+      <Contact /> */}
       {/* <Landpage /> */}
       {/* <About />
       <Skills /> 
