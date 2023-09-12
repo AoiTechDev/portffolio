@@ -46,40 +46,48 @@ const Home = () => {
   const prevRef = useRef(null);
   const [mousePos, setMousePos] = useState({});
   useEffect(() => {
+    const prev = document.querySelector(".swiper-button-prev");
+    const next = document.querySelector(".swiper-button-next");
+
     const handleMouseMove = (event) => {
       setMousePos({ x: event.clientX, y: event.clientY });
-      let w = window.innerWidth > 0 ? window.innerWidth : screen.width;
-      let h = window.innerHeight > 0 ? window.innerHeight : screen.height;
 
-      //const obj = document.querySelector(".arrow");
-      const prev = document.querySelector(".swiper-button-prev")
-      const next = document.querySelector(".swiper-button-next")
-     
-      
-      if(event.clientX < window.innerWidth/8){
-        //obj.style.transform = "rotate(180deg)"
+      if (event.clientX < window.innerWidth / 8) {
         prev.style.left = mousePos.x - 10 + "px";
         prev.style.top = mousePos.y + "px";
-        
-      }else if(event.clientX > window.innerWidth/8 && event.clientX< window.innerWidth-window.innerWidth/8){
-        //obj.style.transform = "rotate(0deg)"
-        prev.style.left = "10px"
-        prev.style.top = "50%"
-        next.style.left = window.innerWidth - 30 + 'px'
-        next.style.top = "50%"
-      }
-      else{
-       
-        next.style.left = mousePos.x -10 + "px";
+      } else if (
+        event.clientX > window.innerWidth / 8 &&
+        event.clientX < window.innerWidth - window.innerWidth / 8
+      ) {
+        prev.style.left = "10px";
+        prev.style.top = "50%";
+        next.style.left = window.innerWidth - 35 + "px";
+        next.style.top = "50%";
+      } else {
+        next.style.left = mousePos.x - 10 + "px";
         next.style.top = mousePos.y + "px";
       }
-    
-    
-    }
+    };
+
+    const handleMouseLeave = (event) => {
+      if (
+        event.clientY <= 0 ||
+        event.clientX <= 0 ||
+        event.clientX >= window.innerWidth ||
+        event.clientY >= window.innerHeight
+      ) {
+        
+        prev.style.top = "50%";
+        next.style.left = window.innerWidth - 35 + "px";
+        next.style.top = "50%";
+      }
+    };
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseout", handleMouseLeave);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseout", handleMouseLeave);
     };
   }, [mousePos]);
 
@@ -132,7 +140,7 @@ const Home = () => {
           <SwiperSlide>
             <Contact />
           </SwiperSlide>
-         
+
           <div className="swiper-button-prev" ref={prevRef}></div>
           <div className="swiper-button-next" ref={nextRef}></div>
         </Swiper>
