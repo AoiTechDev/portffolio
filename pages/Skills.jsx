@@ -6,11 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/hash-navigation";
-import { HardSkills, SoftSkills } from "../../components/skills/SkillsComponent";
+import { HardSkills, SoftSkills } from "@components/skills/SkillsComponent";
 import { useInView } from "react-intersection-observer";
 //import 'swiper/swiper.min.css'
 
 import React, { useLayoutEffect, useState, useRef } from "react";
+import Page from "@components/page";
 
 
 const Skills = () => {
@@ -38,11 +39,15 @@ const Skills = () => {
   });
 
   return (
+    <Page>
+
+  
     <section id="skills">
       
         <HardSkills  />
 
     </section>
+    </Page>
   );
 };
 

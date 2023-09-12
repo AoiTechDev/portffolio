@@ -12,34 +12,51 @@
 .app
     height: 100vh
     --swiper-pagination-top: 3rem
-    position: relative
+ 
+
+.slide-in
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background: red
+    transform-origin: bottom
+    z-index: 999
+
+.slide-out
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background: red
+    transform-origin: top
+    z-index: 999
+
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled
+    opacity: 0 !important
 
 .swiper-button-prev, .swiper-button-next
-    
-.arrow
+    opacity: 0
+
+.line
     position: absolute
-    width: 100px
-    height: 3px
-    background: red
-    z-index: 999
-    &::before
-        content: ""
-        position: absolute
-        background: blue
-        width: 30%
-        height: 3px
-        bottom: -10px
-        right: -5px
-        transform: rotate(-45deg)
-    &::after
-        content: ""
-        position: absolute
-        background: green
-        width: 30%
-        height: 3px
-        top: -10px
-        right: -5px
-        transform: rotate(45deg)
+    width: 200px
+    height: 1px
+    background: #{$blue}
+    top: 80%
+    .line-label
+        color: #{$grey}
+        width: 100%
+        text-align: right
+    .line-label-left
+        text-align: left
+.left-line
+    left: 3rem
+.right-line
+    right: 3rem
 .swiper
     width: 100%
     height: 100%
