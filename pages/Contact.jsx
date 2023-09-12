@@ -9,8 +9,9 @@ import TextareaForm from "@components/contact/TextareaForm";
 import { Button } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { sendContactForm } from "@lib/api";
-
-const initValues = { name:"", email:"", message:"" };
+import Link from 'next/link'
+import Page from "@app/page";
+const initValues = { name: "", email: "", message: "" };
 const initState = { values: initValues };
 
 const Contact = () => {
@@ -32,56 +33,58 @@ const Contact = () => {
     }));
 
   const onSubmit = async () => {
-    setInput(prev=>({...prev,isLoading: true}))
-    await sendContactForm(values)
-  }
+    setInput((prev) => ({ ...prev, isLoading: true }));
+    await sendContactForm(values);
+  };
   return (
-    <section id="contact">
-      <div className="contact-wrapper">
-        <div className="left-contact">
-          <h2>Contact me!</h2>
-         
+    <Page>
+      <section id="contact">
+        <div className="contact-wrapper">
+          <div className="left-contact">
+            <h2>Contact me!</h2>
+          </div>
+          <div className="right-contact">
+            <InputForm
+              label="Name"
+              type="text"
+              handleChange={handleChange}
+              value={values.name}
+              name="name"
+              touched={touched.name}
+              onBlur={onBlur}
+            />
+            <InputForm
+              label="Email"
+              type="email"
+              handleChange={handleChange}
+              value={values.email}
+              name="email"
+              onBlur={onBlur}
+              touched={touched.email}
+            />
+            {/* <Textarea /> */}
+            <TextareaForm
+              handleChange={handleChange}
+              value={values.message}
+              name="message"
+              onBlur={onBlur}
+              touched={touched.message}
+            />
+            <Button
+              leftIcon={<EmailIcon />}
+              colorScheme="teal"
+              variant="outline"
+              isDisabled={!values.name || !values.email || !values.message}
+              onClick={onSubmit}
+              isLoading={isLoading}
+            >
+              Send
+            </Button>
+          </div>
         </div>
-        <div className="right-contact">
-          <InputForm
-            label="Name"
-            type="text"
-            handleChange={handleChange}
-            value={values.name}
-            name="name"
-            touched={touched.name}
-            onBlur={onBlur}
-          />
-          <InputForm
-            label="Email"
-            type="email"
-            handleChange={handleChange}
-            value={values.email}
-            name="email"
-            onBlur={onBlur}
-            touched={touched.email}
-          />
-          {/* <Textarea /> */}
-          <TextareaForm
-            handleChange={handleChange}
-            value={values.message}
-            name="message"
-            onBlur={onBlur}
-            touched={touched.message}
-          />
-          <Button
-            leftIcon={<EmailIcon />}
-            colorScheme="teal"
-            variant="outline"
-            isDisabled={!values.name || !values.email || !values.message}
-            onClick={onSubmit}
-            isLoading={isLoading}
-          >
-            Send
-          </Button>
-        </div>
-      </div>
-    </section>
+       
+      </section>
+  </Page>
   );
 };
 export default Contact;

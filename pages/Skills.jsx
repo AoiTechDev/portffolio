@@ -9,10 +9,9 @@ import "swiper/css/hash-navigation";
 import { HardSkills, SoftSkills } from "@components/skills/SkillsComponent";
 import { useInView } from "react-intersection-observer";
 //import 'swiper/swiper.min.css'
-
+import Link from 'next/link'
 import React, { useLayoutEffect, useState, useRef } from "react";
 import Page from "@components/page";
-
 
 const Skills = () => {
   const windowWidthSize = () => {
@@ -40,13 +39,10 @@ const Skills = () => {
 
   return (
     <Page>
-
-  
-    <section id="skills">
-      
-        <HardSkills  />
-
-    </section>
+      <section id="skills">
+        <HardSkills />
+        
+      </section>
     </Page>
   );
 };

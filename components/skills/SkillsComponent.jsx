@@ -37,25 +37,25 @@ export const HardSkills = () => {
     threshold: 1.0,
   });
   const stackIconArray = [
-    <DiReact className="tech-icon" />,
-    <DiJavascript1 className="tech-icon" />,
-    <DiHtml5 className="tech-icon" />,
-    <DiCss3 className="tech-icon" />,
-    <DiSass className="tech-icon" />,
-    <DiGit className="tech-icon" />,
-    <DiGithubBadge className="tech-icon" />,
-    <DiVisualstudio className="tech-icon" />,
-    <TbApi className="tech-icon" />,
-    <SiPostman className="tech-icon" />,
+    <DiReact className="tech-icon" alt="tech icon"/>,
+    <DiJavascript1 className="tech-icon" alt="tech icon"/>,
+    <DiHtml5 className="tech-icon" alt="tech icon"/>,
+    <DiCss3 className="tech-icon" alt="tech icon"/>,
+    <DiSass className="tech-icon" alt="tech icon"/>,
+    <DiGit className="tech-icon" alt="tech icon"/>,
+    <DiGithubBadge className="tech-icon" alt="tech icon"/>,
+    <DiVisualstudio className="tech-icon" alt="tech icon"/>,
+    <TbApi className="tech-icon" alt="tech icon"/>,
+    <SiPostman className="tech-icon" alt="tech icon"/>,
   ];
   const workedIconArray = [
-    <SiNodedotjs className="tech-icon" />,
-    <SiExpress className="tech-icon" />,
-    <SiTailwindcss className="tech-icon" />,
-    <SiMongodb className="tech-icon" />,
-    <SiTypescript className="tech-icon" />,
-    <SiRedux className="tech-icon" />,
-    <TbBrandNextjs className="tech-icon" />,
+    <SiNodedotjs className="tech-icon" alt="tech icon"/>,
+    <SiExpress className="tech-icon" alt="tech icon"/>,
+    <SiTailwindcss className="tech-icon" alt="tech icon"/>,
+    <SiMongodb className="tech-icon" alt="tech icon"/>,
+    <SiTypescript className="tech-icon" alt="tech icon"/>,
+    <SiRedux className="tech-icon" alt="tech icon"/>,
+    <TbBrandNextjs className="tech-icon" alt="tech icon"/>,
   ];
 
   const stackLabelArray = [
@@ -157,67 +157,67 @@ export const HardSkills = () => {
   );
 };
 
-export const SoftSkills = () => {
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    root: null,
-    rootMargin: "0px",
-    threshold: 1.0,
-    triggerOnce: true,
-  });
-  return (
-    <div className="soft-skills">
-      <h2
-        className={
-          inView ? "soft-first-letter scroll-down" : "soft-first-letter"
-        }
-        ref={ref}
-      >
-        Soft Skills
-      </h2>
-      <div className="skills-wrapper">
-        {softArray.map((skill, index) =>
-          index % 2 === 0 ? (
-            <div className="soft-skill">
-              <CustomIcon
-                key={index}
-                src={skill.icon}
-                className={inView ? "icon scroll-left" : "icon"}
-                ref={ref}
-                delay={index / 2 + "s"}
-              />
-              <h4
-                className={inView && "soft-skill scroll-right"}
-                ref={ref}
-                style={{
-                  animationDelay: index / 2 + "s",
-                }}
-              >
-                {skill.text}
-              </h4>
-            </div>
-          ) : (
-            <div className="soft-skill">
-              <h4
-                className={inView && "soft-skill scroll-left"}
-                ref={ref}
-                style={{
-                  animationDelay: index / 2 + "s",
-                }}
-              >
-                {skill.text}
-              </h4>
-              <CustomIcon
-                key={index}
-                src={skill.icon}
-                className={inView ? "icon scroll-right" : "icon"}
-                ref={ref}
-                delay={index / 2 + "s"}
-              />
-            </div>
-          )
-        )}
-      </div>
-    </div>
-  );
-};
+// export const SoftSkills = () => {
+//   const { ref, inView, entry } = useInView({
+//     /* Optional options */
+//     root: null,
+//     rootMargin: "0px",
+//     threshold: 1.0,
+//     triggerOnce: true,
+//   });
+//   return (
+//     <div className="soft-skills">
+//       <h2
+//         className={
+//           inView ? "soft-first-letter scroll-down" : "soft-first-letter"
+//         }
+//         ref={ref}
+//       >
+//         Soft Skills
+//       </h2>
+//       <div className="skills-wrapper">
+//         {softArray.map((skill, index) =>
+//           index % 2 === 0 ? (
+//             <div className="soft-skill">
+//               <CustomIcon
+//                 key={index}
+//                 src={skill.icon}
+//                 className={inView ? "icon scroll-left" : "icon"}
+//                 ref={ref}
+//                 delay={index / 2 + "s"}
+//               />
+//               <h4
+//                 className={inView && "soft-skill scroll-right"}
+//                 ref={ref}
+//                 style={{
+//                   animationDelay: index / 2 + "s",
+//                 }}
+//               >
+//                 {skill.text}
+//               </h4>
+//             </div>
+//           ) : (
+//             <div className="soft-skill">
+//               <h4
+//                 className={inView && "soft-skill scroll-left"}
+//                 ref={ref}
+//                 style={{
+//                   animationDelay: index / 2 + "s",
+//                 }}
+//               >
+//                 {skill.text}
+//               </h4>
+//               <CustomIcon
+//                 key={index}
+//                 src={skill.icon}
+//                 className={inView ? "icon scroll-right" : "icon"}
+//                 ref={ref}
+//                 delay={index / 2 + "s"}
+//               />
+//             </div>
+//           )
+//         )}
+//       </div>
+//     </div>
+//   );
+// };

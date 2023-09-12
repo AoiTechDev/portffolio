@@ -11,6 +11,7 @@ import Blob from "@components/visual_components/blob/Blob";
 import { myData } from "@components/aboutme/aboutMeData";
 import { useElementOnScreen } from "@utills/ElementOnScreen";
 import Page from "@components/page";
+import Link from 'next/link'
 const About = () => {
   const [contentId, setContentId] = useState("whoami");
   const { ref, inView, entry } = useInView({
@@ -29,14 +30,12 @@ const About = () => {
       <section id="about">
         <div className="cube-wrapper">
           <div className="about-heading-text">
-            <h3 
+            <h3
             // ref={ref} className={inView ? "fade-in-left" : "fade-out-up"}
-
-            
             >
               MyCube
             </h3>
-            <h5 
+            <h5
             // ref={ref} className={inView ? "fade-in-right" : "fade-out-up"}
             >
               Swipe and click to know be better!
@@ -77,7 +76,7 @@ const About = () => {
                 // }
                 className="aboutme-content"
               >
-                <h4 
+                <h4
                 // ref={ref} className={inView ? "fade-in" : "fade-out"}
                 >
                   {data.title}
@@ -96,6 +95,7 @@ const About = () => {
               </div>
             )
         )}
+       
       </section>
     </Page>
   );

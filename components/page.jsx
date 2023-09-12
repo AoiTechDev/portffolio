@@ -6,7 +6,7 @@
 // import Skills from "@pages/Skills";
 // import Landpage from "@pages/home";
 
-import Nav from "./Nav"
+import Nav from '@components/Nav'
 
 // import Menu from "@components/menu/Menu";
 // import Nav from "@components/Nav";

@@ -3,49 +3,90 @@
 @import 'keyframes'
 #landpage
     color: #{$grey}
-    background: black
+    //background: radial-gradient(circle at 70% -20%, #158ca1, #14879e, #127896, #0e648b, #0b4c7b, #07356a, #052157, #021144, #010733, #000224, #01001b, #010017)
+    background-image: url("../assets/images/bg.png")
+
     height: 100vh
     position: relative
-    .landpage-content-wrapper
-        height: 100%
+    @include flexbox(center,center)
+    // .landpage-content-wrapper
+    //     height: 100%
+    //     width: 100%
+    //     @include flexbox(center,center)
+    //     padding: 0 1rem
+    //     flex-direction: column
+    //     .landpage-headline
+
+    //         @include flexbox(center,center)
+    //         flex-direction: column
+    //         z-index: 1
+    //         gap: 3rem
+    //         width: min(700px, 100%)
+    //         min-height: 55vh
+    //         position: relative
+    //         border: #{$bold}
+    //         background: #{$topleft}, #{$bottomright}
+
+    //         @media screen and (max-width: 400px)
+    //             min-height: 45vh
+    //         .my-name
+    //             opacity: 1
+    //             h1
+    //                 line-height: 120%
+    //         h3
+    //             opacity: 1
+    //     .front-img
+    //         width: min(650px,100%)
+    //         position: absolute
+    //         bottom: 0
+    //         opacity: 0.4
+    //         z-index: 0
+    // .front-icon
+    //     position: absolute
+    //     top: 30%
+    //     right: 15%
+    //     width: 70px
+    //     height: 70px
+    .container
         width: 100%
+        height: 100%
+        //background: radial-gradient(circle at 50% 120%, #c800cf, #c200cb, #b001bf, #9801ae, #7d0199, #610282, #48026a, #330253, #23023f, #18012f, #110124, #0f0120)
+
         @include flexbox(center,center)
-        padding: 0 1rem
         flex-direction: column
-        .landpage-headline
+        background: rgba(255, 255, 255, 0)
+        //  border-radius: 16px
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+        backdrop-filter: blur(10px)
+        -webkit-backdrop-filter: blur(7.1px)
+        //border: 1px solid rgba(255, 255, 255, 0.38)
+        .my-name
+            
+            p
+               
+                
+            h1
 
-            @include flexbox(center,center)
-            flex-direction: column
-            z-index: 1
-            gap: 3rem
-            width: min(700px, 100%)
-            min-height: 55vh
-            position: relative
-            border: #{$bold}
-            background: #{$topleft}, #{$bottomright}
-
-
-            @media screen and (max-width: 400px)
-                min-height: 45vh
-            .my-name
-                opacity: 1
-                h1
-                    line-height: 120%
+                text-transform: uppercase
+               
+                letter-spacing: clamp(0.8rem, 0.17vw + 0.76rem, 1rem)
+                @media screen and (max-width: 600px)
+                    letter-spacing: 4px
+                font-weight: 400
             h3
-                opacity: 1
-        .front-img
-            width: min(650px,100%)
-            position: absolute
-            bottom: 0
-            opacity: 0.4
-            z-index: 0
-    .front-icon
-        position: absolute
-        top: 30%
-        right: 15%
-        width: 70px
-        height: 70px
-
+                font-weight: 100
+              
+                text-transform: uppercase
+        .btns-container
+            .front-btn
+                padding: 1rem
+                border-radius: 25px
+                width: 120px
+                margin: 1rem 1rem 0 0 
+            .dive-into-btn
+                background: #{$blue}
+            .contact-btn
+                background: #{$purple}
 .expand-borders
     animation: bordersExpand 1s ease-in
     animation-fill-mode: both !important

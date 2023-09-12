@@ -3,15 +3,16 @@ import { extendTheme } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import "@styles/styles.sass";
-const colors = {
-  brand: {
-    900: "#1a365d",
-    800: "#153e75",
-    700: "#2a69ac",
-  },
+const font = {
+ 
+  textStyles:{
+    h3:{
+      fontWeight: '100'
+    }
+  }
 };
 
-export const theme = extendTheme({ colors });
+export const theme = extendTheme({ font });
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
@@ -22,16 +23,16 @@ function MyApp({ Component, pageProps }) {
 
           <motion.div
             className="slide-in"
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 0 }}
-            exit={{ scaleY: 1 }}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 0 }}
+            exit={{ scaleX: 1 }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           ></motion.div>
           <motion.div
             className="slide-out"
-            initial={{ scaleY: 1 }}
-            animate={{ scaleY: 0 }}
-            exit={{ scaleY: 0 }}
+            initial={{ scaleX: 1 }}
+            animate={{ scaleX: 0 }}
+            exit={{ scaleX: 0 }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           ></motion.div>
         </motion.div>

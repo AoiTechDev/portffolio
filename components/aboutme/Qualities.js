@@ -5,9 +5,9 @@ const Qualities = () => {
     <div className="qualities-wrapper">
       {myData.map((data) => {
         if (data.id === "myqualities") {
-          return data.qualities.map((quality) => {
+          return data.qualities.map((quality, index) => {
             return (
-              <div className="quality-container">
+              <div key={index} className="quality-container">
                 <p>{quality}</p>
               </div>
             );
