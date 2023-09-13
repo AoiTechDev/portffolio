@@ -24,46 +24,14 @@ const LandPage = () => {
   return (
     <Page>
       <section id="landpage">
-        {/* <div className="landpage-content-wrapper">
-          <div
-            // ref={ref}
-            // className={
-            //   inView ? "expand-borders landpage-headline" : "landpage-headline"
-            // }
-            className="landpage-headline"
-          >
-            <div
-            //  ref={ref} className={inView ? "fade-in my-name" : "my-name"}
-             className="my-name"
-             >
-              <h1>Hi, Im Paweł</h1>
-              <h1>Bornikowski</h1>
-            </div>
-
-            <h3 
-            // ref={ref} className={inView && "fade-in"}
-          
-            >
-              Front-end Developer
-            </h3>
-          </div>
-          <Image
-            src={frontImg}
-            // className={inView ? "fade-in-img front-img" : "front-img"}
-            // ref={ref}
-            className="front-img"
-            alt="homepage image"
-          />
-        </div> */}
         <div className="container">
           <div className="my-name">
             <p>Hi, my name is</p>
             <h1>Paweł</h1>
             <h1>Bornikowski</h1>
-            <h3>Front-end Developer</h3>
-            <p>
-              JavaScript wizard in training - striving to create web <br />
-              magic through clean code and design.
+            <h3 className="frontend-text">Front-end Developer</h3>
+            <p className="front-note">
+             Aspiring pixel perfect craftsman honing my JS, React & CSS skills  to build interfaces that delight
             </p>
             <div className="btns-container">
               <Link href="/About">

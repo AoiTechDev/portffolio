@@ -69,25 +69,17 @@ const About = () => {
               <div
                 key={index}
                 ref={ref}
-                // className={
-                //   inView
-                //     ? "expand-borders aboutme-content"
-                //     : "hide-borders aboutme-content"
-                // }
+               
                 className="aboutme-content"
               >
                 <h4
-                // ref={ref} className={inView ? "fade-in" : "fade-out"}
+               
                 >
                   {data.title}
                 </h4>
                 <div
                   ref={ref}
-                  // className={
-                  //   inView
-                  //     ? "fade-in content-wrapper"
-                  //     : "fade-out content-wrapper"
-                  // }
+               
                   className="content-wrapper"
                 >
                   {data.content}
