@@ -6,6 +6,7 @@
     color: #{$grey}
     background-image: url("../assets/images/bg.png")
     height: 100vh
+   
     position: relative
     @include flexbox(center,center)
     background-size: 100% 100%
@@ -24,12 +25,11 @@
             width: min(850px, 100%)
             .front-note
                 width: min(500px, 100%)
-
+          
             h1
                 //color: grey
                 font-weight: 100
-                &:not(.faulty-letter)
-                    color: grey
+                
                 span
                     &:not(.glowing-txt .faulty-letter)
                     

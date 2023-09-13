@@ -11,7 +11,7 @@ import Blob from "@components/visual_components/blob/Blob";
 import { myData } from "@components/aboutme/aboutMeData";
 import { useElementOnScreen } from "@utills/ElementOnScreen";
 import Page from "@components/page";
-import Link from 'next/link'
+import Link from "next/link";
 const About = () => {
   const [contentId, setContentId] = useState("whoami");
   const { ref, inView, entry } = useInView({
@@ -24,70 +24,31 @@ const About = () => {
   const getSlideId = (e) => {
     setContentId(e.currentTarget.id);
   };
-
+  const qualityArray = [
+    "Creative",
+    "Adaptable",
+    "Teamwork",
+    "Self-discipline",
+    "Communication",
+  ];
+  const qualityDescArray = [
+    "Thinking outside the box comes naturally to me. I excel at bringing fresh ideas to projects.",
+    'I adapt quickly to new tools, processes, and environments. Change keeps me engaged.',
+    "I build positive relationships and enjoy brainstorming in groups. Teams create better outcomes together.",
+    "Pushing past mental barriers allows me to persist through challenges. I cultivate a growth mindset.",
+    "Understanding communication styles helps me effectively collaborate with teammates of all backgrounds.",
+  ];
   return (
     <Page>
       <section id="about">
-        <div className="cube-wrapper">
-          <div className="about-heading-text">
-            <h3
-            // ref={ref} className={inView ? "fade-in-left" : "fade-out-up"}
-            >
-              MyCube
-            </h3>
-            <h5
-            // ref={ref} className={inView ? "fade-in-right" : "fade-out-up"}
-            >
-              Swipe and click to know be better!
-            </h5>
-          </div>
-
-          <Swiper
-            effect={"cube"}
-            grabCursor={true}
-            cubeEffect={{
-              shadow: true,
-              slideShadows: true,
-              shadowOffset: 20,
-              shadowScale: 0.94,
-            }}
-            modules={[EffectCube]}
-            // className={inView ? "fade-in-left" : "fade-out-left"}
-            id="mycube"
-            ref={ref}
-          >
-            {myData.map((data, index) => (
-              <SwiperSlide key={index} id={data.id} onClick={getSlideId}>
-                <Blob text={data.title} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <div className="qualities-wrapper">
+          {qualityArray.map((quality, index) => (
+            <div className="quality" key={index}>
+              <span>{quality}</span>
+              <p>{qualityDescArray[index]}</p>
+            </div>
+          ))}
         </div>
-        {myData.map(
-          (data, index) =>
-            data.id === contentId && (
-              <div
-                key={index}
-                ref={ref}
-               
-                className="aboutme-content"
-              >
-                <h4
-               
-                >
-                  {data.title}
-                </h4>
-                <div
-                  ref={ref}
-               
-                  className="content-wrapper"
-                >
-                  {data.content}
-                </div>
-              </div>
-            )
-        )}
-       
       </section>
     </Page>
   );

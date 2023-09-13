@@ -44,6 +44,7 @@ const LandPage = () => {
                   style={{
                     "--glow-color": "hsl(297.79, 100%, 52.16%)",
                   }}
+                  
                 >
                   e
                 </span>
