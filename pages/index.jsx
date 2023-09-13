@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { useElementOnScreen } from "@utills/ElementOnScreen";
 import Link from "next/link";
 import Page from "@components/page";
-
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 const LandPage = () => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
@@ -22,8 +22,9 @@ const LandPage = () => {
   //   threshold: 1
   // })
   return (
-    <section id="landpage">
-      {/* <div className="landpage-content-wrapper">
+    <Page>
+      <section id="landpage">
+        {/* <div className="landpage-content-wrapper">
           <div
             // ref={ref}
             // className={
@@ -54,28 +55,34 @@ const LandPage = () => {
             alt="homepage image"
           />
         </div> */}
-      <div className="container">
-        <div className="my-name">
-          <p>Hi, my name is</p>
-          <h1>Paweł</h1>
-          <h1>Bornikowski</h1>
-          <h3>Front-end Developer</h3>
-          <p>
-            JavaScript wizard in training - striving to create web <br/>
-            magic through 
-            clean code and design.
-          </p>
-          <div className="btns-container">
-            <button className="dive-into-btn front-btn">
-              <Link href="/About">Dive in</Link>
-            </button>
-            <button className="contact-btn front-btn">
-              <Link href="/Contact">Contact me</Link>
-            </button>
+        <div className="container">
+          <div className="my-name">
+            <p>Hi, my name is</p>
+            <h1>Paweł</h1>
+            <h1>Bornikowski</h1>
+            <h3>Front-end Developer</h3>
+            <p>
+              JavaScript wizard in training - striving to create web <br />
+              magic through clean code and design.
+            </p>
+            <div className="btns-container">
+              <Link href="/About">
+                <button className="dive-into-btn front-btn">Dive in</button>
+              </Link>
+
+              <Link href="/Contact">
+                {" "}
+                <button className="contact-btn front-btn">Contact me </button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+        <div className="socials">
+          <Link href="https://github.com/BorPawel" target="_blank"><BsGithub/></Link>
+          <Link href="https://www.linkedin.com/in/pbornikowski/" target="_blank"><BsLinkedin/></Link>
+        </div>
+      </section>
+    </Page>
   );
 };
 export default LandPage;

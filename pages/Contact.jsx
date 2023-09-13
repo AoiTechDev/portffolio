@@ -10,7 +10,7 @@ import { Button } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { sendContactForm } from "@lib/api";
 import Link from 'next/link'
-import Page from "@app/page";
+import Page from "@components/page";
 const initValues = { name: "", email: "", message: "" };
 const initState = { values: initValues };
 

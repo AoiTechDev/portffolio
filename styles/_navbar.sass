@@ -3,24 +3,26 @@
 
 nav
     position: fixed
-    left: 50%
-    transform: translate(-50%)
+   
     z-index: 100
-    width: 90%
+    width: 100%
     .navbar-wrapper
         @include flexbox(center,space-between)
         width: 100%
         padding: 2rem
         .nav-items
-            @include flexbox(center,center)
-            padding: 1rem
-            color: white
+            @include flexbox(center,space-evenly)
+            width: 40%
+            color: #{$grey}
+            gap: 2rem
     @media screen and (max-width: #{$medium})
         .logo
             width: 160px
             height: 40px
         .navbar-wrapper
             padding: 1rem 0
+            .nav-items
+                display: none
     // @media screen and (max-width: 950px)
         
     //     box-shadow: none
@@ -28,8 +30,8 @@ nav
     //         display: none
            
 
-    @include flexbox(center, end)
+    // @include flexbox(center, end)
 
-    ul
-        width: 100%
-        @include navList(row, 2vmin, 0, #{$grey})
+    // ul
+    //     width: 100%
+    //     @include navList(row, 2vmin, 0, #{$grey})

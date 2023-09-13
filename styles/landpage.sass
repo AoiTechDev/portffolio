@@ -9,6 +9,7 @@
     height: 100vh
     position: relative
     @include flexbox(center,center)
+    background-size: 100% 100%
     // .landpage-content-wrapper
     //     height: 100%
     //     width: 100%
@@ -83,10 +84,24 @@
                 border-radius: 25px
                 width: 120px
                 margin: 1rem 1rem 0 0 
+
             .dive-into-btn
                 background: #{$blue}
             .contact-btn
                 background: #{$purple}
+    .socials
+        position: absolute
+        bottom: 2rem
+        left: 2rem
+        @include flexbox(center,center)
+        gap: 2rem
+        a
+            color: #{$grey}
+            font-size: 1.5rem
+            transition: 0.3s
+            &:hover
+                color: #{$blue}
+    
 .expand-borders
     animation: bordersExpand 1s ease-in
     animation-fill-mode: both !important
