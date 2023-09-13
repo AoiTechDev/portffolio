@@ -42,6 +42,7 @@ const About = () => {
     <Page>
       <section id="about">
         <div className="qualities-wrapper">
+          <h5>My qualities</h5>
           {qualityArray.map((quality, index) => (
             <div className="quality" key={index}>
               <span>{quality}</span>

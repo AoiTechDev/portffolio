@@ -11,43 +11,57 @@
     background: #0d0d0d
     @include flexbox(center,center)
     .qualities-wrapper
-        width: 100%
+        width: min(1400px, 100%)
         height: 80%
         @include flexbox(center,center)
         flex-direction: column
+
+        h5
+
+            font-weight: 400
+            text-transform: uppercase
+            margin-bottom: 2rem
+            align-self: start
+            @media screen and (max-width: 900px)
+                padding-left: 10vw
+            @media screen and (max-width: 600px)
+                padding-left: 1rem
 
         .quality
             color: rgb(153, 153, 153)
             width: 100%
             z-index: 2
             position: relative
-            &:nth-child(1)
-                border-top: 1px solid #272522
-
             border-bottom: 1px solid #272522
             transition: color 0.5s
             display: flex
             align-items: center
             justify-content: space-between
-            p
-                width: 30%
-                line-height: 0%
-                opacity: 0
-                transition: 0.5s
-                font-weight: 600
+            &:nth-child(2)
+                border-top: 1px solid #272522
             span
                 font-size: clamp(2.80rem, 3.25vw + 2rem, 4.56rem)
                 font-weight: 700
                 text-transform: uppercase
                 letter-spacing: -4px
-                padding-left: 15vw
+                //padding-left: 15vw
                 align-self: start
-
+            
+            p
+                width: min(400px, 100%)
+                line-height: 0%
+                opacity: 0
+                transition: 0.5s
+                font-weight: 600
+                color: black
+                @media screen and (max-width: 900px)
+                    padding: 0.5rem
+            
             @media screen and (max-width: 900px)
-                padding-left: 10vw
-            @media screen and (max-width: 600px)
-                padding-left: 1rem
-
+                flex-direction: column
+                align-items: start
+                justify-content: start
+                padding: 0.5rem 0 0 0.5rem
             &::after, &::before
                 content: ''
                 position: absolute
@@ -68,7 +82,7 @@
                 height: 50%
             &:hover p
                 opacity: 1
-                line-height: 120%
+                line-height: 100%
             &:hover
                 color: black
 /// EDUCATION COMPONENT
