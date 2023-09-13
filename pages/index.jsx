@@ -67,12 +67,18 @@ const LandPage = () => {
             </p>
             <div className="btns-container">
               <Link href="/About">
-                <button className="dive-into-btn front-btn">Dive in</button>
+                <button className="glowing-btn" style={{'--glow-color':'hsl(186 100% 69%)'}}>
+                  <span className="glowing-txt">DI<span className="faulty-letter">V</span>E IN</span>
+                 
+                  </button>
               </Link>
 
-              <Link href="/Contact">
+              <Link href="/Contact"> 
                 {" "}
-                <button className="contact-btn front-btn">Contact me </button>
+                <button className="glowing-btn" style={{'--glow-color':'hsl(297.79, 100%, 52.16%)'}}>
+                  <span className="glowing-txt">CON<span className="faulty-letter">T</span>ACT ME</span>
+                 
+                  </button>
               </Link>
             </div>
           </div>
