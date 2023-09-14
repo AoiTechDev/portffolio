@@ -4,32 +4,40 @@
 
 #about
 
-    height: 100vh
+    min-height: 100vh
     color: #{$grey}
 
     position: relative
     background: #0d0d0d
     @include flexbox(center,center)
+    flex-direction: column
+    padding: 1rem
+    padding-top: 15vh
+    .title-wrapper
+        @include flexbox(center,start)
+        gap: 1rem
+        width: 100%
+        margin-bottom: 4rem
+        .title-line
+            width: min(215px, 30%)
+            background: #{$grey}
+            height: 1px
+        .title
+            font-size: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem)
+
+            text-transform: uppercase
+            letter-spacing: -2px
+    //QUALITIES
     .qualities-wrapper
-        width: min(1400px, 100%)
+        //width: min(1400px, 100%)
+        width: 100%
         height: 80%
         @include flexbox(center,center)
         flex-direction: column
 
-        h5
-
-            font-weight: 400
-            text-transform: uppercase
-            margin-bottom: 2rem
-            align-self: start
-            @media screen and (max-width: 900px)
-                padding-left: 10vw
-            @media screen and (max-width: 600px)
-                padding-left: 1rem
-
         .quality
             color: rgb(153, 153, 153)
-            width: 100%
+            width: min(1400px, 100%)
             z-index: 2
             position: relative
             border-bottom: 1px solid #272522
@@ -37,6 +45,13 @@
             display: flex
             align-items: center
             justify-content: space-between
+            padding: 0.5rem
+            -webkit-touch-callout: none
+            -webkit-user-select: none
+            -khtml-user-select: none
+            -moz-user-select: none
+            -ms-user-select: none
+            user-select: none
             &:nth-child(2)
                 border-top: 1px solid #272522
             span
@@ -46,7 +61,7 @@
                 letter-spacing: -4px
                 //padding-left: 15vw
                 align-self: start
-            
+
             p
                 width: min(400px, 100%)
                 line-height: 0%
@@ -54,14 +69,12 @@
                 transition: 0.5s
                 font-weight: 600
                 color: black
-                @media screen and (max-width: 900px)
-                    padding: 0.5rem
-            
+
             @media screen and (max-width: 900px)
                 flex-direction: column
                 align-items: start
                 justify-content: start
-                padding: 0.5rem 0 0 0.5rem
+
             &::after, &::before
                 content: ''
                 position: absolute
@@ -85,7 +98,32 @@
                 line-height: 100%
             &:hover
                 color: black
-/// EDUCATION COMPONENT
+
+    //WHO AM I
+    .whoami-wrapper
+        width: 100%
+        
+        display: flex
+        align-items: center
+        
+        justify-content: center
+        flex-direction: column
+        .whoami-content-wrapper
+            width: min(1400px, 100%)
+            
+            .three-col-content
+                @include flexbox(center,center)
+                flex-direction: column
+                gap: 2rem
+        
+                .left-col
+                    width: min(500px, 100%)
+                    align-self: start
+                .right-col
+                    width: min(500px, 100%)
+                    align-self: end
+
+    /// EDUCATION COMPONENT
 .education-wrapper
     @include flexbox(center,space-evenly)
 

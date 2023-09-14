@@ -12,6 +12,8 @@ import { myData } from "@components/aboutme/aboutMeData";
 import { useElementOnScreen } from "@utills/ElementOnScreen";
 import Page from "@components/page";
 import Link from "next/link";
+import Qualities from "@components/about/Qualities";
+import Whoami from "@components/about/Whoami";
 const About = () => {
   const [contentId, setContentId] = useState("whoami");
   const { ref, inView, entry } = useInView({
@@ -24,32 +26,13 @@ const About = () => {
   const getSlideId = (e) => {
     setContentId(e.currentTarget.id);
   };
-  const qualityArray = [
-    "Creative",
-    "Adaptable",
-    "Teamwork",
-    "Self-discipline",
-    "Communication",
-  ];
-  const qualityDescArray = [
-    "Thinking outside the box comes naturally to me. I excel at bringing fresh ideas to projects.",
-    'I adapt quickly to new tools, processes, and environments. Change keeps me engaged.',
-    "I build positive relationships and enjoy brainstorming in groups. Teams create better outcomes together.",
-    "Pushing past mental barriers allows me to persist through challenges. I cultivate a growth mindset.",
-    "Understanding communication styles helps me effectively collaborate with teammates of all backgrounds.",
-  ];
+
+
   return (
     <Page>
       <section id="about">
-        <div className="qualities-wrapper">
-          <h5>My qualities</h5>
-          {qualityArray.map((quality, index) => (
-            <div className="quality" key={index}>
-              <span>{quality}</span>
-              <p>{qualityDescArray[index]}</p>
-            </div>
-          ))}
-        </div>
+        <Whoami/>
+       <Qualities/>
       </section>
     </Page>
   );
