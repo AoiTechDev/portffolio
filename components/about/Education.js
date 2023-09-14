@@ -5,6 +5,7 @@ const Education = () => {
   return (
     <div className="education-wrapper">
       <Title title="Education"/>
+
     </div>
   );
 };

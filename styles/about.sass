@@ -6,13 +6,17 @@
 
     min-height: 100vh
     color: #{$grey}
-
     position: relative
     background: #0d0d0d
     @include flexbox(center,center)
     flex-direction: column
     padding: 1rem
     padding-top: 15vh
+    .wrapper
+        width: 100%
+        min-height: 80vh
+        @include flexbox(center,center)
+        flex-direction: column
     .title-wrapper
         @include flexbox(center,start)
         gap: 1rem
@@ -29,12 +33,6 @@
             letter-spacing: -2px
     //QUALITIES
     .qualities-wrapper
-        //width: min(1400px, 100%)
-        width: 100%
-        height: 80%
-        @include flexbox(center,center)
-        flex-direction: column
-
         .quality
             color: rgb(153, 153, 153)
             width: min(1400px, 100%)
@@ -101,60 +99,123 @@
 
     //WHO AM I
     .whoami-wrapper
-        width: 100%
-        min-height: 80vh
-        display: flex
-        align-items: center
-
-        justify-content: center
-        flex-direction: column
         .whoami-content-wrapper
             width: min(1400px, 100%)
             min-height: 50vh
-            .three-col-content
-                @include flexbox(center,center)
-                flex-direction: column
-                gap: 1rem
-                
-                .about-img
-                    width: min(600px, 100%)
-                    height: auto
-                 
-                .left-col, .right-col
-                    min-height: 400px
-                  
-                    @include flexbox(center,space-around)
-                    gap: 1rem
-                    position: relative
-                    padding: 1rem
-                    p
-                        width: min(600px, 100%)
-                        @include flexbox(center,center)
 
-                @media screen and (max-width: 800px)
-                    .left-col, .right-col
-                        flex-direction: column
-                        z-index: 1
-                       
-                        p
-                            width: min(600px, 80%)
-                    .right-col
-                        p   
-                            order: 1
-                        .about-img
-                            order: 2
-                    .about-img
-                        position: absolute
-                        opacity: 0.1
-                        z-index: -1
-                      
-                  
-                @media screen and (max-width: 600px)
-                    .left-col, .right-col
-                        min-height: 250px
-                        p
-                            width: min(600px, 100%)
+            display: flexbox
+
+            flex-direction: column
+
+            .left-col, .right-col
+
+                display: flex
+                position: relative
+                min-height: 400px
+                z-index: 1
+                @include flexbox(center,center)
+
+                padding: 1rem
+                p
+                    width: min(650px, 100%)
+                    background: rgba(10,125,158,0)
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+                    backdrop-filter: blur(10px)
+                    -webkit-backdrop-filter: blur(10px)
+                    padding: 1rem
+                .art-img, .codding-img
+                    width: min(600px, 100%)
+                    position: absolute
+                    aspect-ratio: 16/9
+                    z-index: -1
+                .art-img
+                    right: 0
+                .codding-img
+                    left: 0
+            .left-col
+                padding-right: 12vw
+            .right-col
+                padding-left: 12vw
+            @media screen and (max-width: 900px)
+                .left-col
+                    padding-right: 1rem
+                .right-col
+                    padding-left: 1rem
+            @media screen and (max-width: 600px)
+                .art-img, .codding-img
+                    top: 0
+                .left-col, .right-col
+                    p
+                        background: rgba(255,255,255,0)
+            //.three-col-content
+
+                // display: flex
+                // flex-direction: row
+                // -webkit-justify-content: space-between
+                // justify-content: space-between
+                // min-height: 800px
+                // width: 100%
+                // min-height: 100%
+                // gap: 1rem
+
+                // .codding-img
+                //     left: 0
+
+                // .left-col, .right-col
+                //     width: min(1200px, 100% )
+                //     min-height: 400px
+                //     z-index: 1
+                //     display: flex
+                //     justify-content: space-between
+                //     gap: 1rem
+                //     position: relative
+                //     padding: 1rem
+                //     .about-img
+                //         width: min(600px, 100%)
+                //         height: auto
+                //         z-index: -1
+                //         position: absolute
+
+                //     p
+                //         color: #{$grey}
+                //         padding: 1rem
+                //         width: min(650px, 100%)
+                //         @include flexbox(center,center)
+                //         background: rgba(10,125,158,0.2)
+                //         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+                //         backdrop-filter: blur(5px)
+                //         -webkit-backdrop-filter: blur(5px)
+                //         // background: #{$blue}
+                //         align-self: center
+                // .right-col
+                //     align-self: flex-end
+                // .left-col
+                //     align-self: flex-start
+                // @media screen and (max-width: 800px)
+                //     .left-col, .right-col
+                //         flex-direction: column
+                //         z-index: 1
+
+                //         p
+                //             width: min(600px, 80%)
+                //             background: rgba(255, 255, 255, 0)
+
+                //     .right-col
+                //         p
+                //             order: 1
+                //         .about-img
+                //             order: 2
+                //     .about-img
+                //         position: absolute
+                //         opacity: 0.3
+
+                // @media screen and (max-width: 500px)
+                //     .left-col, .right-col
+                //         min-height: 250px
+                //         p
+                //             width: min(600px, 100%)
 /// EDUCATION COMPONENT
 .education-wrapper
     width: 100%
     padding-top: 10vh
+    min-height: 50vh
