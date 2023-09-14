@@ -17,7 +17,7 @@
         @include flexbox(center,start)
         gap: 1rem
         width: 100%
-        margin-bottom: 4rem
+        margin-bottom: 2rem
         .title-line
             width: min(215px, 30%)
             background: #{$grey}
@@ -102,41 +102,59 @@
     //WHO AM I
     .whoami-wrapper
         width: 100%
-        
+        min-height: 80vh
         display: flex
         align-items: center
-        
+
         justify-content: center
         flex-direction: column
         .whoami-content-wrapper
             width: min(1400px, 100%)
-            
+            min-height: 50vh
             .three-col-content
                 @include flexbox(center,center)
                 flex-direction: column
-                gap: 2rem
-        
-                .left-col
-                    width: min(500px, 100%)
-                    align-self: start
-                .right-col
-                    width: min(500px, 100%)
-                    align-self: end
+                gap: 3rem
+                
+                .about-img
+                    width: min(600px, 100%)
+                    height: auto
+                 
+                .left-col, .right-col
+                    min-height: 400px
+                  
+                    @include flexbox(center,space-around)
+                    gap: 1rem
+                    position: relative
+                    padding: 1rem
+                    p
+                        width: min(600px, 100%)
+                        @include flexbox(center,center)
 
-    /// EDUCATION COMPONENT
+                @media screen and (max-width: 800px)
+                    .left-col, .right-col
+                        flex-direction: column
+                        z-index: 1
+                       
+                        p
+                            width: min(600px, 80%)
+                    .right-col
+                        p   
+                            order: 1
+                        .about-img
+                            order: 2
+                    .about-img
+                        position: absolute
+                        opacity: 0.1
+                        z-index: -1
+                      
+                  
+                @media screen and (max-width: 600px)
+                    .left-col, .right-col
+                        min-height: 250px
+                        p
+                            width: min(600px, 100%)
+/// EDUCATION COMPONENT
 .education-wrapper
-    @include flexbox(center,space-evenly)
-
-    flex-direction: column
-    gap: 1rem
-    .education-icons
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
-        width: 100%
-        .education-info
-            @include flexbox(center,center)
-            flex-direction: column
-    .edu-icon
-        width: 2rem
-        height: 2rem
-        color: #{$blue}
+    width: 100%
+    padding-top: 10vh
