@@ -18,8 +18,8 @@ const Qualities = () => {
   ];
 
   return (
-    <div className="qualities-wrapper wrapper">
-     <Title title="My qualities"/>
+    <div className="wrapper">
+     {/* <Title title="My qualities"/> */}
       {qualityArray.map((quality, index) => (
         <div className="quality" key={index}>
           <span>{quality}</span>

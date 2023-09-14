@@ -5,8 +5,8 @@ import art_img from "@assets/images/art-img.jpg";
 import Title from "./title/Title";
 const Whoami = () => {
   return (
-    <div className="whoami-wrapper wrapper">
-      <Title title="Who am i?" />
+    <div className="wrapper">
+     
       <div className="whoami-content-wrapper">
         {/* <div className="three-col-content"> */}
         <div className="left-col">
