@@ -1,13 +1,10 @@
 import React from "react";
+import Title from "./title/Title";
 
 const Education = () => {
   return (
     <div className="education-wrapper">
-      {" "}
-      <div className="title-wrapper">
-        <div className="title-line"></div>
-        <span className="title">Education</span>
-      </div>
+      <Title title="Education"/>
     </div>
   );
 };

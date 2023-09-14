@@ -2,13 +2,11 @@ import Image from "next/image";
 import React from "react";
 import code_img from "@assets/images/code-img.jpg";
 import art_img from "@assets/images/art-img.jpg";
+import Title from "./title/Title";
 const Whoami = () => {
   return (
     <div className="whoami-wrapper">
-      <div className="title-wrapper">
-        <div className="title-line"></div>
-        <span className="title">WHO AM I?</span>
-      </div>
+        <Title title="Who am i?"/>
       <div className="whoami-content-wrapper">
         <div className="three-col-content">
           <div className="left-col">

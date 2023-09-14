@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "./title/Title";
 
 const Qualities = () => {
   const qualityDescArray = [
@@ -18,10 +19,7 @@ const Qualities = () => {
 
   return (
     <div className="qualities-wrapper">
-      <div className="title-wrapper">
-        <div className="title-line"></div>
-        <span className="title">My qualities</span>
-      </div>
+     <Title title="My qualities"/>
       {qualityArray.map((quality, index) => (
         <div className="quality" key={index}>
           <span>{quality}</span>

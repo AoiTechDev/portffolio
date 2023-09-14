@@ -15,6 +15,7 @@ import Link from "next/link";
 import Qualities from "@components/about/Qualities";
 import Whoami from "@components/about/Whoami";
 import Education from "@components/about/Education";
+import Hobbies from "@components/about/Hobbies";
 const About = () => {
   const [contentId, setContentId] = useState("whoami");
   const { ref, inView, entry } = useInView({
@@ -36,6 +37,7 @@ const About = () => {
         <Whoami/>
         <Education/>
        <Qualities/>
+       <Hobbies/>
       </section>
     </Page>
   );
