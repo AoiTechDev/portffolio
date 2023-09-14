@@ -15,7 +15,8 @@ import Link from "next/link";
 import Qualities from "@components/about/Qualities";
 import Whoami from "@components/about/Whoami";
 import Education from "@components/about/Education";
-import Hobbies from "@components/about/Hobbies";
+import FunFacts from "@components/about/funfacts/FunFacts";
+
 import Title from "@components/about/title/Title";
 const About = () => {
   const [contentId, setContentId] = useState("whoami");
@@ -38,10 +39,10 @@ const About = () => {
         <Whoami/>
         <Title title="education" />
         <Education/>
-        <Title title="qualities" />
+        <Title title="my qualities" />
        <Qualities/>
-       <Title title="hobbies" />
-       <Hobbies/>
+       <Title title="fun facts" />
+       <FunFacts />
       </section>
     </Page>
   );

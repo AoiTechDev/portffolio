@@ -1,0 +1,69 @@
+@import '../../variables'
+@import '../../mixin'
+
+.funfacts-wrapper
+    position: relative
+    .container
+        position: absolute
+        overflow: hidden
+        width: 300px
+        height: 560px
+        border-radius: 30px
+        -webkit-box-shadow: 0px 56px 72px -30px rgba(81,108,96,0.46)
+        box-shadow: 0px 56px 72px -30px rgba(81,108,96,0.46)
+  
+
+    .next-screen
+        position: absolute
+        background: #{$black}
+        width: 100%
+        padding: 40px 25px 0 25px
+        display: none
+
+    .screen-1
+        padding: 40px 25px 0 25px
+        .top
+            position: relative
+            margin-top: 25px
+            width: 100%
+            height: 300px
+            background: url('../../../assets/images/bg.png')
+            background-size: cover
+            border-radius: 20px
+            overflow: hidden
+            h5
+                text-shadow: 0px 2px 12px rgba(0,0,0,0.86)
+                position: absolute
+                bottom: 0
+                color: white
+                padding: 40px 20px
+                line-height: 1
+                z-index: 1
+                span
+                    font-size: 24px
+                    font-weight: 600
+        .button
+            position: absolute
+            left: 50%
+            top: 84%
+            -webkit-transform: translate(-50%, -50%)
+            transform: translate(-50%, -50%)
+            -webkit-tap-highlight-color: rgba(255,255,255,0)
+            width: 42px
+            height: 42px
+            border-radius: 50%
+            display: grid
+            place-items: center
+            z-index: 200
+            background: #{$blue}
+            cursor: pointer
+            .arrow
+                width: 25px
+                height: 25px
+                color: #{$black}
+        .loading
+            position: absolute
+            bottom: 16px
+            font-size: 14px
+            left: 40px
+            z-index: 210

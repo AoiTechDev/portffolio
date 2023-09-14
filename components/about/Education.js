@@ -40,9 +40,32 @@ const Education = () => {
             </p>
           </div>
         </div>
-        <div className="education-content">asdasd</div>
+        <div className="education-content">
+          <ul>
+            {" "}
+            <li>
+              Gained broad knowledge of computer science - programming
+              languages, technologies, algorithms.
+            </li>{" "}
+            <li>Hands-on experience through coursework labs and projects.</li>{" "}
+            <li>
+              Collaborated in groups to deliver projects using agile
+              methodologies.
+            </li>{" "}
+            <li>
+              Learned to systematically break down complex problems and apply
+              algorithms.
+            </li>{" "}
+            
+            <li>
+              Experience with version control, integration, planning, debugging,
+              tools.
+            </li>{" "}
+          </ul>
+        </div>
       </div>
     </div>
   );
 };
 export default Education;
+ 
