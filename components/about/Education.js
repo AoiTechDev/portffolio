@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "./title/Title";
+import Title from "../reusable/title/Title";
 import Image from "next/image";
 import study_img from "@assets/images/study-img.jpg";
 import { MdLocationPin, MdCalendarMonth } from "react-icons/md";

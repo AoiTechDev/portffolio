@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "./title/Title";
+import Title from "../reusable/title/Title";
 
 const Qualities = () => {
   const qualityDescArray = [

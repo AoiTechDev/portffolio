@@ -2,62 +2,95 @@
 @import 'mixin'
 @import 'keyframes'
 #skills
+    min-height: 100vh
     color: #{$grey}
-    background: black
-    height: 100vh
-    width: 100%
-    @include flexbox(center,space-evenly)
+    position: relative
+    background: #0d0d0d
+    @include flexbox(center,center)
+    flex-direction: column
+    padding: 1rem
 
-    .hard-skills
-        @include flexbox(center,space-evenly)
-        flex-direction: column
-        padding: 2rem
-        min-height: 90%
-        width: 100%
-        // h2
-        //     opacity: 0
-        .stack-wrapper
-            @include flexbox(center,space-evenly)
+    .skills-wrapper
+        width: min(1400px, 100%)
+        min-height: 50vh
+        @include flexbox(center,space-between)
+        @media screen and (max-width: 900px)
             flex-direction: column
-
-        .heading-wrapper
+            justify-content: center
+            align-items: center
+        .skills-icon
+            height: 100%
+            width: 100%
             @include flexbox(center,center)
-            flex-direction: column
-            min-height: 10vh
-            // h5
-            //     opacity: 0
-        .skills-wrapper
-            // display: grid
-            // grid-template-columns: repeat(auto-fit, minmax(100px, 2fr))
-            @include flexbox(center,center)
+        .skills-content
 
-            flex-wrap: wrap
-            gap: 1rem
-            width: min(400px, 100%)
-            .icon-wrapper
-                @include flexbox(center,center)
-                flex-direction: column
-                position: relative
-
-        .worked-skills-wrapper
-            @extend .skills-wrapper
+            height: 100%
             width: 100%
 
-    .tech-icon
-        width: 3rem
-        height: 3rem
-        color: #0A7D9E
+.spinner
+    position: relative
+    width: 250px
+    height: 250px
+    background: red
+    border-radius: 50%
+    
+  
+    .spinner-blur
+        width: 220px
+        height: 220px
+        background: rgba(10,125,158,0)
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+        backdrop-filter: blur(10px)
+        -webkit-backdrop-filter: blur(10px)
+        border-radius: 50%
+        z-index: 50
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    .circle
+        position: absolute
+        width: 130px
+        height: 130px
+        background: #{$blue}
+        border-radius: 50%
+        padding: 1rem
+        display: grid
+        place-items: center
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        // &:nth-child(2)
+        //     top: 20px
+        //     left: -80px
+        // &:nth-child(3)
+        //     top: -80px
+        //     left: 60px
+        // &:nth-child(4)
+        //     top: 20px
+        //     right: -80px
+        // &:nth-child(5)
+        //     top: 180px
+        //     left: -25px
+        // &:nth-child(6)
+        //     top: 180px
+        //     right: -25px
+        // &:nth-child(2)
+        //     top: 35px
+        //     left: -80px
+        // &:nth-child(4)
+        //     top: 35px
+        //     right: -80px
+        // &:nth-child(3)
+        //     top: -70px
+        //     left: 60px
+        // &:nth-child(6)
+        //     top: 200px
+        //     left: -30px
+        // &:nth-child(6)
+        //     top: 200px
+        //     right: -30px
 
-    @media screen and (max-width: 600px)
         .tech-icon
-            width: 2.5rem
-            height: 2.5rem
-
-    .skill-container
-        width: 200px
-        height: 200px
-        background: red
-        .skill
-            width: 50px
-            height: 50px
-            background: blue
+            width: 70px
+            height: 70px

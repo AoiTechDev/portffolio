@@ -17,7 +17,7 @@ import Whoami from "@components/about/Whoami";
 import Education from "@components/about/Education";
 import FunFacts from "@components/about/funfacts/FunFacts";
 
-import Title from "@components/about/title/Title";
+import Title from "@components/reusable/title/Title";
 const About = () => {
   const [contentId, setContentId] = useState("whoami");
   const { ref, inView, entry } = useInView({

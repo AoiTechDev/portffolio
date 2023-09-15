@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import code_img from "@assets/images/code-img.jpg";
 import art_img from "@assets/images/art-img.jpg";
-import Title from "./title/Title";
+import Title from "../reusable/title/Title";
 const Whoami = () => {
   return (
     <div className="wrapper">

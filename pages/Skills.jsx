@@ -1,15 +1,6 @@
 "use client";
 
 import "@styles/skills.sass";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/hash-navigation";
-import { HardSkills, SoftSkills } from "@components/skills/SkillsComponent";
-import { useInView } from "react-intersection-observer";
-//import 'swiper/swiper.min.css'
-import Link from "next/link";
 import React, {
   useLayoutEffect,
   useState,
@@ -18,68 +9,107 @@ import React, {
   forwardRef,
 } from "react";
 import Page from "@components/page";
-import { gsap, Power1  } from "gsap";
-import { TimelineLite } from "gsap";
-
-function RotatingBox({boxID}) {
-
-  const parentRef = useRef();
-
-  const animate = () => {
-    const timeline = gsap.timeline({
-      context: gsap.utils.selector(parentRef.current)
-    });
-    
-    timeline.to(`.child-${boxID}`, 0.5, {
-      rotation: 360,  
-      ease: Power1.inOut 
-    })
-  }
-
-
-
-  return (
-    <div className="skill-container" onClick={animate} ref={parentRef}>
-
-      <div className={`child-${boxID}`}>Child 1</div>  
-      <div className={`child-${boxID}`}>Child 2</div>
-      <div className={`child-${boxID}`}>Child 3</div>
-
-    </div>
-  );
-
-}
+import { gsap } from "gsap";
+import Title from "@components/reusable/title/Title";
+import {
+  DiReact,
+  DiHtml5,
+  DiCss3,
+  DiSass,
+  DiJavascript1,
+} from "react-icons/di";
 
 const Skills = () => {
-  const windowWidthSize = () => {
-    const [windowWidth, setWindowWidth] = useState(0);
-    useLayoutEffect(() => {
-      const updateWidth = () => {
-        setWindowWidth(window.innerWidth);
-      };
-      window.addEventListener("resize", updateWidth);
-      updateWidth();
-      return () => window.removeEventListener("resize", updateWidth);
-    }, []);
-    return windowWidth;
-  };
+  const boxRef = useRef();
+  useLayoutEffect(() => {
+    const spinner = document.querySelector(".spinner");
+    const circles = document.querySelectorAll(".circle");
+    const blur = document.querySelector("spinner-blur");
 
-  let width = windowWidthSize();
+    let mm = gsap.matchMedia();
 
+    mm.add("(max-width: 600px)", () => {
+      gsap.set(spinner, {
+        scale: 0.6,
+      });
+    })
+    gsap
+      .timeline()
+      .to(spinner.children[1], {
+        y: -130,
+        x: 0,
+        duration: 0.8,
+      })
+      .to(spinner.children[2], {
+        y: -30,
+        x: 130,
+        duration: 0.8,
+      })
+      .to(spinner.children[3], {
+        y: 120,
+        x: 80,
+        duration: 0.8,
+      })
+      .to(spinner.children[4], {
+        y: 120,
+        x: -80,
+        duration: 0.8,
+      })
+      .to(spinner.children[5], {
+        y: -30,
+        x: -130,
+        duration: 0.8,
+      });
 
-  useEffect(() => {}, []);
+    gsap.to(spinner, {
+      rotate: '-=360',
+      duration: 10
+    },0)
+    gsap.to(spinner.children,{
+      rotate: 360,
+      duration: 10
+    })
+  });
+
   return (
     <Page>
       <section id="skills">
-        {/* <HardSkills /> */}
-        {/* <div className="skill-container">
-          <div className="skill"></div>
+        <Title title="tech stack" />
+        <div className="skills-wrapper">
+          <div className="skills-icon">
+            <div className="spinner" ref={boxRef}>
+              <div className="spinner-blur"></div>
+              <div className="circle">
+                {" "}
+                <DiReact className="tech-icon" alt="tech icon" />
+              </div>
+              <div className="circle">
+                {" "}
+                <DiJavascript1 className="tech-icon" alt="tech icon" />
+              </div>
+              <div className="circle">
+                {" "}
+                <DiHtml5 className="tech-icon" alt="tech icon" />
+              </div>
+              <div className="circle">
+                {" "}
+                <DiCss3 className="tech-icon" alt="tech icon" />
+              </div>
+              <div className="circle">
+                {" "}
+                <DiSass className="tech-icon" alt="tech icon" />
+              </div>
+            </div>
+          </div>
+          <div className="skills-content">
+            <p>
+              These skills collectively empower me to create modern and
+              user-centric web solutions. I am dedicated to staying updated with
+              the latest trends and best practices in these technologies to
+              deliver high-quality results consistently.
+            </p>
+          </div>
         </div>
-        <div className="skill-container">
-          <div className="skill"></div>
-        </div> */}
-        <RotatingBox  boxID="1"/>
-        <RotatingBox  boxID="2"/>
       </section>
     </Page>
   );
