@@ -9,9 +9,46 @@ import "swiper/css/hash-navigation";
 import { HardSkills, SoftSkills } from "@components/skills/SkillsComponent";
 import { useInView } from "react-intersection-observer";
 //import 'swiper/swiper.min.css'
-import Link from 'next/link'
-import React, { useLayoutEffect, useState, useRef } from "react";
+import Link from "next/link";
+import React, {
+  useLayoutEffect,
+  useState,
+  useRef,
+  useEffect,
+  forwardRef,
+} from "react";
 import Page from "@components/page";
+import { gsap, Power1  } from "gsap";
+import { TimelineLite } from "gsap";
+
+function RotatingBox({boxID}) {
+
+  const parentRef = useRef();
+
+  const animate = () => {
+    const timeline = gsap.timeline({
+      context: gsap.utils.selector(parentRef.current)
+    });
+    
+    timeline.to(`.child-${boxID}`, 0.5, {
+      rotation: 360,  
+      ease: Power1.inOut 
+    })
+  }
+
+
+
+  return (
+    <div className="skill-container" onClick={animate} ref={parentRef}>
+
+      <div className={`child-${boxID}`}>Child 1</div>  
+      <div className={`child-${boxID}`}>Child 2</div>
+      <div className={`child-${boxID}`}>Child 3</div>
+
+    </div>
+  );
+
+}
 
 const Skills = () => {
   const windowWidthSize = () => {
@@ -29,19 +66,20 @@ const Skills = () => {
 
   let width = windowWidthSize();
 
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    root: null,
-    rootMargin: "0px",
-    threshold: 1.0,
-    triggerOnce: true,
-  });
 
+  useEffect(() => {}, []);
   return (
     <Page>
       <section id="skills">
-        <HardSkills />
-        
+        {/* <HardSkills /> */}
+        {/* <div className="skill-container">
+          <div className="skill"></div>
+        </div>
+        <div className="skill-container">
+          <div className="skill"></div>
+        </div> */}
+        <RotatingBox  boxID="1"/>
+        <RotatingBox  boxID="2"/>
       </section>
     </Page>
   );

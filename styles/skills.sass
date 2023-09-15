@@ -6,7 +6,7 @@
     background: black
     height: 100vh
     width: 100%
-    @include flexbox(center,center)
+    @include flexbox(center,space-evenly)
 
     .hard-skills
         @include flexbox(center,space-evenly)
@@ -52,79 +52,12 @@
         .tech-icon
             width: 2.5rem
             height: 2.5rem
-.fade-in-left
-    animation: fadeLeft 1s
-    animation-fill-mode: both !important
 
-.fade-in-right
-    animation: fadeRight 1s
-    animation-fill-mode: both !important
-
-.fade-in-up
-    animation: fadeUp 1s
-    animation-fill-mode: both !important
-
-.fade-in-down
-    animation: fadeDown 1s
-    animation-fill-mode: both !important
-
-.fade-out-down
-    animation: fadeOutDown 0.5s
-    animation-fill-mode: both !important
-
-.fade-out-up
-    animation: fadeOutUp 0.5s
-    animation-fill-mode: both !important
-
-.fade-out-left
-    animation: fadeOutLeft 0.5s
-    animation-fill-mode: both !important
-
-.fade-out-right
-    animation: fadeOutRight 0.5s
-    animation-fill-mode: both !important
-
-.fade-in-random-icon
-    animation: fadeInRandomIcon 0.5s
-    animation-fill-mode: both !important
-    animation-delay: var(--delayIcon)
-.fade-out-random-icon
-    animation: fadeOutRandomIcon 0.5s
-    animation-fill-mode: both !important
-    
-
-@keyframes fadeInRandomIcon
-    from
-        opacity: 0
-        transform: translate3d(0,var(--xIn),0)
-    to
-        opacity: 1
-        transform: translate3d(0,0,0)
-
-@keyframes fadeOutRandomIcon
-    from
-        opacity: 1
-        transform: translate3d(0,0,0)
-    to
-        opacity: 0
-        transform: translate3d(0,var(--xOut),0)
-
-@keyframes fadeOutDown
-    to
-        opacity: 0
-        transform: translate3d(0,-20%,0)
-
-@keyframes fadeOutUp
-    to
-        opacity: 0
-        transform: translate3d(0,20%,0)
-
-@keyframes fadeOutLeft
-    to
-        opacity: 0
-        transform: translate3d(-20%,0,0)
-
-@keyframes fadeOutRight
-    to
-        opacity: 0
-        transform: translate3d(20%,0,0)
+    .skill-container
+        width: 200px
+        height: 200px
+        background: red
+        .skill
+            width: 50px
+            height: 50px
+            background: blue

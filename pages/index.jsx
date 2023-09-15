@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import "@styles/landpage.sass";
 import "animate.css";
-import "@styles/arrows/arrows.sass";
+
 import frontImg from "@assets/images/nobg-frontimg.png";
 import { useInView } from "react-intersection-observer";
 import { useElementOnScreen } from "@utills/ElementOnScreen";
