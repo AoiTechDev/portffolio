@@ -104,7 +104,7 @@ export const Spinner = () => {
       <div
         className="circle"
         style={{
-          "--clr": "rgba(94,211,243,0.1)",
+          "--clr": "rgba(94,211,243,0.3)",
         }}
       >
         {" "}
@@ -113,7 +113,7 @@ export const Spinner = () => {
       <div
         className="circle"
         style={{
-          "--clr": "rgba(239,216,29, 0.1)",
+          "--clr": "rgba(239,216,29, 0.3)",
         }}
       >
         {" "}
@@ -122,7 +122,7 @@ export const Spinner = () => {
       <div
         className="circle"
         style={{
-          "--clr": "rgba(221,75,37,0.1)",
+          "--clr": "rgba(221,75,37,0.3)",
         }}
       >
         {" "}
@@ -131,7 +131,7 @@ export const Spinner = () => {
       <div
         className="circle"
         style={{
-          "--clr": "rgba(53,148,207,0.1)",
+          "--clr": "rgba(53,148,207,0.3)",
         }}
       >
         {" "}
@@ -140,7 +140,7 @@ export const Spinner = () => {
       <div
         className="circle"
         style={{
-          "--clr": "rgba(199,100,148,0.1)",
+          "--clr": "rgba(199,100,148,0.3)",
         }}
       >
         {" "}

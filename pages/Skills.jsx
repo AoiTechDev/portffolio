@@ -6,6 +6,7 @@ import Page from "@components/page";
 
 import Title from "@components/reusable/title/Title";
 import Spinner from "@components/skills/spinner/Spinner";
+import Tools from "@components/skills/tools/Tools";
 
 const Skills = () => {
 
@@ -27,6 +28,9 @@ const Skills = () => {
             </p>
           </div>
         </div>
+
+        <Title title="tools" />
+        <Tools />
       </section>
     </Page>
   );

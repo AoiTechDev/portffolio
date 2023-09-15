@@ -1,0 +1,105 @@
+@import '../variables'
+@import '../mixin'
+
+.menu-open,
+.menu-close
+    position: absolute
+    top: 0
+    right: 0
+    padding: 40px
+    font-size: 20px
+    cursor: pointer
+    color: #{$blue}
+.menu-open
+    z-index: 9
+.menu-close
+    z-index: 102
+
+    span
+        text-transform: uppercase
+        margin: 0 20px
+        letter-spacing: 0px
+
+.nav-container
+    position: fixed
+    bottom: -100vh
+    width: 100vw
+    height: 100vh
+    background: #fff
+    z-index: 10
+    opacity: 0
+.menu__item
+    position: relative
+    padding: 0 6vw
+
+    &-link
+        display: inline-block
+        cursor: pointer
+        position: relative
+        transition: opacity 0.4s
+
+    &-link::before
+        all: initial
+        counter-increment: menu
+        position: absolute
+        bottom: 60%
+        left: 0
+        pointer-events: none
+
+    &-link:hover
+        transition-duration: 0.1s
+        opacity: 0
+
+    &-img
+        z-index: 2
+        pointer-events: none
+        position: absolute
+        height: 12vh
+        max-height: 600px
+        opacity: 0
+        left: 8%
+        top: 10%
+        transform: scale(0)
+
+    &-link:hover + &-img
+        opacity: 1
+        transform: scale(1)
+        transition: all 0.4s
+
+.menu
+    padding: 10vh 0 25vh
+    --offset: 20vw
+    --move-initial: calc(-25% + var(--offset))
+    --move-final: calc(-50% + var(--offset))
+    font-size: 7vw
+
+.marquee
+    position: absolute
+    top: 0
+    left: 0
+    overflow: hidden
+    color: rgb(214, 214, 214)
+    pointer-events: none
+
+    &__inner
+        width: fit-content
+        display: flex
+        position: relative
+        opacity: 0
+        transition: all 0.1s
+        transform: translateX(60px)
+
+    .menu__item-link:hover ~ & &__inner
+        opacity: 1
+        transform: translateX(0px)
+        transition-duration: 0.4s
+
+.menu__item-link,
+.marquee span
+    white-space: nowrap
+    font-size: 7vw
+    padding: 0 1vw
+    line-height: 1.15
+
+    &
+        font-style: italic
