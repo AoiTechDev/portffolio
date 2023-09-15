@@ -22,18 +22,20 @@ import {
 const Skills = () => {
   const boxRef = useRef();
   useLayoutEffect(() => {
+
+   
     const spinner = document.querySelector(".spinner");
     const circles = document.querySelectorAll(".circle");
     const blur = document.querySelector("spinner-blur");
 
     let mm = gsap.matchMedia();
 
-    mm.add("(max-width: 600px)", () => {
+    mm.add("(max-width: 900px)", () => {
       gsap.set(spinner, {
         scale: 0.6,
       });
     })
-    gsap
+   let anim =  gsap
       .timeline()
       .to(spinner.children[1], {
         y: -130,
@@ -64,7 +66,7 @@ const Skills = () => {
     gsap.to(spinner, {
       rotate: '-=360',
       duration: 10
-    },0)
+    })
     gsap.to(spinner.children,{
       rotate: 360,
       duration: 10
@@ -74,30 +76,40 @@ const Skills = () => {
   return (
     <Page>
       <section id="skills">
-        <Title title="tech stack" />
+        <Title title="technologies" />
         <div className="skills-wrapper">
           <div className="skills-icon">
             <div className="spinner" ref={boxRef}>
-              <div className="spinner-blur"></div>
-              <div className="circle">
+              <div className="spinner-blur"><h4>My Main<br/>Tech Stack</h4></div>
+              <div className="circle" style={{
+                '--clr':'rgba(94,211,243,0.1)'
+              }}>
                 {" "}
-                <DiReact className="tech-icon" alt="tech icon" />
+                <DiReact className="tech-icon" alt="tech icon" color="#5ed3f3" />
               </div>
-              <div className="circle">
+              <div className="circle" style={{
+                '--clr':'rgba(239,216,29, 0.1)'
+              }}>
                 {" "}
-                <DiJavascript1 className="tech-icon" alt="tech icon" />
+                <DiJavascript1 className="tech-icon" alt="tech icon" color="#efd81d" />
               </div>
-              <div className="circle">
+              <div className="circle" style={{
+                '--clr':'rgba(221,75,37,0.1)'
+              }}>
                 {" "}
-                <DiHtml5 className="tech-icon" alt="tech icon" />
+                <DiHtml5 className="tech-icon" alt="tech icon" color="#dd4b25"/>
               </div>
-              <div className="circle">
+              <div className="circle" style={{
+                '--clr':'rgba(53,148,207,0.1)'
+              }}>
                 {" "}
-                <DiCss3 className="tech-icon" alt="tech icon" />
+                <DiCss3 className="tech-icon" alt="tech icon" color="#3594cf"/>
               </div>
-              <div className="circle">
+              <div className="circle" style={{
+                '--clr':'rgba(199,100,148,0.1)'
+              }}>
                 {" "}
-                <DiSass className="tech-icon" alt="tech icon" />
+                <DiSass className="tech-icon" alt="tech icon" color="#c76494"/>
               </div>
             </div>
           </div>
