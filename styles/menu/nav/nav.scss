@@ -1,0 +1,91 @@
+@import '../../mixin.sass';
+@import '../../variables.sass';
+
+$perspective: 60rem;
+$font-size: #{$font-size-xxxl};
+$split-position: 49%;
+$split-thickness: 4px;
+$split-color: #ff2c75;
+
+
+.menu {
+  font-size: $font-size;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  padding: min(2rem, 10%);
+  @include flexbox(center,space-evenly);
+
+ // transform: rotateX(-10deg) rotateY(20deg); // overwritten by JS
+}
+
+// === Menu item =====
+.menu_item-link {
+  position: relative;
+  color: transparent;
+  cursor: pointer;
+  
+
+  // === Split Line =====
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $split-position;
+    left: -10%;
+    right: -10%;
+    height: $split-thickness;
+    border-radius: $split-thickness;
+    margin-top: -($split-thickness / 2);
+    background: $split-color;
+    transform: scale(0);
+    transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+    z-index: 1;
+  }
+}
+
+.menu_item{
+  align-self: flex-start;
+}
+// === Top/bottom mask =====
+.mask {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: $split-color;
+  top: 0;
+  height: $split-position;
+  transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+
+  span {
+    display: block;
+  }
+}
+
+// === Bottom mask specific =====
+.mask + .mask {
+  top: $split-position - 0.1;
+  height: 80 - $split-position + 0.1;
+
+  span {
+    transform: translateY(-$split-position + (-5));
+  }
+}
+
+// === Where the fun stuff happens =====
+.menu_item-link:hover,
+.menu_item-link:active {
+  .mask {
+    color: #fff;
+    transform: skewX(12deg) translateX(5px);
+  }
+  .mask + .mask {
+    transform: skewX(12deg) translateX(-5px);
+  }
+  &::before {
+    transform: scale(1);
+  }
+}

@@ -26,9 +26,7 @@
 
             width: 100%
 
-           
             padding: 3rem 1rem 1rem 1rem
-         
 
             p
                 width: min(500px, 100%)
@@ -42,8 +40,8 @@
     .spinner-blur
         width: 220px
         height: 220px
-        background: rgba(196, 196, 196 ,0.1)
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+        background: rgba(#525151 ,0.1)
+        box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.9)
         backdrop-filter: blur(10px)
         -webkit-backdrop-filter: blur(10px)
         border-radius: 50%
@@ -79,9 +77,9 @@
             width: 70px
             height: 70px
 
-        transform-style: preserve-3d
-        outline: 1px solid transparent
-        will-change: border-radius
+            
+            outline: 1px solid transparent
+           
 .circle:before,
 .circle:after
     content: ''
@@ -93,16 +91,14 @@
     top: 0
     border-radius: 42% 58% 90% 30% / 45% 80% 55% 55%
     box-shadow: 5px 5px 89px var(--clr)
-    will-change: border-radius, transform, opacity
+    
 
-   
 .circle:before
-    animation: morph 3s linear infinite
+
     opacity: .21
-    animation-duration: 1.5s
 
 .circle:after
-    animation: morph 3s linear infinite
+
     animation-delay: 400ms
     opacity: .89
     content: attr(data-text)

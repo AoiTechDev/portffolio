@@ -1,28 +1,28 @@
 @import 'variables'
 @import 'mixin'
 
-nav
-    position: fixed
+// nav
+//     position: fixed
    
-    z-index: 100
-    width: 100%
-    .navbar-wrapper
-        @include flexbox(center,space-between)
-        width: 100%
-        padding: 2rem
-        .nav-items
-            @include flexbox(center,space-evenly)
-            width: 40%
-            color: #{$grey}
-            gap: 2rem
-    @media screen and (max-width: #{$medium})
-        .logo
-            width: 160px
-            height: 40px
-        .navbar-wrapper
-            padding: 1rem 0
-            .nav-items
-                display: none
+//     z-index: 100
+//     width: 100%
+//     .navbar-wrapper
+//         @include flexbox(center,space-between)
+//         width: 100%
+//         padding: 2rem
+//         .nav-items
+//             @include flexbox(center,space-evenly)
+//             width: 40%
+//             color: #{$grey}
+//             gap: 2rem
+//     @media screen and (max-width: #{$medium})
+//         .logo
+//             width: 160px
+//             height: 40px
+//         .navbar-wrapper
+//             padding: 1rem 0
+//             .nav-items
+//                 display: none
     // @media screen and (max-width: 950px)
         
     //     box-shadow: none

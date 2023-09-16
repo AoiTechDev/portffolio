@@ -89,6 +89,7 @@ export const Spinner = () => {
     },{
       scale: 1,
       duration: 3,
+      ease: "power4.out"
     }
     )
   });

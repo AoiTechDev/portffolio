@@ -31,20 +31,20 @@
         span
             &:nth-child(1),   &:nth-child(2)
                 position: absolute
-                width: 60px
+                width: 40px
                 height: 1px
                 background: #{$grey}
                 top: 50%
-                left: -10%
+                left: 9%
             &:nth-child(1)
                 transform: rotate(45deg)
             &:nth-child(2)
                 transform: rotate(-45deg)
 
     .menu-line
-        height: 0px
+        height: 400px
         width: 1px
-        background: #{$grey}
+        background: rgba(196, 196, 196,0.3)
 
 .nav-container
     position: fixed
@@ -60,6 +60,8 @@
         width: 50%
         height: 100%
         background: #{$black}
+        @include flexbox(center,start)
+        padding: 1rem
     .menu-right
         position: absolute
         right: 0
@@ -81,78 +83,15 @@
             height: 50%
             background: #{$black}
 
-.menu__item
-    position: relative
-    padding: 0 6vw
-
-    &-link
-        display: inline-block
-        cursor: pointer
-        position: relative
-        transition: opacity 0.4s
-
-    &-link::before
-        all: initial
-        counter-increment: menu
-        position: absolute
-        bottom: 60%
-        left: 0
-        pointer-events: none
-
-    &-link:hover
-        transition-duration: 0.1s
-        opacity: 0
-
-    &-img
-        z-index: 2
-        pointer-events: none
-        position: absolute
-        height: 12vh
-        max-height: 600px
-        opacity: 0
-        left: 8%
-        top: 10%
-        transform: scale(0)
-
-    &-link:hover + &-img
-        opacity: 1
-        transform: scale(1)
-        transition: all 0.4s
 
 .menu
-    padding: 10vh 0 25vh
+    $perspective: 60rem
+    $font-size: 4.25rem
+    $split-position: 49%
+    $split-thickness: 4px
+    $split-color: #FF2C75
+    
     --offset: 20vw
     --move-initial: calc(-25% + var(--offset))
     --move-final: calc(-50% + var(--offset))
-    font-size: 7vw
-
-.marquee
-    position: absolute
-    top: 0
-    left: 0
-    overflow: hidden
-    color: rgb(214, 214, 214)
-    pointer-events: none
-
-    &__inner
-        width: fit-content
-        display: flex
-        position: relative
-        opacity: 0
-        transition: all 0.1s
-        transform: translateX(60px)
-
-    .menu__item-link:hover ~ & &__inner
-        opacity: 1
-        transform: translateX(0px)
-        transition-duration: 0.4s
-
-.menu__item-link,
-.marquee span
-    white-space: nowrap
-    font-size: 7vw
-    padding: 0 1vw
-    line-height: 1.15
-
-    &
-        font-style: italic
+   
