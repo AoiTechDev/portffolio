@@ -1,11 +1,11 @@
 @import '../../mixin.sass';
 @import '../../variables.sass';
 
-$perspective: 60rem;
+
 $font-size: #{$font-size-xxxl};
 $split-position: 49%;
-$split-thickness: 4px;
-$split-color: #ff2c75;
+$split-thickness: 1px;
+$split-color: #{$grey};
 
 
 .menu {
@@ -15,21 +15,21 @@ $split-color: #ff2c75;
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 100vh;
   padding: 1rem;
   @include flexbox(center,space-evenly);
-
- // transform: rotateX(-10deg) rotateY(20deg); // overwritten by JS
+  width: 50%;
+ 
 }
 
-// === Menu item =====
+
 .menu_item-link {
   position: relative;
   color: transparent;
   cursor: pointer;
   
 
-  // === Split Line =====
+ 
   &::before {
     content: "";
     display: block;
@@ -45,15 +45,19 @@ $split-color: #ff2c75;
     transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
     z-index: 1;
   }
+
+ 
 }
 
 .menu_item{
   align-self: flex-start;
+  padding-left: 5rem;
   @media screen and (max-width: 900px) {
     align-self: center;
+    padding-left: 0;
   }
 }
-// === Top/bottom mask =====
+
 .mask {
   display: block;
   position: absolute;
@@ -68,27 +72,35 @@ $split-color: #ff2c75;
   }
 }
 
-// === Bottom mask specific =====
+
 .mask + .mask {
   top: $split-position - 0.1;
   height: 80 - $split-position + 0.1;
 
   span {
-    transform: translateY(-$split-position + (-5));
+    transform: translateY(-$split-position + (-6));
+    @media screen and (max-width: 600px) {
+      transform: translateY(-$split-position);
+    }
   }
 }
 
-// === Where the fun stuff happens =====
+
 .menu_item-link:hover,
 .menu_item-link:active {
+  
   .mask {
-    color: #fff;
-    transform: skewX(12deg) translateX(5px);
+    color: #{$blue};
+    transform: skewX(12deg) translateX(5px) translate3d(0,-20%,0);
   }
   .mask + .mask {
-    transform: skewX(12deg) translateX(-5px);
+    transform: skewX(12deg) translateX(-5px) translate3d(0,20%,0);
   }
+
+ 
   &::before {
     transform: scale(1);
+   
   }
+
 }

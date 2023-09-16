@@ -17,13 +17,12 @@
     position: absolute
     z-index: 102
     left: 50%
-    top: 130%
+    top: -100%
     transform: translate(-50%, -50%)
     display: flex
     flex-direction: column
     align-items: center
     justify-content: space-around
-    
 
     .menu-close
         width: 50px
@@ -43,87 +42,115 @@
             &:nth-child(2)
                 transform: rotate(-45deg)
 
-
     .menu-line
         height: 400px
         width: 1px
         background: rgba(196, 196, 196,0.3)
-        
+
 @media screen and (max-width: 900px)
     .menu-line
         display: none
-           
+
 .nav-container
     position: fixed
-    bottom: -100vh
+    top: -100vh
     width: 100vw
     height: 100vh
-    background: #{$grey}
+    background: #{$black}
     z-index: 10
     opacity: 1
-
+    @include flexbox(center,center)
     .menu-left
-        position: absolute
-        left: -50%
-        width: 50%
-        height: 100%
-        background: #{$black}
-        @include flexbox(center,start)
-        padding: 1rem
-    .menu-right
-        position: absolute
-        right: 0
         width: 50%
         height: 100%
 
-        .menu-right-up
-            position: absolute
-            top: 0
-            right: -100%
-            width: 100%
+    .menu-right
+
+        width: 50%
+        height: 100%
+        @include flexbox(center,center)
+        color: #{$grey}
+        .menu-contact-container
+            width: min(600px, 80%)
             height: 50%
-            background: #{$black}
-        .menu-right-down
-            position: absolute
-            bottom: 0
-            right: -100%
-            width: 100%
-            height: 50%
-            background: #{$black}
-    @media screen and (max-width: 900px)
-        .menu-left
-            left: -100%
-            width: 100%
-            height: 100%
-            background: #{$black}
-            @include flexbox(center,center)
+            text-align: center
+
+            @include flexbox(center,space-evenly)
+            flex-direction: column
+            .menu-contact-button
+                display: inline-block
+                color: #ffffff
+                padding: 32px
+                position: relative
+                letter-spacing: 1px
+                cursor: pointer
+                .btn__circle,
+                .btn__text,
+                .btn__blue-circle
+                    position: absolute
+                .btn__circle
+                    top: 0
+                    left: 0
+                    height: 100%
+                    border-radius: 100%
+                    width: 100%
+                    box-shadow: 0 0 1px 1px #{$grey}
+                    transition: 0.3s linear
+
+                .btn__blue-circle
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%) scale(0)
+                    width: 56px
+                    height: 56px
+                    border-radius: 100%
+                    background: #{$blue}
+                    display: flex
+                    transition: 0.3s ease-in-out
+
+                    svg
+                        width: 24px
+                        height: 24px
+                        margin: auto
+
+                .btn__text
+                    top: 50%
+                    transform: translateY(-50%)
+                    white-space: nowrap
+                    z-index: 2
+                    padding: 24px 5px
+                    transition: 0.3s linear
+
+                &:hover
+                    .btn__circle
+                        transform: scale(0)
+
+                    .btn__blue-circle
+                        transform: translate(-50%, -50%) scale(1)
+
+                    .btn__text
+                        transform: translate(40px, -50%)
+
+.menu-socials
+    position: absolute
+
+    &:nth-child(2)
+        right: 7%
+        bottom: 10%
+    &:nth-child(3)
+        right: 15%
+        bottom: 10%
+    a
+        font-size: 2rem
+        color: #{$grey}
+        transition: all 0.3s ease-in-out
+
+@media screen and (max-width: 900px)
+    .nav-container
         .menu-right
             display: none
-            // width: 100%
-            // height: 50%
-            // right: -100%   
-            // bottom: 0        
-            // background: #{$black}
-            // .menu-right-up
-            //     left: 0
-            //     height: 100%
-            //     width: 50%
-            //     bottom: -100%
-            //     background: blue
-            // .menu-right-down
-            //     right: 0
-            //     height: 100%
-            //     width: 50%
-            //     bottom: -100%
-            //     background: green
-
-.menu
-    $perspective: 60rem
-    $font-size: 4.25rem
-    $split-position: 49%
-    $split-thickness: 4px
-    $split-color: #FF2C75
-    width: 100%
-    --offset: 20vw
-    --move-initial: calc(-25% + var(--offset))
-    --move-final: calc(-50% + var(--offset))
+        .menu-left
+            width: 100%
+            .menu
+                width: 100%
+                height: 80%
