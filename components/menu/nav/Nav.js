@@ -22,7 +22,7 @@ export const Nav = () => {
 
           duration: 0.2,
         })
-      
+
         .to(".menu-close-container", {
           top: "80%",
           ease: "none",
@@ -60,71 +60,74 @@ export const Nav = () => {
           0.4,
           { y: 100, opacity: 0, ease: "power1.InOut" },
           "0.2",
-          "<"
+          "-=1"
         )
+       
     });
 
     mm.add("(max-width: 900px)", () => {
-        tl.to(".nav-container", {
-            top: 0,
-            ease: "power1.in",
+      tl.to(".nav-container", {
+        top: 0,
+        ease: "power1.in",
+        duration: 0.3,
+      })
+        .to(".menu-left", {
+          top: 0,
+          ease: easeBg,
+
+          duration: 0.2,
+        })
+
+        .to(".menu-close-container", {
+          top: "100%",
+          ease: "none",
+          duration: 0.3,
+        })
+        .staggerFrom(
+          ".menu > div",
+          0.4,
+          { y: 50, opacity: 0, ease: "power1.InOut" },
+          "0.1",
+          "<"
+        )
+        .to(
+          ".menu-close-container .menu-close",
+          {
+            y: -100,
+            ease: ease,
             duration: 0.3,
-          })
-            .to(".menu-left", {
-              top: 0,
-              ease: easeBg,
-    
-              duration: 0.2,
-            })
-          
-            .to(".menu-close-container", {
-              top: "100%",
-              ease: "none",
-              duration: 0.3,
-            })
-            .staggerFrom(
-              ".menu > div",
-              0.4,
-              { y: 50, opacity: 0, ease: "power1.InOut" },
-              "0.1",
-              "<"
-            )
-            .to(
-              ".menu-close-container .menu-close",
-              {
-                y: -100,
-                ease: ease,
-                duration: 0.3,
-              },
-              "-=0.2"
-            )
-    
-            .fromTo(
-              ".menu-close-container .menu-close",
-              { scale: 0, opacity: 0 },
-              {
-                scale: 1.3,
-                opacity: 1,
-                duration: 0.3,
-                ease: "elastic.out(1, 0.3)",
-              }
-            )
-          
+          },
+          "-=0.2"
+        )
+
+        .fromTo(
+          ".menu-close-container .menu-close",
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1.3,
+            opacity: 1,
+            duration: 0.3,
+            ease: "elastic.out(1, 0.3)",
+          }
+        );
     });
 
     tl.reverse();
     const open = document.querySelector(".menu-open");
     open.addEventListener("click", (e) => {
+      document.body.style.overflow = "hidden";
       tl.reversed(!tl.reversed());
     });
     const close = document.querySelector(".menu-close");
     close.addEventListener("click", (e) => {
+      document.body.style.overflow = "unset";
       tl.reversed(!tl.reversed());
     });
 
     const menuItems = document.querySelectorAll(".menu_item-link");
     menuItems.forEach((item) => {
       item.addEventListener("click", (e) => {
+        document.body.style.overflow = "unset";
         tl.reversed(!tl.reversed());
       });
     });

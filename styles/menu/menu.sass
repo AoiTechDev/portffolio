@@ -8,11 +8,7 @@
     cursor: pointer
     color: #{$blue}
 .menu-open
-    position: absolute
-    z-index: 9
-    right: 1rem
-    top: 1rem
-    padding: 40px
+  
 .menu-close-container
     position: absolute
     z-index: 102
@@ -94,7 +90,8 @@
                     height: 100%
                     border-radius: 100%
                     width: 100%
-                    box-shadow: 0 0 1px 1px #{$grey}
+                    
+                    border: 1px solid #{$grey}
                     transition: 0.3s linear
 
                 .btn__blue-circle
@@ -118,7 +115,7 @@
                     transform: translateY(-50%)
                     white-space: nowrap
                     z-index: 2
-                    padding: 24px 5px
+                    padding: 24px 2px
                     transition: 0.3s linear
 
                 &:hover

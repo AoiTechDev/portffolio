@@ -1,9 +1,10 @@
 "use client";
-import Nav from "@components/Nav";
+
 import BurgerMenu from "./menu/BurgerMenu";
 import Menu from "./menu/Menu";
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import Nav from "@components/nav/Nav";
 
 function Page({ children }) {
   const [open, setOpen] = useState(false);
@@ -12,11 +13,13 @@ function Page({ children }) {
     setOpen((prev) => !prev);
   };
 
-  useEffect(() => {});
+  useEffect(() => {
+   
+  });
   return (
     <>
-      {/* <Nav/> */}
-      <BurgerMenu menuOpenHandler={menuOpenHandler}/>
+      <Nav/>
+     
       {/* {open && <Menu open={open} ref={menuRef}/>} */}
       <Menu open={open} />
       <main>{children}</main>
