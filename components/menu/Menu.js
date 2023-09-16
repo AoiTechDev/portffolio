@@ -15,65 +15,108 @@ const Menu = ({ open, menuOpenHandler }) => {
     gsap.registerPlugin(CustomEase);
     const ease = "none";
     const easeBg = "power3.out";
-    tl.to(".nav-container", {
-      bottom: 0,
-      ease: easeBg,
-      duration: 0.3,
-    })
-      .to(".menu-left", {
-        left: 0,
-        ease: easeBg,
+    let mm = gsap.matchMedia();
 
-        duration: 0.2,
-      })
-      .to(".menu-right .menu-right-up", {
-        right: 0,
+    mm.add("(min-width: 901px)", () => {
+      tl.to(".nav-container", {
+        bottom: 0,
         ease: easeBg,
+        duration: 0.3,
+      })
+        .to(".menu-left", {
+          left: 0,
+          ease: easeBg,
 
-        duration: 0.2,
-      })
-      .to(".menu-right .menu-right-down", {
-        right: 0,
-        ease: easeBg,
+          duration: 0.2,
+        })
+        .to(".menu-right .menu-right-up", {
+          right: 0,
+          ease: easeBg,
 
-        duration: 0.2,
-      })
-      .to(".menu-close-container", {
-        top: "80%",
-        ease: "none",
-        duration: 0.4,
-      })
-      // .to(".menu-close-container .menu-line", {
-      //   height: 400,
-      //   ease: ease,
-      //   duration: 0.4,
-      // })
-      .to(
-        ".menu-close-container .menu-close",
-        {
-          y: -100,
-          ease: ease,
+          duration: 0.2,
+        })
+        .to(".menu-right .menu-right-down", {
+          right: 0,
+          ease: easeBg,
+
+          duration: 0.2,
+        })
+        .to(".menu-close-container", {
+          top: "80%",
+          ease: "none",
           duration: 0.4,
-        },
-        "-=0.3"
-      )
-      .fromTo(
-        ".menu-close-container .menu-close",
-        { scale: 0, opacity: 0 },
-        {
-          scale: 1.3,
-          opacity: 1,
-          duration: 0.5,
-          ease: "elastic.out(1, 0.3)",
-        }
-      )
-      .staggerFrom(
-        ".menu > div",
-        0.6,
-        { x: -100, opacity: 0, ease: "power1.InOut" },
-        "0.1",
-        "<"
-      );
+        })
+        .to(
+          ".menu-close-container .menu-close",
+          {
+            y: -100,
+            ease: ease,
+            duration: 0.4,
+          },
+          "-=0.3"
+        )
+        .fromTo(
+          ".menu-close-container .menu-close",
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1.3,
+            opacity: 1,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.3)",
+          }
+        )
+        .staggerFrom(
+          ".menu > div",
+          0.6,
+          { x: -100, opacity: 0, ease: "power1.InOut" },
+          "0.1",
+          "<"
+        );
+    });
+    mm.add("(max-width: 900px)", () => {
+      tl.to(".nav-container", {
+        bottom: 0,
+        ease: easeBg,
+        duration: 0.2,
+      })
+        .to(".menu-left", {
+          left: 0,
+          ease: easeBg,
+
+          duration: 0.2,
+        })
+        .to(".menu-close-container", {
+          top: "100%",
+          ease: "none",
+          duration: 0.4,
+        })
+        .to(
+          ".menu-close-container .menu-close",
+          {
+            y: -100,
+            ease: ease,
+            duration: 0.4,
+          },
+          "-=0.3"
+        )
+        .fromTo(
+          ".menu-close-container .menu-close",
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1.3,
+            opacity: 1,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.3)",
+          }
+        )
+        .staggerFrom(
+          ".menu > div",
+          0.6,
+          { x: -100, opacity: 0, ease: "power1.InOut" },
+          "0.1",
+          "<"
+        );
+    });
 
     // .staggerFrom(
     //   ".socials",
@@ -119,12 +162,12 @@ const Menu = ({ open, menuOpenHandler }) => {
         <nav class="menu">
           <div class="menu_item">
             <Link class="menu_item-link" href="/About">
-              About me
+              About
               <span className="mask">
-                <span>About me</span>
+                <span>About</span>
               </span>
               <span className="mask">
-                <span>About me</span>
+                <span>About</span>
               </span>
             </Link>
           </div>

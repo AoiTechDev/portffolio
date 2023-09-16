@@ -16,7 +16,7 @@ $split-color: #ff2c75;
   display: flex;
   flex-direction: column;
   height: 80%;
-  padding: min(2rem, 10%);
+  padding: 1rem;
   @include flexbox(center,space-evenly);
 
  // transform: rotateX(-10deg) rotateY(20deg); // overwritten by JS
@@ -49,6 +49,9 @@ $split-color: #ff2c75;
 
 .menu_item{
   align-self: flex-start;
+  @media screen and (max-width: 900px) {
+    align-self: center;
+  }
 }
 // === Top/bottom mask =====
 .mask {
