@@ -35,6 +35,28 @@ export const Nav = () => {
           "0.1",
           "<"
         )
+
+        .fromTo(
+          ".menu-contact-container h4",
+
+          { y: 0, opacity: 0 },
+          { y: -50, opacity: 1, ease: "power1.InOut" },
+          "-=0.5"
+        )
+        .fromTo(
+          ".menu-contact-container div",
+
+          { y: 0, opacity: 0 },
+          { y: -50, opacity: 1, ease: "power1.InOut" },
+          "-=0.5"
+        )
+        .staggerFrom(
+          ".menu-socials-wrapper > div",
+          0.4,
+          { y: 100, opacity: 0, ease: "power1.InOut" },
+          "0.2",
+          "-=0.5"
+        )
         .to(
           ".menu-close-container .menu-close",
           {
@@ -54,15 +76,7 @@ export const Nav = () => {
             duration: 0.3,
             ease: "elastic.out(1, 0.3)",
           }
-        )
-        .staggerFrom(
-          ".menu-right > div",
-          0.4,
-          { y: 100, opacity: 0, ease: "power1.InOut" },
-          "0.2",
-          "-=1"
-        )
-       
+        );
     });
 
     mm.add("(max-width: 900px)", () => {

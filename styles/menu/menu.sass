@@ -58,7 +58,7 @@
                 position: absolute
                 width: 30px
                 height: 1px
-                background: #{$grey}
+                background: rgba(196, 196, 196,0.7)
                 top: 50%
                 left: 20%
                 transition: 0.2s
@@ -67,19 +67,23 @@
             &:nth-child(2)
                 transform: rotate(-45deg)
 
-    &:hover
-        span:not(.menu-line)
+        &:hover
+            span:not(.menu-line)
 
-            background: #{$blue}
-            &:nth-child(1)
-                transform: rotate(135deg) scale(1.2)
-            &:nth-child(2)
-                transform: rotate(225deg) scale(1.2)
+                background: #{$blue}
+                &:nth-child(1)
+                    transform: rotate(135deg) scale(1.2)
+                &:nth-child(2)
+                    transform: rotate(225deg) scale(1.2)
+    &:hover
+        .menu-line
+            background: rgba(#0A7D9E ,0.3)
 
     .menu-line
         height: 400px
         width: 1px
         background: rgba(196, 196, 196,0.3)
+        transition: 0.2s
 
 @media screen and (max-width: 900px)
     .menu-line
@@ -166,19 +170,33 @@
                     .btn__text
                         transform: translate(40px, -50%)
 
-.menu-socials
+.menu-socials-wrapper
     position: absolute
+    bottom: 10%
+    width: min(600px, 50%)
 
-    &:nth-child(2)
-        right: 7%
-        bottom: 10%
-    &:nth-child(3)
-        right: 15%
-        bottom: 10%
-    a
-        font-size: 2rem
-        color: #{$grey}
-        transition: all 0.3s ease-in-out
+    @include flexbox(center,space-around)
+
+    .menu-socials
+        
+        &:nth-child(2)
+            right: 7%
+            bottom: 10%
+        
+        &:nth-child(3)
+            right: 22%
+            bottom: 10%
+        &:nth-child(4)
+            right: 30%
+            bottom: 10%
+        a
+            font-size: 50px
+            color: #{$grey}
+            transition: all 0.2s ease-in-out
+
+            &:hover
+
+                color: #{$blue}
 
 @media screen and (max-width: 900px)
     .nav-container
