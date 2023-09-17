@@ -137,7 +137,11 @@ export const Nav = () => {
       document.body.style.overflow = "unset";
       tl.reversed(!tl.reversed());
     });
-
+    const menuLogo = document.querySelector('.logo-link')
+    menuLogo.addEventListener('click', (e) => {
+      document.body.style.overflow = "unset";
+      tl.reversed(!tl.reversed());
+    })
     const menuItems = document.querySelectorAll(".menu_item-link");
     menuItems.forEach((item) => {
       item.addEventListener("click", (e) => {
