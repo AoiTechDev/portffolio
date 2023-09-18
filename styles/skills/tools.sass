@@ -1,0 +1,23 @@
+@import '../variables'
+@import '../mixin'
+.tools-wrapper
+    width: min(1400px, 100%)
+    display: flex
+    flex-direction: column
+    .first-row-content, .third-row-content
+        min-height: 30vh
+        width: min(700px, 100%)
+        @include flexbox(center, cencer)
+    .first-row-content
+    .third-row-content
+        align-self: end
+    .center-icon-wrapper
+        min-height: 30vh
+        
+        @include flexbox(center,space-evenly)
+        flex-wrap: wrap
+        .tools-icon
+            width: min(80px, 35%)
+            display: grid
+            place-items: center
+            font-size: #{$font-size-xxl}
