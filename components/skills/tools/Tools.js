@@ -9,49 +9,48 @@ import { BiLogoFigma } from "react-icons/bi";
 const Tools = () => {
   return (
     <div className="tools-wrapper">
-      <div className="first-row-content">
+      <div className="skills-left-content">
         <div className="tools-content">
           <p>
-            In my projects and professional experience, I leverage a range of
-            industry-standard tools and concepts to deliver high quality
-            results. Version control with Git and collaboration on GitHub enable
-            me to efficiently track changes and work seamlessly with teams.
-            Postman allows comprehensive API testing during development.
+            In my projects and professional experience, I use industry-standard
+            tools and concepts to deliver high-quality results. Git and GitHub
+            for version control and collaboration, along with Postman for
+            thorough API testing, are integral to my efficient workflow.
           </p>
         </div>
       </div>
-      <div className="center-icon-wrapper">
-        <div className="tools-icon">
+      <div className="skills-icon-wrapper">
+        <div className="skill-icon">
           <BsGit />
         </div>
-        <div className="tools-icon">
+        <div className="skill-icon">
           <BsGithub />
         </div>
-        <div className="tools-icon">
+        <div className="skill-icon">
           <SiPostman />
         </div>
-        <div className="tools-icon">
+        <div className="skill-icon">
           <SiJira />
         </div>
-        <div className="tools-icon">
+        <div className="skill-icon">
           <TbApi />
         </div>
-        <div className="tools-icon">
+        <div className="skill-icon">
           <DiScrum />
         </div>
-        <div className="tools-icon">
+        <div className="skill-icon">
           <BiLogoFigma />
         </div>
       </div>
-      <div className="third-row-content">
+      <div className="skills-right-content">
         <div className="tools-content">
           <p>
-            I also utilize tools like Jira, Figma, and Scrum frameworks to plan
-            sprints, create mocks, and ship responsive web designs focused on
-            the user experience. Concepts like REST APIs and RWD ensure my work
-            integrates seamlessly across platforms. I enjoy learning new
-            technologies but also rely on these proven staples to build secure,
-            scalable products.
+            I have experience working with tools like Jira, Figma, and Scrum
+            frameworks to plan sprints, create mocks, and ship responsive web
+            designs focused on the user experience. I also apply REST APIs and
+            RWD to ensure seamless cross-platform integration. While I'm eager
+            to learn new technologies, I rely on these proven tools for building
+            secure, scalable products.
           </p>
         </div>
       </div>

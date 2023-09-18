@@ -7,6 +7,7 @@ import Page from "@components/page";
 import Title from "@components/reusable/title/Title";
 import Spinner from "@components/skills/spinner/Spinner";
 import Tools from "@components/skills/tools/Tools";
+import Learning from "@components/skills/learning/Learning";
 
 const Skills = () => {
 
@@ -31,6 +32,8 @@ const Skills = () => {
 
         <Title title="tools" />
         <Tools />
+        <Title title="learning" />
+        <Learning />
       </section>
     </Page>
   );

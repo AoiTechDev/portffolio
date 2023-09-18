@@ -77,9 +77,8 @@
             width: 70px
             height: 70px
 
-            
             outline: 1px solid transparent
-           
+
 .circle:before,
 .circle:after
     content: ''
@@ -91,7 +90,6 @@
     top: 0
     border-radius: 42% 58% 90% 30% / 45% 80% 55% 55%
     box-shadow: 5px 5px 89px var(--clr)
-    
 
 .circle:before
 
@@ -105,3 +103,22 @@
     line-height: 120px
     text-indent: -21px
 
+.skills-left-content
+    min-height: 30vh
+    width: min(700px, 100%)
+    @include flexbox(center, cencer)
+.skills-right-content
+    min-height: 30vh
+    width: min(700px, 100%)
+    @include flexbox(center, cencer)
+.skills-icon-wrapper
+
+    min-height: 30vh
+
+    @include flexbox(center,space-evenly)
+    flex-wrap: wrap
+.skill-icon
+    width: min(80px, 35%)
+    display: grid
+    place-items: center
+    font-size: #{$font-size-xxl}
