@@ -155,7 +155,7 @@ export const Nav = () => {
     <div className="menu-left">
       <nav class="menu">
         <div class="menu_item">
-          <Link class="menu_item-link" href="/About">
+          <Link class="menu_item-link" href="#about">
             About
             <span className="mask">
               <span>About</span>
@@ -166,7 +166,7 @@ export const Nav = () => {
           </Link>
         </div>
         <div class="menu_item">
-          <Link class="menu_item-link" href="/Skills">
+          <Link class="menu_item-link" href="#skills">
             Skills
             <span className="mask">
               <span>Skills</span>
@@ -177,7 +177,7 @@ export const Nav = () => {
           </Link>
         </div>
         <div class="menu_item">
-          <Link class="menu_item-link" href="/Projects">
+          <Link class="menu_item-link" href="#pojects">
             Projects
             <span className="mask">
               <span>Projects</span>
@@ -188,7 +188,7 @@ export const Nav = () => {
           </Link>
         </div>
         <div class="menu_item">
-          <Link class="menu_item-link" href="/Contact">
+          <Link class="menu_item-link" href="#contact">
             Contact
             <span className="mask">
               <span>Contact</span>

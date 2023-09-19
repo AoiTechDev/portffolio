@@ -1,10 +1,15 @@
 "use client";
 
-import BurgerMenu from "./menu/BurgerMenu";
-import Menu from "./menu/Menu";
+import BurgerMenu from "../components/menu/BurgerMenu";
+import Menu from "../components/menu/Menu";
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Nav from "@components/nav/Nav";
+import Home from "@pages/Home";
+import About from "@pages/about";
+import Skills from "@pages/Skills";
+import Projects from "@pages/Projects";
+import Contact from "@pages/contact";
 
 function Page({ children }) {
   const [open, setOpen] = useState(false);
@@ -20,9 +25,13 @@ function Page({ children }) {
     <>
       <Nav/>
      
-      {/* {open && <Menu open={open} ref={menuRef}/>} */}
+     
       <Menu open={open} />
-      <main>{children}</main>
+      <Home/>
+      <About/>
+      <Skills/>
+      <Projects/>
+      <Contact/>
     </>
   );
 }

@@ -23,7 +23,7 @@ const Learning = () => {
           field.
         </p>
       </div>
-      <div className="skills-icons-wrapper">
+      <div className="learning-icons-wrapper">
         <div className="skill-icon">
           <SiTypescript />
         </div>

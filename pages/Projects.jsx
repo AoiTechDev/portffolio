@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Page from "@components/page";
+
 import { Navigation } from "swiper/modules";
 import "@styles/about.sass";
 import ProjectInfo from "@components/projects/projectsCards/ProjectInfo";
@@ -23,7 +23,7 @@ const Projects = () => {
   };
 
   return (
-    <Page>
+   
       <section id="projects">
         <h2>My projects</h2>
         <div className="projects-content">
@@ -46,7 +46,7 @@ const Projects = () => {
         </div>
        
       </section>
-    </Page>
+  
   );
 };
 export default Projects;

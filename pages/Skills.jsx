@@ -2,7 +2,7 @@
 
 import "@styles/skills.sass";
 
-import Page from "@components/page";
+import Page from "@app/page";
 
 import Title from "@components/reusable/title/Title";
 import Spinner from "@components/skills/spinner/Spinner";
@@ -13,7 +13,7 @@ const Skills = () => {
 
 
   return (
-    <Page>
+ 
       <section id="skills">
         <Title title="technologies" />
         <div className="skills-wrapper">
@@ -35,7 +35,7 @@ const Skills = () => {
         <Title title="learning" />
         <Learning />
       </section>
-    </Page>
+    
   );
 };
 

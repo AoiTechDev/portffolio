@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "@styles/skills/tools.sass";
 import { BsGit, BsGithub } from "react-icons/bs";
 import { SiPostman, SiJira } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { DiScrum } from "react-icons/di";
 import { BiLogoFigma } from "react-icons/bi";
+import { gsap } from "gsap";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/dist/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const Tools = () => {
+  useEffect(() => {
+    const icons = gsap.utils.toArray(".tools-icons-wrapper .skill-icon");
+    const panelsContainer = document.querySelector(".tools-icons-wrapper");
+    const tl = gsap
+      .timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: ".tools-icons-wrapper",
+      
+          start: "-110% 60%",
+          end: 'top 30%',
+          scrub: 0.5,
+          markers: true
+        },
+       
+      })
+      .staggerFrom(
+        icons,
+        0.4,
+        { y: 100, opacity: 0, ease: "power1.InOut" },
+        "0.2",
+        "-=0.5"
+      )
+   
+  });
   return (
     <div className="tools-wrapper">
       <div className="skills-left-content">
@@ -19,7 +47,7 @@ const Tools = () => {
           </p>
         </div>
       </div>
-      <div className="skills-icon-wrapper">
+      <div className="tools-icons-wrapper">
         <div className="skill-icon">
           <BsGit />
         </div>

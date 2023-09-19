@@ -7,14 +7,13 @@ import "swiper/css/effect-cube";
 import { useInView } from "react-intersection-observer";
 
 
-import Page from "@components/page";
-
 import Qualities from "@components/about/Qualities";
 import Whoami from "@components/about/Whoami";
 import Education from "@components/about/Education";
 import FunFacts from "@components/about/funfacts/FunFacts";
 
 import Title from "@components/reusable/title/Title";
+
 const About = () => {
   const [contentId, setContentId] = useState("whoami");
   const { ref, inView, entry } = useInView({
@@ -30,7 +29,7 @@ const About = () => {
 
 
   return (
-    <Page>
+ 
       <section id="about">
       <Title title="who am i?" />
         <Whoami/>
@@ -41,7 +40,7 @@ const About = () => {
        <Title title="fun facts" />
        <FunFacts />
       </section>
-    </Page>
+   
   );
 };
 export default About;

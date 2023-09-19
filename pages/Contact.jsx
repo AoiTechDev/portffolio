@@ -9,8 +9,7 @@ import TextareaForm from "@components/contact/TextareaForm";
 import { Button } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { sendContactForm } from "@lib/api";
-import Link from 'next/link'
-import Page from "@components/page";
+
 const initValues = { name: "", email: "", message: "" };
 const initState = { values: initValues };
 
@@ -37,7 +36,7 @@ const Contact = () => {
     await sendContactForm(values);
   };
   return (
-    <Page>
+ 
       <section id="contact">
         <div className="contact-wrapper">
           <div className="left-contact">
@@ -84,7 +83,7 @@ const Contact = () => {
         </div>
        
       </section>
-  </Page>
+ 
   );
 };
 export default Contact;
