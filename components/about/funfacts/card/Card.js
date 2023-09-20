@@ -1,7 +1,7 @@
 import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-const Card = ({id}) => {
+const Card = ({id, title, context}) => {
   const boxRef = useRef();
   //let tl = useRef();
 
@@ -133,19 +133,18 @@ const Card = ({id}) => {
         </div>
 
         <h5>
-          <span>Fun Fact 1</span>
+          <span>{title}</span>
         </h5>
         <div className={`header${id}`}></div>
         <p>
-          I challenged myself to work and make commits to my projects on github
-          every single day!
+         {context}
         </p>
       </div>
 
       <div className={`screen-1${id}`}>
         <div className={`top${id}`}>
           <h5>
-            <span>Fun Fact 1</span>
+            <span>{title}</span>
           </h5>
         </div>
         <div className={`button${id}`}>

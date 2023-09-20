@@ -10,28 +10,46 @@ import About from "@pages/about";
 import Skills from "@pages/Skills";
 import Projects from "@pages/Projects";
 import Contact from "@pages/contact";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/dist/ScrollTrigger";
 
-function Page({ children }) {
-  const [open, setOpen] = useState(false);
- 
-  const menuOpenHandler = () => {
-    setOpen((prev) => !prev);
-  };
+gsap.registerPlugin(ScrollTrigger);
 
+function Page() {
   useEffect(() => {
-   
+    const sections = document.querySelectorAll(".title-wrapper");
+
+    sections.forEach((section) => {
+      gsap.fromTo(
+        section,
+        {
+          x: "-=100",
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          stagger: 0.3,
+          duration: 0.5,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+           
+          
+          },
+        }
+      );
+    });
   });
   return (
     <>
-      <Nav/>
-     
-     
-      <Menu open={open} />
-      <Home/>
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Contact/>
+      <Nav />
+      <Menu />
+      <Home />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
     </>
   );
 }

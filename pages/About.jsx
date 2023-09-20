@@ -1,46 +1,48 @@
 "use client";
 import "@styles/about.sass";
-import { useState, useRef } from "react";
-
-import "swiper/css";
-import "swiper/css/effect-cube";
-import { useInView } from "react-intersection-observer";
-
-
+import { useEffect } from "react";
 import Qualities from "@components/about/Qualities";
 import Whoami from "@components/about/Whoami";
 import Education from "@components/about/Education";
 import FunFacts from "@components/about/funfacts/FunFacts";
-
+import { gsap } from "gsap";
 import Title from "@components/reusable/title/Title";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/dist/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const About = () => {
-  const [contentId, setContentId] = useState("whoami");
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    root: null,
-    rootMargin: "0px",
-    threshold: 1,
+  useEffect(() => {
+    // const title = document.querySelectorAll(".title-wrapper");
+
+    // gsap
+    //   .timeline({
+    //     paused: true,
+    //     scrollTrigger: {
+    //       trigger: "#about",
+    //       start: "top center",
+    //       end: "top center",
+ 
+         
+    //     },
+    //   })
+    //   .to(title, {
+    //     opacity: 1,
+    //     y: 100,
+    //     duration: 0.5,
+    //   });
   });
 
-  const getSlideId = (e) => {
-    setContentId(e.currentTarget.id);
-  };
-
-
   return (
- 
-      <section id="about">
+    <section id="about">
       <Title title="who am i?" />
-        <Whoami/>
-        <Title title="education" />
-        <Education/>
-        <Title title="my qualities" />
-       <Qualities/>
-       <Title title="fun facts" />
-       <FunFacts />
-      </section>
-   
+      <Whoami />
+      <Title title="education" />
+      <Education />
+      <Title title="my qualities" />
+      <Qualities />
+      <Title title="fun facts" />
+      <FunFacts />
+    </section>
   );
 };
 export default About;

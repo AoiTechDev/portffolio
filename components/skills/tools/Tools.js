@@ -22,7 +22,7 @@ const Tools = () => {
           start: "-110% 60%",
           end: 'top 30%',
           scrub: 0.5,
-          markers: true
+         
         },
        
       })
