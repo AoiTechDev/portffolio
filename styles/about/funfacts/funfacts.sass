@@ -1,6 +1,15 @@
 @import '../../variables'
 @import '../../mixin'
 
+.funfacts-wrapper
+
+    width: 100%
+    min-height: 70vh
+    @include flexbox(center,space-evenly)
+    flex-wrap: wrap
+    gap: 2rem
+
+
 .container1, .container2, .container3
     position: relative
     overflow: hidden

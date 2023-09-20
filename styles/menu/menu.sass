@@ -115,60 +115,7 @@
 
             @include flexbox(center,space-evenly)
             flex-direction: column
-            .menu-contact-button
-                display: inline-block
-                color: #ffffff
-                padding: 32px
-                position: relative
-                letter-spacing: 1px
-                cursor: pointer
-                .btn__circle,
-                .btn__text,
-                .btn__blue-circle
-                    position: absolute
-                .btn__circle
-                    top: 0
-                    left: 0
-                    height: 100%
-                    border-radius: 100%
-                    width: 100%
-
-                    border: 1px solid #{$grey}
-                    transition: 0.3s linear
-
-                .btn__blue-circle
-                    top: 50%
-                    left: 50%
-                    transform: translate(-50%, -50%) scale(0)
-                    width: 56px
-                    height: 56px
-                    border-radius: 100%
-                    background: #{$blue}
-                    display: flex
-                    transition: 0.3s ease-in-out
-
-                    svg
-                        width: 24px
-                        height: 24px
-                        margin: auto
-
-                .btn__text
-                    top: 50%
-                    transform: translateY(-50%)
-                    white-space: nowrap
-                    z-index: 2
-                    padding: 24px 2px
-                    transition: 0.3s linear
-
-                &:hover
-                    .btn__circle
-                        transform: scale(0)
-
-                    .btn__blue-circle
-                        transform: translate(-50%, -50%) scale(1)
-
-                    .btn__text
-                        transform: translate(40px, -50%)
+           
 
 .menu-socials-wrapper
     position: absolute

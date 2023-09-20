@@ -1,7 +1,25 @@
-import React from "react";
+'use client'
+import React, { useEffect } from "react";
 import "@styles/about/funfacts/funfacts.sass";
 import Card from "./card/Card";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const Hobbies = () => {
+  useEffect(() => {
+
+    gsap.from(".funfacts-wrapper .card", {
+      scrollTrigger: {
+        trigger: ".funfacts-wrapper",
+        start: "top 60%",
+        end: "bottom 20%",
+      },
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+    });
+  },[])
   return (
     <div className="funfacts-wrapper">
       <Card

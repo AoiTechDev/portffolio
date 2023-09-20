@@ -79,7 +79,7 @@ const Whoami = () => {
       <div className="whoami-content-wrapper">
         {/* <div className="three-col-content"> */}
         <div className="left-col">
-          <Image src={code_img} className="codding-img" />
+          <Image src={code_img} className="codding-img" loading="lazy"/>
           <p>
             Frontend development intersects my passions for art and coding. As a
             recent grad and frontend enthusiast, I want to create visually
@@ -97,7 +97,7 @@ const Whoami = () => {
             as a frontend engineer who can bring those visions to life with
             clean, well-architected code.
           </p>
-          <Image src={art_img} className="art-img" />
+          <Image src={art_img} className="art-img" loading="lazy"/>
         </div>
         {/* </div> */}
       </div>

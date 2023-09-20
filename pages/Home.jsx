@@ -1,3 +1,4 @@
+import ContactButton from "@components/reusable/button/ContactButton";
 import "@styles/home.sass";
 import "animate.css";
 
@@ -40,6 +41,7 @@ const Home = () => {
             Aspiring pixel perfect craftsman honing my JS, React & CSS skills to
             build interfaces that delight.
           </p>
+          <ContactButton/>
         </div>
       </div>
       <div className="socials">
@@ -50,6 +52,7 @@ const Home = () => {
           <BsLinkedin />
         </Link>
       </div>
+     
     </section>
   );
 };

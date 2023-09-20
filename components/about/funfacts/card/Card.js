@@ -113,21 +113,12 @@ const Card = ({id, title, context}) => {
           backgroundColor: "#101010",
           duration: 0.1,
         })
-        .to(`.next-screen${id}`, {
-          ease: "power1.inOut",
-          yPercent: -10,
-          duration: 1,
-        })
-        .to(`.next-screen${id}`, {
-          ease: "power1.inOut",
-          yPercent: 0,
-          duration: 1,
-        });
+       
     }, boxRef);
     return () => ctx.revert();
   }, []);
   return (
-    <div className={`container${id}`} ref={boxRef}>
+    <div className={`card container${id}`} ref={boxRef}>
       <div className={`next-screen${id}`}>
         <div className={`reverse${id}`}>
           <LiaAngleLeftSolid className={`arrow${id}`}/>
