@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, forwardRef } from "react";
+import React from "react";
 import "@styles/about/funfacts/funfacts.sass";
 import Card from "./card/Card";
 const Hobbies = () => {

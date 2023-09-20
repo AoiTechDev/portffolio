@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import '@styles/title/title.sass'
 import { gsap } from "gsap";

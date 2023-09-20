@@ -1,8 +1,8 @@
 import "@styles/about.sass";
 
-import Qualities from "@components/about/Qualities";
-import Whoami from "@components/about/Whoami";
-import Education from "@components/about/Education";
+import Qualities from "@components/about/qualities/Qualities";
+import Whoami from "@components/about/whoami/Whoami";
+import Education from "@components/about/education/Education";
 import FunFacts from "@components/about/funfacts/FunFacts";
 
 import Title from "@components/reusable/title/Title";
