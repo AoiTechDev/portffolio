@@ -1,16 +1,30 @@
 "use client";
 
 import "@styles/skills.sass";
-
-import Page from "@app/page";
-
 import Title from "@components/reusable/title/Title";
 import Spinner from "@components/skills/spinner/Spinner";
 import Tools from "@components/skills/tools/Tools";
 import Learning from "@components/skills/learning/Learning";
+import { gsap } from "gsap";
+import { useEffect } from "react";
 
 const Skills = () => {
+  useEffect(() => {
+    gsap.from('.skills-wrapper .skills-content', {
+      scrollTrigger: {
+        trigger: '.skills-wrapper',
+        start: "top 60%",
+        end: "bottom 20%",
+     
+      },
+      duration: 1,
+      opacity: 0,
+      y: 100,
+      ease: 'ease-in',
+     
 
+    })
+  },[])
 
   return (
  

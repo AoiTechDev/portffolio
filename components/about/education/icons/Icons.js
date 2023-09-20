@@ -18,10 +18,7 @@ const Icons = () => {
         start: "top 60%",
         end: "bottom 20%",
 
-        //markers: true,
-        //pin: true,
-        //pinSpacing: false,
-        //toggleActions: "restart none none none",
+       
       },
       clipPath:
         "polygon(0 0, 100% 0, 100% 20%, 50% 20%, 50% 40%, 100% 40%, 100% 60%, 50% 59%, 50% 80%, 100% 80%, 100% 100%, 0 100%)",

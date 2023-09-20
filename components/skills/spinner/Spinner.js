@@ -1,9 +1,6 @@
 import React, {
-  useLayoutEffect,
-  useState,
   useRef,
   useEffect,
-  forwardRef,
 } from "react";
 import {
   DiReact,
@@ -15,11 +12,8 @@ import {
 import { gsap } from "gsap";
 export const Spinner = () => {
   const boxRef = useRef();
-  useLayoutEffect(() => {
+  useEffect(() => {
     const spinner = document.querySelector(".spinner");
-    const circles = document.querySelectorAll(".circle");
-    const blur = document.querySelector("spinner-blur");
-
     let mm = gsap.matchMedia();
 
     mm.add("(max-width: 900px)", () => {
@@ -28,7 +22,15 @@ export const Spinner = () => {
       });
     });
     gsap
-      .timeline()
+      .timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: '.skills-wrapper',
+          start: "top 60%",
+          end: "bottom 20%",
+       
+        },
+      })
       .to(spinner.children[1], {
         y: -130,
         x: 0,
@@ -55,44 +57,92 @@ export const Spinner = () => {
         duration: 0.8,
       });
 
-    let spinnerTween = gsap.fromTo(
-      spinner,
-      {
-        rotation: 0,
-      },
-      {
-        rotation: '-=360',
-        duration: 10,
-        repeat: -1,
-        ease: "linear",
-      }
-    );
+    let spinnerTween = gsap
+      .timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: spinner,
+          start: "top 60%",
+          end: "bottom 20%",
+        },
+      })
+      .fromTo(
+        spinner,
+        {
+          rotation: 0,
+        },
+        {
+          rotation: "-=360",
+          duration: 10,
+          repeat: -1,
+          ease: "linear",
+        }
+      );
 
-    gsap.fromTo(spinnerTween, { timeScale: 3 }, { timeScale: 1, duration: 1 });
+    gsap
+      .timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: spinner,
+          start: "top 60%",
+          end: "bottom 20%",
+        },
+      })
+      .fromTo(spinnerTween, { timeScale: 3 }, { timeScale: 1, duration: 1 });
 
-    let icons = gsap.fromTo(
-      spinner.children,
-      {
-        rotation: 0,
-      },
-      {
-        rotation: 360,    
-        duration: 10,
-        repeat: -1,
-        ease: "linear",
-      }
-    );
+    let icons = gsap
+      .timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: spinner,
+          start: "top 60%",
+          end: "bottom 20%",
+        },
+      })
+      .fromTo(
+        spinner.children,
+        {
+          rotation: 0,
+        },
+        {
+          rotation: 360,
+          duration: 10,
+          repeat: -1,
+          ease: "linear",
+        }
+      );
 
-    gsap.fromTo(icons, { timeScale: 3 }, { timeScale: 1, duration: 1 });
-    gsap.fromTo(spinner.children, {
-      scale: 0
-    },{
-      scale: 1,
-      duration: 3,
-      ease: "power4.out"
-    }
-    )
-  });
+    gsap
+      .timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: spinner,
+          start: "top 60%",
+          end: "bottom 20%",
+        },
+      })
+      .fromTo(icons, { timeScale: 3 }, { timeScale: 1, duration: 1 });
+    gsap
+      .timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: spinner,
+          start: "top 60%",
+          end: "bottom 20%",
+        },
+      })
+      .fromTo(
+        spinner.children,
+        {
+          scale: 0,
+        },
+        {
+          scale: 1,
+          duration: 3,
+          ease: "power4.out",
+        }
+      );
+  },[]);
   return (
     <div className="spinner" ref={boxRef}>
       <div className="spinner-blur">

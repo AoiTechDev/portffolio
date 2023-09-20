@@ -18,13 +18,10 @@ const Tools = () => {
         paused: true,
         scrollTrigger: {
           trigger: ".tools-icons-wrapper",
-      
-          start: "-110% 60%",
-          end: 'top 30%',
-          scrub: 0.5,
-         
+
+          start: "top 60%",
+          end: "bottom 20%",
         },
-       
       })
       .staggerFrom(
         icons,
@@ -33,7 +30,29 @@ const Tools = () => {
         "0.2",
         "-=0.5"
       )
-   
+
+      gsap.from('.skills-left-content .tools-content', {
+        scrollTrigger:{
+          trigger:'.skills-left-content',
+          start:'top 60%',
+          end:'bottom 20%',
+        },
+        y:100,
+        opacity:0,
+        duration:1,
+        
+      })
+      gsap.from('.skills-right-content .tools-content', {
+        scrollTrigger:{
+          trigger:'.skills-right-content',
+          start:'top 60%',
+          end:'bottom 20%',
+        },
+        y:100,
+        opacity:0,
+        duration:1,
+        
+      })
   });
   return (
     <div className="tools-wrapper">
