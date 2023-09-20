@@ -14,7 +14,7 @@ const Whoami = () => {
         trigger: ".left-col",
         start: "top 60%",
         end: "bottom 20%",
-        markers: true
+    
         //markers: true,
         //pin: true,
         //pinSpacing: false,
@@ -29,7 +29,7 @@ const Whoami = () => {
         trigger: ".left-col",
         start: "top 60%",
         end: "bottom 20%",
-        markers: true
+     
         //markers: true,
         //pin: true,
         //pinSpacing: false,

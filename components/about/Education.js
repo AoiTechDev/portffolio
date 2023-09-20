@@ -1,28 +1,67 @@
-import React from "react";
-import Title from "../reusable/title/Title";
+'use client'
+import React, { useEffect } from "react";  
 import Image from "next/image";
 import study_img from "@assets/images/study-img.jpg";
 import { MdLocationPin, MdCalendarMonth } from "react-icons/md";
 import { BsFillMortarboardFill } from "react-icons/bs";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Education = () => {
+  useEffect(() => {
+    gsap.from(".education-content ul li",{
+      scrollTrigger: {
+        trigger: ".education-content",
+        start: "top 60%",
+        end: "bottom 20%",
+    
+        //markers: true,
+        //pin: true,
+        //pinSpacing: false,
+        //toggleActions: "restart none none none",
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+    })
+    gsap.to(".img-icons-wrapper .study-img",{
+      scrollTrigger: {
+        trigger: ".img-icons-wrapper",
+        start: "top 60%",
+        end: "bottom 20%",
+    
+        //markers: true,
+        //pin: true,
+        //pinSpacing: false,
+        //toggleActions: "restart none none none",
+      },
+      clipPath: 'polygon(0 0, 100% 0, 100% 20%, 50% 20%, 50% 40%, 100% 40%, 100% 60%, 50% 59%, 50% 80%, 100% 80%, 100% 100%, 0 100%)',
+      duration: 1,
+    })
+    gsap.from(".img-icons-wrapper .education-info", {
+      scrollTrigger: {
+        trigger: '.img-icons-wrapper',
+        start: 'top 40%',
+        end: 'bottom 20%'
+      },
+      opacity: 0,
+      duration: 1,
+      stagger: 0.5,
+      x: -100
+    })
+
+  },[])
+
   return (
     <div className="wrapper">
-      {/* <Title title="Education" /> */}
+     
       <div className="education-wrapper ">
         <div className="img-icons-wrapper">
           <Image src={study_img} className="study-img" />
-          {/* <div class="bottom">
-            <Image src={study_img} className="study-img" />
-          </div> */}
-          {/* <div class="perspective">
-            <Image src={study_img} width={400} height={500}/>
-            <div class="bottom">
-              <Image src={study_img} width={400} height={500}/>
-            </div>
-            <div class="left">
-              <Image src={study_img} width={400} height={500}/>
-            </div>
-          </div> */}
+        
           <div className="education-info">
             <MdCalendarMonth className="edu-icon" />
             <p>10.2018 - 07.2023</p>
