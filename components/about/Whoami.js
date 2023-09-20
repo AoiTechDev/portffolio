@@ -1,9 +1,77 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import code_img from "@assets/images/code-img.jpg";
 import art_img from "@assets/images/art-img.jpg";
-import Title from "../reusable/title/Title";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Whoami = () => {
+  useEffect(()=>{
+    gsap.from(".left-col img",{
+      scrollTrigger: {
+        trigger: ".left-col",
+        start: "top 60%",
+        end: "bottom 20%",
+        markers: true
+        //markers: true,
+        //pin: true,
+        //pinSpacing: false,
+        //toggleActions: "restart none none none",
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+    })
+    gsap.from(".left-col p",{
+      scrollTrigger: {
+        trigger: ".left-col",
+        start: "top 60%",
+        end: "bottom 20%",
+        markers: true
+        //markers: true,
+        //pin: true,
+        //pinSpacing: false,
+        //toggleActions: "restart none none none",
+      },
+      x: 100,
+      opacity: 0,
+      duration: 1,
+    })
+
+
+    gsap.from(".right-col img",{
+      scrollTrigger: {
+        trigger: ".right-col",
+        start: "top 60%",
+        end: "bottom 20%",
+       
+        //markers: true,
+        //pin: true,
+        //pinSpacing: false,
+        //toggleActions: "restart none none none",
+      },
+      x: 100,
+      opacity: 0,
+      duration: 1,
+    })
+    gsap.from(".right-col p",{
+      scrollTrigger: {
+        trigger: ".right-col",
+        start: "top 60%",
+        end: "bottom 20%",
+       
+        //markers: true,
+        //pin: true,
+        //pinSpacing: false,
+        //toggleActions: "restart none none none",
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+    })
+  },[])
   return (
     <div className="wrapper">
      
