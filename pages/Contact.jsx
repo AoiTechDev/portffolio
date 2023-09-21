@@ -58,7 +58,7 @@ const Contact = () => {
             onBlur={onBlur}
             touched={touched.email}
           />
-          {/* <Textarea /> */}
+    
           <TextareaForm
             handleChange={handleChange}
             value={values.message}
