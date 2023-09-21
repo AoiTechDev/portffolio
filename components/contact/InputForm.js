@@ -5,7 +5,7 @@ import {
   FormLabel,
   FormErrorMessage,
 } from "@chakra-ui/react";
-
+import '@styles/contact.sass'
 const InputForm = ({
   label,
   type,
@@ -27,10 +27,10 @@ const InputForm = ({
         type={type}
         value={value}
         onChange={handleChange}
-        width="50%"
         name={name}
         errorBorderColor="red.300"
         onBlur={onBlur}
+        
       />
       <FormErrorMessage>Required</FormErrorMessage>
       {/* {!isError ? (

@@ -1,36 +1,22 @@
 @import 'mixin'
 @import 'variables'
 
-#contact
-    height: 100vh
-    @include flexbox(center,center)
+#contact 
+    width: 100%
+    min-height: 90vh
+    @include flexbox(center,space-evenly)
+    flex-direction: column
     color: #{$grey}
-    background: black
+    background: #{$black}
+   
     .contact-wrapper
-        height: 70%
-        width: 80%
-        @include flexbox(center,space-evenly)
-        .left-contact
-            width: 20%
-           
-            height: 100%
-            @include flexbox(center,space-evenly)
-            flex-direction: column
-            h2
-                font-size: 2rem
-                
+        width: min(1400px, 100%)
+    
         .right-contact
-            width: 40%
-            
-            height: 100%
             @include flexbox(center,center)
             flex-direction: column
-            gap: 10px
-           
-
-    .contact-icon
-        width: 200px
-        height: 200px
-
-    .chakra-button
-        align-self: start
+            gap: 1rem
+            width: 100%
+  
+    .form-wrapper
+        width: min(500px, 100%)

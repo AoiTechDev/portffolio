@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FormControl, Textarea, FormLabel, FormErrorMessage } from "@chakra-ui/react";
+
 const TextareaForm = ({ value, handleChange, name, touched, onBlur }) => {
   return (
     <FormControl
@@ -15,7 +16,7 @@ const TextareaForm = ({ value, handleChange, name, touched, onBlur }) => {
         onChange={handleChange}
         placeholder="Here is a sample placeholder"
         size="sm"
-        width="80%"
+        className="inputs"
         name={name}
         rows={4}
         onBlur={onBlur}

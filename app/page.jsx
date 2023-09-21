@@ -8,6 +8,7 @@ import About from "@pages/about";
 import Skills from "@pages/Skills";
 import Projects from "@pages/Projects";
 import Contact from "@pages/contact";
+import Footer from "@components/Footer";
 
 function Page() {
 
@@ -18,8 +19,9 @@ function Page() {
       <Home />
       <About />
       <Skills />
-      <Projects />
+      {/* <Projects /> */}
       <Contact />
+      <Footer/>
     </>
   );
 }
