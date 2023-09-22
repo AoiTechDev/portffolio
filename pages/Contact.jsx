@@ -7,6 +7,8 @@ import { Button } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { sendContactForm } from "@lib/api";
 import Title from "@components/reusable/title/Title";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import Link from "next/link";
 
 const initValues = { name: "", email: "", message: "" };
 const initState = { values: initValues };
@@ -35,10 +37,15 @@ const Contact = () => {
   };
   return (
     <section id="contact">
-      <div className="contact-header">
-        <h2>Get In Touch</h2>
-      </div>
+      
       <div className="contact-wrapper">
+        <div className="left-contact"> 
+        <div className="contact-header">
+         <h2>Get In Touch</h2>
+         <p>pawel.bornikowski@gmail.com</p>
+        
+        </div>
+      </div>
         <div className="right-contact">
           <InputForm
             label="Name"

@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Rotate Sphere animation */
+@-webkit-keyframes animateSphere {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(720deg);
+            transform: rotateX(720deg);
+  }
+}
+@keyframes animateSphere {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(720deg);
+            transform: rotateX(720deg);
+  }
+}
+
+html {
+  background: black;
+}
+
+.scene {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.container {
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation-name: animateSphere;
+          animation-name: animateSphere;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+}
+
+/* X Axis */
+.circle:nth-child(1) {
+  -webkit-transform: rotate3d(1, 0, 0, 0deg);
+          transform: rotate3d(1, 0, 0, 0deg);
+}
+
+.circle:nth-child(2) {
+  -webkit-transform: rotate3d(1, 0, 0, 36deg);
+          transform: rotate3d(1, 0, 0, 36deg);
+}
+
+.circle:nth-child(3) {
+  -webkit-transform: rotate3d(1, 0, 0, 72deg);
+          transform: rotate3d(1, 0, 0, 72deg);
+}
+
+.circle:nth-child(4) {
+  -webkit-transform: rotate3d(1, 0, 0, 108deg);
+          transform: rotate3d(1, 0, 0, 108deg);
+}
+
+.circle:nth-child(5) {
+  -webkit-transform: rotate3d(1, 0, 0, 144deg);
+          transform: rotate3d(1, 0, 0, 144deg);
+}
+
+/* Y Axis */
+.circle:nth-child(6) {
+  -webkit-transform: rotate3d(0, 1, 0, 0deg);
+          transform: rotate3d(0, 1, 0, 0deg);
+}
+
+.circle:nth-child(7) {
+  -webkit-transform: rotate3d(0, 1, 0, 36deg);
+          transform: rotate3d(0, 1, 0, 36deg);
+}
+
+.circle:nth-child(8) {
+  -webkit-transform: rotate3d(0, 1, 0, 72deg);
+          transform: rotate3d(0, 1, 0, 72deg);
+}
+
+.circle:nth-child(9) {
+  -webkit-transform: rotate3d(0, 1, 0, 108deg);
+          transform: rotate3d(0, 1, 0, 108deg);
+}
+
+.circle:nth-child(10) {
+  -webkit-transform: rotate3d(0, 1, 0, 144deg);
+          transform: rotate3d(0, 1, 0, 144deg);
+}
+
+/* Z Axis */
+.circle:nth-child(11) {
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 0deg);
+          transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 0deg);
+}
+
+.circle:nth-child(12) {
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 36deg);
+          transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 36deg);
+}
+
+.circle:nth-child(13) {
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 72deg);
+          transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 72deg);
+}
+
+.circle:nth-child(14) {
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 108deg);
+          transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 108deg);
+}
+
+.circle:nth-child(15) {
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);
+          transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);
+}
+
+/* Light effect */
+/* Clip the sphere a bit */
+.clip {
+  -webkit-clip-path: circle(48%);
+          clip-path: circle(48%);
+}
+/*# sourceMappingURL=sphere.css.map */

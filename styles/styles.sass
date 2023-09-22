@@ -10,9 +10,12 @@
     //font-family: 'Cormorant Garamond'
     font-family: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-sans
 
+body
+     background: #{$black}
 .app
     height: 100vh
-    --swiper-pagination-top: 3rem
+
+    background: #{$black}
     
 
 .slide-in
@@ -148,3 +151,24 @@ p
             transform: skewY(0.7deg)
         &::after
             transform: skewY(-0.7deg)
+
+.whoami-animated-container
+    min-height: 100vh
+    width: 100%
+    @include flexbox(center,center)
+    background: #{$black}
+    flex-direction: column
+    .growing-container
+        // background: #{$blue}
+        height: 30vh
+        width: 50%
+        @include flexbox(center,center)
+      
+        .whoami-header
+            display: flex
+            overflow: hidden
+            div
+                font-size: clamp(2.80rem, 3.25vw + 5rem, 8.56rem)
+                text-transform: uppercase
+                color: #{$grey}
+

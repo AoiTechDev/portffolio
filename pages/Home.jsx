@@ -1,12 +1,30 @@
+'use client'
 import ContactButton from "@components/reusable/button/ContactButton";
 import "@styles/home.sass";
 import "animate.css";
 
 import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 import { BsLinkedin, BsGithub } from "react-icons/bs";
+import { useEffect } from "react";
 
 const Home = () => {
+  // useEffect(()=>{
+  //   gsap.to("#home", {
+  //     yPercent: -100,
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: ".scroll-test",
+  //       // start: "top bottom", // the default values
+  //       // end: "bottom top",
+  //       scrub: true
+  //     }, 
+  //   });
+  // },[])
   return (
     <section id="home">
       <div className="container">

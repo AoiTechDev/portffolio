@@ -10,68 +10,82 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Whoami = () => {
   useEffect(()=>{
-    gsap.from(".left-col img",{
-      scrollTrigger: {
-        trigger: ".left-col",
-        start: "top 60%",
-        end: "bottom 20%",
+
+    const tl = gsap.timeline({ scrollTrigger: {
+      trigger: ".whoami-content-wrapper",
+      // start: "top bottom", // the default values
+      // end: "bottom top",
+      scrub: true,
+      pin: true,
+    }})
+    tl.from('.left-col img',{
+      y: -100,
+      duration: 1
+    })
+
+
+    // gsap.from(".left-col img",{
+    //   scrollTrigger: {
+    //     trigger: ".left-col",
+    //     start: "top 60%",
+    //     end: "bottom 20%",
     
-        //markers: true,
-        //pin: true,
-        //pinSpacing: false,
-        //toggleActions: "restart none none none",
-      },
-      x: -100,
-      opacity: 0,
-      duration: 1,
-    })
-    gsap.from(".left-col p",{
-      scrollTrigger: {
-        trigger: ".left-col",
-        start: "top 60%",
-        end: "bottom 20%",
+    //     //markers: true,
+    //     //pin: true,
+    //     //pinSpacing: false,
+    //     //toggleActions: "restart none none none",
+    //   },
+    //   x: -100,
+    //   opacity: 0,
+    //   duration: 1,
+    // })
+    // gsap.from(".left-col p",{
+    //   scrollTrigger: {
+    //     trigger: ".left-col",
+    //     start: "top 60%",
+    //     end: "bottom 20%",
      
-        //markers: true,
-        //pin: true,
-        //pinSpacing: false,
-        //toggleActions: "restart none none none",
-      },
-      x: 100,
-      opacity: 0,
-      duration: 1,
-    })
+    //     //markers: true,
+    //     //pin: true,
+    //     //pinSpacing: false,
+    //     //toggleActions: "restart none none none",
+    //   },
+    //   x: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    // })
 
 
-    gsap.from(".right-col img",{
-      scrollTrigger: {
-        trigger: ".right-col",
-        start: "top 60%",
-        end: "bottom 20%",
+    // gsap.from(".right-col img",{
+    //   scrollTrigger: {
+    //     trigger: ".right-col",
+    //     start: "top 60%",
+    //     end: "bottom 20%",
        
-        //markers: true,
-        //pin: true,
-        //pinSpacing: false,
-        //toggleActions: "restart none none none",
-      },
-      x: 100,
-      opacity: 0,
-      duration: 1,
-    })
-    gsap.from(".right-col p",{
-      scrollTrigger: {
-        trigger: ".right-col",
-        start: "top 60%",
-        end: "bottom 20%",
+    //     //markers: true,
+    //     //pin: true,
+    //     //pinSpacing: false,
+    //     //toggleActions: "restart none none none",
+    //   },
+    //   x: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    // })
+    // gsap.from(".right-col p",{
+    //   scrollTrigger: {
+    //     trigger: ".right-col",
+    //     start: "top 60%",
+    //     end: "bottom 20%",
        
-        //markers: true,
-        //pin: true,
-        //pinSpacing: false,
-        //toggleActions: "restart none none none",
-      },
-      x: -100,
-      opacity: 0,
-      duration: 1,
-    })
+    //     //markers: true,
+    //     //pin: true,
+    //     //pinSpacing: false,
+    //     //toggleActions: "restart none none none",
+    //   },
+    //   x: -100,
+    //   opacity: 0,
+    //   duration: 1,
+    // })
   },[])
   return (
     <div className="wrapper">
