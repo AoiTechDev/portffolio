@@ -152,23 +152,3 @@ p
         &::after
             transform: skewY(-0.7deg)
 
-.whoami-animated-container
-    min-height: 100vh
-    width: 100%
-    @include flexbox(center,center)
-    background: #{$black}
-    flex-direction: column
-    .growing-container
-        // background: #{$blue}
-        height: 30vh
-        width: 50%
-        @include flexbox(center,center)
-      
-        .whoami-header
-            display: flex
-            overflow: hidden
-            div
-                font-size: clamp(2.80rem, 3.25vw + 5rem, 8.56rem)
-                text-transform: uppercase
-                color: #{$grey}
-

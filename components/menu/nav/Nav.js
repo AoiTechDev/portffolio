@@ -31,7 +31,7 @@ export const Nav = () => {
         .staggerFrom(
           ".menu > div",
           0.4,
-          { y: 50, opacity: 0, ease: "power1.InOut" },
+          { height: 0,  ease: "power1.InOut" },
           "0.1",
           "<"
         )
@@ -53,7 +53,7 @@ export const Nav = () => {
         .staggerFrom(
           ".menu-socials-wrapper > div",
           0.4,
-          { y: 100, opacity: 0, ease: "power1.InOut" },
+          { height: 100, opacity: 0, ease: "power1.InOut" },
           "0.2",
           "-=0.5"
         )

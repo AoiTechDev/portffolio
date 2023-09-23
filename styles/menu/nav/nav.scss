@@ -22,7 +22,9 @@ $split-color: #{$grey};
  
 }
 
-
+.menu_item{
+  overflow: hidden;
+}
 .menu_item-link {
   position: relative;
   color: transparent;

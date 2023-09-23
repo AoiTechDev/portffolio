@@ -1,0 +1,22 @@
+@import '../variables'
+@import '../mixin'
+.whoami-animated-container
+    min-height: 100vh
+    width: 100%
+    @include flexbox(center,center)
+    
+    flex-direction: column
+    .growing-container
+        background: #{$blue}
+       
+        @include flexbox(center,center)
+      
+        .whoami-header
+            display: flex
+            overflow: hidden
+            gap: 1rem
+            div
+                font-size: clamp(2.80rem, 3.25vw + 8rem, 10.56rem)
+                text-transform: uppercase
+                color: #{$grey}
+

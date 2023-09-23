@@ -1,4 +1,4 @@
-'use client'
+
 import "@styles/about.sass";
 
 import Qualities from "@components/about/qualities/Qualities";
@@ -13,7 +13,7 @@ const About = () => {
   return (
     <section id="about">
     
-      {/* <Title title="who am i?" /> */}
+      <Title title="who am i?" />
       <Whoami />
       <Title title="education" />
       <Education />
