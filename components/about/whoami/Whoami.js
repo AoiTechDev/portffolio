@@ -9,12 +9,19 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Whoami = () => {
-   const text = "Frontend development intersects my passions for art and coding. As a\
+   const firstText = "Frontend development intersects my passions for art and coding. As a\
     recent grad and frontend enthusiast, I want to create visually\
     impressive digital experiences. With my background in painting and\
     drawing, I see code as a new form of creative expression. I'm\
     fascinated by combining design and development skills."
-    const split = text.split('').map((char, index) => <span key={index}>{char}</span>)
+    const secondText = " My goal is to craft not just functional programs, but truly engaging\
+    interfaces that provide real value to users. I strive to evolve as a\
+    UI/UX designer who can imagine creative solutions to problems and\
+    turn them into intuitive, user-centric designs. I also want to grow\
+    as a frontend engineer who can bring those visions to life with\
+    clean, well-architected code."
+    const splitFirst = firstText.split(' ').map((char, index) => <span key={index}>{char}</span>)
+    const splitSecond = secondText.split(' ').map((char, index) => <span key={index}>{char}</span>)
   useEffect(()=>{
    
   
@@ -52,17 +59,24 @@ const Whoami = () => {
         trigger: ".left-col",
         start: "top 60%",
         end: "bottom 20%",
-     
-        //markers: true,
-        // pin: true,
-        //pinSpacing: false,
-        //toggleActions: "restart none none none",
       },
       x: 100,
       opacity: 0,
       duration: 1,
     })
-
+    gsap.from('.left-col p span', {
+      scrollTrigger: {
+        trigger: ".left-col",
+        start: "top 60%",
+        end: "bottom 20%",
+      },
+      x: 50,
+      opacity: 0,
+      
+      
+      duration: 1,
+      stagger: 0.01
+    })
 
     gsap.from(".right-col img",{
       scrollTrigger: {
@@ -94,6 +108,18 @@ const Whoami = () => {
       opacity: 0,
       duration: 1,
     })
+    gsap.from('.right-col p span', {
+      scrollTrigger: {
+        trigger: ".right-col",
+        start: "top 60%",
+        end: "bottom 20%",
+      },
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.01
+    })
+
   },[])
   return (
     <div className="wrapper">
@@ -103,17 +129,12 @@ const Whoami = () => {
         <div className="left-col">
           <Image src={code_img} className="codding-img" loading="lazy"/>
           <p>
-           {split}
+           {splitFirst}
           </p>
         </div>
         <div className="right-col">
           <p>
-            My goal is to craft not just functional programs, but truly engaging
-            interfaces that provide real value to users. I strive to evolve as a
-            UI/UX designer who can imagine creative solutions to problems and
-            turn them into intuitive, user-centric designs. I also want to grow
-            as a frontend engineer who can bring those visions to life with
-            clean, well-architected code.
+           {splitSecond}
           </p>
           <Image src={art_img} className="art-img" loading="lazy"/>
         </div>
