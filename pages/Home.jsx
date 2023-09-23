@@ -13,46 +13,17 @@ import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { useEffect } from "react";
 
 const Home = () => {
-  // useEffect(()=>{
-  //   gsap.to("#home", {
-  //     yPercent: -100,
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: ".scroll-test",
-  //       // start: "top bottom", // the default values
-  //       // end: "bottom top",
-  //       scrub: true
-  //     }, 
-  //   });
-  // },[])
+  useEffect(()=>{
+  
+  },[])
   return (
     <section id="home">
       <div className="container">
         <div className="my-name">
           {/* <p>Hi, my name is</p> */}
+          <p>Hi, my name is</p>
           <h1>
-            Hi, I am <span>Paweł Bornikowski</span> a{" "}
-            <span className="glowing-txt">
-              <span
-                className="faulty-letter"
-                style={{
-                  "--glow-color": "hsl(186 100% 69%)",
-                }}
-              >
-                F
-              </span>
-              ront-
-              <span
-                className="faulty-letter"
-                style={{
-                  "--glow-color": "hsl(297.79, 100%, 52.16%)",
-                }}
-              >
-                e
-              </span>
-              nd
-            </span>
-            <span>&nbsp;Developer</span>
+           Paweł Bornikowski
           </h1>
 
           <p className="front-note">
@@ -62,6 +33,7 @@ const Home = () => {
           <ContactButton/>
         </div>
       </div>
+     
       <div className="socials">
         <Link href="https://github.com/BorPawel" target="_blank">
           <BsGithub />

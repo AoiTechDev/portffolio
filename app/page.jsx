@@ -28,12 +28,12 @@ function Page() {
       <Nav /> 
     <Menu /> 
       <Home /> 
-      {/* <Who /> */}
+{/*     
       <About /> 
       <Skills />
-      {/* <Projects /> */}
+     
       <Contact />
-      <Footer/>
+      <Footer/> */}
     </>
   );
 }
