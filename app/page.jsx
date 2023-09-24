@@ -13,11 +13,11 @@ import Footer from "@components/Footer";
 import '@styles/styles.sass'
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Scrollbar from 'smooth-scrollbar';
+
 import { useEffect } from "react";
 import code_img from "@assets/images/code-img.jpg";
 import Image from "next/image";
-import Who from "@components/introduce/Who";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,12 +28,12 @@ function Page() {
       <Nav /> 
     <Menu /> 
       <Home /> 
-{/*     
+    
       <About /> 
       <Skills />
      
       <Contact />
-      <Footer/> */}
+      <Footer/>
     </>
   );
 }

@@ -5,23 +5,13 @@ import code_img from "@assets/images/code-img.jpg";
 import art_img from "@assets/images/art-img.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
+import { whoamiData_first, whoamiData_second } from "./data/data";
 gsap.registerPlugin(ScrollTrigger);
 
 const Whoami = () => {
-   const firstText = "Frontend development intersects my passions for art and coding. As a\
-    recent grad and frontend enthusiast, I want to create visually\
-    impressive digital experiences. With my background in painting and\
-    drawing, I see code as a new form of creative expression. I'm\
-    fascinated by combining design and development skills."
-    const secondText = " My goal is to craft not just functional programs, but truly engaging\
-    interfaces that provide real value to users. I strive to evolve as a\
-    UI/UX designer who can imagine creative solutions to problems and\
-    turn them into intuitive, user-centric designs. I also want to grow\
-    as a frontend engineer who can bring those visions to life with\
-    clean, well-architected code."
-    const splitFirst = firstText.split(' ').map((char, index) => <span key={index}>{char}</span>)
-    const splitSecond = secondText.split(' ').map((char, index) => <span key={index}>{char}</span>)
+
+    const splitFirst = whoamiData_first.split(' ').map((char, index) => <span key={index}>{char}</span>)
+    const splitSecond = whoamiData_second.split(' ').map((char, index) => <span key={index}>{char}</span>)
   useEffect(()=>{
    
   
