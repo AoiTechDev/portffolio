@@ -5,13 +5,13 @@ import code_img from "@assets/images/code-img.jpg";
 import art_img from "@assets/images/art-img.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { whoamiData_first, whoamiData_second } from "./data/data";
+import { whoami_content_one, whoami_content_two } from "./data/data";
 gsap.registerPlugin(ScrollTrigger);
 
 const Whoami = () => {
 
-    const splitFirst = whoamiData_first.split(' ').map((char, index) => <span key={index}>{char}</span>)
-    const splitSecond = whoamiData_second.split(' ').map((char, index) => <span key={index}>{char}</span>)
+    const splitFirst = whoami_content_one.split(' ').map((char, index) => <span key={index}>{char}</span>)
+    const splitSecond = whoami_content_two.split(' ').map((char, index) => <span key={index}>{char}</span>)
   useEffect(()=>{
    
   

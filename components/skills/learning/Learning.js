@@ -12,6 +12,7 @@ import {
 } from "react-icons/si";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { learning_content } from "../data/data";
 
 gsap.registerPlugin(ScrollTrigger);
 const Learning = () => {
@@ -50,13 +51,7 @@ const Learning = () => {
     <div className="learning-wrapper">
       <div className="skills-left-content">
         <p>
-          I continually enhance my skills by adopting new web development
-          technologies. Currently, I'm prioritizing TypeScript, Next.js, and
-          Redux to strengthen my capabilities in backend development and user
-          interface design. I've also gained experience with Node.js, Express,
-          MongoDB, and jQuery. Embracing new technical concepts and staying at
-          the forefront of innovation drives my enthusiasm in this dynamic
-          field.
+       {learning_content}
         </p>
       </div>
       <div className="learning-icons-wrapper">

@@ -7,7 +7,7 @@ import Tools from "@components/skills/tools/Tools";
 import Learning from "@components/skills/learning/Learning";
 import { gsap } from "gsap";
 import { useEffect } from "react";
-
+import { technologies_content } from "@components/skills/data/data";
 const Skills = () => {
   useEffect(() => {
     gsap.from('.skills-wrapper .skills-content', {
@@ -36,10 +36,7 @@ const Skills = () => {
           </div>
           <div className="skills-content">
             <p>
-              These skills collectively empower me to create modern and
-              user-centric web solutions. I am dedicated to staying updated with
-              the latest trends and best practices in these technologies to
-              deliver high-quality results consistently.
+              {technologies_content}
             </p>
           </div>
         </div>

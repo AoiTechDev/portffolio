@@ -7,6 +7,7 @@ import { DiScrum } from "react-icons/di";
 import { BiLogoFigma } from "react-icons/bi";
 import { gsap } from "gsap";
 import { ScrollTrigger, ScrollToPlugin } from "gsap/dist/ScrollTrigger";
+import { tools_content_one, tools_content_two } from "../data/data";
 
 gsap.registerPlugin(ScrollTrigger);
 const Tools = () => {
@@ -59,10 +60,7 @@ const Tools = () => {
       <div className="skills-left-content">
         <div className="tools-content">
           <p>
-            In my projects and professional experience, I use industry-standard
-            tools and concepts to deliver high-quality results. Git and GitHub
-            for version control and collaboration, along with Postman for
-            thorough API testing, are integral to my efficient workflow.
+           {tools_content_one}
           </p>
         </div>
       </div>
@@ -92,12 +90,7 @@ const Tools = () => {
       <div className="skills-right-content">
         <div className="tools-content">
           <p>
-            I have experience working with tools like Jira, Figma, and Scrum
-            frameworks to plan sprints, create mocks, and ship responsive web
-            designs focused on the user experience. I also apply REST APIs and
-            RWD to ensure seamless cross-platform integration. While I'm eager
-            to learn new technologies, I rely on these proven tools for building
-            secure, scalable products.
+            {tools_content_two}
           </p>
         </div>
       </div>
