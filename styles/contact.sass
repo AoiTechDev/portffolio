@@ -11,6 +11,10 @@
     .contact-wrapper
         width: min(1400px, 100%)
         @include flexbox(center,space-evenly)
+        @media screen and (max-width: 900px)
+            flex-direction: column
+            gap: 2rem
+           
         .left-contact
             width: min(500px, 100%)
             align-self: start

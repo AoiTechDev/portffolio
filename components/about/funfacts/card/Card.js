@@ -2,6 +2,7 @@
 import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { FaQuestion } from "react-icons/fa";
 const Card = ({id, title, context}) => {
   const boxRef = useRef();
   //let tl = useRef();
@@ -127,7 +128,9 @@ const Card = ({id, title, context}) => {
         <h5>
           <span>{title}</span>
         </h5>
-        <div className={`header${id}`}></div>
+        <div className={`header${id}`}>
+        
+        </div>
         <p>
          {context}
         </p>
@@ -135,6 +138,7 @@ const Card = ({id, title, context}) => {
 
       <div className={`screen-1${id}`}>
         <div className={`top${id}`}>
+        <FaQuestion/>
           <h5>
             <span>{title}</span>
           </h5>

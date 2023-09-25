@@ -34,7 +34,7 @@ export const Spinner = () => {
       .to(spinner.children[1], {
         y: -130,
         x: 0,
-        duration: 0.8,
+        duration: 0.8,  
       })
       .to(spinner.children[2], {
         y: -30,
@@ -77,7 +77,7 @@ export const Spinner = () => {
           repeat: -1,
           ease: "linear",
         }
-      );
+      )
 
     gsap
       .timeline({
@@ -110,7 +110,8 @@ export const Spinner = () => {
           repeat: -1,
           ease: "linear",
         }
-      );
+      )
+      
 
     gsap
       .timeline({
@@ -122,6 +123,8 @@ export const Spinner = () => {
         },
       })
       .fromTo(icons, { timeScale: 3 }, { timeScale: 1, duration: 1 });
+
+
     gsap
       .timeline({
         paused: true,
@@ -142,6 +145,9 @@ export const Spinner = () => {
           ease: "power4.out",
         }
       );
+
+  
+      
   },[]);
   return (
     <div className="spinner" ref={boxRef}>
