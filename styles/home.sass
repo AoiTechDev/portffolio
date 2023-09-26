@@ -6,41 +6,57 @@
     color: #{$grey}
     //background-image: url("../assets/images/title-bg.png")
     height: 100vh
-   
+
     position: relative
     @include flexbox(center,center)
     background-size: 100% 100%
-   
-                
+
+    .bg-image
+       
+        z-index: -1
+        position: absolute
+        background-size: 100% 100%
     .container
         width: 100%
         height: 100%
-        @include flexbox(center,center)
+        @include flexbox(center,start)
         flex-direction: column
         // background: rgba(255, 255, 255, 0)
         // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
-        // backdrop-filter: blur(10px)
+        // backdrop-filter: blur(15px)
         // -webkit-backdrop-filter: blur(7.1px)
         overflow: hidden
-        padding: 1rem
-        .name-container, .my-title 
+
+        .name-container
+            margin-top: 5vw
+        .name-container, .my-title
             display: flex
             gap: 1rem
-            
+            width: 100%
+
+            h1
+                font-size: 8vw
+                letter-spacing: -0.8vw
+        .my-title
+            justify-content: flex-end
+        .test
+            width: min(600px, 100%)
+            text-align: center
+
         .my-name
             position: relative
             width: min(850px, 100%)
             .front-note
                 width: min(500px, 100%)
             &:not(.faulty-letter)
-                    color: rgb(161, 161, 161)
+                color: rgb(161, 161, 161)
             h1
                 //color: grey
                 font-weight: 100
-                
+
                 span
                     &:not(.glowing-txt .faulty-letter)
-                    
+
                         font-weight: 300
                         color: #{$grey}
                 //text-transform: uppercase
@@ -76,7 +92,7 @@
     @extend .glowing-txt
     color: var(--glow-color)
     perspective: 2em
-    
+
 .glowing-btn
     position: relative
     color: var(--glow-color)

@@ -11,46 +11,88 @@ gsap.registerPlugin(ScrollTrigger);
 
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { useEffect, useRef } from "react";
-
+import Image from "next/image";
+import bgImage from "@assets/images/bg.jpg";
 const Home = () => {
   const containerRef = useRef();
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.timeline().from(".home__name", {
-        xPercent: 700,
-        yPercent: 600,
-        scale: 7,
-        duration: 0.8,
-        ease: "Power4.InOut",
-      })
-      .from(".home__surname", {
-        xPercent: 700,
-        yPercent: -600,
-        scale: 7,
-        duration: 0.8,
-        ease: "Power4.InOut",
-      }, '-=0.4')
-      .from(".home__front", {
-        xPercent: -700,
-        yPercent: 600,
-        scale: 7,
-        duration: 0.8,
-        ease: "Power4.InOut",
-      }, '-=0.4')
-      .from(".home__dev", {
-        xPercent: 700,
-        yPercent: -600,
-        scale: 7,
-        duration: 0.8,
-        ease: "Power4.InOut",
-      }, '-=0.4')
- 
-    }, containerRef);
-    return () => ctx.revert();
+    //let ctx = gsap.context(() => {
+    // gsap.timeline().from(".home__name", {
+    //   xPercent: 700,
+    //   yPercent: 600,
+    //   scale: 7,
+    //   duration: 0.8,
+    //   ease: "Power4.InOut",
+    // })
+    // .from(".home__surname", {
+    //   xPercent: 700,
+    //   yPercent: -600,
+    //   scale: 7,
+    //   duration: 0.8,
+    //   ease: "Power4.InOut",
+    // }, '-=0.4')
+    // .from(".home__front", {
+    //   xPercent: -700,
+    //   yPercent: 600,
+    //   scale: 7,
+    //   duration: 0.8,
+    //   ease: "Power4.InOut",
+    // }, '-=0.4')
+    // .from(".home__dev", {
+    //   xPercent: 700,
+    //   yPercent: -600,
+    //   scale: 7,
+    //   duration: 0.8,
+    //   ease: "Power4.InOut",
+    // }, '-=0.4')
+
+    //}, containerRef);
+    //return () => ctx.revert();
+
+    gsap.to(".name-container", {
+      scrollTrigger: {
+        trigger: ".container",
+        scrub: 1,
+
+        start: "top top",
+        end: "center top",
+      },
+      x: -500,
+    });
+    gsap.to(".my-title", {
+      scrollTrigger: {
+        trigger: ".container",
+        scrub: 1,
+
+        start: "top top",
+        end: "center top",
+      },
+      x: 500,
+    });
+    gsap.fromTo(
+      ".test",
+      {
+        opacity: 0,
+        y: -200,
+      },
+      {
+        scrollTrigger: {
+          pin: true,
+          trigger: "#home",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+        opacity: 1,
+        y: 80,
+        ease: "power2.out",
+      }
+    );
   }, []);
 
   return (
     <section id="home">
+      <Image src={bgImage} className="bg-image" />
       <div className="container" ref={containerRef}>
         {/* <div className="my-name">
         
@@ -73,6 +115,12 @@ const Home = () => {
         <div className="my-title">
           <h1 className="home__front">Front-end</h1>
           <h1 className="home__dev">Developer</h1>
+        </div>
+        <div className="test">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+          culpa aliquid, veniam vero ut nihil dolorum mollitia sequi? Id odio
+          sit facilis quae corrupti voluptatum itaque, cupiditate commodi vero
+          numquam.
         </div>
       </div>
       {/*      
