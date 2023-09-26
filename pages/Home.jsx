@@ -51,7 +51,7 @@ const Home = () => {
 
     gsap.to(".name-container", {
       scrollTrigger: {
-        trigger: ".container",
+        trigger:  "#home",
         scrub: 1,
 
         start: "top top",
@@ -61,7 +61,7 @@ const Home = () => {
     });
     gsap.to(".my-title", {
       scrollTrigger: {
-        trigger: ".container",
+        trigger:  "#home",
         scrub: 1,
 
         start: "top top",
@@ -84,7 +84,7 @@ const Home = () => {
           scrub: 1,
         },
         opacity: 1,
-        y: 80,
+        y: 60,
         ease: "power2.out",
       }
     );
@@ -117,10 +117,11 @@ const Home = () => {
           <h1 className="home__dev">Developer</h1>
         </div>
         <div className="test">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-          culpa aliquid, veniam vero ut nihil dolorum mollitia sequi? Id odio
-          sit facilis quae corrupti voluptatum itaque, cupiditate commodi vero
-          numquam.
+          <p>
+            {" "}
+            Crafting digital magic with JavaScript, React, and CSS to create
+            user experiences that sparkle and shine!
+          </p>
         </div>
       </div>
       {/*      

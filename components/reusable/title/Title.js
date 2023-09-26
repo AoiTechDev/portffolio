@@ -49,6 +49,19 @@ const Title = ({ title }) => {
              
             }
           })
+          gsap.fromTo(section.children[2], {
+            x: "+=100",
+            opacity: 0,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.5,
+            scrollTrigger: {
+              trigger: section,
+             
+            }
+           })
       // gsap.fromTo(
       //   section,
       //   {
@@ -75,6 +88,7 @@ const Title = ({ title }) => {
     <div className="title-wrapper">
       <div className="title-line"></div>
       <div className="title">{split}</div>
+      <div className="title-line"></div>
     </div>
   );
 };

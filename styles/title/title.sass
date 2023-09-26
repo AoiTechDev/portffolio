@@ -1,12 +1,14 @@
 @import '../variables'
 @import '../mixin'
+@import url('https://fonts.google.com/specimen/Permanent+Marker')
 .title-wrapper
-    @include flexbox(center,start)
+    @include flexbox(center,center)
     gap: 1rem
     width: 100%
     margin: 2rem 0
+    overflow: hidden
     .title-line
-        width: min(215px, 30%)
+        width: min(100px, 30%)
         background: #{$grey}
         height: 1px
     .title
@@ -14,3 +16,8 @@
         display: flex
         text-transform: uppercase
         letter-spacing: 1px
+        background-image: linear-gradient(to right, #{$lightblue}, #{$pink})
+        // background-image: linear-gradient(to right, #0b15ee, #f31154)
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        font-family: 'sans' !important
