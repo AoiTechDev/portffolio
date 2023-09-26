@@ -13,7 +13,7 @@ const About = () => {
   return (
     <section id="about">
     
-      <Title title="who am i?" />
+     
       <Whoami />
       <Title title="education" />
       <Education />

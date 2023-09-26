@@ -7,3 +7,7 @@ export const whoami_content_two =
   " I aim to create captivating interfaces that offer genuine user value. My goal is to advance as a UI/UX designer, \
   envisioning innovative solutions and translating them into user-friendly designs.\
    Additionally, I aspire to develop into a frontend engineer capable of realizing these visions with impeccable code architecture.";
+
+export const whoami_content = "I am a recent graduate with a passion for merging art and coding to \
+create visually stunning digital experiences. I aspire to be a front-end developer and UI/UX designer,\
+ envisioning innovative solutions and translating them into user-friendly designs with impeccable code."
