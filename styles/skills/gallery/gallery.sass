@@ -1,0 +1,45 @@
+@import '../../variables'
+@import '../../mixin'
+
+.gallery
+    width: min(1400px, 100%)
+    height: 300vh
+    display: flex
+    &__left, &__right
+       width: 50%
+
+    &__left
+       
+        @include flexbox(center,center)
+        &_container
+
+            height: 100%
+            width: 100%
+            display: flex
+           
+            flex-direction: column
+            justify-content: space-between
+            .gallery__left_inner
+
+                background: var(--clr)
+                width: 100%
+                height: 100%
+                @include flexbox(center,center)
+                flex-direction: column
+                padding: 1rem
+
+    &__right
+        height: 100vh
+        background: blue
+        @include flexbox(center,center)
+        &_container
+            width: 100%
+            height: 40%
+            position: relative
+            overflow: hidden
+            .gallery__right_inner
+                background: var(--clr)
+                height: 100%
+                width: 100%
+                position: absolute
+                

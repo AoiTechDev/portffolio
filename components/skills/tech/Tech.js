@@ -4,9 +4,10 @@ import { gsap } from "gsap";
 import { useEffect } from "react";
 import Title from "@components/reusable/title/Title";
 import Layout from "@components/layout/Layout";
-import { Spinner } from "@chakra-ui/react";
+
 
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Spinner from "@components/skills/spinner/Spinner";
 gsap.registerPlugin(ScrollTrigger);
 export function Tech({ technologies_content }) {
   useEffect(() => {
