@@ -12,94 +12,6 @@
 
 body
      background: #{$black}
-.app
-    height: 100vh
-
-    background: #{$black}
-    
-
-.slide-in
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100vh
-    background: red
-    transform-origin: right
-    z-index: 999
-
-.slide-out
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100vh
-    background: red
-    transform-origin: left
-    z-index: 999
-
-
-.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled
-    opacity: 0 !important
-
-.swiper-button-prev, .swiper-button-next
-    opacity: 0
-
-.line-wrapper
-    position: absolute
-    width: 200px
-    height: 1px
-    background: #{$blue}
-    top: 80%
-    .line-label
-        color: #{$grey}
-        width: 100%
-        text-align: right
-    .line-label-left
-        text-align: left
-.left-line
-    left: 3rem
-.right-line
-    right: 3rem
-.swiper
-    width: 100%
-    height: 100%
-    
-.swiper-pagination-bullet
-
-    text-align: center
-    line-height: 20px
-    font-size: #{$font-size-sm}
-    color: #{$grey}
-    opacity: 1
-    color: #776e6e
-    width: 90px
-    height: 30px
-    border-radius: 0
-    transition: 0.7s
-    background: transparent
-
-    &-active
-        color: #fff
-        background: transparent
-        font-size: #{$font-size-md}
-        position: relative
-
-        &:before
-            content: ''
-            position: absolute
-            width: 60%
-            height: 3px
-            bottom: -10px
-            background: #{$grey}
-            transform: scale(1.5)
-
-
-// .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal
-//     top: 1rem
-.swiper-wrapper
-    transition-timing-function: ease-in
-
 h1
     font-size: #{$font-size-xxxl}
 h2
@@ -113,42 +25,8 @@ h5
 p
     font-size: #{$font-size-base}
 
-.line-container
-    width: 100%
-    height: 10px
 
+main
+    width: min(1400px, 100%)
     display: flex
-    align-items: center
-    .left-line, .right-line
-        width: 47%
-        height: 30%
-
-        position: relative
-
-    .left-line
-        &::before
-            content: ''
-            position: absolute
-            top: 0
-            width: 100%
-            height: 50%
-            background: #{$blue}
-            transform: skewY(-0.7deg)
-            //clip-path: polygon(0 51%, 100% 100%, 100% 0)
-
-        &::after
-            content: ''
-            position: absolute
-            bottom: -2px
-            width: 100%
-            height: 50%
-            background: #{$blue}
-            transform: skewY(0.7deg)
-            //clip-path: polygon(0 51%, 100% 100%, 100% 0)
-    .right-line
-        @extend .left-line
-        &::before
-            transform: skewY(0.7deg)
-        &::after
-            transform: skewY(-0.7deg)
-
+    flex-direction: column

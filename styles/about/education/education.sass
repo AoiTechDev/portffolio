@@ -3,7 +3,6 @@
 .education-wrapper
     @include flexbox(center, space-between)
     width: min(1400px, 100%)
-
     @media screen and (max-width: 1200px)
         flex-direction: column
     .education-content
@@ -22,11 +21,6 @@
                 position: relative
                 display: flex
                 flex-wrap: wrap
-                // @for $i from 1 to 6
-                //     &:nth-child(#{$i})
-
-                //         transform: translate3d(calc($i * 30px),0,0)
-
                 padding: 1rem
                 font-size: clamp(1rem, 0.34vw + 0.91rem, 1.19rem)
                 &::before

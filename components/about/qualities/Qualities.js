@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import '@styles/about/qualities/qualities.sass';
 import {description, quality} from './data/data'
+import Title from "@components/reusable/title/Title";
 gsap.registerPlugin(ScrollTrigger);
 
 const Qualities = () => {
@@ -25,7 +26,7 @@ const Qualities = () => {
 
   return (
     <div className="wrapper quality-wrapper">
-     {/* <Title title="My qualities"/> */}
+       <Title title="my qualities" />
       {quality.map((quality, index) => (
         <div className="quality" key={index}>
           <span>{quality}</span>

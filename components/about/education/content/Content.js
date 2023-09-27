@@ -1,22 +1,16 @@
 "use client";
 import React, { useEffect } from "react";
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-
 const Content = () => {
   useEffect(() => {
     gsap.from(".education-content ul li", {
       scrollTrigger: {
         trigger: ".education-content",
-        start: "top 60%",
-        end: "bottom 20%",
-
-        //markers: true,
-        //pin: true,
-        //pinSpacing: false,
-        //toggleActions: "restart none none none",
+        start: "top 80%",
+        end: "60% 20%",
+        scrub: 1,
       },
       x: -100,
       opacity: 0,

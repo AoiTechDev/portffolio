@@ -15,9 +15,9 @@ const Icons = () => {
     gsap.to(".img-icons-wrapper .study-img", {
       scrollTrigger: {
         trigger: ".img-icons-wrapper",
-        start: "top 60%",
-        end: "bottom 20%",
-
+        start: "top 80%",
+        end: "30% 30%",
+        scrub: 1,
        
       },
       clipPath:
@@ -27,8 +27,9 @@ const Icons = () => {
     gsap.from(".img-icons-wrapper .education-info", {
       scrollTrigger: {
         trigger: ".img-icons-wrapper",
-        start: "top 40%",
-        end: "bottom 20%",
+        start: "top 80%",
+        end: "60% 20%",
+        scrub: 1
       },
       opacity: 0,
       duration: 1,

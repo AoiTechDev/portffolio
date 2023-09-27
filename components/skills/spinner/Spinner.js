@@ -10,6 +10,7 @@ import {
   DiJavascript1,
 } from "react-icons/di";
 import { gsap } from "gsap";
+import '@styles/skills/tech/tech.sass'
 export const Spinner = () => {
   const boxRef = useRef();
   useEffect(() => {

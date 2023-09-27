@@ -1,0 +1,54 @@
+@import '../variables'
+@import '../mixin'
+@import '../keyframes'
+#skills
+    min-height: 100vh
+    color: #{$grey}
+    position: relative
+    background: #{$black}
+    @include flexbox(center,center)
+    flex-direction: column
+    padding: 15vh 1rem 1rem 1rem
+
+    .skills-wrapper
+        width: min(1400px, 100%)
+        min-height: 50vh
+        @include flexbox(center,space-between)
+        @media screen and (max-width: 900px)
+            flex-direction: column
+            justify-content: space-around
+            align-items: center
+        .skills-icon
+            height: 100%
+            width: 100%
+            @include flexbox(center,center)
+        .skills-content
+
+            width: 100%
+
+            padding: 3rem 1rem 1rem 1rem
+
+            p
+                width: min(500px, 100%)
+
+
+.learning-left-content
+    min-height: 30vh
+    width: min(700px, 100%)
+    @include flexbox(center, cencer)
+.tools-left-content
+    @extend .learning-left-content
+.tools-right-content
+    min-height: 30vh
+    width: min(700px, 100%)
+    @include flexbox(center, cencer)
+    align-self: end
+.tools-icons-wrapper, .learning-icons-wrapper
+    min-height: 30vh
+    @include flexbox(center,space-evenly)
+    flex-wrap: wrap
+.skill-icon
+    width: min(80px, 35%)
+    display: grid
+    place-items: center
+    font-size: #{$font-size-xxl}

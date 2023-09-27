@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
-import "@styles/about.sass";
+
 import ProjectInfo from "@components/projects/projectsCards/ProjectInfo";
 import { project_data } from "@components/projects/projects_data/data";
 import Link from 'next/link'

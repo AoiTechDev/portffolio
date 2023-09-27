@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect } from "react";
-import "@styles/skills/learning.sass";
 import {
   SiTypescript,
   SiNextdotjs,
@@ -13,14 +12,16 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { learning_content } from "../data/data";
+import Layout from "@components/layout/Layout";
+import Title from "@components/reusable/title/Title";
 
 gsap.registerPlugin(ScrollTrigger);
 const Learning = () => {
   useEffect(() => {
     const icons = gsap.utils.toArray(".learning-icons-wrapper .skill-icon");
-    gsap.from(".learning-wrapper .skills-left-content", {
+    gsap.from("main .learning-left-content", {
       scrollTrigger: {
-        trigger: ".learning-wrapper",
+        trigger: "main .learning-wrapper",
         start: "top 60%",
         end: "bottom 20%",
       },
@@ -48,8 +49,9 @@ const Learning = () => {
       )
   })
   return (
-    <div className="learning-wrapper">
-      <div className="skills-left-content">
+    <Layout>
+       <Title title="learning" />
+      <div className="learning-left-content">
         <p>
        {learning_content}
         </p>
@@ -77,7 +79,8 @@ const Learning = () => {
           <SiRedux />
         </div>
       </div>
-    </div>
+    
+    </Layout>
   );
 };
 export default Learning;

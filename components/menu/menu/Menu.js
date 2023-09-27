@@ -6,8 +6,8 @@ import { gsap } from "gsap";
 import Link from "next/link";
 import { CustomEase } from "gsap/dist/CustomEase";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import Nav from "./nav/Nav";
-import Contact from "./contact/Contact";
+import Nav from "../nav/Nav";
+import Contact from "../contact/Contact";
 import Logo from "@components/reusable/logo/Logo";
 
 const Menu = ({ open, menuOpenHandler }) => {

@@ -4,6 +4,7 @@ import "@styles/about/funfacts/funfacts.sass";
 import Card from "./card/Card";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Title from "@components/reusable/title/Title";
 gsap.registerPlugin(ScrollTrigger);
 const Hobbies = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const Hobbies = () => {
   },[])
   return (
     <div className="funfacts-wrapper">
+       <Title title="fun facts" />
       <Card
         id="1"
         title="Fun Fact 1"
