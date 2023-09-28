@@ -6,17 +6,17 @@
     height: 300vh
     display: flex
     &__left, &__right
-       width: 50%
+        width: 50%
 
     &__left
-       
+
         @include flexbox(center,center)
         &_container
 
             height: 100%
             width: 100%
             display: flex
-           
+
             flex-direction: column
             justify-content: space-between
             .gallery__left_inner
@@ -27,13 +27,15 @@
                 @include flexbox(center,center)
                 flex-direction: column
                 padding: 1rem
+                p
+                    width: 80%
 
     &__right
         height: 100vh
         background: blue
         @include flexbox(center,center)
         &_container
-            width: 100%
+            width: 80%
             height: 40%
             position: relative
             overflow: hidden
@@ -42,4 +44,9 @@
                 height: 100%
                 width: 100%
                 position: absolute
-                
+
+.tech-icon
+    width: 70px
+    height: 70px
+
+    outline: 1px solid transparent

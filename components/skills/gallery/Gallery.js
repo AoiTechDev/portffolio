@@ -4,6 +4,13 @@ import "@styles/skills/gallery/gallery.sass";
 import Layout from "@components/layout/Layout";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import {
+    DiReact,
+    DiHtml5,
+    DiCss3,
+    DiSass,
+    DiJavascript1,
+  } from "react-icons/di";
 gsap.registerPlugin(ScrollTrigger);
 const Gallery = () => {
   useEffect(() => {
@@ -20,63 +27,48 @@ const Gallery = () => {
       //     });
       //   });
       const content = panel.querySelectorAll("*");
-      //   content.forEach((el) => {
-      //     gsap.set(el, {
-      //       y: 0,
-      //       opacity: 0,
-      //     });
-      //   });
+      content.forEach((el) => {
+        gsap.set(el, {
+          y: 0,
+          opacity: 0,
+        });
+      });
       ScrollTrigger.create({
         trigger: panel,
 
-        start: "top top",
-
+        start: "top-=250 top",
+        markers: true,
         //snap: { snapTo: [0.5], duration: 1, delay: 0 },
 
-        // onEnter: ({ progress, direction, isActive }) => {
-        //   console.log("onEnter", progress, direction, isActive);
-        //   gsap.fromTo(
-        //     content,
-        //     { y: 20, opacity: 0 },
-        //     { y: 0, opacity: 1, stagger: 0.05 }
-        //   );
-        // },
-        // onLeave: ({ progress, direction, isActive }) => {
-        //   console.log("onLeave", progress, direction, isActive);
-        //   gsap.fromTo(
-        //     content,
-        //     { y: 0, opacity: 1 },
-        //     { y: -20, opacity: 0, stagger: 0.05 }
-        //   );
-        // },
-        // onLeaveBack: ({ progress, direction, isActive }) => {
-        //   console.log("onLeaveBack", progress, direction, isActive);
-        //   gsap.fromTo(
-        //     content,
-        //     { y: 0, opacity: 1 },
-        //     { y: -20, opacity: 0, stagger: 0.05 }
-        //   );
-        // },
-        // onEnterBack: ({ progress, direction, isActive }) => {
-        //   console.log("onEnterBack", progress, direction, isActive);
-        //   gsap.fromTo(
-        //     content,
-        //     { y: -20, opacity: 0 },
-        //     { y: 0, opacity: 1, stagger: 0.05 }
-        //   );
-        // },
+        onEnter: ({ progress, direction, isActive }) => {
+          gsap.fromTo(
+            content,
+            { y: 80, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.05 }
+          );
+        },
+        onLeave: () => {
+          gsap.fromTo(
+            content,
+            { y: 0, opacity: 1 },
+            { y: -80, opacity: 0, stagger: 0.05 }
+          );
+        },
+        onLeaveBack: () => {
+          gsap.fromTo(
+            content,
+            { y: 0, opacity: 1 },
+            { y: -80, opacity: 0, stagger: 0.05 }
+          );
+        },
+        onEnterBack: () => {
+          gsap.fromTo(
+            content,
+            { y: -80, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.05 }
+          );
+        },
       });
-
-      //   gsap.from(panel.children, {
-      //     y: panel.offsetWidth,
-
-      //     stagger: 0.5,
-      //     scrollTrigger: {
-      //       trigger: "#skills",
-      //       pin: true,
-      //       scrub: 1,
-      //     },
-      //   });
     });
 
     right_panels.forEach((panel, i) => {
@@ -94,7 +86,6 @@ const Gallery = () => {
 
       tl.from(panel.children[1], {
         y: panel.offsetWidth,
-       
       }).from(panel.children[2], {
         y: panel.offsetWidth,
       });
@@ -106,8 +97,13 @@ const Gallery = () => {
         <div className="gallery__left">
           <div className="gallery__left_container">
             <div className="gallery__left_inner" style={{ "--clr": "red" }}>
-              <h2>asdasdasdassdad</h2>
-              <h2>111111111111111</h2>
+              <p>
+                These skills enable me to craft contemporary, user-centered web
+                solutions.I'm committed to staying current with the latest
+                trends and best practices in these technologies for consistent
+                high-quality results.
+              </p>
+             
             </div>
             <div className="gallery__left_inner" style={{ "--clr": "black" }}>
               <h2>asdasdasdasdasdd</h2>
@@ -122,7 +118,11 @@ const Gallery = () => {
         <div className="gallery__right">
           <div className="gallery__right_container">
             <div className="gallery__right_inner" style={{ "--clr": "red" }}>
-              1111111111111
+            <DiReact className="tech-icon" alt="tech icon" color="#5ed3f3" />
+            <DiJavascript1 className="tech-icon" alt="tech icon" color="#efd81d" />
+            <DiHtml5 className="tech-icon" alt="tech icon" color="#dd4b25" />
+            <DiCss3 className="tech-icon" alt="tech icon" color="#3594cf" />
+            <DiSass className="tech-icon" alt="tech icon" color="#c76494" />
             </div>
             <div className="gallery__right_inner" style={{ "--clr": "black" }}>
               2222222222222222
