@@ -15,6 +15,7 @@ import {
 import {
   learning_content,
   technologies_content,
+  tools_content,
   tools_content_one,
   tools_content_two,
 } from "../data/data";
@@ -42,47 +43,73 @@ const Gallery = () => {
     );
 
     left_panels.forEach((panel, index) => {
-      //   const content = panel.querySelectorAll(".gallery__left_inner > *");
-      //   console.log(content);
-      //   content.forEach((el) => {
-      //     gsap.set(el, {
-      //       y: 0,
-      //       opacity: 0,
-      //     });
-      //   });
-      //   console.log(index)
-      //console.log(right_inner[index])
       const content = panel.querySelectorAll("*");
-      console.log(right_inner[index].children);
-      right_inner.forEach((el) => {
-        gsap.set(el.children, {
-          y: 0,
-          opacity: 0,
-        });
+
+      right_inner.forEach((el, index) => {
+      
+            gsap.set(el.children, {
+              y: 0,
+              opacity: 0,
+            });
+       
       });
-      content.forEach((el) => {
-        gsap.set(el, {
-          y: 0,
-          opacity: 0,
-        });
+      content.forEach((el, index) => {
+       
+       
+          gsap.set(el, {
+            y: 0,
+            opacity: 0,
+          });
+       
+      });
+
+     
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        end: "bottom top",
+
+        onEnter: () => {
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: 80, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.05 }
+          );
+        },
+        onLeave: () => {
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: 0, opacity: 1 },
+            { y: -80, opacity: 0, stagger: 0.05 }
+          );
+        },
+        onLeaveBack: () => {
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: 0, opacity: 1 },
+            { y: -80, opacity: 0, stagger: 0.05 }
+          );
+        },
+        onEnterBack: () => {
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: -80, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.05 }
+          );
+        },
       });
 
       ScrollTrigger.create({
         trigger: panel,
-
-        start: "top-=250 top",
-
-        // sna  p: { snapTo: [0.5], duration: 1, delay: 0 },
-
+        markers: true,
+        start: "top top",
+        end: "bottom top",
+        pin: index === left_panels.length - 1 ? false : content,
+        pinSpacer: false,
         onEnter: ({ progress, direction, isActive }) => {
           gsap.fromTo(
             content,
             { y: 80, opacity: 0 },
-            { y: 0, opacity: 1, stagger: 0.05 }
-          );
-          gsap.fromTo(
-            right_inner[index].children,
-            { y: -80, opacity: 0 },
             { y: 0, opacity: 1, stagger: 0.05 }
           );
 
@@ -94,20 +121,10 @@ const Gallery = () => {
             { y: 0, opacity: 1 },
             { y: -80, opacity: 0, stagger: 0.05 }
           );
-          gsap.fromTo(
-            right_inner[index].children,
-            { y: 0, opacity: 1 },
-            { y: 80, opacity: 0, stagger: 0.05 }
-          );
         },
-        onLeaveBack: () => {
+        onLeaveBack: ({ progress, direction, isActive }) => {
           gsap.fromTo(
             content,
-            { y: 0, opacity: 1 },
-            { y: -80, opacity: 0, stagger: 0.05 }
-          );
-          gsap.fromTo(
-            right_inner[index].children,
             { y: 0, opacity: 1 },
             { y: -80, opacity: 0, stagger: 0.05 }
           );
@@ -116,11 +133,6 @@ const Gallery = () => {
           gsap.fromTo(
             content,
             { y: -80, opacity: 0 },
-            { y: 0, opacity: 1, stagger: 0.05 }
-          );
-          gsap.fromTo(
-            right_inner[index].children,
-            { y: 80, opacity: 0 },
             { y: 0, opacity: 1, stagger: 0.05 }
           );
         },
@@ -135,7 +147,7 @@ const Gallery = () => {
           scrub: 1,
           pin: ".gallery__right",
           start: "top top",
-          markers: true,
+
           end: `bottom+=955`,
         },
       });
@@ -146,16 +158,6 @@ const Gallery = () => {
         y: -panel.offsetWidth,
       });
     });
-
-    // const icon_container = document.querySelectorAll('.gallery__right_inner_container')
-
-    // icon_container.forEach(container => {
-    //     gsap.from(container.children, {
-    //         y: 50, opacity: 0, stagger: 0.5, scrollTrigger: {
-    //             trigger: '.gallery__right_inner'
-    //         }
-    //     })
-    // })
   }, []);
   return (
     <Layout>
@@ -166,8 +168,7 @@ const Gallery = () => {
               <p>{technologies_content}</p>
             </div>
             <div className="gallery__left_inner" style={{ "--clr": "black" }}>
-              <p>{tools_content_one}</p>
-              <p>{tools_content_two}</p>
+              <p>{tools_content}</p>
             </div>
             <div className="gallery__left_inner" style={{ "--clr": "purple" }}>
               <p>{learning_content}</p>
