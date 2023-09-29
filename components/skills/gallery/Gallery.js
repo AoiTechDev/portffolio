@@ -5,19 +5,43 @@ import Layout from "@components/layout/Layout";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
-    DiReact,
-    DiHtml5,
-    DiCss3,
-    DiSass,
-    DiJavascript1,
-  } from "react-icons/di";
+  DiReact,
+  DiHtml5,
+  DiCss3,
+  DiSass,
+  DiJavascript1,
+  DiScrum,
+} from "react-icons/di";
+import {
+  learning_content,
+  technologies_content,
+  tools_content_one,
+  tools_content_two,
+} from "../data/data";
+import { BsGit, BsGithub } from "react-icons/bs";
+import {
+  SiExpress,
+  SiJira,
+  SiJquery,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostman,
+  SiRedux,
+  SiTypescript,
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
+import { BiLogoFigma } from "react-icons/bi";
 gsap.registerPlugin(ScrollTrigger);
 const Gallery = () => {
   useEffect(() => {
     const left_panels = gsap.utils.toArray(".gallery__left_inner");
     const right_panels = document.querySelectorAll(".gallery__right_container");
+    const right_inner = document.querySelectorAll(
+      ".gallery__right_inner .gallery__right_inner_container"
+    );
 
-    left_panels.forEach((panel) => {
+    left_panels.forEach((panel, index) => {
       //   const content = panel.querySelectorAll(".gallery__left_inner > *");
       //   console.log(content);
       //   content.forEach((el) => {
@@ -26,19 +50,29 @@ const Gallery = () => {
       //       opacity: 0,
       //     });
       //   });
+      //   console.log(index)
+      //console.log(right_inner[index])
       const content = panel.querySelectorAll("*");
+      console.log(right_inner[index].children);
+      right_inner.forEach((el) => {
+        gsap.set(el.children, {
+          y: 0,
+          opacity: 0,
+        });
+      });
       content.forEach((el) => {
         gsap.set(el, {
           y: 0,
           opacity: 0,
         });
       });
+
       ScrollTrigger.create({
         trigger: panel,
 
         start: "top-=250 top",
-        markers: true,
-        //snap: { snapTo: [0.5], duration: 1, delay: 0 },
+
+        // sna  p: { snapTo: [0.5], duration: 1, delay: 0 },
 
         onEnter: ({ progress, direction, isActive }) => {
           gsap.fromTo(
@@ -46,12 +80,24 @@ const Gallery = () => {
             { y: 80, opacity: 0 },
             { y: 0, opacity: 1, stagger: 0.05 }
           );
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: -80, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.05 }
+          );
+
+          ////to  zajebisty pomysl essunia
         },
         onLeave: () => {
           gsap.fromTo(
             content,
             { y: 0, opacity: 1 },
             { y: -80, opacity: 0, stagger: 0.05 }
+          );
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: 0, opacity: 1 },
+            { y: 80, opacity: 0, stagger: 0.05 }
           );
         },
         onLeaveBack: () => {
@@ -60,11 +106,21 @@ const Gallery = () => {
             { y: 0, opacity: 1 },
             { y: -80, opacity: 0, stagger: 0.05 }
           );
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: 0, opacity: 1 },
+            { y: -80, opacity: 0, stagger: 0.05 }
+          );
         },
         onEnterBack: () => {
           gsap.fromTo(
             content,
             { y: -80, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.05 }
+          );
+          gsap.fromTo(
+            right_inner[index].children,
+            { y: 80, opacity: 0 },
             { y: 0, opacity: 1, stagger: 0.05 }
           );
         },
@@ -85,11 +141,21 @@ const Gallery = () => {
       });
 
       tl.from(panel.children[1], {
-        y: panel.offsetWidth,
+        y: -panel.offsetWidth,
       }).from(panel.children[2], {
-        y: panel.offsetWidth,
+        y: -panel.offsetWidth,
       });
     });
+
+    // const icon_container = document.querySelectorAll('.gallery__right_inner_container')
+
+    // icon_container.forEach(container => {
+    //     gsap.from(container.children, {
+    //         y: 50, opacity: 0, stagger: 0.5, scrollTrigger: {
+    //             trigger: '.gallery__right_inner'
+    //         }
+    //     })
+    // })
   }, []);
   return (
     <Layout>
@@ -97,38 +163,110 @@ const Gallery = () => {
         <div className="gallery__left">
           <div className="gallery__left_container">
             <div className="gallery__left_inner" style={{ "--clr": "red" }}>
-              <p>
-                These skills enable me to craft contemporary, user-centered web
-                solutions.I'm committed to staying current with the latest
-                trends and best practices in these technologies for consistent
-                high-quality results.
-              </p>
-             
+              <p>{technologies_content}</p>
             </div>
             <div className="gallery__left_inner" style={{ "--clr": "black" }}>
-              <h2>asdasdasdasdasdd</h2>
-              <h2>22222222222222</h2>
+              <p>{tools_content_one}</p>
+              <p>{tools_content_two}</p>
             </div>
             <div className="gallery__left_inner" style={{ "--clr": "purple" }}>
-              <h2>asdasdasdasd2asd</h2>
-              <h2>333333333333</h2>
+              <p>{learning_content}</p>
             </div>
           </div>
         </div>
         <div className="gallery__right">
           <div className="gallery__right_container">
             <div className="gallery__right_inner" style={{ "--clr": "red" }}>
-            <DiReact className="tech-icon" alt="tech icon" color="#5ed3f3" />
-            <DiJavascript1 className="tech-icon" alt="tech icon" color="#efd81d" />
-            <DiHtml5 className="tech-icon" alt="tech icon" color="#dd4b25" />
-            <DiCss3 className="tech-icon" alt="tech icon" color="#3594cf" />
-            <DiSass className="tech-icon" alt="tech icon" color="#c76494" />
+              <div className="gallery__right_inner_container">
+                <div className="skill-icon">
+                  {" "}
+                  <DiReact
+                    className="tech-icon"
+                    alt="tech icon"
+                    color="#5ed3f3"
+                  />
+                </div>
+                <div className="skill-icon">
+                  {" "}
+                  <DiJavascript1
+                    className="tech-icon"
+                    alt="tech icon"
+                    color="#efd81d"
+                  />
+                </div>
+                <div className="skill-icon">
+                  <DiHtml5
+                    className="tech-icon"
+                    alt="tech icon"
+                    color="#dd4b25"
+                  />
+                </div>
+                <div className="skill-icon">
+                  {" "}
+                  <DiCss3
+                    className="tech-icon"
+                    alt="tech icon"
+                    color="#3594cf"
+                  />
+                </div>
+                <div className="skill-icon">
+                  <DiSass
+                    className="tech-icon"
+                    alt="tech icon"
+                    color="#c76494"
+                  />
+                </div>
+              </div>
             </div>
             <div className="gallery__right_inner" style={{ "--clr": "black" }}>
-              2222222222222222
+              <div className="gallery__right_inner_container">
+                <div className="skill-icon">
+                  <BsGit className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <BsGithub className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiPostman className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiJira className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <TbApi className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <DiScrum className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <BiLogoFigma className="tech-icon" />
+                </div>
+              </div>
             </div>
             <div className="gallery__right_inner" style={{ "--clr": "purple" }}>
-              333333333333333333
+              <div className="gallery__right_inner_container">
+                <div className="skill-icon">
+                  <SiTypescript className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiNextdotjs className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiMongodb className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiJquery className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiNodedotjs className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiExpress className="tech-icon" />
+                </div>
+                <div className="skill-icon">
+                  <SiRedux className="tech-icon" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
