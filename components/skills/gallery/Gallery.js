@@ -35,6 +35,7 @@ import { TbApi } from "react-icons/tb";
 import { BiLogoFigma } from "react-icons/bi";
 gsap.registerPlugin(ScrollTrigger);
 const Gallery = () => {
+    const split_first_text = technologies_content.split(" ").map((char, index) => <span key={index}>{char}</span>)
   useEffect(() => {
     const left_panels = gsap.utils.toArray(".gallery__left_inner");
     const right_panels = document.querySelectorAll(".gallery__right_container");
@@ -165,7 +166,7 @@ const Gallery = () => {
         <div className="gallery__left">
           <div className="gallery__left_container">
             <div className="gallery__left_inner" style={{ "--clr": "red" }}>
-              <p>{technologies_content}</p>
+              <p>{split_first_text}</p>
             </div>
             <div className="gallery__left_inner" style={{ "--clr": "black" }}>
               <p>{tools_content}</p>
